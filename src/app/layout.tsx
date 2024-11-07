@@ -1,7 +1,5 @@
 import { ReactNode } from 'react';
 
-import { Container } from '@components/Container';
-
 export const metadata = {
   title: 'Smart UI - Web Application Development',
   description:
@@ -17,9 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <Container>
-        <body>{children}</body>
-      </Container>
+      <body>{children}</body>
     </html>
   );
 }
