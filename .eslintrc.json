@@ -17,6 +17,9 @@
       "error",
       { "argsIgnorePattern": "^_" }
     ],
+    "import/order": "off",
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "no-console": "error",
     "semi": ["error", "always"],
@@ -28,6 +31,14 @@
       { "extensions": [".jsx", ".tsx"] }
     ]
   },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "react/require-default-props": "off"
+      }
+    }
+  ],
   "settings": {
     "react": {
       "version": "detect"
