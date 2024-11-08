@@ -1,0 +1,19 @@
+@import "@styles/vars";
+
+.notFound {
+  text-align: center;
+  padding: 50px;
+
+  a {
+    display: inline-block;
+    background-color: $primaryColor;
+    padding: 6px 12px;
+    margin-top: 20px;
+    border-radius: $borderRadius1;
+    transition: $transition2 ease all;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+}

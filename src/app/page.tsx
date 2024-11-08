@@ -1,11 +1,11 @@
+import { Layout } from '@components/Layout/Layout';
+
 import '../styles/globals.scss';
-import styles from './page.module.scss';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>main</main>
-      <footer className={styles.footer}>footer</footer>
-    </div>
+    <Layout>
+      <div>body</div>
+    </Layout>
   );
 }

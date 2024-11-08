@@ -19,6 +19,8 @@
     ],
     "import/order": "off",
     "import/prefer-default-export": "off",
+    "arrow-body-style": ["off"],
+    "react/button-has-type": "off",
     "react/function-component-definition": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "no-console": "error",
@@ -29,6 +31,16 @@
     "react/jsx-filename-extension": [
       "error",
       { "extensions": [".jsx", ".tsx"] }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never"
+      }
     ]
   },
   "overrides": [

@@ -1,5 +1,4 @@
 @import "vars";
-@import "colors";
 @import "fonts";
 
 html,
@@ -13,6 +12,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 18px;
+  background-color: $backgroundColor;
+  color: white;
 }
 
 * {
