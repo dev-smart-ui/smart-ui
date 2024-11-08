@@ -1,0 +1,22 @@
+@import '@styles/vars';
+
+.wrapper {
+  position: absolute;
+  top: calc(100% - 20px);
+  left: 0;
+  width: 200px;
+  transition: $transition2;
+  opacity: 0;
+  padding: 0 12px;
+  max-height: 0;
+  pointer-events: none;
+  visibility: hidden;
+
+  &.active {
+    padding: 12px;
+    max-height: 200px;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+  }
+}

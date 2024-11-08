@@ -13,7 +13,8 @@
     transition: $transition2 ease all;
 
     &:hover {
-      opacity: .7;
+      transform: scale(1.03);
+      box-shadow: $boxShadow1;
     }
   }
 }

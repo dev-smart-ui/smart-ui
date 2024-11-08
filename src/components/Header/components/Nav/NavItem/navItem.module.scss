@@ -1,0 +1,53 @@
+@import "@styles/vars";
+
+.wrapper {
+  position: relative;
+  height: 100%;
+
+  &:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to top, rgba($primaryColor, .2), rgba($primaryColor, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+  }
+
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.link, .navMenuBtn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navMenuBtn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.arrow {
+  border: solid $borderColor2;
+  border-width: 0 2px 2px 0;
+  padding: 4px;
+  display: inline-block;
+  transform: rotate(45deg);
+  margin-top: -3px;
+  transition: $transition2;
+
+  &.active {
+    margin-top: 4px;
+    transform: rotate(225deg);
+  }
+}
