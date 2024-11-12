@@ -5,5 +5,5 @@ interface ProvidersProps {
 }
 
 export const Providers = ({ children }: ProvidersProps) => {
-  return { children };
+  return children;
 };
