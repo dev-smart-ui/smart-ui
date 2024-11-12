@@ -8,7 +8,7 @@ const NAV_LINKS = [
     label: 'Services',
     submenu: [
       { label: 'example 1', path: '#' },
-      { label: 'example 2', path: '##' },
+      { label: 'example 2', path: '' },
     ],
   },
   { label: 'Our Work', path: '/our-work' },
@@ -20,7 +20,7 @@ export const Nav = () => {
     <nav className={styles.wrapper}>
       <ul className={styles.navList}>
         {NAV_LINKS.map((link) => (
-          <NavItem key={link.path} link={link} />
+          <NavItem key={link.label} link={link} />
         ))}
       </ul>
     </nav>
