@@ -22,7 +22,6 @@ export const SubMenu: FC<SubMenuProps> = ({
   navItemRef,
 }) => {
   const subMenuRef = useRef<HTMLUListElement | null>(null);
-
   useOnClickOutside(subMenuRef, onCloseSubMenu, navItemRef);
 
   return (

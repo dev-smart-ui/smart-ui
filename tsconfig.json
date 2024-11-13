@@ -23,8 +23,11 @@
       "@api/*": ["./src/api/*"],
       "@helpers/*": ["./src/helpers/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@app-types/*": ["./src/types/*"]
-    }
+      "@app-types/*": ["./src/types/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@graphqlQueries/*": ["./src/graphql/*"],
+      "@context/*": ["./src/context/*"],
+    },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
