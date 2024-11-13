@@ -17,6 +17,12 @@
     clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
   }
 
+  &.active {
+    &:after {
+      opacity: 1;
+    }
+  }
+
   &:hover {
     &:after {
       opacity: 1;

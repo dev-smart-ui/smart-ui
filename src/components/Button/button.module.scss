@@ -1,0 +1,51 @@
+@import '@styles/vars';
+
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 9px 32px;
+  font-size: 20px;
+  font-weight: 600;
+  color: $textColor;
+  background: $surfaceColor;
+  border: none;
+  border-radius: $borderRadius2;
+  transition: background-color $transition2 ease, color $transition2 ease;
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: calc(100% + 2px);
+    width: calc(100% + 2px);
+    background: linear-gradient(to bottom, rgba($primaryColor, 0.2), $primaryColor 100%);
+    border-radius: $borderRadius2;
+    z-index: -1;
+    transition: all $transition2 ease;
+  }
+
+  &:hover {
+    background-color: $primaryColor;
+    color: #fff;
+
+    &::after {
+      height: calc(100%);
+      width: calc(100%);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &.isIcon {
+    padding: 13px;
+  }
+}
+
+.icon {
+  display: inline-block;
+}

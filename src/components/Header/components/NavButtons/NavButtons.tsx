@@ -2,6 +2,8 @@
 
 import { usePathname, useRouter } from 'next/navigation';
 
+import { Button } from '@components/Button';
+
 import styles from './navButtons.module.scss';
 
 export const NavButtons = () => {
@@ -17,7 +19,7 @@ export const NavButtons = () => {
 
   return (
     <div className={styles.wrapper}>
-      <button>Contact Us</button>
+      <Button text="Contact Us" />
       <button onClick={() => handleLanguageChange('en')}>EN</button>
       <button onClick={() => handleLanguageChange('ua')}>UA</button>
     </div>

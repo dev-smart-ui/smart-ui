@@ -5,6 +5,8 @@
   background-color: $surfaceColor;
   border-bottom: .4px solid $borderColor;
   display: flex;
+  position: relative;
+  z-index: 0;
 }
 
 .content {

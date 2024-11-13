@@ -2,6 +2,7 @@
 
 import classNames from 'classnames';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import { FC, useRef } from 'react';
 
@@ -17,15 +18,27 @@ interface NavItemProps {
 }
 
 export const NavItem: FC<NavItemProps> = ({ link }) => {
+  const pathname = usePathname();
   const {
     isOpen: isSubMenu,
     onToggle: onToggleSubMenu,
     onClose: onCloseSubMenu,
   } = useOpen();
   const navItemRef = useRef<HTMLLIElement | null>(null);
+  const normalizedPathname = pathname.replace(/^\/[a-z]{2}/, '') || '/';
+  const isActive =
+    link.path &&
+    (normalizedPathname === link.path ||
+      (normalizedPathname.startsWith(link.path) && link.path !== '/'));
 
   return (
-    <li ref={navItemRef} className={styles.wrapper} key={link.label}>
+    <li
+      ref={navItemRef}
+      className={classNames(styles.wrapper, {
+        [styles.active]: isActive,
+      })}
+      key={link.label}
+    >
       {link.path ? (
         <Link className={styles.link} href={link.path}>
           {link.label}
