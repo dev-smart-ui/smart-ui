@@ -1,5 +1,6 @@
 'use client';
 
+import { useLanguage } from '@context/languageContext';
 import classNames from 'classnames';
 import Link from 'next/link';
 
@@ -10,6 +11,7 @@ import { ILink } from '@components/Header/types/types';
 
 import { useOpen } from '@hooks/useOpen';
 
+import { useTranslation } from '../../../../../app/i18n';
 import styles from './navItem.module.scss';
 
 interface NavItemProps {
@@ -23,16 +25,18 @@ export const NavItem: FC<NavItemProps> = ({ link }) => {
     onClose: onCloseSubMenu,
   } = useOpen();
   const navItemRef = useRef<HTMLLIElement | null>(null);
+  const lng = useLanguage();
+  const { t } = useTranslation(lng, 'home');
 
   return (
     <li ref={navItemRef} className={styles.wrapper} key={link.label}>
       {link.path ? (
         <Link className={styles.link} href={link.path}>
-          {link.label}
+          {t(link.label)}
         </Link>
       ) : (
         <button className={styles.navMenuBtn} onClick={onToggleSubMenu}>
-          {link.label}
+          {t(link.label)}
           <span
             className={classNames(styles.arrow, {
               [styles.active]: isSubMenu,
@@ -42,6 +46,7 @@ export const NavItem: FC<NavItemProps> = ({ link }) => {
       )}
       {link.submenu && (
         <SubMenu
+          t={t}
           navItemRef={navItemRef}
           isSubMenu={isSubMenu}
           link={link}
