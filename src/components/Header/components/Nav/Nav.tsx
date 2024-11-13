@@ -1,6 +1,6 @@
 'use client';
 
-import { useLanguage } from '@context/languageContext';
+import { useLanguage } from '@context/LanguageContext';
 
 import { NavItem } from '@components/Header/components/Nav/NavItem';
 
