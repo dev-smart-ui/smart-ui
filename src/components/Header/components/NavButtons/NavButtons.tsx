@@ -1,12 +1,18 @@
-import { useTranslation } from 'react-i18next';
+'use client';
+
+import { usePathname, useRouter } from 'next/navigation';
 
 import styles from './navButtons.module.scss';
 
 export const NavButtons = () => {
-  const { i18n } = useTranslation();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const handleLanguageChange = (lng: string) => {
-    i18n.changeLanguage(lng);
+    const segments = pathname.split('/');
+    segments[1] = lng;
+    const newPath = segments.join('/');
+    router.push(newPath);
   };
 
   return (
