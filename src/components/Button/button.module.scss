@@ -11,7 +11,7 @@
   border: none;
   padding: 9px 32px;
   font-weight: 600;
-  transition: background-color $transition2 ease, color $transition2 ease;
+  transition: background-color $transition1 ease, color $transition1 ease;
 
   &:hover {
     background-color: rgba($primaryColor, 0.8);
@@ -32,7 +32,7 @@
     background: linear-gradient(var(--gradient-direction, to bottom), rgba($primaryColor, 0.2), $primaryColor 100%);
     border-radius: var(--border-radius, $borderRadius2);
     z-index: -1;
-    transition: all $transition2 ease;
+    transition: all $transition1 ease;
   }
 
   &:hover {
@@ -47,12 +47,25 @@
     opacity: 0.5;
   }
 
-  &.isIcon {
-    padding: 13px;
+  &.isRoundedmedium, &.isRoundedsmall {
+    --border-radius: 50%;
+    font-size: 16px;
+
+    &:hover span {
+      transform: scale(1.08);
+    }
   }
 
-  &.isRounded {
-    --border-radius: 50%;
+  &.isRoundedmedium {
+    padding: 13px;
+    width: 50px;
+    height: 50px;
+  }
+
+  &.isRoundedsmall {
+    padding: 12px;
+    width: 46px;
+    height: 46px;
   }
 
   &.isGradienttoTop {
@@ -78,6 +91,20 @@
   &.isGradienttoRight {
     --gradient-direction: to right;
   }
+
+  &.isMonotoneBorder {
+    border: 1px solid rgba($primaryColor, 0.2);
+
+    &::after {
+      background: initial;
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .mainBtn {
@@ -96,7 +123,7 @@
     position: relative;
     background: linear-gradient(var(--gradient-direction-main-btn, to right), rgba($mainBtnGradient1, 0.2), $mainBtnGradient2 100%) 0 0% / 200% 100%;
     background-size: 200% 100%;
-    transition: background-position $transition2 ease;
+    transition: background-position $transition1 ease;
 
     &:hover {
       background-position: 100% 0;

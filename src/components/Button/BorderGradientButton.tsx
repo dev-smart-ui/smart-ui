@@ -9,7 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
-  isRounded?: boolean;
+  isRounded?: 'small' | 'medium';
   gradientDirection?:
     | 'toTop'
     | 'toBottom'
@@ -17,6 +17,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'toLeft'
     | 'toRight'
     | 'toBottomLeft';
+  isMonotoneBorder?: boolean;
 }
 
 export const BorderGradientButton: FC<ButtonProps> = ({
@@ -24,24 +25,26 @@ export const BorderGradientButton: FC<ButtonProps> = ({
   icon,
   onClick,
   disabled,
-  isRounded = false,
+  isRounded,
   gradientDirection = 'toBottom',
+  isMonotoneBorder = false,
 }) => {
   return (
     <button
       className={classNames(
         styles.borderGradientBtn,
         styles[`isGradient${gradientDirection}`],
+        styles[`isRounded${isRounded}`],
         {
-          [styles.isIcon]: !!icon,
-          [styles.isRounded]: isRounded,
+          [styles.isMonotoneBorder]: isMonotoneBorder,
         },
       )}
       onClick={onClick}
       disabled={disabled}
     >
-      {text}
-      {icon && icon}
+      <span>
+        {text} {icon && icon}
+      </span>
     </button>
   );
 };
