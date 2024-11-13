@@ -1,0 +1,154 @@
+@import '@styles/vars';
+
+.mainBtn, .borderGradientBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: var(--border-radius, $borderRadius2);
+  border: none;
+  padding: 9px 32px;
+  font-weight: 600;
+  transition: background-color $transition1 ease, color $transition1 ease;
+  min-width: max-content;
+
+  &:hover {
+    background-color: rgba($primaryColor, 0.8);
+    color: white;
+  }
+}
+
+.borderGradientBtn {
+  font-size: 16px;
+  color: $textColor;
+  background: $surfaceColor;
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: calc(100% + 2px);
+    width: calc(100% + 2px);
+    background: linear-gradient(var(--gradient-direction, to bottom), rgba($primaryColor, 0.2), $primaryColor 100%);
+    border-radius: var(--border-radius, $borderRadius2);
+    z-index: -1;
+    transition: all $transition1 ease;
+  }
+
+  &:hover {
+    &::after {
+      height: calc(100%);
+      width: calc(100%);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &.isRoundedmedium, &.isRoundedsmall {
+    --border-radius: 50%;
+    font-size: 16px;
+    padding: 12px;
+
+    &:hover span {
+      transform: scale(1.08);
+    }
+  }
+
+  &.isRoundedmedium {
+    min-width: 46px;
+    width: 44px;
+    height: 44px;
+
+    @include breakpoint(lg) {
+      min-width: 50px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &.isRoundedsmall {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+
+    @include breakpoint(lg) {
+      min-width: 46px;
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &.isGradienttoTop {
+    --gradient-direction: to top;
+  }
+
+  &.isGradienttoBottom {
+    --gradient-direction: to bottom;
+  }
+
+  &.isGradienttoTopRight {
+    --gradient-direction: to top right;
+  }
+
+  &.isGradienttoBottomLeft {
+    --gradient-direction: to bottom left;
+  }
+
+  &.isGradienttoLeft {
+    --gradient-direction: to left;
+  }
+
+  &.isGradienttoRight {
+    --gradient-direction: to right;
+  }
+
+  &.isMonotoneBorder {
+    border: 1px solid rgba($primaryColor, 0.2);
+
+    &::after {
+      background: initial;
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 20px;
+  }
+}
+
+.mainBtn {
+  background: $primaryColor2;
+  color: $textColor2;
+  font-size: 18px;
+
+  &.isBig {
+    padding: 14px 32px;
+  }
+
+  &.isGradient {
+    padding: 4px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    background: linear-gradient(var(--gradient-direction-main-btn, to right), rgba($mainBtnGradient1, 0.2), $mainBtnGradient2 100%) 0 0% / 200% 100%;
+    background-size: 200% 100%;
+    transition: background-position $transition1 ease;
+
+    &:hover {
+      background-position: 100% 0;
+    }
+  }
+
+  @include breakpoint(lg) {
+    font-size: 24px;
+  }
+}

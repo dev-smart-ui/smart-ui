@@ -7,9 +7,13 @@ import { Container } from '@components/Container';
 import { Nav } from '@components/Header/components/Nav';
 import { NavButtons } from '@components/Header/components/NavButtons';
 
+import { useOpen } from '@hooks/useOpen';
+
 import styles from './header.module.scss';
 
 export const Header = () => {
+  const { isOpen, onToggle, onClose } = useOpen(false);
+
   return (
     <header className={styles.wrapper}>
       <Container>
@@ -22,8 +26,8 @@ export const Header = () => {
               alt="logo"
             />
           </Link>
-          <Nav />
-          <NavButtons />
+          <Nav isOpen={isOpen} onCloseMainMenu={onClose} />
+          <NavButtons onToggle={onToggle} />
         </div>
       </Container>
     </header>

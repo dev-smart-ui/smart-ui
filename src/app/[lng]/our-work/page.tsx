@@ -1,9 +1,9 @@
 import { Container } from '@components/Container';
 
-export default function Home() {
+export default function OurWorkPage() {
   return (
     <div>
-      <Container>main body</Container>
+      <Container>our works</Container>
     </div>
   );
 }

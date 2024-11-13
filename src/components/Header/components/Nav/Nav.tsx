@@ -1,18 +1,42 @@
-'use client';
+import { ROUTES } from '@routes/index';
+import classNames from 'classnames';
 
-import { useLanguage } from '@context/languageContext';
+import { FC, useEffect } from 'react';
 
+import { BorderGradientButton } from '@components/Button';
 import { NavItem } from '@components/Header/components/Nav/NavItem';
 
-import { useTranslation } from '../../../../app/i18n/client';
+import useMediaQuery from '@hooks/useMediaQuery';
+import { useMount } from '@hooks/useMount';
+import { useTranslation } from '@hooks/useTranslation';
+
 import styles from './nav.module.scss';
 
-export const Nav = () => {
-  const lng = useLanguage();
-  const { t } = useTranslation(lng, 'home');
+interface INavProps {
+  isOpen: boolean;
+  onCloseMainMenu: () => void;
+}
+
+export const Nav: FC<INavProps> = ({ isOpen, onCloseMainMenu }) => {
+  const { t, lng } = useTranslation('home');
+  const isDesktop = useMediaQuery('(min-width: 768px)');
+
+  const { mounted } = useMount(isOpen);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   const NAV_LINKS = [
-    { label: 'Home', path: '/' },
+    { label: 'Home', path: `/${lng}${ROUTES.HOME}` },
     {
       label: 'Services',
       submenu: [
@@ -20,16 +44,23 @@ export const Nav = () => {
         { label: 'example 2', path: '' },
       ],
     },
-    { label: 'Our Work', path: '/our-work' },
-    { label: 'About Us', path: '/about-us' },
+    { label: 'Our Work', path: `/${lng}${ROUTES.OUR_WORK}` },
+    { label: 'About Us', path: `/${lng}${ROUTES.ABOUT_US}` },
   ];
 
+  if (!isDesktop && !mounted && !isOpen) return null;
+
   return (
-    <nav className={styles.wrapper}>
+    <nav
+      className={classNames(styles.wrapper, {
+        [styles.isOpen]: mounted && isOpen,
+      })}
+    >
       <ul className={styles.navList}>
         {NAV_LINKS.map((link) => (
           <NavItem
             key={link.label}
+            onCloseMainMenu={onCloseMainMenu}
             link={{
               ...link,
               label: t(link.label),
@@ -41,6 +72,10 @@ export const Nav = () => {
           />
         ))}
       </ul>
+      <BorderGradientButton
+        text="Contact Us"
+        className={styles.contactUsBtnMobile}
+      />
     </nav>
   );
 };

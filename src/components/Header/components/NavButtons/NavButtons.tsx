@@ -1,25 +1,21 @@
-'use client';
+import { FC } from 'react';
 
-import { usePathname, useRouter } from 'next/navigation';
+import { BorderGradientButton } from '@components/Button';
+import { BurgerMenu } from '@components/Header/components/Burger';
+import { LanguageSwitcher } from '@components/Header/components/LanguageSwitcher/LanguageSwitcher';
 
 import styles from './navButtons.module.scss';
 
-export const NavButtons = () => {
-  const router = useRouter();
-  const pathname = usePathname();
+interface INavButtonsProps {
+  onToggle: () => void;
+}
 
-  const handleLanguageChange = (lng: string) => {
-    const segments = pathname.split('/');
-    segments[1] = lng;
-    const newPath = segments.join('/');
-    router.push(newPath);
-  };
-
+export const NavButtons: FC<INavButtonsProps> = ({ onToggle }) => {
   return (
     <div className={styles.wrapper}>
-      <button>Contact Us</button>
-      <button onClick={() => handleLanguageChange('en')}>EN</button>
-      <button onClick={() => handleLanguageChange('ua')}>UA</button>
+      <BorderGradientButton text="Contact Us" className={styles.contactUsBtn} />
+      <LanguageSwitcher />
+      <BurgerMenu onClick={onToggle} />
     </div>
   );
 };

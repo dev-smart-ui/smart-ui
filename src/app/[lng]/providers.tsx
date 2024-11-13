@@ -1,4 +1,4 @@
-import { LanguageProvider } from '@context/languageContext';
+import { LanguageProvider } from '@context/LanguageContext';
 
 import { ReactNode } from 'react';
 

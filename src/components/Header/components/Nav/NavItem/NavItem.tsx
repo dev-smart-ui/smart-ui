@@ -1,7 +1,6 @@
-'use client';
-
 import classNames from 'classnames';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import { FC, useRef } from 'react';
 
@@ -14,20 +13,36 @@ import styles from './navItem.module.scss';
 
 interface NavItemProps {
   link: ILink;
+  onCloseMainMenu: () => void;
 }
 
-export const NavItem: FC<NavItemProps> = ({ link }) => {
+export const NavItem: FC<NavItemProps> = ({ link, onCloseMainMenu }) => {
+  const pathname = usePathname();
   const {
     isOpen: isSubMenu,
     onToggle: onToggleSubMenu,
     onClose: onCloseSubMenu,
   } = useOpen();
   const navItemRef = useRef<HTMLLIElement | null>(null);
+  const normalizedPathname = pathname.replace(/^\/[a-z]{2}/, '') || '/';
+  const normalizedLinkPath = link.path?.replace(/^\/[a-z]{2}/, '') || '/';
+
+  const isActive =
+    link.path &&
+    (normalizedPathname === normalizedLinkPath ||
+      (normalizedPathname.startsWith(normalizedLinkPath) &&
+        normalizedLinkPath !== '/'));
 
   return (
     <li ref={navItemRef} className={styles.wrapper} key={link.label}>
       {link.path ? (
-        <Link className={styles.link} href={link.path}>
+        <Link
+          onClick={onCloseMainMenu}
+          className={classNames(styles.link, {
+            [styles.active]: isActive,
+          })}
+          href={link.path}
+        >
           {link.label}
         </Link>
       ) : (
@@ -46,6 +61,7 @@ export const NavItem: FC<NavItemProps> = ({ link }) => {
           isSubMenu={isSubMenu}
           link={link}
           onCloseSubMenu={onCloseSubMenu}
+          onCloseMainMenu={onCloseMainMenu}
         />
       )}
     </li>

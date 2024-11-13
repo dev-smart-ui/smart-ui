@@ -1,10 +1,64 @@
+@import "@styles/vars";
+
 .wrapper {
-  height: 100%;
+  height: calc(100% - 80px);
+  width: 100%;
+  position: fixed;
+  top: 80px;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: $transition2;
+  background: $surfaceColor;
+  padding: 0 10px;
+  z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @include breakpoint(md) {
+    height: 100%;
+    background: transparent;
+    padding: 0;
+    top: 0;
+    position: static;
+    opacity: initial;
+    pointer-events: auto;
+    visibility: visible;
+    transform: initial;
+    overflow: initial;
+  }
+
+  &.isOpen {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .contactUsBtnMobile {
+    display: inline-flex;
+    margin-top: 20px;
+
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
 }
 
 .navList {
   display: flex;
-  align-items: center;
-  gap: 24px;
-  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  @include breakpoint(md) {
+    height: 100%;
+    flex-direction: row;
+    gap: 16px;
+  }
+  @include breakpoint(lg) {
+    gap: 24px;
+  }
 }
