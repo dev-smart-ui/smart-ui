@@ -1,35 +1,41 @@
 @import '@styles/vars';
 
-.wrapper {
+.mainBtn, .borderGradientBtn {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   cursor: pointer;
+  border-radius: var(--border-radius, $borderRadius2);
+  border: none;
   padding: 9px 32px;
-  font-size: 20px;
   font-weight: 600;
+  transition: background-color $transition2 ease, color $transition2 ease;
+
+  &:hover {
+    background-color: rgba($primaryColor, 0.8);
+    color: white;
+  }
+}
+
+.borderGradientBtn {
+  font-size: 20px;
   color: $textColor;
   background: $surfaceColor;
-  border: none;
-  border-radius: $borderRadius2;
-  transition: background-color $transition2 ease, color $transition2 ease;
 
   &::after {
     position: absolute;
     content: '';
     height: calc(100% + 2px);
     width: calc(100% + 2px);
-    background: linear-gradient(to bottom, rgba($primaryColor, 0.2), $primaryColor 100%);
-    border-radius: $borderRadius2;
+    background: linear-gradient(var(--gradient-direction, to bottom), rgba($primaryColor, 0.2), $primaryColor 100%);
+    border-radius: var(--border-radius, $borderRadius2);
     z-index: -1;
     transition: all $transition2 ease;
   }
 
   &:hover {
-    background-color: $primaryColor;
-    color: #fff;
-
     &::after {
       height: calc(100%);
       width: calc(100%);
@@ -44,8 +50,56 @@
   &.isIcon {
     padding: 13px;
   }
+
+  &.isRounded {
+    --border-radius: 50%;
+  }
+
+  &.isGradienttoTop {
+    --gradient-direction: to top;
+  }
+
+  &.isGradienttoBottom {
+    --gradient-direction: to bottom;
+  }
+
+  &.isGradienttoTopRight {
+    --gradient-direction: to top right;
+  }
+
+  &.isGradienttoBottomLeft {
+    --gradient-direction: to bottom left;
+  }
+
+  &.isGradienttoLeft {
+    --gradient-direction: to left;
+  }
+
+  &.isGradienttoRight {
+    --gradient-direction: to right;
+  }
 }
 
-.icon {
-  display: inline-block;
+.mainBtn {
+  background: $primaryColor2;
+  color: $textColor2;
+  font-size: 24px;
+
+  &.isBig {
+    padding: 14px 32px;
+  }
+
+  &.isGradient {
+    padding: 4px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    background: linear-gradient(var(--gradient-direction-main-btn, to right), rgba($mainBtnGradient1, 0.2), $mainBtnGradient2 100%) 0 0% / 200% 100%;
+    background-size: 200% 100%;
+    transition: background-position $transition2 ease;
+
+    &:hover {
+      background-position: 100% 0;
+    }
+  }
 }

@@ -1,34 +1,37 @@
 import classNames from 'classnames';
 
-import React, { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes, FC, ReactNode } from 'react';
 
 import styles from './button.module.scss';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  text?: string;
-  icon?: React.ReactNode;
-  gradientClass?: string;
+interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  text: string;
+  icon?: ReactNode;
   onClick?: () => void;
   disabled?: boolean;
+  isBig?: boolean;
+  isGradient?: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = ({
+export const Button: FC<IButtonProps> = ({
   text,
   icon,
-  gradientClass,
   onClick,
   disabled,
+  isBig = false,
+  isGradient = false,
 }) => {
   return (
     <button
-      className={classNames(styles.wrapper, styles[gradientClass ?? ''], {
-        [styles.isIcon]: !!icon,
-      })}
       onClick={onClick}
       disabled={disabled}
+      className={classNames(styles.mainBtn, {
+        [styles.isBig]: isBig,
+        [styles.isGradient]: isGradient,
+      })}
     >
-      {icon && <span className={styles.icon}>{icon}</span>}
       {text}
+      {icon && icon}
     </button>
   );
 };

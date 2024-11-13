@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from 'next/navigation';
 
-import { Button } from '@components/Button';
+import { BorderGradientButton } from '@components/Button';
 
 import styles from './navButtons.module.scss';
 
@@ -19,7 +19,7 @@ export const NavButtons = () => {
 
   return (
     <div className={styles.wrapper}>
-      <Button text="Contact Us" />
+      <BorderGradientButton text="Contact Us" />
       <button onClick={() => handleLanguageChange('en')}>EN</button>
       <button onClick={() => handleLanguageChange('ua')}>UA</button>
     </div>
