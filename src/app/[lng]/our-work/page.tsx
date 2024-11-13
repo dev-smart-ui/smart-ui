@@ -1,9 +1,9 @@
-import { Layout } from '@components/Layout';
+import { Container } from '@components/Container';
 
-export default function Page() {
+export default function OurWorkPage() {
   return (
-    <Layout>
-      <div>our work page</div>
-    </Layout>
+    <div>
+      <Container>our works</Container>
+    </div>
   );
 }
