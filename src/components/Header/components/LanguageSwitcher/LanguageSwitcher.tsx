@@ -1,16 +1,18 @@
-import { useLanguage } from '@context/LanguageContext';
 import { usePathname, useRouter } from 'next/navigation';
+
+import { useTranslation } from 'react-i18next';
 
 import { BorderGradientButton } from '@components/Button';
 
 export const LanguageSwitcher = () => {
   const router = useRouter();
   const pathname = usePathname();
+  const { i18n } = useTranslation();
 
-  const lng = useLanguage();
+  const handleLanguageChange = async () => {
+    const newLanguage = i18n.language === 'ua' ? 'en' : 'ua';
 
-  const handleLanguageChange = () => {
-    const newLanguage = lng === 'en' ? 'ua' : 'en';
+    await i18n.changeLanguage(newLanguage);
     const segments = pathname.split('/');
     segments[1] = newLanguage;
     const newPath = segments.join('/');
@@ -21,7 +23,7 @@ export const LanguageSwitcher = () => {
     <BorderGradientButton
       isMonotoneBorder
       isRounded="small"
-      text={lng.toUpperCase()}
+      text={i18n.language.toUpperCase()}
       onClick={handleLanguageChange}
     />
   );

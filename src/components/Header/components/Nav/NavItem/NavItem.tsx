@@ -25,10 +25,13 @@ export const NavItem: FC<NavItemProps> = ({ link, onCloseMainMenu }) => {
   } = useOpen();
   const navItemRef = useRef<HTMLLIElement | null>(null);
   const normalizedPathname = pathname.replace(/^\/[a-z]{2}/, '') || '/';
+  const normalizedLinkPath = link.path?.replace(/^\/[a-z]{2}/, '') || '/';
+
   const isActive =
     link.path &&
-    (normalizedPathname === link.path ||
-      (normalizedPathname.startsWith(link.path) && link.path !== '/'));
+    (normalizedPathname === normalizedLinkPath ||
+      (normalizedPathname.startsWith(normalizedLinkPath) &&
+        normalizedLinkPath !== '/'));
 
   return (
     <li ref={navItemRef} className={styles.wrapper} key={link.label}>

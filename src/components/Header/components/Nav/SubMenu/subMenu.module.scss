@@ -21,7 +21,7 @@
     border-radius: $borderRadius2;
   }
 
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     position: absolute;
     top: calc(100% - 20px);
     width: 200px;

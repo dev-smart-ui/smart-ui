@@ -1,4 +1,3 @@
-import { useLanguage } from '@context/LanguageContext';
 import { ROUTES } from '@routes/index';
 import classNames from 'classnames';
 
@@ -9,8 +8,8 @@ import { NavItem } from '@components/Header/components/Nav/NavItem';
 
 import useMediaQuery from '@hooks/useMediaQuery';
 import { useMount } from '@hooks/useMount';
+import { useTranslation } from '@hooks/useTranslation';
 
-import { useTranslation } from '../../../../app/i18n/client';
 import styles from './nav.module.scss';
 
 interface INavProps {
@@ -19,8 +18,7 @@ interface INavProps {
 }
 
 export const Nav: FC<INavProps> = ({ isOpen, onCloseMainMenu }) => {
-  const lng = useLanguage();
-  const { t } = useTranslation(lng, 'home');
+  const { t, lng } = useTranslation('home');
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const { mounted } = useMount(isOpen);
@@ -38,7 +36,7 @@ export const Nav: FC<INavProps> = ({ isOpen, onCloseMainMenu }) => {
   }, [isOpen]);
 
   const NAV_LINKS = [
-    { label: 'Home', path: ROUTES.HOME },
+    { label: 'Home', path: `/${lng}${ROUTES.HOME}` },
     {
       label: 'Services',
       submenu: [
@@ -46,8 +44,8 @@ export const Nav: FC<INavProps> = ({ isOpen, onCloseMainMenu }) => {
         { label: 'example 2', path: '' },
       ],
     },
-    { label: 'Our Work', path: ROUTES.OUR_WORK },
-    { label: 'About Us', path: ROUTES.ABOUT_US },
+    { label: 'Our Work', path: `/${lng}${ROUTES.OUR_WORK}` },
+    { label: 'About Us', path: `/${lng}${ROUTES.ABOUT_US}` },
   ];
 
   if (!isDesktop && !mounted && !isOpen) return null;
