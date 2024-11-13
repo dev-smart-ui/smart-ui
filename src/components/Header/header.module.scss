@@ -15,11 +15,24 @@
   justify-content: center;
   height: 100%;
   width: 100%;
-  gap: 48px;
+  gap: 20px;
+
+  @include breakpoint(sm) {
+    gap: 32px;
+  }
+  @include breakpoint(lg) {
+    gap: 48px;
+  }
 }
 
 .logo {
   cursor: pointer;
-  max-width: 162px;
   width: 100%;
+  max-width: 122px;
+  min-width: 122px;
+
+  @include breakpoint(lg) {
+    max-width: 162px;
+    min-width: 162px;
+  }
 }

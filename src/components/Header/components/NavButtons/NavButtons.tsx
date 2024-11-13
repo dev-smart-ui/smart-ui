@@ -1,21 +1,21 @@
-'use client';
+import { FC } from 'react';
 
 import { BorderGradientButton } from '@components/Button';
-import { Icons } from '@components/CustomIcons';
+import { BurgerMenu } from '@components/Header/components/Burger';
 import { LanguageSwitcher } from '@components/Header/components/LanguageSwitcher/LanguageSwitcher';
 
 import styles from './navButtons.module.scss';
 
-export const NavButtons = () => {
+interface INavButtonsProps {
+  onToggle: () => void;
+}
+
+export const NavButtons: FC<INavButtonsProps> = ({ onToggle }) => {
   return (
     <div className={styles.wrapper}>
-      <BorderGradientButton text="Contact Us" />
+      <BorderGradientButton text="Contact Us" className={styles.contactUsBtn} />
       <LanguageSwitcher />
-      <BorderGradientButton
-        isMonotoneBorder
-        isRounded="small"
-        icon={<Icons.Sun />}
-      />
+      <BurgerMenu onClick={onToggle} />
     </div>
   );
 };

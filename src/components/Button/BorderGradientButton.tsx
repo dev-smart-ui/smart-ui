@@ -18,6 +18,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'toRight'
     | 'toBottomLeft';
   isMonotoneBorder?: boolean;
+  className?: string;
 }
 
 export const BorderGradientButton: FC<ButtonProps> = ({
@@ -28,6 +29,7 @@ export const BorderGradientButton: FC<ButtonProps> = ({
   isRounded,
   gradientDirection = 'toBottom',
   isMonotoneBorder = false,
+  className,
 }) => {
   return (
     <button
@@ -35,6 +37,7 @@ export const BorderGradientButton: FC<ButtonProps> = ({
         styles.borderGradientBtn,
         styles[`isGradient${gradientDirection}`],
         styles[`isRounded${isRounded}`],
+        className,
         {
           [styles.isMonotoneBorder]: isMonotoneBorder,
         },

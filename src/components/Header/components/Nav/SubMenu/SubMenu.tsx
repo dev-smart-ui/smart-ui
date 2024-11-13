@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import Link from 'next/link';
 
 import { FC, RefObject, useRef } from 'react';
 
@@ -13,6 +14,7 @@ interface SubMenuProps {
   onCloseSubMenu: () => void;
   isSubMenu: boolean;
   navItemRef: RefObject<HTMLLIElement | null>;
+  onCloseMainMenu: () => void;
 }
 
 export const SubMenu: FC<SubMenuProps> = ({
@@ -20,6 +22,7 @@ export const SubMenu: FC<SubMenuProps> = ({
   onCloseSubMenu,
   isSubMenu,
   navItemRef,
+  onCloseMainMenu,
 }) => {
   const subMenuRef = useRef<HTMLUListElement | null>(null);
   useOnClickOutside(subMenuRef, onCloseSubMenu, navItemRef);
@@ -32,8 +35,21 @@ export const SubMenu: FC<SubMenuProps> = ({
       })}
     >
       {link.submenu?.map((subLink) => (
-        <li key={subLink.path}>
-          <a href={subLink.path}>{subLink.label}</a>
+        <li key={subLink.path} className={styles.item}>
+          <Link
+            href={subLink.path}
+            onClick={onCloseMainMenu}
+            className={styles.link}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                onCloseMainMenu();
+              }
+            }}
+          >
+            {subLink.label}
+          </Link>
         </li>
       ))}
     </ul>

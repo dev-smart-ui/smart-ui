@@ -12,6 +12,7 @@
   padding: 9px 32px;
   font-weight: 600;
   transition: background-color $transition1 ease, color $transition1 ease;
+  min-width: max-content;
 
   &:hover {
     background-color: rgba($primaryColor, 0.8);
@@ -20,7 +21,7 @@
 }
 
 .borderGradientBtn {
-  font-size: 20px;
+  font-size: 16px;
   color: $textColor;
   background: $surfaceColor;
 
@@ -50,6 +51,7 @@
   &.isRoundedmedium, &.isRoundedsmall {
     --border-radius: 50%;
     font-size: 16px;
+    padding: 12px;
 
     &:hover span {
       transform: scale(1.08);
@@ -57,15 +59,27 @@
   }
 
   &.isRoundedmedium {
-    padding: 13px;
-    width: 50px;
-    height: 50px;
+    min-width: 46px;
+    width: 44px;
+    height: 44px;
+
+    @include breakpoint(lg) {
+      min-width: 50px;
+      width: 50px;
+      height: 50px;
+    }
   }
 
   &.isRoundedsmall {
-    padding: 12px;
-    width: 46px;
-    height: 46px;
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+
+    @include breakpoint(lg) {
+      min-width: 46px;
+      width: 46px;
+      height: 46px;
+    }
   }
 
   &.isGradienttoTop {
@@ -105,12 +119,16 @@
     align-items: center;
     justify-content: center;
   }
+
+  @include breakpoint(lg) {
+    font-size: 20px;
+  }
 }
 
 .mainBtn {
   background: $primaryColor2;
   color: $textColor2;
-  font-size: 24px;
+  font-size: 18px;
 
   &.isBig {
     padding: 14px 32px;
@@ -128,5 +146,9 @@
     &:hover {
       background-position: 100% 0;
     }
+  }
+
+  @include breakpoint(lg) {
+    font-size: 24px;
   }
 }

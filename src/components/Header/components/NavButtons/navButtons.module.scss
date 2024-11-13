@@ -1,6 +1,16 @@
+@import "@styles/vars";
+
 .wrapper {
   margin-left: auto;
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.contactUsBtn {
+  display: none;
+
+  @include breakpoint(sm) {
+    display: inline-flex;
+  }
 }
