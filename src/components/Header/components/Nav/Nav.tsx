@@ -1,6 +1,7 @@
 'use client';
 
 import { useLanguage } from '@context/LanguageContext';
+import { ROUTES } from '@routes/index';
 
 import { NavItem } from '@components/Header/components/Nav/NavItem';
 
@@ -12,7 +13,7 @@ export const Nav = () => {
   const { t } = useTranslation(lng, 'home');
 
   const NAV_LINKS = [
-    { label: 'Home', path: '/' },
+    { label: 'Home', path: ROUTES.HOME },
     {
       label: 'Services',
       submenu: [
@@ -20,8 +21,8 @@ export const Nav = () => {
         { label: 'example 2', path: '' },
       ],
     },
-    { label: 'Our Work', path: '/our-work' },
-    { label: 'About Us', path: '/about-us' },
+    { label: 'Our Work', path: ROUTES.OUR_WORK },
+    { label: 'About Us', path: ROUTES.ABOUT_US },
   ];
 
   return (

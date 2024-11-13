@@ -27,6 +27,7 @@
       "@lib/*": ["./src/lib/*"],
       "@graphqlQueries/*": ["./src/graphql/*"],
       "@context/*": ["./src/context/*"],
+      "@routes/*": ["./src/routes/*"]
     },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
