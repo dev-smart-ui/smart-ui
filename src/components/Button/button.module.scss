@@ -14,9 +14,8 @@
   transition: background-color $transition1 ease, color $transition1 ease;
   min-width: max-content;
 
-  &:hover {
-    background-color: rgba($primaryColor, 0.8);
-    color: white;
+  &.fullWidth {
+    width: 100%;
   }
 }
 
@@ -28,12 +27,52 @@
   &::after {
     position: absolute;
     content: '';
-    height: calc(100% + 2px);
-    width: calc(100% + 2px);
-    background: linear-gradient(var(--gradient-direction, to bottom), rgba($primaryColor, 0.2), $primaryColor 100%);
+    height: calc(100% + 3px);
+    width: calc(100% + 3px);
     border-radius: var(--border-radius, $borderRadius2);
     z-index: -1;
     transition: all $transition1 ease;
+  }
+
+  &.greenBorderColor {
+    &::after {
+      background: linear-gradient(var(--gradient-direction, to bottom), rgba($primaryColor, 0.2), $primaryColor 100%);
+    }
+
+    &:hover {
+      background-color: rgba($primaryColor, 0.8);
+      color: white;
+    }
+  }
+  &.blueBorderColor {
+    &::after {
+      background: linear-gradient(var(--gradient-direction, to bottom), rgba($thirdColor, 0.2), $thirdColor 100%);
+    }
+
+    &:hover {
+      background-color: rgba($thirdColor, 0.8);
+      color: white;
+    }
+  }
+  &.lightBlueBorderColor {
+    &::after {
+      background: linear-gradient(var(--gradient-direction, to bottom), rgba($fourthColor, 0.2), $fourthColor 100%);
+    }
+
+    &:hover {
+      background-color: rgba($fourthColor, 0.8);
+      color: white;
+    }
+  }
+  &.darkGreenBorderColor {
+    &::after {
+      background: linear-gradient(var(--gradient-direction, to bottom), rgba($fifthColor, 0.2), $fifthColor 100%);
+    }
+
+    &:hover {
+      background-color: rgba($fifthColor, 0.8);
+      color: white;
+    }
   }
 
   &:hover {
@@ -48,25 +87,13 @@
     opacity: 0.5;
   }
 
-  &.isRoundedmedium, &.isRoundedsmall {
+  &.isRoundedsmall, &.isRoundedlarge {
     --border-radius: 50%;
     font-size: 16px;
     padding: 12px;
 
-    &:hover span {
+    &:hover .label {
       transform: scale(1.08);
-    }
-  }
-
-  &.isRoundedmedium {
-    min-width: 46px;
-    width: 44px;
-    height: 44px;
-
-    @include breakpoint(lg) {
-      min-width: 50px;
-      width: 50px;
-      height: 50px;
     }
   }
 
@@ -79,6 +106,18 @@
       min-width: 46px;
       width: 46px;
       height: 46px;
+    }
+  }
+
+  &.isRoundedlarge {
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+
+    @include breakpoint(lg) {
+      min-width: 120px;
+      width: 120px;
+      height: 120px;
     }
   }
 
@@ -114,12 +153,6 @@
     }
   }
 
-  span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   @include breakpoint(lg) {
     font-size: 20px;
   }
@@ -129,6 +162,11 @@
   background: $primaryColor2;
   color: $textColor2;
   font-size: 18px;
+
+  &:hover {
+    background-color: rgba($primaryColor, 0.8);
+    color: white;
+  }
 
   &.isBig {
     padding: 14px 32px;
@@ -150,5 +188,22 @@
 
   @include breakpoint(lg) {
     font-size: 24px;
+  }
+}
+
+.label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+
+  &.isIconSeparated {
+    padding-right: 10px;
+    border-right: 1px solid rgba($borderColor3, 0.2);
   }
 }

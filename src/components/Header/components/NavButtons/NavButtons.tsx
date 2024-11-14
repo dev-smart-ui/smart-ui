@@ -2,8 +2,8 @@ import { FC } from 'react';
 
 import { BorderGradientButton } from '@components/Button';
 import { BurgerMenu } from '@components/Header/components/Burger';
-import { LanguageSwitcher } from '@components/Header/components/LanguageSwitcher/LanguageSwitcher';
 
+import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 import styles from './navButtons.module.scss';
 
 interface INavButtonsProps {

@@ -21,6 +21,7 @@
     "import/prefer-default-export": "off",
     "arrow-body-style": ["off"],
     "react/button-has-type": "off",
+    "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "no-console": "error",
