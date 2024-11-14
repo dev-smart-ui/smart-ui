@@ -13,9 +13,19 @@
 
 .content {
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'info' 'links' 'services' 'socials';
+  gap: 20px;
+  padding: 80px 0;
   max-width: 100%;
   margin: 0 auto;
-  grid-template-columns: minmax(300px, 420px) 200px minmax(200px, 1fr) 130px;
-  grid-template-areas: 'info links services socials';
-  padding: 80px 0;
+
+  @include breakpoint(md) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'info socials' 'services links';
+  }
+  @include breakpoint(lg2) {
+    grid-template-columns: minmax(300px, 420px) 200px minmax(300px, 1fr) 140px;
+    grid-template-areas: 'info links services socials';
+  }
 }

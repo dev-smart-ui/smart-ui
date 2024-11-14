@@ -5,7 +5,7 @@ import { Logo } from '@components/Logo';
 
 import styles from './info.module.scss';
 
-const LINKS = [
+const ITEMS = [
   {
     label: 'info@smart-ui.pro',
     href: 'mailto:info@smart-ui.pro',
@@ -34,21 +34,25 @@ export const Info = () => {
         We build readymade websites, mobile applications, and elaborate online
         business services.
       </p>
-      <div className={styles.items}>
-        {LINKS.map((link) =>
+      <ul className={styles.items}>
+        {ITEMS.map((link) =>
           link.isLink ? (
-            <Link className={styles.item} key={link.label} href={link.href}>
-              {link.icon}
-              {link.label}
-            </Link>
+            <li className={styles.item}>
+              <Link key={link.label} href={link.href}>
+                {link.icon}
+                {link.label}
+              </Link>
+            </li>
           ) : (
-            <span className={styles.item} key={link.label}>
-              {link.icon}
-              {link.label}
-            </span>
+            <li className={styles.item}>
+              <span key={link.label}>
+                {link.icon}
+                {link.label}
+              </span>
+            </li>
           ),
         )}
-      </div>
+      </ul>
     </div>
   );
 };

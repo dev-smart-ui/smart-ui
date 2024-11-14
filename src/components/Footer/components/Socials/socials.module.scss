@@ -1,13 +1,24 @@
+@import "@styles/vars";
+
 .wrapper {
   grid-area: socials;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 12px;
+
+  @include breakpoint(md){
+    flex-direction: column;
+  }
 
   .socialBtn {
     font-size: 14px;
     font-weight: 500;
     color: white;
     padding: 12px;
+    max-width: 140px;
+
+    @include breakpoint(lg2){
+      max-width: initial;
+    }
   }
 }

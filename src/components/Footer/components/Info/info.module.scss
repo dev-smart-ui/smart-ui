@@ -20,8 +20,11 @@
 }
 
 .item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: $textColor2;
+  a, span {
+    max-width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $textColor2;
+  }
 }
