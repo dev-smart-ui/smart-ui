@@ -1,15 +1,15 @@
 import classNames from 'classnames';
 
-import React, { ButtonHTMLAttributes, FC } from 'react';
+import React, { ComponentPropsWithoutRef, ElementType } from 'react';
 
 import styles from './button.module.scss';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps<T extends ElementType = 'button'> {
   text?: string;
   icon?: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
-  isRounded?: 'small' | 'medium';
+  isRounded?: 'small' | 'large';
   gradientDirection?:
     | 'toTop'
     | 'toBottom'
@@ -19,9 +19,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'toBottomLeft';
   isMonotoneBorder?: boolean;
   className?: string;
+  fullWidth?: boolean;
+  as?: T;
 }
 
-export const BorderGradientButton: FC<ButtonProps> = ({
+export const BorderGradientButton = <T extends ElementType = 'button'>({
   text,
   icon,
   onClick,
@@ -29,10 +31,15 @@ export const BorderGradientButton: FC<ButtonProps> = ({
   isRounded,
   gradientDirection = 'toBottom',
   isMonotoneBorder = false,
+  fullWidth,
   className,
-}) => {
+  as,
+  ...rest
+}: ButtonProps<T> &
+  Omit<ComponentPropsWithoutRef<T>, keyof ButtonProps<T>>) => {
+  const Component = as || 'button';
   return (
-    <button
+    <Component
       className={classNames(
         styles.borderGradientBtn,
         styles[`isGradient${gradientDirection}`],
@@ -40,14 +47,16 @@ export const BorderGradientButton: FC<ButtonProps> = ({
         className,
         {
           [styles.isMonotoneBorder]: isMonotoneBorder,
+          [styles.fullWidth]: fullWidth,
         },
       )}
       onClick={onClick}
       disabled={disabled}
+      {...rest}
     >
       <span>
-        {text} {icon && icon}
+        {icon && icon} {text}
       </span>
-    </button>
+    </Component>
   );
 };
