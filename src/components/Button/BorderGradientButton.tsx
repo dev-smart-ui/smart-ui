@@ -17,10 +17,12 @@ interface ButtonProps<T extends ElementType = 'button'> {
     | 'toLeft'
     | 'toRight'
     | 'toBottomLeft';
+  borderColorType?: 'green' | 'blue' | 'lightBlue' | 'darkGreen';
   isMonotoneBorder?: boolean;
   className?: string;
   fullWidth?: boolean;
   as?: T;
+  isIconSeparated?: boolean;
 }
 
 export const BorderGradientButton = <T extends ElementType = 'button'>({
@@ -30,7 +32,9 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
   disabled,
   isRounded,
   gradientDirection = 'toBottom',
+  borderColorType = 'green',
   isMonotoneBorder = false,
+  isIconSeparated = false,
   fullWidth,
   className,
   as,
@@ -38,12 +42,14 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
 }: ButtonProps<T> &
   Omit<ComponentPropsWithoutRef<T>, keyof ButtonProps<T>>) => {
   const Component = as || 'button';
+
   return (
     <Component
       className={classNames(
         styles.borderGradientBtn,
         styles[`isGradient${gradientDirection}`],
         styles[`isRounded${isRounded}`],
+        styles[`${borderColorType}BorderColor`],
         className,
         {
           [styles.isMonotoneBorder]: isMonotoneBorder,
@@ -54,8 +60,17 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
       disabled={disabled}
       {...rest}
     >
-      <span>
-        {icon && icon} {text}
+      <span className={styles.label}>
+        {icon && (
+          <span
+            className={classNames(styles.icon, {
+              [styles.isIconSeparated]: isIconSeparated,
+            })}
+          >
+            {icon}
+          </span>
+        )}
+        {text}
       </span>
     </Component>
   );
