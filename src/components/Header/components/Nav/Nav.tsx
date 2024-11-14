@@ -18,7 +18,7 @@ interface INavProps {
 }
 
 export const Nav: FC<INavProps> = ({ isOpen, onCloseMainMenu }) => {
-  const { t, lng } = useTranslation('home');
+  const { t, lng } = useTranslation('header');
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const { mounted } = useMount(isOpen);

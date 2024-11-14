@@ -1,0 +1,21 @@
+{
+  "info": {
+    "infoDescription": "We build readymade websites, mobile applications, and elaborate online business services.",
+    "infoLocation": "14, Lopatyns`kyi Ln / Kharkov City, Ukraine"
+  },
+  "services": {
+    "customSoftwareDevelopment": "Custom Software Development",
+    "cloudSolutions": "Cloud Solutions",
+    "systemIntegration": "System Integration",
+    "seoOptimization": "SEO Optimization",
+    "uiUxDesign": "UI/UX Design",
+    "appDesign": "App Design"
+  },
+  "quickLinks": {
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of use"
+  }
+}

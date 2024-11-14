@@ -1,31 +1,32 @@
-import { ItemsList } from '@components/Footer/components/ItemsList';
+import { FC } from 'react';
 
+import { ItemsList } from '../ItemsList/ItemsList';
 import styles from './links.module.scss';
 
 const LINKS = [
   {
-    label: 'Portfolio',
+    label: 'quickLinks.portfolio',
     href: '#',
   },
   {
-    label: 'About',
+    label: 'quickLinks.about',
     href: '#',
   },
   {
-    label: 'Contact',
+    label: 'quickLinks.contact',
     href: '#',
   },
   {
-    label: 'Privacy Policy',
+    label: 'quickLinks.privacyPolicy',
     href: '#',
   },
   {
-    label: 'Terms of use',
+    label: 'quickLinks.termsOfUse',
     href: '#',
   },
 ];
 
-export const Links = () => {
+export const Links: FC = () => {
   return (
     <div className={styles.wrapper}>
       <h6 className={styles.title}>Quick Links</h6>

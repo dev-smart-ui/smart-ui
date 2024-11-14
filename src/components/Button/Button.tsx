@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 
-import React, { ButtonHTMLAttributes, FC, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import styles from './button.module.scss';
 
-interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface IButtonProps {
   text: string;
   icon?: ReactNode;
   onClick?: () => void;

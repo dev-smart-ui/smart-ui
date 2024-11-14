@@ -1,5 +1,7 @@
 'use client';
 
+import { FC } from 'react';
+
 import { Container } from '@components/Container';
 import { Nav } from '@components/Header/components/Nav';
 import { NavButtons } from '@components/Header/components/NavButtons';
@@ -9,7 +11,7 @@ import { useOpen } from '@hooks/useOpen';
 
 import styles from './header.module.scss';
 
-export const Header = () => {
+export const Header: FC = () => {
   const { isOpen, onToggle, onClose } = useOpen(false);
 
   return (

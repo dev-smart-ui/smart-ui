@@ -1,0 +1,21 @@
+{
+  "info": {
+    "infoDescription": "Ми створюємо готові вебсайти, мобільні додатки та складні онлайн-сервіси для бізнесу.",
+    "infoLocation": "вул. Лопатинського, 14 / м. Харків, Україна"
+  },
+  "services": {
+    "customSoftwareDevelopment": "Розробка індивідуального програмного забезпечення",
+    "cloudSolutions": "Хмарні рішення",
+    "systemIntegration": "Системна інтеграція",
+    "seoOptimization": "SEO оптимізація",
+    "uiUxDesign": "UI/UX дизайн",
+    "appDesign": "Дизайн додатків"
+  },
+  "quickLinks": {
+    "portfolio": "Портфоліо",
+    "about": "Про нас",
+    "contact": "Контакти",
+    "privacyPolicy": "Політика конфіденційності",
+    "termsOfUse": "Умови використання"
+  }
+}

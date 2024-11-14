@@ -1,35 +1,36 @@
-import { ItemsList } from '@components/Footer/components/ItemsList';
+import { FC } from 'react';
 
+import { ItemsList } from '../ItemsList/ItemsList';
 import styles from './services.module.scss';
 
 const LINKS = [
   {
-    label: 'Custom Software Development',
+    label: 'services.customSoftwareDevelopment',
     href: '#',
   },
   {
-    label: 'Cloud Solutions',
+    label: 'services.cloudSolutions',
     href: '#',
   },
   {
-    label: 'System Integration',
+    label: 'services.systemIntegration',
     href: '#',
   },
   {
-    label: 'SEO Optimization',
+    label: 'services.seoOptimization',
     href: '#',
   },
   {
-    label: 'UI/UX Design',
+    label: 'services.uiUxDesign',
     href: '#',
   },
   {
-    label: 'App Design',
+    label: 'services.appDesign',
     href: '#',
   },
 ];
 
-export const Services = () => {
+export const Services: FC = () => {
   return (
     <div className={styles.wrapper}>
       <h6 className={styles.title}>Services</h6>

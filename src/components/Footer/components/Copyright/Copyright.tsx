@@ -1,6 +1,8 @@
-import styles from './allRights.module.scss';
+import { FC } from 'react';
 
-export const AllRights = () => {
+import styles from './copyright.module.scss';
+
+export const Copyright: FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (

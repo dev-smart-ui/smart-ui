@@ -1,7 +1,11 @@
 import Link from 'next/link';
 
+import { FC } from 'react';
+
 import { Icons } from '@components/CustomIcons';
 import { Logo } from '@components/Logo';
+
+import { useTranslation } from '@hooks/useTranslation';
 
 import styles from './info.module.scss';
 
@@ -19,35 +23,34 @@ const ITEMS = [
     isLink: true,
   },
   {
-    label: '14, Lopatyns`kyi Ln   /   Kharkov City, Ukraine',
+    label: 'info.infoLocation',
     href: '#',
-    icon: <Icons.NavigationPoint />,
+    icon: <Icons.InfoLocation />,
     isLink: false,
   },
 ];
 
-export const Info = () => {
+export const Info: FC = () => {
+  const { t } = useTranslation('footer');
+
   return (
     <div className={styles.wrapper}>
       <Logo />
-      <p className={styles.text}>
-        We build readymade websites, mobile applications, and elaborate online
-        business services.
-      </p>
+      <p className={styles.text}>{t('info.infoDescription')}</p>
       <ul className={styles.items}>
         {ITEMS.map((link) =>
           link.isLink ? (
-            <li className={styles.item}>
+            <li className={styles.item} key={link.label}>
               <Link key={link.label} href={link.href}>
                 {link.icon}
-                {link.label}
+                {t(link.label)}
               </Link>
             </li>
           ) : (
-            <li className={styles.item}>
+            <li className={styles.item} key={link.label}>
               <span key={link.label}>
                 {link.icon}
-                {link.label}
+                {t(link.label)}
               </span>
             </li>
           ),

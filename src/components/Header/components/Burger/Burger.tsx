@@ -1,6 +1,12 @@
+import { FC } from 'react';
+
 import styles from './burger.module.scss';
 
-export const BurgerMenu = ({ onClick }: { onClick: () => void }) => {
+interface IBurgerMenu {
+  onClick: () => void;
+}
+
+export const BurgerMenu: FC<IBurgerMenu> = ({ onClick }) => {
   return (
     <button
       className={styles.wrapper}

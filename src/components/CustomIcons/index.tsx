@@ -122,7 +122,7 @@ export const Icons = {
       />
     </svg>
   ),
-  NavigationPoint: ({
+  InfoLocation: ({
     height = 21,
     width = 17,
     fill = '#31B76F',
