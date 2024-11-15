@@ -1,20 +1,24 @@
 @import "@styles/vars";
 
-.notFound {
-  text-align: center;
-  padding: 50px;
-
-  a {
-    display: inline-block;
-    background-color: $primaryColor;
-    padding: 6px 12px;
-    margin-top: 20px;
-    border-radius: $borderRadius1;
-    transition: $transition2 ease all;
-
-    &:hover {
-      transform: scale(1.03);
-      box-shadow: $boxShadow1;
-    }
-  }
+.wrapper {
+  height: 100%;
 }
+
+//.notFound {
+//  text-align: center;
+//  padding: 50px;
+//
+//  a {
+//    display: inline-block;
+//    background-color: $primaryColor;
+//    padding: 6px 12px;
+//    margin-top: 20px;
+//    border-radius: $borderRadius1;
+//    transition: $transition2 ease all;
+//
+//    &:hover {
+//      transform: scale(1.03);
+//      box-shadow: $boxShadow1;
+//    }
+//  }
+//}

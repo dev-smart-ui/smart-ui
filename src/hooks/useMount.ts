@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { ANIMATION_MOUNT_UNMOUNT_TIME } from '@constants/common';
 
-import { ANIMATION_MOUNT_UNMOUNT_TIME } from '../app/const';
+import { useEffect, useState } from 'react';
 
 export const useMount = (animStart: boolean) => {
   const [mounted, setMounted] = useState(animStart);

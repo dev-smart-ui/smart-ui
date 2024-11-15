@@ -1,10 +1,11 @@
 import { usePathname, useRouter } from 'next/navigation';
 
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { BorderGradientButton } from '@components/Button';
 
-export const LanguageSwitcher = () => {
+export const LanguageSwitcher: FC = () => {
   const router = useRouter();
   const pathname = usePathname();
   const { i18n } = useTranslation();

@@ -1,31 +1,24 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
+import { FC } from 'react';
 
 import { Container } from '@components/Container';
 import { Nav } from '@components/Header/components/Nav';
 import { NavButtons } from '@components/Header/components/NavButtons';
+import { Logo } from '@components/Logo';
 
 import { useOpen } from '@hooks/useOpen';
 
 import styles from './header.module.scss';
 
-export const Header = () => {
+export const Header: FC = () => {
   const { isOpen, onToggle, onClose } = useOpen(false);
 
   return (
     <header className={styles.wrapper}>
       <Container>
         <div className={styles.content}>
-          <Link href="/" className={styles.logo}>
-            <Image
-              src="/assets/img/logo.png"
-              width={160}
-              height={32}
-              alt="logo"
-            />
-          </Link>
+          <Logo />
           <Nav isOpen={isOpen} onCloseMainMenu={onClose} />
           <NavButtons onToggle={onToggle} />
         </div>

@@ -1,0 +1,11 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: inline-block;
+  -webkit-text-fill-color: transparent;
+
+  &.isPrimaryColor {
+    background: linear-gradient(to right, $primaryColor, $accentColor);
+    -webkit-background-clip: text;
+  }
+}

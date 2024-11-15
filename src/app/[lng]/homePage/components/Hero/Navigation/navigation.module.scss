@@ -1,0 +1,23 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+
+  @include breakpoint(md) {
+    gap: 48px;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+.socialButtons {
+  display: flex;
+  gap: 20px;
+}

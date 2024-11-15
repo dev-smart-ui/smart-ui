@@ -1,0 +1,21 @@
+@import '@styles/vars';
+
+.title {
+  max-width: 800px;
+  font-size: 32px;
+  line-height: 1.4;
+
+  @include breakpoint(md) {
+    font-size: 48px;
+  }
+}
+
+.description {
+  margin-top: 32px;
+  font-size: 20px;
+  color: $textColor;
+
+  @include breakpoint(md) {
+    font-size: 24px;
+  }
+}

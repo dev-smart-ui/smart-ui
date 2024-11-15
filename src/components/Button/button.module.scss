@@ -40,7 +40,7 @@
     }
 
     &:hover {
-      background-color: rgba($primaryColor, 0.8);
+      background-color: $primaryColor;
       color: white;
     }
   }
@@ -50,7 +50,7 @@
     }
 
     &:hover {
-      background-color: rgba($thirdColor, 0.8);
+      background-color: $thirdColor;
       color: white;
     }
   }
@@ -60,7 +60,7 @@
     }
 
     &:hover {
-      background-color: rgba($fourthColor, 0.8);
+      background-color: $fourthColor;
       color: white;
     }
   }
@@ -70,7 +70,7 @@
     }
 
     &:hover {
-      background-color: rgba($fifthColor, 0.8);
+      background-color: $fifthColor;
       color: white;
     }
   }
@@ -85,6 +85,14 @@
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  &.isOnlyIcon {
+    padding: 12px;
+
+    &:hover .label {
+      transform: scale(1.08);
+    }
   }
 
   &.isRoundedsmall, &.isRoundedlarge {
@@ -164,7 +172,7 @@
   font-size: 18px;
 
   &:hover {
-    background-color: rgba($primaryColor, 0.8);
+    background-color: $primaryColor;
     color: white;
   }
 
@@ -192,7 +200,6 @@
 }
 
 .label {
-  width: 100%;
   display: flex;
   align-items: center;
   gap: 10px;

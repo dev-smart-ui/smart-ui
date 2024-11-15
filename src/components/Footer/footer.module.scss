@@ -1,17 +1,32 @@
 @import '@styles/vars';
 
 .wrapper {
-  width: 100%;
   background: $surfaceColor;
-  border-top: 1px solid rgba($primaryColor, .4);
-  border-bottom: 1px solid rgba($primaryColor, .4);
   position: relative;
   z-index: 0;
 }
 
+.contentWrapper {
+  border-top: 1px solid rgba($primaryColor, .4);
+  border-bottom: 1px solid rgba($primaryColor, .4);
+}
+
 .content {
   display: grid;
-  grid-template-columns: minmax(300px, 420px) 200px minmax(200px, 1fr) 130px;
-  grid-template-areas: 'info links services socials';
-  padding: 80px 0;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'info' 'links' 'services' 'socials';
+  gap: 20px;
+  padding: 40px 0;
+  max-width: 100%;
+  margin: 0 auto;
+
+  @include breakpoint(md) {
+    padding: 80px 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'info socials' 'services links';
+  }
+  @include breakpoint(lg2) {
+    grid-template-columns: minmax(300px, 420px) 200px minmax(300px, 1fr) 140px;
+    grid-template-areas: 'info links services socials';
+  }
 }

@@ -1,0 +1,17 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  font-weight: 500;
+  color: $textColor4;
+  transition: $transition1 ease;
+
+  &:hover {
+    color: white;
+  }
+}

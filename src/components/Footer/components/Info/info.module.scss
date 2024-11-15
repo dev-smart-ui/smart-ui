@@ -1,3 +1,37 @@
+@import "@styles/vars";
+
 .wrapper {
   grid-area: info;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #3D4144;
+}
+
+.text {
+  color: $textColor;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.item {
+  a, span {
+    max-width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $textColor2;
+  }
+}
+
+.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 22px;
 }
