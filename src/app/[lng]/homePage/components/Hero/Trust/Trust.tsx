@@ -4,12 +4,12 @@ import { Icons } from '@components/CustomIcons';
 
 import styles from './trust.module.scss';
 
-interface ITrustProps {
-  starsCount: number;
+interface TrustProps {
+  starsCount?: number;
   description?: string;
 }
 
-export const Trust: FC<ITrustProps> = ({
+export const Trust: FC<TrustProps> = ({
   starsCount = 5,
   description = '1000+ Trust Customer',
 }) => {

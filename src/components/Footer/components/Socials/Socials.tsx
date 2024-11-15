@@ -1,11 +1,13 @@
 import { SOCIALS } from '@constants/socials';
 import Link from 'next/link';
 
+import { FC } from 'react';
+
 import { BorderGradientButton } from '@components/Button';
 
 import styles from './socials.module.scss';
 
-export const Socials = () => {
+export const Socials: FC = () => {
   return (
     <div className={styles.wrapper}>
       {SOCIALS.map((item) => (

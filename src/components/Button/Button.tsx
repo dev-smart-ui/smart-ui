@@ -4,7 +4,7 @@ import React, { FC, ReactNode } from 'react';
 
 import styles from './button.module.scss';
 
-interface IButtonProps {
+interface ButtonProps {
   text: string;
   icon?: ReactNode;
   onClick?: () => void;
@@ -14,7 +14,7 @@ interface IButtonProps {
   className?: string;
 }
 
-export const Button: FC<IButtonProps> = ({
+export const Button: FC<ButtonProps> = ({
   text,
   icon,
   onClick,

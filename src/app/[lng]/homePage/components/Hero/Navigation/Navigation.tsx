@@ -1,11 +1,13 @@
 import { SOCIALS } from '@constants/socials';
 import Link from 'next/link';
 
+import { FC } from 'react';
+
 import { BorderGradientButton, Button } from '@components/Button';
 
 import styles from './navigation.module.scss';
 
-export const Navigation = () => {
+export const Navigation: FC = () => {
   return (
     <div className={styles.wrapper}>
       <Button className={styles.btn} isBig text="Get Start" />

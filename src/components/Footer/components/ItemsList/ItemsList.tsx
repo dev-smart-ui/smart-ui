@@ -11,11 +11,11 @@ type TItem = {
   href: string;
 };
 
-interface IItemsListProps {
+interface ItemsListProps {
   items: TItem[];
 }
 
-export const ItemsList: FC<IItemsListProps> = ({ items }) => {
+export const ItemsList: FC<ItemsListProps> = ({ items }) => {
   const { t } = useTranslation('footer');
 
   return (

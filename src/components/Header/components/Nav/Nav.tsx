@@ -12,12 +12,12 @@ import { useTranslation } from '@hooks/useTranslation';
 
 import styles from './nav.module.scss';
 
-interface INavProps {
+interface NavProps {
   isOpen: boolean;
   onCloseMainMenu: () => void;
 }
 
-export const Nav: FC<INavProps> = ({ isOpen, onCloseMainMenu }) => {
+export const Nav: FC<NavProps> = ({ isOpen, onCloseMainMenu }) => {
   const { t, lng } = useTranslation('header');
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
