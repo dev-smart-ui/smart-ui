@@ -42,14 +42,14 @@ export const Info: FC = () => {
           link.isLink ? (
             <li className={styles.item} key={link.label}>
               <Link key={link.label} href={link.href}>
-                {link.icon}
+                <span className={styles.icon}>{link.icon}</span>
                 {t(link.label)}
               </Link>
             </li>
           ) : (
             <li className={styles.item} key={link.label}>
               <span key={link.label}>
-                {link.icon}
+                <span className={styles.icon}>{link.icon}</span>
                 {t(link.label)}
               </span>
             </li>
