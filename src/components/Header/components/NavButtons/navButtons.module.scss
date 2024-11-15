@@ -5,12 +5,12 @@
   display: flex;
   align-items: center;
   gap: 16px;
-}
 
-.contactUsBtn {
-  display: none;
+  .contactUsBtn {
+    display: none;
 
-  @include breakpoint(sm) {
-    display: inline-flex;
+    @include breakpoint(sm) {
+      display: inline-flex;
+    }
   }
 }

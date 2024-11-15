@@ -27,6 +27,7 @@
       "@lib/*": ["./src/lib/*"],
       "@graphqlQueries/*": ["./src/graphql/*"],
       "@context/*": ["./src/context/*"],
+      "@constants/*": ["./src/constants/*"],
       "@routes/*": ["./src/routes/*"]
     },
   },

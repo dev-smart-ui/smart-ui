@@ -11,6 +11,7 @@ interface IButtonProps {
   disabled?: boolean;
   isBig?: boolean;
   isGradient?: boolean;
+  className?: string;
 }
 
 export const Button: FC<IButtonProps> = ({
@@ -20,15 +21,20 @@ export const Button: FC<IButtonProps> = ({
   disabled,
   isBig = false,
   isGradient = false,
+  className,
 }) => {
   return (
     <button
       onClick={onClick}
       disabled={disabled}
-      className={classNames(styles.mainBtn, {
-        [styles.isBig]: isBig,
-        [styles.isGradient]: isGradient,
-      })}
+      className={classNames(
+        styles.mainBtn,
+        {
+          [styles.isBig]: isBig,
+          [styles.isGradient]: isGradient,
+        },
+        className,
+      )}
     >
       {text}
       {icon && icon}

@@ -50,11 +50,12 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
         styles[`isGradient${gradientDirection}`],
         styles[`isRounded${isRounded}`],
         styles[`${borderColorType}BorderColor`],
-        className,
         {
           [styles.isMonotoneBorder]: isMonotoneBorder,
+          [styles.isOnlyIcon]: !!icon && !text,
           [styles.fullWidth]: fullWidth,
         },
+        className,
       )}
       onClick={onClick}
       disabled={disabled}
