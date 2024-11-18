@@ -43,7 +43,7 @@ interface UseTranslationOptions {
 // Custom useTranslation hook with client and server handling
 export function useTranslation(
   lng: string,
-  ns: string | string[],
+  ns?: string | string[],
   options?: UseTranslationOptions,
 ): UseTranslationResponse<string, undefined> {
   const [cookies, setCookie] = useCookies([cookieName]); // Access cookies for language storage
