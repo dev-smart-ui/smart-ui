@@ -2,13 +2,13 @@ import { ROUTES } from '@routes/index';
 import classNames from 'classnames';
 
 import { FC, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { BorderGradientButton } from '@components/Button';
 import { NavItem } from '@components/Header/components/Nav/NavItem';
 
 import useMediaQuery from '@hooks/useMediaQuery';
 import { useMount } from '@hooks/useMount';
-import { useTranslation } from '@hooks/useTranslation';
 
 import styles from './nav.module.scss';
 
@@ -18,8 +18,9 @@ interface NavProps {
 }
 
 export const Nav: FC<NavProps> = ({ isOpen, onCloseMainMenu }) => {
-  const { t, lng } = useTranslation('header');
+  const { t, i18n } = useTranslation('header');
   const isDesktop = useMediaQuery('(min-width: 768px)');
+  const lng = i18n.language;
 
   const { mounted } = useMount(isOpen);
 
@@ -35,7 +36,7 @@ export const Nav: FC<NavProps> = ({ isOpen, onCloseMainMenu }) => {
     };
   }, [isOpen]);
 
-  const NAV_LINKS = [
+  const navLinks = [
     { label: 'Home', path: `/${lng}${ROUTES.HOME}` },
     {
       label: 'Services',
@@ -57,16 +58,16 @@ export const Nav: FC<NavProps> = ({ isOpen, onCloseMainMenu }) => {
       })}
     >
       <ul className={styles.navList}>
-        {NAV_LINKS.map((link) => (
+        {navLinks.map(({ label, submenu, ...rest }) => (
           <NavItem
-            key={link.label}
+            key={label}
             onCloseMainMenu={onCloseMainMenu}
             link={{
-              ...link,
-              label: t(link.label),
-              submenu: link.submenu?.map((subLink) => ({
+              ...rest,
+              label: t(label),
+              submenu: submenu?.map((subLink) => ({
                 ...subLink,
-                label: t(subLink.label),
+                label: t(label),
               })),
             }}
           />

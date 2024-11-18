@@ -4,16 +4,19 @@ import { GradientText } from '@components/GradientText';
 
 import styles from './content.module.scss';
 
-export const Content: FC = () => {
+interface ContentProps {
+  t: (s: string) => string;
+}
+
+export const Content: FC<ContentProps> = ({ t }) => {
   return (
     <div className={styles.content}>
       <h1 className={styles.title}>
-        Develop Your: <GradientText>Innovative Software</GradientText> with
-        Tailored IT Solutions for Lasting Impact
+        {t('hero.title.main')}{' '}
+        <GradientText>{t('hero.title.highlighted')}</GradientText>{' '}
+        {t('hero.title.secondary')}
       </h1>
-      <p className={styles.description}>
-        Your Partner for Streamlined IT Solutions
-      </p>
+      <p className={styles.description}>{t('hero.description')}</p>
     </div>
   );
 };

@@ -1,11 +1,10 @@
 import Link from 'next/link';
 
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Icons } from '@components/CustomIcons';
 import { Logo } from '@components/Logo';
-
-import { useTranslation } from '@hooks/useTranslation';
 
 import styles from './info.module.scss';
 
@@ -38,19 +37,19 @@ export const Info: FC = () => {
       <Logo />
       <p className={styles.text}>{t('info.infoDescription')}</p>
       <ul className={styles.items}>
-        {ITEMS.map((link) =>
-          link.isLink ? (
-            <li className={styles.item} key={link.label}>
-              <Link key={link.label} href={link.href}>
-                <span className={styles.icon}>{link.icon}</span>
-                {t(link.label)}
+        {ITEMS.map(({ isLink, label, href, icon }) =>
+          isLink ? (
+            <li className={styles.item} key={label}>
+              <Link key={label} href={href}>
+                <span className={styles.icon}>{icon}</span>
+                {t(label)}
               </Link>
             </li>
           ) : (
-            <li className={styles.item} key={link.label}>
-              <span key={link.label}>
-                <span className={styles.icon}>{link.icon}</span>
-                {t(link.label)}
+            <li className={styles.item} key={label}>
+              <span key={label}>
+                <span className={styles.icon}>{icon}</span>
+                {t(label)}
               </span>
             </li>
           ),

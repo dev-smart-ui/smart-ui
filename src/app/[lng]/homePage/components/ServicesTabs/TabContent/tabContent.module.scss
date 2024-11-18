@@ -1,0 +1,25 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  padding: 24px 16px 30px;
+
+  @include breakpoint(md){
+    gap: 80px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 48px 32px 60px;
+  }
+}
+
+.serviceButton {
+  min-width: 250px;
+}
+
+.image {
+  max-width: 560px;
+  width: 100%;
+  max-height: 360px;
+}

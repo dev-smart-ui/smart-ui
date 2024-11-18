@@ -1,1 +1,110 @@
-{}
+{
+  "hero": {
+    "trust": "1000+ Trust Customer",
+    "title": {
+      "main": "Develop Your:",
+      "highlighted": "Innovative Software",
+      "secondary": "with Tailored IT Solutions for Lasting Impact"
+    },
+    "description": "Your Partner for Streamlined IT Solutions"
+  },
+  "services": {
+    "tabs": {
+      "softwareDevelopment": "Software Development",
+      "uiUxDesign": "UI/UX Design",
+      "webDevelopment": "Web Development",
+      "mobileAppDevelopment": "Mobile App Development",
+      "cloudIntegration": "Cloud Integration",
+      "dataAnalytics": "Data Analytics"
+    },
+    "content": {
+      "softwareDevelopment": {
+        "title": "Tailored Solutions for Your Unique Needs",
+        "list": [
+          "Bespoke Applications",
+          "Agile Development Process",
+          "Seamless Integration",
+          "User-Centric Design"
+        ]
+      },
+      "uiUxDesign": {
+        "title": "Crafting Engaging and Intuitive Experiences",
+        "list": [
+          "User-Centered Approach",
+          "Seamless Navigation",
+          "Responsive Design",
+          "Data-Driven Decisions"
+        ]
+      },
+      "webDevelopment": {
+        "title": "Building High-Performance Websites for Your Business",
+        "list": [
+          "Custom Solutions",
+          "Optimized Performance",
+          "Responsive Design",
+          "Secure and Scalable"
+        ]
+      },
+      "mobileAppDevelopment": {
+        "title": "Creating Seamless and Engaging Mobile Experiences",
+        "list": [
+          "Custom-Built Apps",
+          "Cross-Platform Compatibility",
+          "User-Centric Interface",
+          "Scalable and Secure"
+        ]
+      },
+      "cloudIntegration": {
+        "title": "Connecting Your Systems for Seamless Operations",
+        "list": [
+          "Unified Data Access",
+          "Streamlined Processes",
+          "Real-Time Updates",
+          "Enhanced Security Compliance"
+        ]
+      },
+      "dataAnalytics": {
+        "title": "Transforming Data into Actionable Insights",
+        "list": [
+          "Informed Decision-Making",
+          "Predictive Analysis",
+          "Custom Dashboards",
+          "Real-Time Monitoring"
+        ]
+      }
+    }
+  },
+  "advantages": {
+    "title": {
+      "main": "Why Choose Us for",
+      "highlighted": "Your Technology Needs"
+    },
+    "subTitle": "Here’s what sets us apart and makes us the trusted choice for businesses like yours:",
+    "cardsData": [
+      {
+        "title": "Wide Range of Services",
+        "description": "Offering a comprehensive suite of services to meet all your technology needs"
+      },
+      {
+        "title": "Full-Cycle Development",
+        "description": "Managing every stage of development, from concept to launch, for a seamless experience"
+      },
+      {
+        "title": "Rapid Development",
+        "description": "Delivering solutions quickly without compromising on quality"
+      },
+      {
+        "title": "High-Quality Work",
+        "description": "Ensuring excellence in every project with attention to detail and precision"
+      },
+      {
+        "title": "High Page Speed",
+        "description": "Optimizing website performance for fast loading times and smooth user experience"
+      },
+      {
+        "title": "SEO Optimization",
+        "description": "Implementing strategies to improve visibility and ranking on search engines"
+      }
+    ]
+  }
+}

@@ -9,10 +9,7 @@ interface TrustProps {
   description?: string;
 }
 
-export const Trust: FC<TrustProps> = ({
-  starsCount = 5,
-  description = '1000+ Trust Customer',
-}) => {
+export const Trust: FC<TrustProps> = ({ starsCount = 5, description }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.stars}>
@@ -22,7 +19,7 @@ export const Trust: FC<TrustProps> = ({
           </span>
         ))}
       </div>
-      <p className={styles.description}>{description}</p>
+      {description && <p className={styles.description}>{description}</p>}
     </div>
   );
 };

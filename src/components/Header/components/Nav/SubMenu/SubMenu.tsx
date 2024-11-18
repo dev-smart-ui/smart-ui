@@ -34,10 +34,10 @@ export const SubMenu: FC<SubMenuProps> = ({
         [styles.active]: isSubMenu,
       })}
     >
-      {link.submenu?.map((subLink) => (
-        <li key={subLink.path} className={styles.item}>
+      {link.submenu?.map(({ path, label }) => (
+        <li key={path} className={styles.item}>
           <Link
-            href={subLink.path}
+            href={path}
             onClick={onCloseMainMenu}
             className={styles.link}
             role="button"
@@ -48,7 +48,7 @@ export const SubMenu: FC<SubMenuProps> = ({
               }
             }}
           >
-            {subLink.label}
+            {label}
           </Link>
         </li>
       ))}

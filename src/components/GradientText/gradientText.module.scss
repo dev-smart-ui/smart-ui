@@ -8,4 +8,9 @@
     background: linear-gradient(to right, $primaryColor, $accentColor);
     -webkit-background-clip: text;
   }
+
+  &.isSecondaryColor {
+    background: linear-gradient(to right, $fourthColor, $sixthColor);
+    -webkit-background-clip: text;
+  }
 }

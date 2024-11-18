@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { BorderGradientButton } from '@components/Button';
 import { BurgerMenu } from '@components/Header/components/Burger';
@@ -11,9 +12,14 @@ interface INavButtonsProps {
 }
 
 export const NavButtons: FC<INavButtonsProps> = ({ onToggle }) => {
+  const { t } = useTranslation(['header', 'common']);
+
   return (
     <div className={styles.wrapper}>
-      <BorderGradientButton text="Contact Us" className={styles.contactUsBtn} />
+      <BorderGradientButton
+        text={t('buttons.contact', { ns: 'common' })}
+        className={styles.contactUsBtn}
+      />
       <LanguageSwitcher />
       <BurgerMenu onClick={onToggle} />
     </div>
