@@ -13,7 +13,7 @@ export const ServicesTabs = () => {
 
   return (
     <section className={styles.wrapper}>
-      <div className={styles.body}>
+      <div className={styles.contentWrapper}>
         <Tabs
           tabs={TABS}
           currentTab={currentTab}

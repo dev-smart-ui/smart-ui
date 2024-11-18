@@ -20,7 +20,7 @@ export const Hero: FC = () => {
       <div className={styles.image}>
         <Image src={bgImage} alt="backgroundImage" />
       </div>
-      <div className={styles.body}>
+      <div className={styles.contentWrapper}>
         <Trust description={t('hero.trust')} />
         <Content t={t} />
         <Navigation t={t} />
