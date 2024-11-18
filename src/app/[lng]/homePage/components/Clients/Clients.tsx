@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from '@components/Button';
@@ -23,16 +24,16 @@ const CLIENTS_LOGO = [
   { key: 'tiger', image: tigerImg },
 ];
 
-export const Clients = () => {
+export const Clients: FC = () => {
   const { t } = useTranslation('common');
 
   return (
     <section className={styles.wrapper}>
       <Button text={t('buttons.ourAwesomeClients')} isGradient />
       <ul className={styles.logos}>
-        {CLIENTS_LOGO.map((logo) => (
-          <li key={logo.key}>
-            <Image src={logo.image} alt={logo.key} />
+        {CLIENTS_LOGO.map(({ image, key }) => (
+          <li key={key}>
+            <Image src={image} alt={key} />
           </li>
         ))}
       </ul>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext } from 'react';
+import React, { createContext } from 'react';
 
 import { useTranslation as useI18nextTranslation } from '../app/i18n/client';
 
@@ -17,8 +17,4 @@ export const LanguageProvider = ({
   return (
     <LanguageContext.Provider value={lng}>{children}</LanguageContext.Provider>
   );
-};
-
-export const useLanguage = () => {
-  return useContext(LanguageContext);
 };

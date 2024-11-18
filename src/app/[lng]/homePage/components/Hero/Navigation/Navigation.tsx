@@ -20,13 +20,13 @@ export const Navigation: FC<NavigationProps> = ({ t }) => {
         text={t('buttons.getStart', { ns: 'common' })}
       />
       <div className={styles.socialButtons}>
-        {SOCIALS.map((social) => (
+        {SOCIALS.map(({ label, link, borderColor, icon }) => (
           <BorderGradientButton
-            key={social.label}
+            key={label}
             as={Link}
-            href={social.link}
-            borderColorType={social.borderColor}
-            icon={social.icon}
+            href={link}
+            borderColorType={borderColor}
+            icon={icon}
           />
         ))}
       </div>

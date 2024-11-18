@@ -58,16 +58,16 @@ export const Nav: FC<NavProps> = ({ isOpen, onCloseMainMenu }) => {
       })}
     >
       <ul className={styles.navList}>
-        {navLinks.map((link) => (
+        {navLinks.map(({ label, submenu, ...rest }) => (
           <NavItem
-            key={link.label}
+            key={label}
             onCloseMainMenu={onCloseMainMenu}
             link={{
-              ...link,
-              label: t(link.label),
-              submenu: link.submenu?.map((subLink) => ({
+              ...rest,
+              label: t(label),
+              submenu: submenu?.map((subLink) => ({
                 ...subLink,
-                label: t(subLink.label),
+                label: t(label),
               })),
             }}
           />

@@ -10,18 +10,18 @@ import styles from './socials.module.scss';
 export const Socials: FC = () => {
   return (
     <div className={styles.wrapper}>
-      {SOCIALS.map((item) => (
+      {SOCIALS.map(({ link, label, borderColor, icon }) => (
         <BorderGradientButton
           fullWidth
           isIconSeparated
-          key={item.link}
+          key={link}
           as={Link}
-          href={item.link}
+          href={link}
           target="_blank"
-          text={item.label}
+          text={label}
           className={styles.socialBtn}
-          borderColorType={item.borderColor}
-          icon={item.icon}
+          borderColorType={borderColor}
+          icon={icon}
         />
       ))}
     </div>

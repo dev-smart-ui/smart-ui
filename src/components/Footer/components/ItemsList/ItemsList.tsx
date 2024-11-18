@@ -19,9 +19,9 @@ export const ItemsList: FC<ItemsListProps> = ({ items }) => {
 
   return (
     <ul className={styles.wrapper}>
-      {items.map((item) => (
-        <li key={item.label} className={styles.item}>
-          <Link href={item.href}>{t(item.label)}</Link>
+      {items.map(({ href, label }) => (
+        <li key={label} className={styles.item}>
+          <Link href={href}>{t(label)}</Link>
         </li>
       ))}
     </ul>
