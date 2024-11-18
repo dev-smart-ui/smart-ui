@@ -18,6 +18,7 @@ export const Navigation: FC<NavigationProps> = ({ t }) => {
       <div className={styles.socialButtons}>
         {SOCIALS.map((social) => (
           <BorderGradientButton
+            key={social.label}
             as={Link}
             href={social.link}
             borderColorType={social.borderColor}
