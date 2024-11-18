@@ -13,7 +13,7 @@ import styles from './hero.module.scss';
 import bgImage from './img/heroBg.png';
 
 export const Hero: FC = () => {
-  const { t } = useTranslation('home');
+  const { t } = useTranslation(['home', 'common']);
 
   return (
     <section className={styles.wrapper}>

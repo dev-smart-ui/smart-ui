@@ -6,9 +6,72 @@
       "highlighted": "Innovative Software",
       "secondary": "with Tailored IT Solutions for Lasting Impact"
     },
-    "description": "Your Partner for Streamlined IT Solutions",
-    "buttons": {
-      "getStart": "Get Start"
+    "description": "Your Partner for Streamlined IT Solutions"
+  },
+  "services": {
+    "tabs": {
+      "softwareDevelopment": "Software Development",
+      "uiUxDesign": "UI/UX Design",
+      "webDevelopment": "Web Development",
+      "mobileAppDevelopment": "Mobile App Development",
+      "cloudIntegration": "Cloud Integration",
+      "dataAnalytics": "Data Analytics"
+    },
+    "content": {
+      "softwareDevelopment": {
+        "title": "Tailored Solutions for Your Unique Needs",
+        "list": [
+          "Bespoke Applications",
+          "Agile Development Process",
+          "Seamless Integration",
+          "User-Centric Design"
+        ]
+      },
+      "uiUxDesign": {
+        "title": "Crafting Engaging and Intuitive Experiences",
+        "list": [
+          "User-Centered Approach",
+          "Seamless Navigation",
+          "Responsive Design",
+          "Data-Driven Decisions"
+        ]
+      },
+      "webDevelopment": {
+        "title": "Building High-Performance Websites for Your Business",
+        "list": [
+          "Custom Solutions",
+          "Optimized Performance",
+          "Responsive Design",
+          "Secure and Scalable"
+        ]
+      },
+      "mobileAppDevelopment": {
+        "title": "Creating Seamless and Engaging Mobile Experiences",
+        "list": [
+          "Custom-Built Apps",
+          "Cross-Platform Compatibility",
+          "User-Centric Interface",
+          "Scalable and Secure"
+        ]
+      },
+      "cloudIntegration": {
+        "title": "Connecting Your Systems for Seamless Operations",
+        "list": [
+          "Unified Data Access",
+          "Streamlined Processes",
+          "Real-Time Updates",
+          "Enhanced Security Compliance"
+        ]
+      },
+      "dataAnalytics": {
+        "title": "Transforming Data into Actionable Insights",
+        "list": [
+          "Informed Decision-Making",
+          "Predictive Analysis",
+          "Custom Dashboards",
+          "Real-Time Monitoring"
+        ]
+      }
     }
   }
 }

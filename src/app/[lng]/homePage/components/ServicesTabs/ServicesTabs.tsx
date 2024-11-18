@@ -4,10 +4,11 @@ import { useState } from 'react';
 
 import { TabContent } from './TabContent';
 import { Tabs } from './Tabs';
-import { SERVICES_TABS, TABS } from './data';
+import { useTabsAndServices } from './hooks/useTabsAndServices';
 import styles from './servicesTabs.module.scss';
 
 export const ServicesTabs = () => {
+  const { TABS, SERVICES_TABS } = useTabsAndServices();
   const [currentTab, setCurrentTab] = useState(TABS[0].value);
 
   return (

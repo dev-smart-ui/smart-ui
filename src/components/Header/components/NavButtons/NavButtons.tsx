@@ -13,12 +13,12 @@ interface INavButtonsProps {
 }
 
 export const NavButtons: FC<INavButtonsProps> = ({ onToggle }) => {
-  const { t } = useTranslation('header');
+  const { t } = useTranslation(['header', 'common']);
 
   return (
     <div className={styles.wrapper}>
       <BorderGradientButton
-        text={t('buttons.contact')}
+        text={t('buttons.contact', { ns: 'common' })}
         className={styles.contactUsBtn}
       />
       <LanguageSwitcher />

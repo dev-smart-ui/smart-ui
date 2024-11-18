@@ -8,13 +8,17 @@ import { BorderGradientButton, Button } from '@components/Button';
 import styles from './navigation.module.scss';
 
 interface NavigationProps {
-  t: (s: string) => string;
+  t: (key: string, options: { ns: string }) => string;
 }
 
 export const Navigation: FC<NavigationProps> = ({ t }) => {
   return (
     <div className={styles.wrapper}>
-      <Button className={styles.btn} isBig text={t('hero.buttons.getStart')} />
+      <Button
+        className={styles.btn}
+        isBig
+        text={t('buttons.getStart', { ns: 'common' })}
+      />
       <div className={styles.socialButtons}>
         {SOCIALS.map((social) => (
           <BorderGradientButton

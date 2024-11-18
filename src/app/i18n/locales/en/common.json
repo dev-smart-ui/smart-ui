@@ -1,1 +1,6 @@
-{}
+{
+  "buttons": {
+    "contact": "Contact Us",
+    "getStart": "Get Start"
+  }
+}
