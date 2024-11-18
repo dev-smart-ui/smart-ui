@@ -4,5 +4,8 @@
   "example 1": "Example 1",
   "example 2": "Example 2",
   "Our Work": "Our Work",
-  "About Us": "About Us"
+  "About Us": "About Us",
+  "buttons": {
+    "contact": "Contact Us"
+  }
 }
