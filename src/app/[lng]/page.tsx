@@ -1,5 +1,6 @@
 import { Container } from '@components/Container';
 
+import { Advantages } from './homePage/components/Advantages';
 import { Clients } from './homePage/components/Clients';
 import { Hero } from './homePage/components/Hero';
 import { ServicesTabs } from './homePage/components/ServicesTabs';
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
         <ServicesTabs />
         <Clients />
+        <Advantages />
       </Container>
     </div>
   );

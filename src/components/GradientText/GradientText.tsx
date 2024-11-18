@@ -6,7 +6,7 @@ import styles from './gradientText.module.scss';
 
 interface GradientTextProps {
   children: ReactNode;
-  color?: 'Primary';
+  color?: 'Primary' | 'Secondary';
 }
 
 export const GradientText: FC<GradientTextProps> = ({
