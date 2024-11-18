@@ -35,7 +35,7 @@ export const Nav: FC<NavProps> = ({ isOpen, onCloseMainMenu }) => {
     };
   }, [isOpen]);
 
-  const NAV_LINKS = [
+  const navLinks = [
     { label: 'Home', path: `/${lng}${ROUTES.HOME}` },
     {
       label: 'Services',
@@ -57,7 +57,7 @@ export const Nav: FC<NavProps> = ({ isOpen, onCloseMainMenu }) => {
       })}
     >
       <ul className={styles.navList}>
-        {NAV_LINKS.map((link) => (
+        {navLinks.map((link) => (
           <NavItem
             key={link.label}
             onCloseMainMenu={onCloseMainMenu}

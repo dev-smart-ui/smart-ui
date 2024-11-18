@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 
-import { Button } from '@components/Button';
+import { useTranslation } from 'react-i18next';
 
-import { useTranslation } from '@hooks/useTranslation';
+import { Button } from '@components/Button';
 
 import styles from './clients.module.scss';
 import duelmastersImg from './img/duelmasters.png';

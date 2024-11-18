@@ -1,10 +1,9 @@
 import Image, { StaticImageData } from 'next/image';
 
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { BorderGradientButton } from '@components/Button';
-
-import { useTranslation } from '@hooks/useTranslation';
 
 import { List } from './List';
 import styles from './tabContent.module.scss';

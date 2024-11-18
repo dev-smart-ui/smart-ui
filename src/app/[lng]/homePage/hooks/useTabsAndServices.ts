@@ -1,16 +1,16 @@
 import { useTranslation } from 'react-i18next';
 
-import image1 from '../img/image1.png';
-import image2 from '../img/image2.png';
-import image3 from '../img/image3.png';
-import image4 from '../img/image4.png';
-import image5 from '../img/image5.png';
-import image6 from '../img/image6.png';
+import image1 from '../components/ServicesTabs/img/image1.png';
+import image2 from '../components/ServicesTabs/img/image2.png';
+import image3 from '../components/ServicesTabs/img/image3.png';
+import image4 from '../components/ServicesTabs/img/image4.png';
+import image5 from '../components/ServicesTabs/img/image5.png';
+import image6 from '../components/ServicesTabs/img/image6.png';
 
 export const useTabsAndServices = () => {
-  const { t } = useTranslation(['home']);
+  const { t } = useTranslation('home');
 
-  const TABS = [
+  const tabs = [
     {
       label: t('services.tabs.softwareDevelopment'),
       value: 'softwareDevelopment',
@@ -25,7 +25,7 @@ export const useTabsAndServices = () => {
     { label: t('services.tabs.dataAnalytics'), value: 'dataAnalytics' },
   ];
 
-  const SERVICES_TABS = {
+  const servicesTabs = {
     softwareDevelopment: {
       title: t('services.content.softwareDevelopment.title'),
       list: t('services.content.softwareDevelopment.list', {
@@ -70,5 +70,5 @@ export const useTabsAndServices = () => {
     },
   };
 
-  return { TABS, SERVICES_TABS };
+  return { tabs, servicesTabs };
 };

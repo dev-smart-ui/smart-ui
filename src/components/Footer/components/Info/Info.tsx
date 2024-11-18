@@ -1,11 +1,10 @@
 import Link from 'next/link';
 
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Icons } from '@components/CustomIcons';
 import { Logo } from '@components/Logo';
-
-import { useTranslation } from '@hooks/useTranslation';
 
 import styles from './info.module.scss';
 

@@ -1,9 +1,8 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { BorderGradientButton } from '@components/Button';
 import { BurgerMenu } from '@components/Header/components/Burger';
-
-import { useTranslation } from '@hooks/useTranslation';
 
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 import styles from './navButtons.module.scss';

@@ -1,8 +1,7 @@
 import Link from 'next/link';
 
 import { FC } from 'react';
-
-import { useTranslation } from '@hooks/useTranslation';
+import { useTranslation } from 'react-i18next';
 
 import styles from './itemsList.module.scss';
 

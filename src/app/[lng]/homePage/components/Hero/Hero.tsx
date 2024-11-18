@@ -3,8 +3,7 @@
 import Image from 'next/image';
 
 import { FC } from 'react';
-
-import { useTranslation } from '@hooks/useTranslation';
+import { useTranslation } from 'react-i18next';
 
 import { Content } from './Content';
 import { Navigation } from './Navigation';
