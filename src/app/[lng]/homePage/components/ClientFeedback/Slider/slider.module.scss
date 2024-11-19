@@ -7,8 +7,11 @@
 .slide {
   opacity: 0.8;
   pointer-events: none;
-  background: $cardColo2;
-  border-radius: $borderRadius4;
+
+  > div {
+    background: $cardColo2;
+    border-radius: $borderRadius4;
+  }
 
   &.isActive {
     opacity: 1;
@@ -17,10 +20,16 @@
 
   &:hover {
    @include breakpoint(lg) {
-     background: $cardColor!important;
+     > div {
+       background: $cardColor!important;
 
-     p {
-       font-size: 20px;
+       p {
+         font-size: 20px;
+       }
+
+       &::after {
+         opacity: 1;
+       }
      }
    }
   }
@@ -42,7 +51,6 @@
       height: auto !important;
       transition: $transition2 ease;
       min-width: calc(33.33% - 16px);
-      position: relative;
 
       @include breakpoint(md) {
         min-width: calc(50% - 16px);
