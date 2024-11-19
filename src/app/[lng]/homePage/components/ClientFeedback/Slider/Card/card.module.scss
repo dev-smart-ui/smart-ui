@@ -1,0 +1,53 @@
+@import "@styles/vars";
+
+.wrapper {
+  width: 100%;
+  padding: 36px 36px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+.author {
+  display: flex;
+  gap: 10px;
+}
+
+.image {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  color: $primaryColor;
+}
+
+.workInfo {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+}
+
+.highlighted {
+  color: $textColor5;
+}
+
+.feedback {
+  font-size: 18px;
+  flex: 1;
+  margin-bottom: 60px;
+}

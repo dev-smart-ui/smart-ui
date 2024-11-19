@@ -1,0 +1,34 @@
+@import "@styles/vars";
+
+.wrapper {
+  position: relative;
+}
+
+.slide {
+  opacity: 0.9;
+  transition: $transition2 ease;
+  pointer-events: none;
+  background: $cardColo2;
+  border-radius: $borderRadius4;
+
+  &.isActive {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.swiper {
+  overflow: visible;
+
+  :global {
+    .swiper-wrapper {
+      display: flex;
+      align-items: stretch;
+
+    }
+    .swiper-slide {
+      height: auto !important;
+      transition: $transition2 ease;
+    }
+  }
+}

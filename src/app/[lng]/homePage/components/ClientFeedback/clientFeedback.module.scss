@@ -1,0 +1,9 @@
+@import "@styles/vars";
+
+.wrapper {
+  padding: 40px 0;
+
+  @include breakpoint(md) {
+    padding: 80px 0;
+  }
+}

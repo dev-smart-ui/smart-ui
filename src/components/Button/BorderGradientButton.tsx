@@ -1,12 +1,12 @@
 import classNames from 'classnames';
 
-import React, { ComponentPropsWithoutRef, ElementType } from 'react';
+import { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
 
 import styles from './button.module.scss';
 
 interface ButtonProps<T extends ElementType = 'button'> {
   text?: string;
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   onClick?: () => void;
   disabled?: boolean;
   isRounded?: 'small' | 'large';
@@ -23,9 +23,11 @@ interface ButtonProps<T extends ElementType = 'button'> {
   fullWidth?: boolean;
   as?: T;
   isIconSeparated?: boolean;
+  children?: ReactNode;
 }
 
 export const BorderGradientButton = <T extends ElementType = 'button'>({
+  children,
   text,
   icon,
   onClick,
@@ -61,18 +63,20 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
       disabled={disabled}
       {...rest}
     >
-      <span className={styles.label}>
-        {icon && (
-          <span
-            className={classNames(styles.icon, {
-              [styles.isIconSeparated]: isIconSeparated,
-            })}
-          >
-            {icon}
-          </span>
-        )}
-        {text}
-      </span>
+      {children || (
+        <span className={styles.label}>
+          {icon && (
+            <span
+              className={classNames(styles.icon, {
+                [styles.isIconSeparated]: isIconSeparated,
+              })}
+            >
+              {icon}
+            </span>
+          )}
+          {text}
+        </span>
+      )}
     </Component>
   );
 };
