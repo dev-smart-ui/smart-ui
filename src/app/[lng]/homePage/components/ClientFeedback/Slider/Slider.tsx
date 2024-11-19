@@ -1,58 +1,26 @@
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Swiper as SwiperClass } from 'swiper/types';
 
-import { useEffect, useRef, useState } from 'react';
+import useMediaQuery from '@hooks/useMediaQuery';
 
+import { useSwiperInteraction } from '../../../hooks/useSwiperInteraction';
 import { Card } from './Card';
 import styles from './slider.module.scss';
 import { feedbacks } from './sliderData';
 
 export const Slider = () => {
-  const swiperRef = useRef<SwiperClass | null>(null);
-  const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
-
-  useEffect(() => {
-    if (!swiperRef.current) {
-      return undefined;
-    }
-
-    const swiper = swiperRef.current;
-
-    const updateActiveSlides = () => {
-      const slidesPerView = swiper.params.slidesPerView as number;
-      const indexes = Array.from(
-        { length: slidesPerView },
-        (_, i) => swiper.activeIndex + i,
-      ).filter((index) => index >= 0 && index < swiper.slides.length);
-
-      setActiveIndexes(indexes);
-    };
-
-    swiper.on('slideChange', updateActiveSlides);
-
-    const handleResize = () => {
-      swiper.update();
-      updateActiveSlides();
-    };
-    window.addEventListener('resize', handleResize);
-
-    updateActiveSlides();
-
-    return () => {
-      swiper.off('slideChange', updateActiveSlides);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const { swiperRef, activeIndexes, handleMouseEnter, handleMouseLeave } =
+    useSwiperInteraction(isDesktop);
 
   return (
     <div className={styles.wrapper}>
       <Swiper
+        centeredSlides
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
         modules={[Navigation]}
-        // centeredSlides={true}
         spaceBetween={16}
         slidesPerView={1}
         navigation={{
@@ -71,14 +39,14 @@ export const Slider = () => {
         className={styles.swiper}
       >
         {feedbacks.map((feedback, index) => (
-          <div className={styles.slideWrapper}>
-            <SwiperSlide
-              key={feedback.id}
-              className={`${styles.slide} ${activeIndexes.includes(index) ? styles.isActive : ''}`}
-            >
-              <Card {...feedback} />
-            </SwiperSlide>
-          </div>
+          <SwiperSlide
+            key={feedback.id}
+            className={`${styles.slide} ${activeIndexes.includes(index) ? styles.isActive : ''}`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Card {...feedback} />
+          </SwiperSlide>
         ))}
       </Swiper>
     </div>

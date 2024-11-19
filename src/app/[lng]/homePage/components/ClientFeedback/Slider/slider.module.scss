@@ -5,8 +5,7 @@
 }
 
 .slide {
-  opacity: 0.9;
-  transition: $transition2 ease;
+  opacity: 0.8;
   pointer-events: none;
   background: $cardColo2;
   border-radius: $borderRadius4;
@@ -15,20 +14,61 @@
     opacity: 1;
     pointer-events: all;
   }
+
+  &:hover {
+   @include breakpoint(lg) {
+     background: $cardColor!important;
+
+     p {
+       font-size: 20px;
+     }
+   }
+  }
 }
 
 .swiper {
   overflow: visible;
+  transform: translateX(0px);
+  transition: $transition2 ease;
 
   :global {
     .swiper-wrapper {
       display: flex;
       align-items: stretch;
-
+      min-height: 380px;
     }
+
     .swiper-slide {
       height: auto !important;
       transition: $transition2 ease;
+      min-width: calc(33.33% - 16px);
+      position: relative;
+
+      @include breakpoint(md) {
+        min-width: calc(50% - 16px);
+      }
+
+      @include breakpoint(lg) {
+        min-width: calc(33.33% - 16px);
+
+        &-next {
+          min-width: 33.33%;
+        }
+      }
+
+      @include breakpoint(lg) {
+        &-active:hover {
+          min-width: calc(33.33% - 16px + 200px);
+        }
+
+        &-next:hover {
+          min-width: calc(33.33% - 16px + 200px);
+        }
+
+        &-prev:hover {
+          min-width: calc(33.33% - 16px + 200px);
+        }
+      }
     }
   }
 }
