@@ -8,7 +8,7 @@ import { Icons } from '@components/CustomIcons';
 
 import styles from './card.module.scss';
 
-interface ServiceItemProps {
+interface CardProps {
   title: string;
   description: string;
   image: StaticImageData;
@@ -16,7 +16,7 @@ interface ServiceItemProps {
   buttonLabel: string;
 }
 
-export const Card: FC<ServiceItemProps> = ({
+export const Card: FC<CardProps> = ({
   title,
   description,
   image,
