@@ -2,7 +2,7 @@ import { StaticImageData } from 'next/image';
 
 import { FC } from 'react';
 
-import { ServiceItem } from './ServiceItem';
+import { Card } from './Card';
 import styles from './services.module.scss';
 
 type TService = {
@@ -21,11 +21,7 @@ export const Services: FC<ServicesProps> = ({ services, buttonLabel }) => {
   return (
     <ul className={styles.wrapper}>
       {services.map((service) => (
-        <ServiceItem
-          key={service.title}
-          {...service}
-          buttonLabel={buttonLabel}
-        />
+        <Card key={service.title} {...service} buttonLabel={buttonLabel} />
       ))}
     </ul>
   );
