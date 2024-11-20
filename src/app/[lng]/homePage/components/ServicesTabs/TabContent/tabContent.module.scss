@@ -10,8 +10,15 @@
     gap: 80px;
     flex-direction: row;
     justify-content: space-between;
+  }
+  @include breakpoint(lg) {
     padding: 48px 32px 60px;
   }
+}
+
+.title {
+  line-height: 1.4;
+  font-size: 32px;
 }
 
 .serviceButton {

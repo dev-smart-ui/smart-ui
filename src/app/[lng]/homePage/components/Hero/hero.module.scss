@@ -1,12 +1,16 @@
 @import "@styles/vars";
 
-.wrapper {
+.content {
   padding: 40px 0;
   position: relative;
 
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     padding: 80px 0;
   }
+}
+
+.imageWrapper {
+  position: relative;
 }
 
 .image {

@@ -6,6 +6,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from '@components/Button';
+import { Container } from '@components/Container';
 
 import styles from './clients.module.scss';
 import duelmastersImg from './img/duelmasters.png';
@@ -29,14 +30,16 @@ export const Clients: FC = () => {
 
   return (
     <section className={styles.wrapper}>
-      <Button text={t('buttons.ourAwesomeClients')} isGradient />
-      <ul className={styles.logos}>
-        {CLIENTS_LOGO.map(({ image, key }) => (
-          <li key={key}>
-            <Image src={image} alt={key} />
-          </li>
-        ))}
-      </ul>
+      <Container className={styles.content}>
+        <Button text={t('buttons.ourAwesomeClients')} isGradient />
+        <ul className={styles.logos}>
+          {CLIENTS_LOGO.map(({ image, key }) => (
+            <li key={key}>
+              <Image src={image} alt={key} />
+            </li>
+          ))}
+        </ul>
+      </Container>
     </section>
   );
 };

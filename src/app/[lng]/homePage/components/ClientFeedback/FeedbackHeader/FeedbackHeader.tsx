@@ -5,10 +5,14 @@ import { Icons } from '@components/CustomIcons';
 
 import styles from './feedbackHeader.module.scss';
 
-export const FeedbackHeader: FC = () => {
+interface FeedbackHeaderProps {
+  t: (key: string) => string;
+}
+
+export const FeedbackHeader: FC<FeedbackHeaderProps> = ({ t }) => {
   return (
     <div className={styles.wrapper}>
-      <h2 className={styles.title}>What Our Clients Say About Us</h2>
+      <h2 className={styles.title}>{t('feedbacks.title')}</h2>
       <div className={styles.navButton}>
         <BorderGradientButton
           id="prevButton"

@@ -1,0 +1,33 @@
+@import "@styles/vars";
+
+.wrapper {
+  text-align: center;
+  height: 100%;
+
+  @include breakpoint(lg){
+    text-align: left;
+  }
+}
+
+.description {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 16px;
+
+  @include breakpoint(md) {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+}
+
+.title {
+  color: white;
+  line-height: 1.4;
+  font-size: 32px;
+  margin-bottom: 16px;
+
+  @include breakpoint(md) {
+    font-size: 48px;
+    margin-bottom: 32px;
+  }
+}
