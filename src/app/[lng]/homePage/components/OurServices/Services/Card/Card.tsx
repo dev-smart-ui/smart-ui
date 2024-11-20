@@ -6,7 +6,7 @@ import { FC } from 'react';
 import { Button } from '@components/Button';
 import { Icons } from '@components/CustomIcons';
 
-import styles from './serviceItem.module.scss';
+import styles from './card.module.scss';
 
 interface ServiceItemProps {
   title: string;
@@ -16,7 +16,7 @@ interface ServiceItemProps {
   buttonLabel: string;
 }
 
-export const ServiceItem: FC<ServiceItemProps> = ({
+export const Card: FC<ServiceItemProps> = ({
   title,
   description,
   image,
@@ -31,7 +31,11 @@ export const ServiceItem: FC<ServiceItemProps> = ({
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
-        <Button text={buttonLabel} icon={<Icons.ArrowRight />} />
+        <Button
+          text={buttonLabel}
+          className={styles.button}
+          icon={<Icons.ArrowRight />}
+        />
       </div>
     </li>
   );

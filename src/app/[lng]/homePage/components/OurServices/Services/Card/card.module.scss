@@ -66,13 +66,16 @@
 .info {
   width: 100%;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 20px;
 }
 
 .title {
   font-size: 32px;
   line-height: 1.4;
   color: $textColor;
-  margin-bottom: 20px;
 
   @include breakpoint(md) {
     font-size: 48px;
@@ -82,11 +85,17 @@
 .description {
   font-size: 18px;
   color: $textColor;
-  margin-bottom: 32px;
+  flex-grow: 1;
 
   @include breakpoint(md) {
     font-size: 24px;
   }
+}
+
+.button {
+  max-width: max-content;
+
+  margin-top: 12px;
 }
 
 .image {
