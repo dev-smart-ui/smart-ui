@@ -24,7 +24,7 @@ export const TabContent: FC<TabContentProps> = ({ data }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.left}>
-        <h3>{data.title}</h3>
+        <h3 className={styles.title}>{data.title}</h3>
         <List list={data.list} />
         <BorderGradientButton
           className={styles.serviceButton}

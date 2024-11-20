@@ -107,21 +107,22 @@
       }
     ]
   },
-  "feedbacks": [
-    {
-      "feedback": "Less than 24h turn around. Easy communication. Did exactly as offered, all around a perfect experience."
-    },
-    {
-      "feedback": "Smart-UI is one of the BEST web designers I've ever worked with professionally. I am a repeat customer who continues to work with Zakir because of his talent/skills, great customer service, work ethic, and attention to detail."
-    },
-    {
-      "feedback": "Working with Golio was a great experience, understanding person, fast response time does his work honestly, experienced, a problem solver. Gives it it's all. I highly recommend him for providing beyond high-quality service."
-    },
-    {
-      "feedback": "This guy is a true professional and very experienced in migration and server configuration. He was able to complete my order in time and as per the agreed scope. Highly recommend!"
-    },
-    {
-      "feedback": "Less than 24h turn around. Easy communication. Did exactly as offered, all around a perfect experience."
+  "feedbacks": {
+    "title": "What Our Clients Say About Us",
+    "feedback1": "Less than 24h turn around. Easy communication. Did exactly as offered, all around a perfect experience.",
+    "feedback2": "Smart-UI is one of the BEST web designers I've ever worked with professionally. I am a repeat customer who continues to work with Zakir because of his talent/skills, great customer service, work ethic, and attention to detail.",
+    "feedback3": "Working with Golio was a great experience, understanding person, fast response time does his work honestly, experienced, a problem solver. Gives it it's all. I highly recommend him for providing beyond high-quality service.",
+    "feedback4": "This guy is a true professional and very experienced in migration and server configuration. He was able to complete my order in time and as per the agreed scope. Highly recommend!",
+    "feedback5": "Less than 24h turn around. Easy communication. Did exactly as offered, all around a perfect experience."
+  },
+  "workTogether": {
+    "title": "Let’s work together",
+    "description": "Partner with us to turn your ideas into reality. Our team of experts is ready to understand your needs, provide insights, and create a custom solution that drives results.",
+    "cards": {
+      "category1": "Awards Rewarded",
+      "category2": "Happy Clients",
+      "category3": "Years of Experience",
+      "category4": "Completed Project"
     }
-  ]
+  }
 }

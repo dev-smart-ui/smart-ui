@@ -1,0 +1,64 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  @include breakpoint(sm) {
+    gap: 24px;
+    width: initial;
+    flex-direction: row;
+  }
+}
+
+.firstGroup, .secondGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include breakpoint(lg) {
+    gap: 36px;
+  }
+}
+
+.firstGroup {
+  @include breakpoint(lg) {
+    transform: translateY(-16px);
+  }
+}
+
+.secondGroup {
+  @include breakpoint(lg) {
+    transform: translateY(16px);
+  }
+}
+
+.card {
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+  width: 100%;
+  min-width: max-content;
+  border-radius: $borderRadius2;
+}
+
+.count {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  color: black;
+}
+
+.category {
+  color: $textColor6;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.icon {
+  max-width: 56px;
+}

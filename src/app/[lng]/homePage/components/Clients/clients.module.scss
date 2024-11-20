@@ -3,7 +3,7 @@
 .wrapper {
   padding-bottom: 40px;
 
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     padding-bottom: 80px;
   }
 }

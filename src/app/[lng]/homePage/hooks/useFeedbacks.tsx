@@ -1,12 +1,8 @@
-import { useTranslation } from 'react-i18next';
-
 import { Icons } from '@components/CustomIcons';
 
 import avatar from '../components/ClientFeedback/img/avatar.png';
 
-export const useFeedbacks = () => {
-  const { t } = useTranslation(['home']);
-
+export const useFeedbacks = (t: (key: string) => string) => {
   const feedbacks = [
     {
       id: 0,
@@ -14,7 +10,7 @@ export const useFeedbacks = () => {
       author: 'Annette Black',
       work: 'CEO of',
       company: 'Notion',
-      feedback: t('feedbacks.0.feedback'),
+      feedback: t('feedbacks.feedback1'),
       icon: <Icons.Amazon />,
     },
     {
@@ -23,7 +19,7 @@ export const useFeedbacks = () => {
       author: 'Annette Black',
       work: 'Chief Chairman of',
       company: 'Netflix',
-      feedback: t('feedbacks.1.feedback'),
+      feedback: t('feedbacks.feedback2'),
       icon: <Icons.Netflix />,
     },
     {
@@ -32,7 +28,7 @@ export const useFeedbacks = () => {
       author: 'Annette Black',
       work: 'Chief Chairman of',
       company: 'Youtube',
-      feedback: t('feedbacks.2.feedback'),
+      feedback: t('feedbacks.feedback3'),
       icon: <Icons.Youtube />,
     },
     {
@@ -41,7 +37,7 @@ export const useFeedbacks = () => {
       author: 'Annette Black',
       work: 'CEO of',
       company: 'Google',
-      feedback: t('feedbacks.3.feedback'),
+      feedback: t('feedbacks.feedback4'),
       icon: <Icons.Google />,
     },
     {
@@ -50,7 +46,7 @@ export const useFeedbacks = () => {
       author: 'Annette Black',
       work: 'CEO of',
       company: 'Notion',
-      feedback: t('feedbacks.4.feedback'),
+      feedback: t('feedbacks.feedback5'),
       icon: <Icons.Amazon />,
     },
   ];
