@@ -24,7 +24,7 @@
        background: $cardColor!important;
 
        p {
-         font-size: 20px;
+         font-size: 22px;
        }
 
        &::after {
@@ -44,7 +44,8 @@
     .swiper-wrapper {
       display: flex;
       align-items: stretch;
-      min-height: 380px;
+      min-height: 402px;
+      max-height: 402px;
     }
 
     .swiper-slide {

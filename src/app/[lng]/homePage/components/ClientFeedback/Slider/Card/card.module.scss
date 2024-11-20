@@ -8,7 +8,6 @@
   gap: 24px;
   height: 100%;
   position: relative;
-  transition: $transition2 ease;
 
   &::after {
     position: absolute;
@@ -68,4 +67,5 @@
   transition: $transition2 ease;
   font-size: 18px;
   flex: 1;
+  overflow: hidden;
 }
