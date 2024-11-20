@@ -1,0 +1,12 @@
+@import "@styles/vars";
+
+.wrapper {
+  padding: 40px 0;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+
+  @include breakpoint(md) {
+    padding: 80px 0;
+  }
+}

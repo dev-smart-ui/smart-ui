@@ -5,10 +5,15 @@ import styles from './container.module.scss';
 interface ContainerProps {
   children: ReactNode;
   size?: 'large';
+  className?: string;
 }
 
-export const Container: FC<ContainerProps> = ({ children, size = 'large' }) => {
+export const Container: FC<ContainerProps> = ({
+  children,
+  size = 'large',
+  className,
+}) => {
   const containerClass = styles[`container-${size}`];
 
-  return <div className={containerClass}>{children}</div>;
+  return <div className={`${containerClass} ${className}`}>{children}</div>;
 };

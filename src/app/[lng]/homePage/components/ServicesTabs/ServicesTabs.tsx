@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import { Container } from '@components/Container';
+
 import { useTabsAndServices } from '../../hooks/useTabsAndServices';
 import { TabContent } from './TabContent';
 import { Tabs } from './Tabs';
@@ -13,16 +15,18 @@ export const ServicesTabs = () => {
 
   return (
     <section className={styles.wrapper}>
-      <div className={styles.contentWrapper}>
-        <Tabs
-          tabs={tabs}
-          currentTab={currentTab}
-          setCurrentTab={setCurrentTab}
-        />
-        <TabContent
-          data={servicesTabs[currentTab as keyof typeof servicesTabs]}
-        />
-      </div>
+      <Container>
+        <div className={styles.contentWrapper}>
+          <Tabs
+            tabs={tabs}
+            currentTab={currentTab}
+            setCurrentTab={setCurrentTab}
+          />
+          <TabContent
+            data={servicesTabs[currentTab as keyof typeof servicesTabs]}
+          />
+        </div>
+      </Container>
     </section>
   );
 };

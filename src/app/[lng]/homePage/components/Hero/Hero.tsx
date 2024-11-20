@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { Container } from '@components/Container';
+
 import { Content } from './Content';
 import { Navigation } from './Navigation';
 import { Trust } from './Trust';
@@ -16,14 +18,16 @@ export const Hero: FC = () => {
 
   return (
     <section className={styles.wrapper}>
-      <div className={styles.image}>
-        <Image src={bgImage} alt="backgroundImage" />
-      </div>
-      <div className={styles.contentWrapper}>
-        <Trust description={t('hero.trust')} />
-        <Content t={t} />
-        <Navigation t={t} />
-      </div>
+      <Container className={styles.content}>
+        <div className={styles.image}>
+          <Image src={bgImage} alt="backgroundImage" />
+        </div>
+        <div className={styles.contentWrapper}>
+          <Trust description={t('hero.trust')} />
+          <Content t={t} />
+          <Navigation t={t} />
+        </div>
+      </Container>
     </section>
   );
 };
