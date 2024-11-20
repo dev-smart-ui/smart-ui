@@ -66,15 +66,15 @@
 
       @include breakpoint(lg) {
         &-active:hover {
-          min-width: calc(33.33% - 16px + 200px);
+          min-width: calc(33.33% + 200px);
         }
 
         &-next:hover {
-          min-width: calc(33.33% - 16px + 200px);
+          min-width: calc(33.33% + 200px);
         }
 
         &-prev:hover {
-          min-width: calc(33.33% - 16px + 200px);
+          min-width: calc(33.33% + 200px);
         }
       }
     }
