@@ -24,31 +24,23 @@ export const Cards: FC<CardProps> = ({ cards }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.firstGroup}>
-        {firstGroup.map((card) => (
-          <div
-            key={card.id}
-            className={styles.card}
-            style={{ backgroundColor: card.backgroundColor }}
-          >
-            <Image className={styles.icon} src={card.icon} alt="icon" />
+        {firstGroup.map(({ id, backgroundColor, icon, count, category }) => (
+          <div key={id} className={styles.card} style={{ backgroundColor }}>
+            <Image className={styles.icon} src={icon} alt="icon" />
             <div>
-              <span className={styles.count}>{card.count}</span>
-              <span className={styles.category}>{card.category}</span>
+              <span className={styles.count}>{count}</span>
+              <span className={styles.category}>{category}</span>
             </div>
           </div>
         ))}
       </div>
       <div className={styles.secondGroup}>
-        {secondGroup.map((card) => (
-          <div
-            key={card.id}
-            className={styles.card}
-            style={{ backgroundColor: card.backgroundColor }}
-          >
-            <Image className={styles.icon} src={card.icon} alt="icon" />
+        {secondGroup.map(({ id, backgroundColor, icon, count, category }) => (
+          <div key={id} className={styles.card} style={{ backgroundColor }}>
+            <Image className={styles.icon} src={icon} alt="icon" />
             <div>
-              <span className={styles.count}>{card.count}</span>
-              <span className={styles.category}>{card.category}</span>
+              <span className={styles.count}>{count}</span>
+              <span className={styles.category}>{category}</span>
             </div>
           </div>
         ))}

@@ -15,5 +15,7 @@ export const Container: FC<ContainerProps> = ({
 }) => {
   const containerClass = styles[`container-${size}`];
 
-  return <div className={`${containerClass} ${className}`}>{children}</div>;
+  return (
+    <div className={`${containerClass} ${className ?? ''}`}>{children}</div>
+  );
 };
