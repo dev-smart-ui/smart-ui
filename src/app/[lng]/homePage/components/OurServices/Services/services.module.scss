@@ -1,0 +1,16 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr; // Одна колонка
+  grid-template-rows: auto; // Автоматическая высота строк
+  gap: 40px 32px;
+
+  @include breakpoint(lg) {
+    grid-template-areas:
+      'service1 service1'
+      'service2 service3'
+      'service4 service4';
+    grid-template-columns: repeat(2, 1fr); // Две колонки для `lg` и выше
+  }
+}

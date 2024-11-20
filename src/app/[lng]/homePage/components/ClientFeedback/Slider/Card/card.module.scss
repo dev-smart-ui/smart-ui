@@ -22,7 +22,7 @@
     border-radius: $borderRadius4;
     z-index: -1;
     transition: $transition2 ease;
-    background: linear-gradient(var(--gradient-direction, to top), rgba($primaryColor, 0), rgba($primaryColor, .5), $primaryColor 80%);
+    background: linear-gradient(to top, rgba($primaryColor, 0), rgba($primaryColor, .5), $primaryColor 80%);
   }
 }
 

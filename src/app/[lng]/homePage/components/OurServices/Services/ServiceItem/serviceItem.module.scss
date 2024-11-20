@@ -1,0 +1,120 @@
+@import "@styles/vars";
+
+.wrapper {
+  background: $surfaceColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: $borderRadius4;
+  position: relative;
+  z-index: 1;
+  padding: 32px;
+  gap: 16px;
+  border: .5px solid rgba($primaryColor, .8);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background: $backgroundColo2;
+    filter: blur(160px);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+  }
+  @include breakpoint(md) {
+    gap: 32px;
+  }
+  @include breakpoint(lg) {
+    flex-direction: row;
+
+    &:nth-child(3n + 2),
+    &:nth-child(3n + 3) {
+      flex-direction: column;
+    }
+  }
+}
+
+.service1 {
+  @include breakpoint(lg) {
+    grid-area: service1;
+  }
+}
+
+.service2 {
+  @include breakpoint(lg) {
+    grid-area: service2;
+  }
+}
+
+.service3 {
+  @include breakpoint(lg) {
+    grid-area: service3;
+  }
+}
+
+.service4 {
+  @include breakpoint(lg) {
+    grid-area: service4;
+  }
+}
+
+.info {
+  width: 100%;
+  text-align: left;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 1.4;
+  color: $textColor;
+  margin-bottom: 20px;
+
+  @include breakpoint(md) {
+    font-size: 48px;
+  }
+}
+
+.description {
+  font-size: 18px;
+  color: $textColor;
+  margin-bottom: 32px;
+
+  @include breakpoint(md) {
+    font-size: 24px;
+  }
+}
+
+.image {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $borderRadius4;
+  background: $backgroundColo3;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    display: block;
+    overflow: hidden;
+    top: -0.5px;
+    left: -0.5px;
+    right: -0.5px;
+    bottom: 0;
+    border-radius: $borderRadius4;
+    z-index: -1;
+    transition: $transition2 ease;
+    background: linear-gradient(to top, rgba($primaryColor, 0), rgba($primaryColor, 0.1), $primaryColor 80%);
+  }
+
+  img {
+    border-radius: $borderRadius4;
+  }
+}

@@ -124,5 +124,27 @@
       "category3": "Years of Experience",
       "category4": "Completed Project"
     }
+  },
+  "ourServices": {
+    "title": {
+      "main": "A Comprehensive Range of Services for",
+      "highlighted": "Your Business"
+    },
+    "service1": {
+      "title": "Custom Software Development",
+      "description": "Our team specializes in building fully customized software solutions designed to meet your specific business needs. From initial concept to deployment, we ensure that every application is scalable, user-friendly, and optimized to boost your efficiency"
+    },
+    "service2": {
+      "title": "Cloud Solutions",
+      "description": "Leverage the power of cloud technology with our robust cloud solutions. We help implement and manage cloud-based infrastructure that provides your business with scalability, flexibility, and enhanced security"
+    },
+    "service3": {
+      "title": "System Integration",
+      "description": "Optimize your workflow by seamlessly connecting your software and hardware systems. Our system integration services ensure that all your business processes work in harmony, improving efficiency and data accessibility"
+    },
+    "service4": {
+      "title": "SEO Optimization",
+      "description": "Increase your online visibility and attract targeted traffic with our comprehensive SEO services. We conduct in-depth keyword research, optimize your content, and improve your site’s technical structure to enhance search engine rankings. Our SEO strategies are designed to drive sustainable growth by connecting your business with the right audience"
+    }
   }
 }
