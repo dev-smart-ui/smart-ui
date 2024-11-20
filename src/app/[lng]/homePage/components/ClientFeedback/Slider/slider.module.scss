@@ -24,7 +24,7 @@
        background: $cardColor!important;
 
        p {
-         font-size: 20px;
+         font-size: 22px;
        }
 
        &::after {
@@ -44,7 +44,8 @@
     .swiper-wrapper {
       display: flex;
       align-items: stretch;
-      min-height: 380px;
+      min-height: 402px;
+      max-height: 402px;
     }
 
     .swiper-slide {
@@ -66,15 +67,15 @@
 
       @include breakpoint(lg) {
         &-active:hover {
-          min-width: calc(33.33% - 16px + 200px);
+          min-width: calc(33.33% + 200px);
         }
 
         &-next:hover {
-          min-width: calc(33.33% - 16px + 200px);
+          min-width: calc(33.33% + 200px);
         }
 
         &-prev:hover {
-          min-width: calc(33.33% - 16px + 200px);
+          min-width: calc(33.33% + 200px);
         }
       }
     }

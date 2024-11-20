@@ -3,13 +3,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import useMediaQuery from '@hooks/useMediaQuery';
 
+import { useFeedbacks } from '../../../hooks/useFeedbacks';
 import { useSwiperInteraction } from '../../../hooks/useSwiperInteraction';
 import { Card } from './Card';
 import styles from './slider.module.scss';
-import { feedbacks } from './sliderData';
 
 export const Slider = () => {
   const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const { feedbacks } = useFeedbacks();
   const { swiperRef, activeIndexes, handleMouseEnter, handleMouseLeave } =
     useSwiperInteraction(isDesktop);
 
