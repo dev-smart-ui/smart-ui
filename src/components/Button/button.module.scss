@@ -1,6 +1,7 @@
 @import '@styles/vars';
 
 .mainBtn, .borderGradientBtn {
+  font-family: $primaryFont;
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -186,7 +187,6 @@
 
   &.isGradient {
     padding: 4px 32px;
-    font-size: 18px;
     font-weight: 500;
     position: relative;
     background: linear-gradient(var(--gradient-direction-main-btn, to right), rgba($mainBtnGradient1, 0.2), $mainBtnGradient2 100%) 0 0% / 200% 100%;

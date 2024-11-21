@@ -8,6 +8,7 @@ interface AdvantageCard {
 }
 
 interface HeaderInfo {
+  ourAdvantages: string;
   title: {
     main: string;
     highlighted: string;
@@ -16,11 +17,9 @@ interface HeaderInfo {
 }
 
 export const useAdvantages = () => {
-  const { t } = useTranslation(['home', 'common']);
+  const { t } = useTranslation('home');
 
-  const button = t('buttons.ourAdvantages', { ns: 'common' });
-
-  const headerInfo: HeaderInfo = t('advantages', {
+  const headerInfo: HeaderInfo = t('advantages.headerInfo', {
     returnObjects: true,
   }) as HeaderInfo;
 
@@ -61,5 +60,5 @@ export const useAdvantages = () => {
     },
   ];
 
-  return { cards, headerInfo, button };
+  return { cards, headerInfo };
 };

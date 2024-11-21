@@ -1,31 +1,37 @@
 'use client';
 
+import { IProjectData } from '@app-types/interfaces';
+
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
 import { GradientText } from '@components/GradientText';
 import { TextGradientBackground } from '@components/TextGradientBackgraund';
 
-import { useOurServices } from '../../hooks/useOurServices';
-import { Services } from './Services';
-import styles from './ourServices.module.scss';
+import { Projects } from './Projects';
+import styles from './ourWork.module.scss';
 
-export const OurServices: FC = () => {
-  const { services, headerInfo, buttons } = useOurServices();
+interface OurWorkProps {
+  data?: IProjectData[];
+}
+
+export const OurWork: FC<OurWorkProps> = ({ data }) => {
+  const { t } = useTranslation('home');
 
   return (
     <section className={styles.wrapper}>
       <Container className={styles.content}>
         <TextGradientBackground>
-          {headerInfo.ourServices}
+          {t('ourWork.headerInfo.ourWork')}
         </TextGradientBackground>
         <h2 className={styles.title}>
-          {headerInfo.title.main}{' '}
+          {t('ourWork.headerInfo.title.main')}{' '}
           <GradientText color="Secondary">
-            {headerInfo.title.highlighted}
+            {t('ourWork.headerInfo.title.highlighted')}
           </GradientText>
         </h2>
-        <Services services={services} buttonLabel={buttons.learnMore} />
+        <Projects data={data} />
       </Container>
     </section>
   );

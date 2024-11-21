@@ -6,8 +6,8 @@ import 'swiper/css/navigation';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Button } from '@components/Button';
 import { Container } from '@components/Container';
+import { TextGradientBackground } from '@components/TextGradientBackgraund';
 
 import { FeedbackHeader } from './FeedbackHeader';
 import { Slider } from './Slider';
@@ -19,10 +19,9 @@ export const ClientFeedback: FC = () => {
   return (
     <section className={styles.wrapper}>
       <Container>
-        <Button
-          isGradient
-          text={t('buttons.clientFeedback', { ns: 'common' })}
-        />
+        <TextGradientBackground>
+          {t('feedbacks.headerInfo.clientFeedback')}
+        </TextGradientBackground>
         <FeedbackHeader t={t} />
         <Slider t={t} />
       </Container>

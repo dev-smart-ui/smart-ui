@@ -2,20 +2,22 @@
 
 import { FC } from 'react';
 
-import { Button } from '@components/Button';
 import { Container } from '@components/Container';
 import { GradientText } from '@components/GradientText';
+import { TextGradientBackground } from '@components/TextGradientBackgraund';
 
 import { useAdvantages } from '../../hooks/useAdvantages';
 import styles from './advantages.module.scss';
 
 export const Advantages: FC = () => {
-  const { cards, headerInfo, button } = useAdvantages();
+  const { cards, headerInfo } = useAdvantages();
 
   return (
     <section className={styles.wrapper}>
       <Container className={styles.content}>
-        <Button text={button} isGradient />
+        <TextGradientBackground>
+          {headerInfo.ourAdvantages}
+        </TextGradientBackground>
         <h2 className={styles.title}>
           {headerInfo.title.main}{' '}
           <GradientText color="Secondary">

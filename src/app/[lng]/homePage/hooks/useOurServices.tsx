@@ -6,6 +6,7 @@ import serviceImg3 from '../components/OurServices/img/service3.png';
 import serviceImg4 from '../components/OurServices/img/service4.png';
 
 interface HeaderInfo {
+  ourServices: string;
   title: {
     main: string;
     highlighted: string;
@@ -16,11 +17,10 @@ export const useOurServices = () => {
   const { t } = useTranslation(['home', 'common']);
 
   const buttons = {
-    ourServices: t('buttons.ourServices', { ns: 'common' }),
     learnMore: t('buttons.learnMore', { ns: 'common' }),
   };
 
-  const headerInfo: HeaderInfo = t('ourServices', {
+  const headerInfo: HeaderInfo = t('ourServices.headerInfo', {
     returnObjects: true,
   }) as HeaderInfo;
 

@@ -5,6 +5,7 @@ import { FC } from 'react';
 
 import { Button } from '@components/Button';
 import { Icons } from '@components/CustomIcons';
+import { GradientBorder } from '@components/GradientBorder';
 
 import styles from './card.module.scss';
 
@@ -25,9 +26,11 @@ export const Card: FC<CardProps> = ({
 }) => {
   return (
     <li className={classNames(styles.wrapper, styles[area])}>
-      <div className={styles.image}>
-        <Image src={image} alt="serviceImage" />
-      </div>
+      <GradientBorder color="#1B653D" borderRadius="lg">
+        <div className={styles.image}>
+          <Image src={image} alt="serviceImage" />
+        </div>
+      </GradientBorder>
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>

@@ -74,12 +74,18 @@
       }
     }
   },
+  "clients": {
+    "ourAwesomeClients": "Our Awesome Client"
+  },
   "advantages": {
-    "title": {
-      "main": "Why Choose Us for",
-      "highlighted": "Your Technology Needs"
+    "headerInfo": {
+      "ourAdvantages": "Our Advantages",
+      "title": {
+        "main": "Why Choose Us for",
+        "highlighted": "Your Technology Needs"
+      },
+      "subTitle": "Here’s what sets us apart and makes us the trusted choice for businesses like yours:"
     },
-    "subTitle": "Here’s what sets us apart and makes us the trusted choice for businesses like yours:",
     "cardsData": [
       {
         "title": "Wide Range of Services",
@@ -108,7 +114,10 @@
     ]
   },
   "feedbacks": {
-    "title": "What Our Clients Say About Us",
+    "headerInfo": {
+      "clientFeedback": "Client Feedback",
+      "title": "What Our Clients Say About Us"
+    },
     "feedback1": "Less than 24h turn around. Easy communication. Did exactly as offered, all around a perfect experience.",
     "feedback2": "Smart-UI is one of the BEST web designers I've ever worked with professionally. I am a repeat customer who continues to work with Zakir because of his talent/skills, great customer service, work ethic, and attention to detail.",
     "feedback3": "Working with Golio was a great experience, understanding person, fast response time does his work honestly, experienced, a problem solver. Gives it it's all. I highly recommend him for providing beyond high-quality service.",
@@ -126,9 +135,12 @@
     }
   },
   "ourServices": {
-    "title": {
-      "main": "A Comprehensive Range of Services for",
-      "highlighted": "Your Business"
+    "headerInfo": {
+      "ourServices": "Our Services",
+      "title": {
+        "main": "A Comprehensive Range of Services for",
+        "highlighted": "Your Business"
+      }
     },
     "service1": {
       "title": "Custom Software Development",
@@ -145,6 +157,15 @@
     "service4": {
       "title": "SEO Optimization",
       "description": "Increase your online visibility and attract targeted traffic with our comprehensive SEO services. We conduct in-depth keyword research, optimize your content, and improve your site’s technical structure to enhance search engine rankings. Our SEO strategies are designed to drive sustainable growth by connecting your business with the right audience"
+    }
+  },
+  "ourWork": {
+    "headerInfo": {
+      "ourWork": "Our Work",
+      "title": {
+        "main": "Explore Our Success Stories",
+        "highlighted": "Project Highlights"
+      }
     }
   }
 }
