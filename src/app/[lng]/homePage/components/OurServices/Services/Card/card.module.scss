@@ -94,7 +94,6 @@
 
 .button {
   max-width: max-content;
-
   margin-top: 12px;
 }
 
@@ -106,22 +105,6 @@
   justify-content: center;
   border-radius: $borderRadius4;
   background: $backgroundColo3;
-  position: relative;
-
-  &::after {
-    position: absolute;
-    content: '';
-    display: block;
-    overflow: hidden;
-    top: -0.5px;
-    left: -0.5px;
-    right: -0.5px;
-    bottom: 0;
-    border-radius: $borderRadius4;
-    z-index: -1;
-    transition: $transition2 ease;
-    background: linear-gradient(to top, rgba($primaryColor, 0), rgba($primaryColor, 0.1), $primaryColor 80%);
-  }
 
   img {
     border-radius: $borderRadius4;

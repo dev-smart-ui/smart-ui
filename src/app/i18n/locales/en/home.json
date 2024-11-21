@@ -79,7 +79,7 @@
   },
   "advantages": {
     "headerInfo": {
-    "ourAdvantages": "Our Advantages",
+      "ourAdvantages": "Our Advantages",
       "title": {
         "main": "Why Choose Us for",
         "highlighted": "Your Technology Needs"
@@ -157,6 +157,15 @@
     "service4": {
       "title": "SEO Optimization",
       "description": "Increase your online visibility and attract targeted traffic with our comprehensive SEO services. We conduct in-depth keyword research, optimize your content, and improve your site’s technical structure to enhance search engine rankings. Our SEO strategies are designed to drive sustainable growth by connecting your business with the right audience"
+    }
+  },
+  "ourWork": {
+    "headerInfo": {
+      "ourWork": "Our Work",
+      "title": {
+        "main": "Explore Our Success Stories",
+        "highlighted": "Project Highlights"
+      }
     }
   }
 }
