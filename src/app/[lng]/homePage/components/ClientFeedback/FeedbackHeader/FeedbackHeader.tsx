@@ -12,7 +12,7 @@ interface FeedbackHeaderProps {
 export const FeedbackHeader: FC<FeedbackHeaderProps> = ({ t }) => {
   return (
     <div className={styles.wrapper}>
-      <h2 className={styles.title}>{t('feedbacks.title')}</h2>
+      <h2 className={styles.title}>{t('feedbacks.headerInfo.title')}</h2>
       <div className={styles.navButton}>
         <BorderGradientButton
           id="prevButton"

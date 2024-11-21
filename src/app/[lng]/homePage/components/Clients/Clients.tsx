@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Button } from '@components/Button';
 import { Container } from '@components/Container';
+import { TextGradientBackground } from '@components/TextGradientBackgraund';
 
 import styles from './clients.module.scss';
 import duelmastersImg from './img/duelmasters.png';
@@ -26,12 +26,14 @@ const CLIENTS_LOGO = [
 ];
 
 export const Clients: FC = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('home');
 
   return (
     <section className={styles.wrapper}>
       <Container className={styles.content}>
-        <Button text={t('buttons.ourAwesomeClients')} isGradient />
+        <TextGradientBackground>
+          {t('clients.ourAwesomeClients')}
+        </TextGradientBackground>
         <ul className={styles.logos}>
           {CLIENTS_LOGO.map(({ image, key }) => (
             <li key={key}>

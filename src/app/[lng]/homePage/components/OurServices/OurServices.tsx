@@ -2,9 +2,9 @@
 
 import { FC } from 'react';
 
-import { Button } from '@components/Button';
 import { Container } from '@components/Container';
 import { GradientText } from '@components/GradientText';
+import { TextGradientBackground } from '@components/TextGradientBackgraund';
 
 import { useOurServices } from '../../hooks/useOurServices';
 import { Services } from './Services';
@@ -16,7 +16,9 @@ export const OurServices: FC = () => {
   return (
     <section className={styles.wrapper}>
       <Container className={styles.content}>
-        <Button text={buttons.ourServices} isGradient />
+        <TextGradientBackground>
+          {headerInfo.ourServices}
+        </TextGradientBackground>
         <h2 className={styles.title}>
           {headerInfo.title.main}{' '}
           <GradientText color="Secondary">
