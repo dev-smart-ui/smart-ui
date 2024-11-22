@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
 import { GradientText } from '@components/GradientText';
+import { Section } from '@components/Section';
 import { TextGradientBackground } from '@components/TextGradientBackgraund';
 
 import { Projects } from './Projects';
@@ -20,7 +21,7 @@ export const OurWork: FC<OurWorkProps> = ({ data }) => {
   const { t } = useTranslation('home');
 
   return (
-    <section className={styles.wrapper}>
+    <Section>
       <Container className={styles.content}>
         <TextGradientBackground>
           {t('ourWork.headerInfo.ourWork')}
@@ -33,6 +34,6 @@ export const OurWork: FC<OurWorkProps> = ({ data }) => {
         </h2>
         <Projects data={data} />
       </Container>
-    </section>
+    </Section>
   );
 };

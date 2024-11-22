@@ -4,6 +4,7 @@ import { FC } from 'react';
 
 import { Container } from '@components/Container';
 import { GradientText } from '@components/GradientText';
+import { Section } from '@components/Section';
 import { TextGradientBackground } from '@components/TextGradientBackgraund';
 
 import { useAdvantages } from '../../hooks/useAdvantages';
@@ -13,7 +14,7 @@ export const Advantages: FC = () => {
   const { cards, headerInfo } = useAdvantages();
 
   return (
-    <section className={styles.wrapper}>
+    <Section>
       <Container className={styles.content}>
         <TextGradientBackground>
           {headerInfo.ourAdvantages}
@@ -35,6 +36,6 @@ export const Advantages: FC = () => {
           ))}
         </ul>
       </Container>
-    </section>
+    </Section>
   );
 };

@@ -6,6 +6,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
+import { Section } from '@components/Section';
 
 import { Content } from './Content';
 import { Navigation } from './Navigation';
@@ -17,7 +18,7 @@ export const Hero: FC = () => {
   const { t } = useTranslation(['home', 'common']);
 
   return (
-    <section className={styles.wrapper}>
+    <Section>
       <Container className={styles.content}>
         <div className={styles.image}>
           <Image src={bgImage} alt="backgroundImage" />
@@ -28,6 +29,6 @@ export const Hero: FC = () => {
           <Navigation t={t} />
         </div>
       </Container>
-    </section>
+    </Section>
   );
 };

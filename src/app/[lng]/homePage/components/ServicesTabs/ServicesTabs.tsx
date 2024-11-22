@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { Container } from '@components/Container';
+import { Section } from '@components/Section';
 
 import { useTabsAndServices } from '../../hooks/useTabsAndServices';
 import { TabContent } from './TabContent';
@@ -14,7 +15,7 @@ export const ServicesTabs = () => {
   const [currentTab, setCurrentTab] = useState(tabs[0].value);
 
   return (
-    <section className={styles.wrapper}>
+    <Section>
       <Container>
         <div className={styles.contentWrapper}>
           <Tabs
@@ -27,6 +28,6 @@ export const ServicesTabs = () => {
           />
         </div>
       </Container>
-    </section>
+    </Section>
   );
 };

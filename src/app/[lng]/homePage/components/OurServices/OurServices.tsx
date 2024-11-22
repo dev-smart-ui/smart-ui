@@ -4,6 +4,7 @@ import { FC } from 'react';
 
 import { Container } from '@components/Container';
 import { GradientText } from '@components/GradientText';
+import { Section } from '@components/Section';
 import { TextGradientBackground } from '@components/TextGradientBackgraund';
 
 import { useOurServices } from '../../hooks/useOurServices';
@@ -14,7 +15,7 @@ export const OurServices: FC = () => {
   const { services, headerInfo, buttons } = useOurServices();
 
   return (
-    <section className={styles.wrapper}>
+    <Section>
       <Container className={styles.content}>
         <TextGradientBackground>
           {headerInfo.ourServices}
@@ -27,6 +28,6 @@ export const OurServices: FC = () => {
         </h2>
         <Services services={services} buttonLabel={buttons.learnMore} />
       </Container>
-    </section>
+    </Section>
   );
 };

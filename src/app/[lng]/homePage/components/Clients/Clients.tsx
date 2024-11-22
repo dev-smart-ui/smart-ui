@@ -6,6 +6,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
+import { Section } from '@components/Section';
 import { TextGradientBackground } from '@components/TextGradientBackgraund';
 
 import styles from './clients.module.scss';
@@ -29,7 +30,7 @@ export const Clients: FC = () => {
   const { t } = useTranslation('home');
 
   return (
-    <section className={styles.wrapper}>
+    <Section>
       <Container className={styles.content}>
         <TextGradientBackground>
           {t('clients.ourAwesomeClients')}
@@ -42,6 +43,6 @@ export const Clients: FC = () => {
           ))}
         </ul>
       </Container>
-    </section>
+    </Section>
   );
 };
