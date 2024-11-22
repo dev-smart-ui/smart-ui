@@ -1,13 +1,5 @@
 @import "@styles/vars";
 
-.wrapper {
-  padding: 40px 0;
-
-  @include breakpoint(lg) {
-    padding: 80px 0;
-  }
-}
-
 .content {
   display: flex;
   flex-direction: column;
@@ -17,26 +9,12 @@
   text-align: center;
 }
 
-.title {
-  font-size: 32px;
-  line-height: 1.4;
-  color: white;
-
-  @include breakpoint(md) {
-    font-size: 40px;
-  }
-}
-
-.subTitle {
-  font-size: 24px;
-}
-
 .cards {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 32px;
 }
 
 .card {

@@ -6,7 +6,8 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
-import { TextGradientBackground } from '@components/TextGradientBackgraund';
+import { Section } from '@components/Section';
+import { SectionHeader } from '@components/SectionHeader';
 
 import styles from './clients.module.scss';
 import duelmastersImg from './img/duelmasters.png';
@@ -29,11 +30,9 @@ export const Clients: FC = () => {
   const { t } = useTranslation('home');
 
   return (
-    <section className={styles.wrapper}>
+    <Section>
       <Container className={styles.content}>
-        <TextGradientBackground>
-          {t('clients.ourAwesomeClients')}
-        </TextGradientBackground>
+        <SectionHeader sectionName={t('clients.ourAwesomeClients')} />
         <ul className={styles.logos}>
           {CLIENTS_LOGO.map(({ image, key }) => (
             <li key={key}>
@@ -42,6 +41,6 @@ export const Clients: FC = () => {
           ))}
         </ul>
       </Container>
-    </section>
+    </Section>
   );
 };
