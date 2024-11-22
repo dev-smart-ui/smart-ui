@@ -1,0 +1,12 @@
+@import "@styles/vars";
+
+.hidedTextWrapper {
+  overflow: hidden;
+}
+
+.hidedText {
+  color: $textColor;
+  font-size: 20px;
+  padding: 32px;
+  border-top: 1px solid rgba($primaryColor, .2);
+}

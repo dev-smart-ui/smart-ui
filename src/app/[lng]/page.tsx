@@ -2,6 +2,7 @@ import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 import dynamic from 'next/dynamic';
 
+import { Accordion } from './homePage/components/Accordion';
 import { Advantages } from './homePage/components/Advantages';
 import { Clients } from './homePage/components/Clients';
 import { Hero } from './homePage/components/Hero';
@@ -38,6 +39,7 @@ export default async function Home() {
       <WorkTogether />
       <OurServices />
       <OurWork data={singleProjectsData} />
+      <Accordion />
     </div>
   );
 }
