@@ -5,6 +5,7 @@
   grid-template-columns: 1fr; // Одна колонка
   grid-template-rows: auto; // Автоматическая высота строк
   gap: 40px 32px;
+  margin-top: 32px;
 
   @include breakpoint(lg) {
     grid-template-areas:

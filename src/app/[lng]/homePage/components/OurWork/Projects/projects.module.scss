@@ -5,6 +5,7 @@
   grid-template-columns: 1fr;
   gap: 20px;
   width: 100%;
+  margin-top: 32px;
 
   @include breakpoint(md) {
     grid-template-columns: repeat(2, 1fr);

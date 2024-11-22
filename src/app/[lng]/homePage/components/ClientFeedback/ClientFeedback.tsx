@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
 import { Section } from '@components/Section';
-import { TextGradientBackground } from '@components/TextGradientBackgraund';
+import { SectionHeader } from '@components/SectionHeader';
 
 import { FeedbackHeader } from './FeedbackHeader';
 import { Slider } from './Slider';
@@ -19,9 +19,10 @@ export const ClientFeedback: FC = () => {
   return (
     <Section>
       <Container>
-        <TextGradientBackground>
-          {t('feedbacks.headerInfo.clientFeedback')}
-        </TextGradientBackground>
+        <SectionHeader
+          position="left"
+          sectionName={t('feedbacks.headerInfo.clientFeedback')}
+        />
         <FeedbackHeader t={t} />
         <Slider t={t} />
       </Container>
