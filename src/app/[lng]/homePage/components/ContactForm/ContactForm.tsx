@@ -14,7 +14,7 @@ export const ContactForm = () => {
   const { t } = useTranslation(['home', 'common']);
 
   return (
-    <Section>
+    <Section id="contactForm">
       <Container>
         <div className={styles.content}>
           <GradientBorder direction="both" className={styles.gradientBorder}>

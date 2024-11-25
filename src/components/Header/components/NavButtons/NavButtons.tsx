@@ -1,3 +1,5 @@
+import { scrollToElement } from '@utils/scrollToElement';
+
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -17,6 +19,7 @@ export const NavButtons: FC<INavButtonsProps> = ({ onToggle }) => {
   return (
     <div className={styles.wrapper}>
       <BorderGradientButton
+        onClick={() => scrollToElement('contactForm')}
         text={t('buttons.contact', { ns: 'common' })}
         className={styles.contactUsBtn}
       />

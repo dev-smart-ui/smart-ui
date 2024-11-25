@@ -1,4 +1,5 @@
 import { SOCIALS } from '@constants/socials';
+import { scrollToElement } from '@utils/scrollToElement';
 import Link from 'next/link';
 
 import { FC } from 'react';
@@ -15,6 +16,7 @@ export const Navigation: FC<NavigationProps> = ({ t }) => {
   return (
     <div className={styles.wrapper}>
       <Button
+        onClick={() => scrollToElement('contactForm')}
         className={styles.btn}
         isBig
         text={t('buttons.getStart', { ns: 'common' })}

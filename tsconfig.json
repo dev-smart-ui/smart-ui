@@ -25,6 +25,7 @@
       "@hooks/*": ["./src/hooks/*"],
       "@app-types/*": ["./src/types/*"],
       "@lib/*": ["./src/lib/*"],
+      "@utils/*": ["./src/utils/*"],
       "@graphqlQueries/*": ["./src/graphql/*"],
       "@context/*": ["./src/context/*"],
       "@constants/*": ["./src/constants/*"],

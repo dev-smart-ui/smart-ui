@@ -1,3 +1,5 @@
+import { scrollToElement } from '@utils/scrollToElement';
+
 import { FC } from 'react';
 
 import { Button } from '@components/Button';
@@ -19,6 +21,7 @@ export const Info: FC<InfoProps> = ({ info }) => {
       <h2 className={styles.title}>{info.title}</h2>
       <p className={styles.description}>{info.description}</p>
       <Button
+        onClick={() => scrollToElement('contactForm')}
         text={info.buttonLabel}
         icon={<Icons.ArrowRight fill="white" />}
       />
