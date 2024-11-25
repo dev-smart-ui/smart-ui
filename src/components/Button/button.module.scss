@@ -174,16 +174,17 @@
   color: $textColor2;
   font-size: 18px;
 
-  svg {
-    transition: all $transition2 ease;
+  .icon {
+    transition: transform $transition2 ease;
+    will-change: transform;
   }
 
   &:hover {
     background-color: $primaryColor;
     color: white;
 
-    svg {
-      transform: translateX(5px) scale(1.05);
+    .icon {
+      transform: translateX(5px);
     }
   }
 

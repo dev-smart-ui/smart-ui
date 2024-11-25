@@ -37,7 +37,7 @@ export const Button: FC<ButtonProps> = ({
       )}
     >
       {text}
-      {icon && icon}
+      {icon && <span className={styles.icon}>{icon}</span>}
     </button>
   );
 };
