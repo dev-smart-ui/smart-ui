@@ -7,11 +7,22 @@
 .hidedText {
   color: $textColor;
   font-size: 16px;
-  padding: 16px;
+  padding: 0 16px;
   border-top: 1px solid rgba($primaryColor, .2);
+  transition: all $transition3 ease;
+  opacity: 0;
 
   @include breakpoint(md) {
     font-size: 20px;
-    padding: 32px;
+    padding: 0 32px;
+  }
+
+  &.isActive {
+    padding: 16px;
+    opacity: 1;
+
+    @include breakpoint(md) {
+      padding: 32px;
+    }
   }
 }

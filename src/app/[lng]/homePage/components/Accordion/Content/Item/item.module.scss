@@ -4,7 +4,7 @@
   width: 100%;
   background: $cardColor;
   border-radius: $borderRadius2;
-  transition: $transition2 ease;
+  transition: all $transition3 ease;
   display: grid;
   grid-template-rows: 100px 0fr;
   cursor: pointer;

@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+
 import { FC } from 'react';
 
 import { useMount } from '@hooks/useMount';
@@ -22,7 +24,13 @@ export const HidedText: FC<HidedTextProps> = ({ id, hidedText, isActive }) => {
       role="region"
       hidden={!mounted && !isActive}
     >
-      <p className={styles.hidedText}>{hidedText}</p>
+      <p
+        className={classNames(styles.hidedText, {
+          [styles.isActive]: isActive,
+        })}
+      >
+        {hidedText}
+      </p>
     </div>
   );
 };
