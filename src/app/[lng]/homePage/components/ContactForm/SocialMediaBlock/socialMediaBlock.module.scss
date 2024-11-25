@@ -1,0 +1,53 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  background: $surfaceColor;
+  border-radius: $borderRadius2;
+  z-index: 1;
+}
+
+.centerInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  .logo {
+    @include breakpoint(md) {
+      max-width: 250px;
+    }
+  }
+}
+
+.text {
+  margin-bottom: 16px;
+}
+
+.socialButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 16px;
+  gap: 15px 30px;
+
+  @include breakpoint(md) {
+    gap: 48px;
+  }
+}
+
+.image {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+
+  img {
+    object-fit: cover;
+  }
+}

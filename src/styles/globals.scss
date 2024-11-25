@@ -42,9 +42,13 @@ button {
   font-size: inherit;
 }
 
-input {
+input, textarea {
   border: none;
   outline: none;
+  background: transparent;
+  font-size: inherit;
+  color: inherit;
+  width: 100%;
 }
 
 ul, ol {

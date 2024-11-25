@@ -7,7 +7,9 @@ import styles from './gradientBorder.module.scss';
 interface GradientBorderProps {
   children?: ReactNode;
   color?: string;
-  borderRadius?: 'xs' | 'sm' | 'ms' | 'lg';
+  borderRadius?: 'xs' | 'sm' | 'md' | 'lg';
+  direction?: 'top' | 'bottom' | 'both';
+  className?: string;
 }
 
 /* eslint-disable no-bitwise */
@@ -23,8 +25,10 @@ const hexToRgb = (hex: string): { r: number; g: number; b: number } => {
 
 export const GradientBorder: FC<GradientBorderProps> = ({
   children,
-  color,
+  color = '#31B76F',
   borderRadius = 'sm',
+  direction = 'top',
+  className,
 }) => {
   const { r, g, b } = hexToRgb(color ?? '');
 
@@ -33,6 +37,8 @@ export const GradientBorder: FC<GradientBorderProps> = ({
       className={classNames(
         styles.wrapper,
         styles[`${borderRadius}BorderRadius`],
+        styles[`${direction}Direction`],
+        className ?? '',
       )}
       style={
         {

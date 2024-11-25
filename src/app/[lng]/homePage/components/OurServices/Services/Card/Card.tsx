@@ -37,7 +37,7 @@ export const Card: FC<CardProps> = ({
         <Button
           text={buttonLabel}
           className={styles.button}
-          icon={<Icons.ArrowRight />}
+          icon={<Icons.ArrowRight fill="white" />}
         />
       </div>
     </li>
