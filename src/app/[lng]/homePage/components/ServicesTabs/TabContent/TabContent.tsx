@@ -1,3 +1,4 @@
+import { scrollToElement } from '@utils/scrollToElement';
 import Image, { StaticImageData } from 'next/image';
 
 import { FC } from 'react';
@@ -27,6 +28,7 @@ export const TabContent: FC<TabContentProps> = ({ data }) => {
         <h3 className={styles.title}>{data.title}</h3>
         <List list={data.list} />
         <BorderGradientButton
+          onClick={() => scrollToElement('contactForm')}
           className={styles.serviceButton}
           text={t('buttons.contact')}
         />
