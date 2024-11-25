@@ -200,5 +200,32 @@
       "label": "6. Can I make changes during the development process?",
       "hidedText": "We specialize in a variety of digital solutions, including web development, mobile app development, system integration, and UI/UX design. Our team tailors each project to meet your specific needs and goals"
     }
+  },
+  "contactForm": {
+    "form": {
+      "title": "Let&apos;s Get Started Now!",
+      "subTitle": "We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us.",
+      "firstName": {
+        "placeholder": "First Name",
+        "errorMessage": "First name is required"
+      },
+      "lastName": {
+        "placeholder": "Last Name"
+      },
+      "email": {
+        "placeholder": "Email",
+        "errorMessage": "Email is required",
+        "patternMessage": "Invalid email address"
+      },
+      "phone": {
+        "placeholder": "Phone Number",
+        "errorMessage": "Phone number is required",
+        "patternMessage": "Invalid phone number"
+      },
+      "textarea": {
+        "placeholder": "Message"
+      },
+      "buttonLabel": "Send Message"
+    }
   }
 }

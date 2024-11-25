@@ -18,7 +18,11 @@ interface FormValues {
   message: string;
 }
 
-export const Form: FC = () => {
+interface FormProps {
+  t: (key: string) => string;
+}
+
+export const Form: FC<FormProps> = ({ t }) => {
   const {
     register,
     handleSubmit,
@@ -39,27 +43,27 @@ export const Form: FC = () => {
       <InputField
         id="firstName"
         className={styles.inputName}
-        placeholder="First Name"
+        placeholder={t('contactForm.form.firstName.placeholder')}
         register={register('firstName', {
-          required: 'First name is required',
+          required: t('contactForm.form.firstName.errorMessage'),
         })}
         error={errors.firstName?.message}
       />
       <InputField
         id="lastName"
         className={styles.inputName}
-        placeholder="Last Name"
+        placeholder={t('contactForm.form.lastName.placeholder')}
         register={register('lastName')}
       />
       <InputField
         id="email"
         className={styles.inputEmail}
-        placeholder="Email"
+        placeholder={t('contactForm.form.email.placeholder')}
         register={register('email', {
-          required: 'Email is required',
+          required: t('contactForm.form.email.errorMessage'),
           pattern: {
             value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-            message: 'Invalid email address',
+            message: t('contactForm.form.email.patternMessage'),
           },
         })}
         error={errors.email?.message}
@@ -67,12 +71,12 @@ export const Form: FC = () => {
       <InputField
         id="phone"
         className={styles.inputPhone}
-        placeholder="Phone Number"
+        placeholder={t('contactForm.form.phone.placeholder')}
         register={register('phone', {
-          required: 'Phone number is required',
+          required: t('contactForm.form.phone.errorMessage'),
           pattern: {
             value: /^[+]?[0-9]{10,15}$/,
-            message: 'Invalid phone number',
+            message: t('contactForm.form.phone.patternMessage'),
           },
         })}
         error={errors.phone?.message}
@@ -80,12 +84,12 @@ export const Form: FC = () => {
       <TextareaField
         id="message"
         className={styles.textArea}
-        placeholder="Message"
+        placeholder={t('contactForm.form.textarea.placeholder')}
         register={register('message')}
       />
       <Button
         className={styles.submitButton}
-        text="Send Message"
+        text={t('contactForm.form.buttonLabel')}
         icon={<Icons.RocketSmall />}
       />
     </form>

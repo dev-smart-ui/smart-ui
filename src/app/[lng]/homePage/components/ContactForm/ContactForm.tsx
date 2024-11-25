@@ -1,3 +1,7 @@
+'use client';
+
+import { useTranslation } from 'react-i18next';
+
 import { Container } from '@components/Container';
 import { GradientBorder } from '@components/GradientBorder';
 import { Section } from '@components/Section';
@@ -7,6 +11,8 @@ import { SocialMediaBlock } from './SocialMediaBlock';
 import styles from './contactFrom.module.scss';
 
 export const ContactForm = () => {
+  const { t } = useTranslation(['home', 'common']);
+
   return (
     <Section>
       <Container>
@@ -14,7 +20,7 @@ export const ContactForm = () => {
           <GradientBorder direction="both" className={styles.gradientBorder}>
             <SocialMediaBlock />
           </GradientBorder>
-          <FormWrapper />
+          <FormWrapper t={t} />
         </div>
       </Container>
     </Section>
