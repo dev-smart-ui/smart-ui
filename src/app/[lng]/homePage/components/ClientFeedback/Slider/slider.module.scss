@@ -24,7 +24,7 @@
        background: $cardColor!important;
 
        p {
-         font-size: 22px;
+         transform: scaleY(1.1);
        }
 
        &::after {

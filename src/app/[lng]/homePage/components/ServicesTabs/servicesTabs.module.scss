@@ -7,19 +7,39 @@
   border-radius: $borderRadius4;
   position: relative;
   z-index: 1;
+}
 
+.isEllipseAllBrowsers {
   &::before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
     background: $backgroundColor2;
-    filter: blur(160px);
+    filter: blur(150px);
     border-radius: 50%;
-    z-index: 0;
+    z-index: -1;
     pointer-events: none;
+  }
+}
+
+.isEllipseSafari {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1px;
+    height: 1px;
+    background: $backgroundColor2;
+    box-shadow: 0 0 230px 100px $backgroundColor2; // Внешнее размытие
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: .8;
   }
 }

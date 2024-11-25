@@ -1,7 +1,8 @@
 import classNames from 'classnames';
+import { detect } from 'detect-browser';
 import Image, { StaticImageData } from 'next/image';
 
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { Button } from '@components/Button';
 import { Icons } from '@components/CustomIcons';
@@ -24,8 +25,21 @@ export const Card: FC<CardProps> = ({
   area,
   buttonLabel,
 }) => {
+  const [isSafari, setIsSafari] = useState(false);
+  const browser = detect();
+
+  useEffect(() => {
+    if (browser?.name === 'safari') setIsSafari(true);
+  }, [browser]);
+
   return (
-    <li className={classNames(styles.wrapper, styles[area])}>
+    <li
+      className={classNames(
+        styles.wrapper,
+        isSafari ? styles.isEllipseSafari : styles.isEllipseAllBrowsers,
+        styles[area],
+      )}
+    >
       <GradientBorder color="#1B653D" borderRadius="lg">
         <div className={styles.image}>
           <Image src={image} alt="serviceImage" />
