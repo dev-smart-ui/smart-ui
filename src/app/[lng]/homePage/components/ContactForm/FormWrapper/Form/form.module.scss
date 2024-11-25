@@ -1,0 +1,33 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+
+  .input,
+  .inputName,
+  .inputEmail,
+  .inputPhone,
+  .textArea{
+    > div {
+      background: $backgroundColor4;
+    }
+  }
+
+  .inputName {
+    @include breakpoint(md) {
+      width: calc(50% - 7px);
+    }
+  }
+
+  textArea {
+    min-height: 132px;
+    resize: none;
+  }
+}
+
+.submitButton {
+  width: 100%;
+}

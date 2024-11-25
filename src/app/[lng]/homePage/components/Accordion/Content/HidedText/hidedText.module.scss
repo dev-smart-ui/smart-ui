@@ -1,0 +1,17 @@
+@import "@styles/vars";
+
+.hidedTextWrapper {
+  overflow: hidden;
+}
+
+.hidedText {
+  color: $textColor;
+  font-size: 16px;
+  padding: 16px;
+  border-top: 1px solid rgba($primaryColor, .2);
+
+  @include breakpoint(md) {
+    font-size: 20px;
+    padding: 32px;
+  }
+}

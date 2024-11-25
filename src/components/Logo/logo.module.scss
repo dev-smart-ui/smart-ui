@@ -2,7 +2,10 @@
 
 .wrapper {
   display: flex;
-  cursor: pointer;
   width: 100%;
   max-width: 162px;
+
+  &.isLink {
+    cursor: pointer;
+  }
 }

@@ -2,8 +2,10 @@ import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 import dynamic from 'next/dynamic';
 
+import { Accordion } from './homePage/components/Accordion';
 import { Advantages } from './homePage/components/Advantages';
 import { Clients } from './homePage/components/Clients';
+import { ContactForm } from './homePage/components/ContactForm';
 import { Hero } from './homePage/components/Hero';
 import { OurServices } from './homePage/components/OurServices';
 import { OurWork } from './homePage/components/OurWork';
@@ -26,7 +28,8 @@ export default async function Home() {
     locale: 'en',
     pagination: { limit: 5 },
   });
-  const { data: singleProjectsData } = singleProjects;
+
+  const singleProjectsData = singleProjects?.data || [];
 
   return (
     <div className={styles.wrapper}>
@@ -38,6 +41,8 @@ export default async function Home() {
       <WorkTogether />
       <OurServices />
       <OurWork data={singleProjectsData} />
+      <Accordion />
+      <ContactForm />
     </div>
   );
 }

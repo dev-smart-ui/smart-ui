@@ -94,9 +94,11 @@
 
   &.isOnlyIcon {
     padding: 12px;
+    min-height: 46px;
+    min-width: 46px;
 
     &:hover .label {
-      transform: scale(1.08);
+      transform: scale(1.1);
     }
   }
 
@@ -106,31 +108,27 @@
     padding: 12px;
 
     &:hover .label {
-      transform: scale(1.08);
+      transform: scale(1.1);
     }
   }
 
   &.isRoundedsmall {
     min-width: 40px;
-    width: 40px;
-    height: 40px;
+    min-height: 40px;
 
     @include breakpoint(lg) {
       min-width: 46px;
-      width: 46px;
-      height: 46px;
+      min-height: 46px;
     }
   }
 
   &.isRoundedlarge {
     min-width: 80px;
-    width: 80px;
-    height: 80px;
+    min-height: 80px;
 
     @include breakpoint(lg) {
       min-width: 120px;
-      width: 120px;
-      height: 120px;
+      min-height: 120px;
     }
   }
 
@@ -176,9 +174,17 @@
   color: $textColor2;
   font-size: 18px;
 
+  svg {
+    transition: all $transition2 ease;
+  }
+
   &:hover {
     background-color: $primaryColor;
     color: white;
+
+    svg {
+      transform: translateX(5px) scale(1.05);
+    }
   }
 
   &.isBig {
