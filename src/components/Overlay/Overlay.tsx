@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import styles from './overlay.module.scss';
@@ -10,6 +10,14 @@ interface OverlayProps {
 }
 
 export const Overlay: FC<OverlayProps> = ({ isActive }) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
+
   return createPortal(
     <div
       className={classNames(styles.wrapper, {
