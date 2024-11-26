@@ -1,8 +1,38 @@
 {
-  "Home": "Home",
-  "Services": "Services",
+  "home": "Home",
+  "services": "Services",
   "example 1": "Example 1",
   "example 2": "Example 2",
-  "Our Work": "Our Work",
-  "About Us": "About Us"
+  "ourWork": "Our Work",
+  "aboutUs": "About Us",
+  "submenuServices": {
+    "link1": {
+      "title": "Frontend Development",
+      "description": "React development, Next development, Gatsby development"
+    },
+    "link2": {
+      "title": "CMS",
+      "description": "WordPress development, Strapi development, Netlify development"
+    },
+    "link3": {
+      "title": "Backend Development",
+      "description": "Django REST development, Express development, Next development"
+    },
+    "link4": {
+      "title": "UI/UX Design",
+      "description": "UI/UX Design, Prototyping and Wireframing, Other Design Services"
+    },
+    "link5": {
+      "title": "QA",
+      "description": "Manual Testing, Automated Testing, Security Testing, Mobile App Testing"
+    },
+    "link6": {
+      "title": "Custom Services",
+      "description": "Email Templates Coding, Website Maintenance, Website Redesign"
+    },
+    "link7": {
+      "title": "Web3 - Blockchain",
+      "description": "Decentralized Application, Blockchain Integration, Tokenization"
+    }
+  }
 }

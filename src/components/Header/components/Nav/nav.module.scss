@@ -12,10 +12,12 @@
   transform: translateX(100%);
   transition: $transition2;
   background: $surfaceColor;
-  padding: 0 10px;
+  padding: 20px 16px;
   z-index: 100;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   @include breakpoint(md) {
     height: 100%;
@@ -39,7 +41,7 @@
 
   .contactUsBtnMobile {
     display: inline-flex;
-    margin-top: 20px;
+    width: 100%;
 
     @include breakpoint(sm) {
       display: none;
@@ -50,8 +52,6 @@
 .navList {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
 
   @include breakpoint(md) {
     height: 100%;

@@ -1,7 +1,6 @@
 import { scrollToElement } from '@utils/scrollToElement';
 
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { BorderGradientButton } from '@components/Button';
 import { BurgerMenu } from '@components/Header/components/Burger';
@@ -11,16 +10,15 @@ import styles from './navButtons.module.scss';
 
 interface INavButtonsProps {
   onToggle: () => void;
+  buttonLabel: string;
 }
 
-export const NavButtons: FC<INavButtonsProps> = ({ onToggle }) => {
-  const { t } = useTranslation(['header', 'common']);
-
+export const NavButtons: FC<INavButtonsProps> = ({ onToggle, buttonLabel }) => {
   return (
     <div className={styles.wrapper}>
       <BorderGradientButton
         onClick={() => scrollToElement('contactForm')}
-        text={t('buttons.contact', { ns: 'common' })}
+        text={buttonLabel}
         className={styles.contactUsBtn}
       />
       <LanguageSwitcher />

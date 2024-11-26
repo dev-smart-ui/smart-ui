@@ -2,30 +2,38 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { FC, useRef } from 'react';
+import { FC, useRef, useState } from 'react';
 
 import { SubMenu } from '@components/Header/components/Nav/SubMenu';
-import { ILink } from '@components/Header/types/types';
+import { ILink, ISubMenu } from '@components/Header/types/types';
 
 import { useOpen } from '@hooks/useOpen';
+import { useResetStatesOnResize } from '@hooks/useResetStateOnResize';
 
 import styles from './navItem.module.scss';
 
 interface NavItemProps {
   link: ILink;
+  submenu?: ISubMenu;
   onCloseMainMenu: () => void;
 }
 
-export const NavItem: FC<NavItemProps> = ({ link, onCloseMainMenu }) => {
+export const NavItem: FC<NavItemProps> = ({
+  link,
+  onCloseMainMenu,
+  submenu,
+}) => {
   const pathname = usePathname();
   const {
     isOpen: isSubMenu,
     onToggle: onToggleSubMenu,
     onClose: onCloseSubMenu,
   } = useOpen();
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const navItemRef = useRef<HTMLLIElement | null>(null);
   const normalizedPathname = pathname.replace(/^\/[a-z]{2}/, '') || '/';
   const normalizedLinkPath = link.path?.replace(/^\/[a-z]{2}/, '') || '/';
+  useResetStatesOnResize([() => setIsSubmenuOpen(false), onCloseMainMenu]);
 
   const isActive =
     link.path &&
@@ -34,7 +42,13 @@ export const NavItem: FC<NavItemProps> = ({ link, onCloseMainMenu }) => {
         normalizedLinkPath !== '/'));
 
   return (
-    <li ref={navItemRef} className={styles.wrapper} key={link.label}>
+    <li
+      onMouseEnter={() => setIsSubmenuOpen(true)}
+      onMouseLeave={() => setIsSubmenuOpen(false)}
+      ref={navItemRef}
+      className={styles.wrapper}
+      key={link.label}
+    >
       {link.path ? (
         <Link
           onClick={onCloseMainMenu}
@@ -55,12 +69,13 @@ export const NavItem: FC<NavItemProps> = ({ link, onCloseMainMenu }) => {
           />
         </button>
       )}
-      {link.submenu && (
+      {submenu && (
         <SubMenu
           navItemRef={navItemRef}
-          isSubMenu={isSubMenu}
-          link={link}
           onCloseSubMenu={onCloseSubMenu}
+          submenu={submenu}
+          isSubmenuOpen={isSubmenuOpen}
+          isSubMenu={isSubMenu}
           onCloseMainMenu={onCloseMainMenu}
         />
       )}

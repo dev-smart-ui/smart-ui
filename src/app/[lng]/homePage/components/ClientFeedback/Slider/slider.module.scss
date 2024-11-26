@@ -47,14 +47,15 @@
 
           > div {
             background: $cardColor!important;
-          }
 
-          p {
-            transform: scaleY(1.1);
-          }
+            p {
+              padding-top: 10px;
+              transform: scaleY(1.2);
+            }
 
-          &::after {
-            opacity: 1;
+            &::after {
+              opacity: 1;
+            }
           }
         }
       }
