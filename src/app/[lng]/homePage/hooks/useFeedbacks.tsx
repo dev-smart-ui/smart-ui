@@ -5,7 +5,7 @@ import avatar from '../components/ClientFeedback/img/avatar.png';
 export const useFeedbacks = (t: (key: string) => string) => {
   const feedbacks = [
     {
-      id: 0,
+      id: 1,
       image: avatar,
       author: 'Annette Black',
       work: 'CEO of',
@@ -14,7 +14,7 @@ export const useFeedbacks = (t: (key: string) => string) => {
       icon: <Icons.Amazon />,
     },
     {
-      id: 1,
+      id: 2,
       image: avatar,
       author: 'Annette Black',
       work: 'Chief Chairman of',
@@ -23,7 +23,7 @@ export const useFeedbacks = (t: (key: string) => string) => {
       icon: <Icons.Netflix />,
     },
     {
-      id: 2,
+      id: 3,
       image: avatar,
       author: 'Annette Black',
       work: 'Chief Chairman of',
@@ -32,7 +32,7 @@ export const useFeedbacks = (t: (key: string) => string) => {
       icon: <Icons.Youtube />,
     },
     {
-      id: 3,
+      id: 4,
       image: avatar,
       author: 'Annette Black',
       work: 'CEO of',
@@ -41,7 +41,25 @@ export const useFeedbacks = (t: (key: string) => string) => {
       icon: <Icons.Google />,
     },
     {
-      id: 4,
+      id: 5,
+      image: avatar,
+      author: 'Annette Black',
+      work: 'CEO of',
+      company: 'Notion',
+      feedback: t('feedbacks.feedback5'),
+      icon: <Icons.Amazon />,
+    },
+    {
+      id: 6,
+      image: avatar,
+      author: 'Annette Black',
+      work: 'CEO of',
+      company: 'Notion',
+      feedback: t('feedbacks.feedback5'),
+      icon: <Icons.Amazon />,
+    },
+    {
+      id: 7,
       image: avatar,
       author: 'Annette Black',
       work: 'CEO of',

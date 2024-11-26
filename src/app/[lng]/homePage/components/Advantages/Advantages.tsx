@@ -13,7 +13,7 @@ export const Advantages: FC = () => {
   const { cards, headerInfo } = useAdvantages();
 
   return (
-    <Section>
+    <Section className={styles.advantagesSection}>
       <Container className={styles.content}>
         <SectionHeader
           sectionName={headerInfo.ourAdvantages}

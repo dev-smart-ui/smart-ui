@@ -1,43 +1,6 @@
-import { Swiper as SwiperClass } from 'swiper/types';
-
-import { MouseEvent, useEffect, useRef, useState } from 'react';
+import { MouseEvent } from 'react';
 
 export const useSwiperInteraction = (isDesktop: boolean) => {
-  const swiperRef = useRef<SwiperClass | null>(null);
-  const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
-
-  useEffect(() => {
-    if (!swiperRef.current) return undefined;
-
-    const swiper = swiperRef.current;
-
-    const updateActiveSlides = () => {
-      const indexes = [
-        swiper.activeIndex - 1,
-        swiper.activeIndex,
-        swiper.activeIndex + 1,
-      ].filter((index) => index >= 0 && index < swiper.slides.length);
-
-      setActiveIndexes(indexes);
-    };
-
-    swiper.on('slideChange', updateActiveSlides);
-
-    const handleResize = () => {
-      swiper.update();
-      updateActiveSlides();
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    updateActiveSlides();
-
-    return () => {
-      swiper.off('slideChange', updateActiveSlides);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   const handleMouseEnter = (event: MouseEvent<HTMLElement>) => {
     if (!isDesktop) return;
 
@@ -64,8 +27,6 @@ export const useSwiperInteraction = (isDesktop: boolean) => {
   };
 
   return {
-    swiperRef,
-    activeIndexes,
     handleMouseEnter,
     handleMouseLeave,
   };
