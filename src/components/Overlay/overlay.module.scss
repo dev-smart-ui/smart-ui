@@ -1,0 +1,19 @@
+@import "@styles/vars";
+
+.wrapper {
+  position: fixed;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(#21242DCC, 0.8);
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity $transition2 ease;
+
+  &.active {
+    opacity: 1;
+  }
+}

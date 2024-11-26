@@ -4,39 +4,57 @@
   position: relative;
   height: 100%;
   min-width: max-content;
-  border-bottom: 1px solid rgba($primaryColor, .1);
   width: 100%;
-  padding: 20px 0;
+  color: $textColor2;
 
   @include breakpoint(md) {
     border-bottom: none;
     width: initial;
     padding: 0;
   }
+
+  @include breakpoint(lg) {
+    &:hover {
+      .navMenuBtn {
+        .arrow {
+          margin-top: 4px;
+          transform: rotate(225deg);
+        }
+
+        + div {
+          pointer-events: all;
+
+          + div {
+            &::before {
+              opacity: 1;
+            }
+          }
+
+          > div {
+            max-height: 500px;
+            padding: 10px 16px;
+            opacity: 1;
+          }
+        }
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 .link, .navMenuBtn {
-  height: 100%;
   display: flex;
   align-items: center;
-}
-
-.link {
-  position: relative;
-  height: 100%;
-  width: 100%;
-
-  &:hover, &:active {
-    &:after {
-      opacity: 1;
-    }
-  }
-
-  &.active {
-    color: $primaryColor;
-  }
+  padding: 12px 0;
+  color: $textColor2;
 
   @include breakpoint(md) {
+    padding: 0 5px;
+    height: 100%;
+
     &:after {
       position: absolute;
       content: "";
@@ -50,6 +68,22 @@
       clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
     }
 
+    &:hover, &:active {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.link {
+  position: relative;
+
+  &.active {
+    color: $primaryColor;
+  }
+
+  @include breakpoint(md) {
     &.active {
       color: inherit;
 
@@ -77,8 +111,10 @@
   margin-top: -3px;
   transition: $transition2;
 
-  &.active {
-    margin-top: 4px;
-    transform: rotate(225deg);
+  @include max-breakpoint(md) {
+    &.active {
+      margin-top: 4px;
+      transform: rotate(225deg);
+    }
   }
 }

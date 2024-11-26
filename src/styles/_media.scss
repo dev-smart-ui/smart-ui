@@ -21,3 +21,14 @@ $breakpoints: (
     @error "Breakpoint `#{$size}` not found in $breakpoints map.";
   }
 }
+
+@mixin max-breakpoint($size, $offset: 1px) {
+  @if map-has-key($breakpoints, $size) {
+    $value: map-get($breakpoints, $size);
+    @media (max-width: calc(#{$value} - #{$offset})) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint `#{$size}` not found in $breakpoints map.";
+  }
+}

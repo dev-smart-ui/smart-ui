@@ -1,8 +1,36 @@
 {
-  "Home": "Головна",
-  "Services": "Послуги",
-  "example 1": "Приклад 1",
-  "example 2": "Приклад 2",
-  "Our Work": "Наша робота",
-  "About Us": "Про нас"
+  "home": "Головна",
+  "services": "Послуги",
+  "ourWork": "Наша робота",
+  "aboutUs": "Про нас",
+  "submenuServices": {
+    "link1": {
+      "title": "Frontend Development",
+      "description": "Розробка на React, розробка на Next, розробка на Gatsby"
+    },
+    "link2": {
+      "title": "CMS",
+      "description": "Розробка на WordPress, розробка на Strapi, розробка на Netlify"
+    },
+    "link3": {
+      "title": "Backend Development",
+      "description": "Розробка Django REST, розробка на Express, розробка на Next"
+    },
+    "link4": {
+      "title": "UI/UX Design",
+      "description": "UI/UX дизайн, створення прототипів і вайрфреймів, інші дизайнерські послуги"
+    },
+    "link5": {
+      "title": "QA",
+      "description": "Ручне тестування, автоматизоване тестування, тестування безпеки, тестування мобільних додатків"
+    },
+    "link6": {
+      "title": "Custom Services",
+      "description": "Кодування email-шаблонів, підтримка сайтів, редизайн сайтів"
+    },
+    "link7": {
+      "title": "Web3 - Blockchain",
+      "description": "Децентралізовані додатки, інтеграція блокчейну, токенізація"
+    }
+  }
 }
