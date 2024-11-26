@@ -18,7 +18,7 @@ export const Hero: FC = () => {
   const { t } = useTranslation(['home', 'common']);
 
   return (
-    <Section>
+    <Section className={styles.heroSection}>
       <Container className={styles.content}>
         <div className={styles.image}>
           <Image src={bgImage} alt="backgroundImage" />

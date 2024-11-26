@@ -1,5 +1,9 @@
 @import "@styles/vars";
 
+.heroSection {
+  overflow: hidden;
+}
+
 .content {
   position: relative;
 }
@@ -26,10 +30,10 @@
   display: flex;
   gap: 32px;
   flex-direction: column;
-  margin-top: 35px;
+  margin-top: 65px;
 
   @include breakpoint(md) {
     gap: 48px;
-    margin-top: 70px;
+    margin-top: 130px;
   }
 }

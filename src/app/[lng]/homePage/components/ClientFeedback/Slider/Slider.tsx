@@ -17,18 +17,17 @@ interface SliderProps {
 export const Slider: FC<SliderProps> = ({ t }) => {
   const isDesktop = useMediaQuery('(min-width: 1024px)');
   const { feedbacks } = useFeedbacks(t);
-  const { swiperRef, activeIndexes, handleMouseEnter, handleMouseLeave } =
+  const { handleMouseEnter, handleMouseLeave } =
     useSwiperInteraction(isDesktop);
 
   return (
     <div className={styles.wrapper}>
       <Swiper
+        loop
+        loopAdditionalSlides={2}
         centeredSlides
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
         modules={[Navigation]}
-        spaceBetween={16}
+        spaceBetween={20}
         slidesPerView={1}
         navigation={{
           prevEl: '#prevButton',
@@ -40,15 +39,13 @@ export const Slider: FC<SliderProps> = ({ t }) => {
           },
           1024: {
             slidesPerView: 3,
-            initialSlide: 1,
           },
         }}
         className={styles.swiper}
       >
-        {feedbacks.map((feedback, index) => (
+        {feedbacks.map((feedback) => (
           <SwiperSlide
             key={feedback.id}
-            className={`${styles.slide} ${activeIndexes.includes(index) ? styles.isActive : ''}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >

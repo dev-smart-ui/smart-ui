@@ -4,37 +4,6 @@
   position: relative;
 }
 
-.slide {
-  opacity: 0.8;
-  pointer-events: none;
-
-  > div {
-    background: $cardColo2;
-    border-radius: $borderRadius4;
-  }
-
-  &.isActive {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  &:hover {
-   @include breakpoint(lg) {
-     > div {
-       background: $cardColor!important;
-
-       p {
-         transform: scaleY(1.1);
-       }
-
-       &::after {
-         opacity: 1;
-       }
-     }
-   }
-  }
-}
-
 .swiper {
   overflow: visible;
   transform: translateX(0px);
@@ -65,17 +34,28 @@
         }
       }
 
+      > div {
+        background: $cardColo2;
+        border-radius: $borderRadius4;
+      }
+
       @include breakpoint(lg) {
-        &-active:hover {
-          min-width: calc(33.33% + 200px);
-        }
-
-        &-next:hover {
-          min-width: calc(33.33% + 200px);
-        }
-
+        &-active:hover,
+        &-next:hover,
         &-prev:hover {
           min-width: calc(33.33% + 200px);
+
+          > div {
+            background: $cardColor!important;
+          }
+
+          p {
+            transform: scaleY(1.1);
+          }
+
+          &::after {
+            opacity: 1;
+          }
         }
       }
     }

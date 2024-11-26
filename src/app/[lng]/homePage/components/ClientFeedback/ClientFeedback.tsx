@@ -12,19 +12,22 @@ import { SectionHeader } from '@components/SectionHeader';
 
 import { FeedbackHeader } from './FeedbackHeader';
 import { Slider } from './Slider';
+import styles from './clientFeedback.module.scss';
 
 export const ClientFeedback: FC = () => {
   const { t } = useTranslation(['home', 'common']);
 
   return (
     <Section>
-      <Container>
-        <SectionHeader
-          position="left"
-          sectionName={t('feedbacks.headerInfo.clientFeedback')}
-        />
-        <FeedbackHeader t={t} />
-        <Slider t={t} />
+      <Container className={styles.additionalContentWrapper}>
+        <Container>
+          <SectionHeader
+            position="left"
+            sectionName={t('feedbacks.headerInfo.clientFeedback')}
+          />
+          <FeedbackHeader t={t} />
+          <Slider t={t} />
+        </Container>
       </Container>
     </Section>
   );
