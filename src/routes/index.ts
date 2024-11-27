@@ -3,5 +3,5 @@ export const ROUTES = {
   SERVICES: '/services',
   OUR_WORK: '/our-work',
   ABOUT_US: '/about-us',
-  WORDPRESS_SERVICE: '/wordpress-service',
+  CMS_SERVICE: '/cms-service',
 };

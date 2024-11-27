@@ -16,7 +16,7 @@ import styles from './hero.module.scss';
 import bgImage from './img/heroBg.png';
 
 interface HeroProps {
-  page?: 'home' | 'wordpressService';
+  page?: string;
   image?: StaticImageData;
   bottomBgImage?: StaticImageData;
 }

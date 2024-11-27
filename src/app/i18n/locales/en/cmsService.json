@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "title": {
+      "main": "Streamline Your Workflow with Tailored",
+      "highlighted": "CMS Solutions",
+      "secondary": ""
+    },
+    "description": "Build, Customize, and Optimize Your WordPress Site with Our Expert Services"
+  },
+  "technologyStack": {
+    "sectionName": "Our Technology Stack",
+    "title": "We create interfaces of the future",
+    "subTitle": "We leverage modern tools and frameworks to deliver robust, scalable, and visually stunning frontend solutions. Our expertise ensures your project stays ahead of the curve with cutting-edge technologies"
+  }
+}

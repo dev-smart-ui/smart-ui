@@ -10,6 +10,7 @@ import styles from './sectionHeader.module.scss';
 type TTitleObj = {
   main: string;
   highlighted: string;
+  secondary: string;
 };
 
 interface SectionHeaderProps {
@@ -42,6 +43,7 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
             <>
               {title.main}{' '}
               <GradientText color="Secondary">{title.highlighted}</GradientText>
+              {title.secondary ? title.secondary : ''}{' '}
             </>
           ) : (
             title

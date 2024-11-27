@@ -6,12 +6,14 @@ import { Clients } from '@components/Clients';
 import { ContactForm } from '@components/ContactForm';
 import { Hero } from '@components/Hero';
 import { OurWork } from '@components/OurWork';
+import { TechnologyStack } from '@components/TechnologyStack';
 
 import bottomBgImage from './img/bg.png';
-import image from './img/wpImage.png';
+import heroImg from './img/heroImg.png';
+import technologyImg from './img/technologyImg.jpg';
 import styles from './page.module.scss';
 
-export default async function WordpressService() {
+export default async function CmsService() {
   const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
     locale: 'en',
     pagination: { limit: 5 },
@@ -21,11 +23,8 @@ export default async function WordpressService() {
 
   return (
     <div className={styles.wrapper}>
-      <Hero
-        page="wordpressService"
-        image={image}
-        bottomBgImage={bottomBgImage}
-      />
+      <Hero page="cmsService" image={heroImg} bottomBgImage={bottomBgImage} />
+      <TechnologyStack image={technologyImg} />
       <Clients />
       <OurWork data={singleProjectsData} />
       <Accordion />
