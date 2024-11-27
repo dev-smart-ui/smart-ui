@@ -13,7 +13,7 @@ export const Content: FC<ContentProps> = ({ t }) => {
     <div className={styles.content}>
       <h1 className={styles.title}>
         {t('hero.title.main')}{' '}
-        <GradientText>{t('hero.title.highlighted')}</GradientText>{' '}
+        <GradientText color="Third">{t('hero.title.highlighted')}</GradientText>{' '}
         {t('hero.title.secondary')}
       </h1>
       <p className={styles.description}>{t('hero.description')}</p>
