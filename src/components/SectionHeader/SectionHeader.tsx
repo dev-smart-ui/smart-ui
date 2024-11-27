@@ -10,7 +10,7 @@ import styles from './sectionHeader.module.scss';
 type TTitleObj = {
   main: string;
   highlighted: string;
-  secondary: string;
+  secondary?: string;
 };
 
 interface SectionHeaderProps {

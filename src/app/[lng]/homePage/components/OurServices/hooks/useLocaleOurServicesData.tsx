@@ -6,10 +6,11 @@ import serviceImg3 from '../img/service3.png';
 import serviceImg4 from '../img/service4.png';
 
 interface HeaderInfo {
-  ourServices: string;
+  sectionName: string;
   title: {
     main: string;
     highlighted: string;
+    secondary: string;
   };
 }
 

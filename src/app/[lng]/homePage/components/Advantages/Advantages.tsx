@@ -16,7 +16,7 @@ export const Advantages: FC = () => {
     <Section className={styles.advantagesSection}>
       <Container className={styles.content}>
         <SectionHeader
-          sectionName={headerInfo.ourAdvantages}
+          sectionName={headerInfo.sectionName}
           title={headerInfo.title}
           subTitle={headerInfo.subTitle}
         />

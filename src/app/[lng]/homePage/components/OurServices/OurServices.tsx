@@ -17,7 +17,7 @@ export const OurServices: FC = () => {
     <Section>
       <Container className={styles.content}>
         <SectionHeader
-          sectionName={headerInfo.ourServices}
+          sectionName={headerInfo.sectionName}
           title={headerInfo.title}
         />
         <Services services={services} buttonLabel={buttons.learnMore} />

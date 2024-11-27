@@ -27,7 +27,7 @@ export const OurWork: FC<OurWorkProps> = ({ data }) => {
     <Section>
       <Container className={styles.content}>
         <SectionHeader
-          sectionName={t('ourWork.headerInfo.ourWork')}
+          sectionName={t('ourWork.headerInfo.sectionName')}
           title={title}
         />
         <Projects data={data} />

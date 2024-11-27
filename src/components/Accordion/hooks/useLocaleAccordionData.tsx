@@ -1,10 +1,11 @@
 import { useTranslation } from 'react-i18next';
 
 interface HeaderInfo {
-  frequentlyAskedQuestions: string;
+  sectionName: string;
   title: {
     main: string;
     highlighted: string;
+    secondary: string;
   };
 }
 

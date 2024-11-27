@@ -32,7 +32,7 @@ export const Clients: FC = () => {
   return (
     <Section>
       <Container className={styles.content}>
-        <SectionHeader sectionName={t('clients.ourAwesomeClients')} />
+        <SectionHeader sectionName={t('clients.sectionName')} />
         <ul className={styles.logos}>
           {CLIENTS_LOGO.map(({ image, key }) => (
             <li key={key}>
