@@ -1,0 +1,81 @@
+@import "@styles/vars";
+
+.heroSection {
+  overflow: hidden;
+  position: relative;
+  margin-top: 80px;
+  padding: 70px 16px 40px;
+
+  @include breakpoint(lg) {
+    padding: 140px 16px 80px;
+  }
+
+  &.isNoHomePage {
+    padding: 70px 16px 70px;
+
+    @include breakpoint(lg) {
+      padding: 140px 16px 140px;
+    }
+  }
+}
+
+.content {
+  position: relative;
+
+  &.isNoHomePage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+
+    @include breakpoint(lg) {
+      flex-direction: row;
+    }
+
+    .contentWrapper {
+      margin-top: 0;
+    }
+  }
+}
+
+.allPageImage {
+  @include breakpoint(xl) {
+    margin-right: -110px;
+  }
+}
+
+.homePageImage {
+  position: absolute;
+  top: -80px;
+  right: -200px;
+  width: 800px;
+  z-index: -1;
+
+  @include breakpoint(md) {
+    top: -150px;
+    right: -300px;
+    width: 1000px;
+  }
+}
+
+.bottomBgImage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  pointer-events: none;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.contentWrapper {
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+
+  @include breakpoint(md) {
+    gap: 48px;
+  }
+}

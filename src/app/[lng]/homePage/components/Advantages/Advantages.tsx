@@ -6,11 +6,11 @@ import { Container } from '@components/Container';
 import { Section } from '@components/Section';
 import { SectionHeader } from '@components/SectionHeader';
 
-import { useAdvantages } from '../../hooks/useAdvantages';
 import styles from './advantages.module.scss';
+import { useLocaleAdvantagesData } from './hooks/useLocaleAdvantagesData';
 
 export const Advantages: FC = () => {
-  const { cards, headerInfo } = useAdvantages();
+  const { cards, headerInfo } = useLocaleAdvantagesData();
 
   return (
     <Section className={styles.advantagesSection}>

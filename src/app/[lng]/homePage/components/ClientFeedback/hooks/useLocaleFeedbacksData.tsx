@@ -1,8 +1,8 @@
 import { Icons } from '@components/CustomIcons';
 
-import avatar from '../components/ClientFeedback/img/avatar.png';
+import avatar from '../img/avatar.png';
 
-export const useFeedbacks = (t: (key: string) => string) => {
+export const useLocaleFeedbacksData = (t: (key: string) => string) => {
   const feedbacks = [
     {
       id: 1,

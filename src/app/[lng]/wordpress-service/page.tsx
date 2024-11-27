@@ -1,6 +1,5 @@
 import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
-import dynamic from 'next/dynamic';
 
 import { Accordion } from '@components/Accordion';
 import { Clients } from '@components/Clients';
@@ -8,23 +7,11 @@ import { ContactForm } from '@components/ContactForm';
 import { Hero } from '@components/Hero';
 import { OurWork } from '@components/OurWork';
 
-import { Advantages } from './homePage/components/Advantages';
-import { OurServices } from './homePage/components/OurServices';
-import { ServicesTabs } from './homePage/components/ServicesTabs';
-import { WorkTogether } from './homePage/components/WorkTogether';
+import bottomBgImage from './img/bg.png';
+import image from './img/wpImage.png';
 import styles from './page.module.scss';
 
-const ClientFeedback = dynamic(
-  () =>
-    import('./homePage/components/ClientFeedback').then(
-      (mod) => mod.ClientFeedback,
-    ),
-  {
-    ssr: false,
-  },
-);
-
-export default async function Home() {
+export default async function WordpressService() {
   const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
     locale: 'en',
     pagination: { limit: 5 },
@@ -34,13 +21,12 @@ export default async function Home() {
 
   return (
     <div className={styles.wrapper}>
-      <Hero />
-      <ServicesTabs />
+      <Hero
+        page="wordpressService"
+        image={image}
+        bottomBgImage={bottomBgImage}
+      />
       <Clients />
-      <Advantages />
-      <ClientFeedback />
-      <WorkTogether />
-      <OurServices />
       <OurWork data={singleProjectsData} />
       <Accordion />
       <ContactForm />

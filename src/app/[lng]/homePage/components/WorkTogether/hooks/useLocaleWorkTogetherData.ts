@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 
-import briefcaseImg from '../components/WorkTogether/img/briefcase.png';
-import smileImg from '../components/WorkTogether/img/smile.png';
-import trophyImg from '../components/WorkTogether/img/trophy.png';
-import usersImg from '../components/WorkTogether/img/users.png';
+import briefcaseImg from '../img/briefcase.png';
+import smileImg from '../img/smile.png';
+import trophyImg from '../img/trophy.png';
+import usersImg from '../img/users.png';
 
-export const useWorkTogether = () => {
+export const useLocaleWorkTogetherData = () => {
   const { t } = useTranslation(['home', 'common']);
 
   const info = {

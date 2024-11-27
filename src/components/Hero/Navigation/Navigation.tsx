@@ -10,9 +10,10 @@ import styles from './navigation.module.scss';
 
 interface NavigationProps {
   t: (key: string, options: { ns: string }) => string;
+  isHomePage: boolean;
 }
 
-export const Navigation: FC<NavigationProps> = ({ t }) => {
+export const Navigation: FC<NavigationProps> = ({ t, isHomePage }) => {
   return (
     <div className={styles.wrapper}>
       <Button
@@ -21,17 +22,19 @@ export const Navigation: FC<NavigationProps> = ({ t }) => {
         isBig
         text={t('buttons.getStart', { ns: 'common' })}
       />
-      <div className={styles.socialButtons}>
-        {SOCIALS.map(({ label, link, borderColor, icon }) => (
-          <BorderGradientButton
-            key={label}
-            as={Link}
-            href={link}
-            borderColorType={borderColor}
-            icon={icon}
-          />
-        ))}
-      </div>
+      {isHomePage && (
+        <div className={styles.socialButtons}>
+          {SOCIALS.map(({ label, link, borderColor, icon }) => (
+            <BorderGradientButton
+              key={label}
+              as={Link}
+              href={link}
+              borderColorType={borderColor}
+              icon={icon}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -6,12 +6,12 @@ import { Container } from '@components/Container';
 import { Section } from '@components/Section';
 import { SectionHeader } from '@components/SectionHeader';
 
-import { useOurServices } from '../../hooks/useOurServices';
 import { Services } from './Services';
+import { useLocaleOurServicesData } from './hooks/useLocaleOurServicesData';
 import styles from './ourServices.module.scss';
 
 export const OurServices: FC = () => {
-  const { services, headerInfo, buttons } = useOurServices();
+  const { services, headerInfo, buttons } = useLocaleOurServicesData();
 
   return (
     <Section>
