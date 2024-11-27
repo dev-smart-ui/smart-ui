@@ -16,7 +16,7 @@ interface HeaderInfo {
   subTitle: string;
 }
 
-export const useAdvantages = () => {
+export const useLocaleAdvantagesData = () => {
   const { t } = useTranslation('home');
 
   const headerInfo: HeaderInfo = t('advantages.headerInfo', {

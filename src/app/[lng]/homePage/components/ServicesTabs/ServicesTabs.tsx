@@ -8,13 +8,13 @@ import { useEffect, useState } from 'react';
 import { Container } from '@components/Container';
 import { Section } from '@components/Section';
 
-import { useTabsAndServices } from '../../hooks/useTabsAndServices';
 import { TabContent } from './TabContent';
 import { Tabs } from './Tabs';
+import { useLocaleTabsAndServicesData } from './hooks/useLocaleTabsAndServicesData';
 import styles from './servicesTabs.module.scss';
 
 export const ServicesTabs = () => {
-  const { tabs, servicesTabs } = useTabsAndServices();
+  const { tabs, servicesTabs } = useLocaleTabsAndServicesData();
   const [currentTab, setCurrentTab] = useState(tabs[0].value);
   const [isSafari, setIsSafari] = useState(false);
   const browser = detect();

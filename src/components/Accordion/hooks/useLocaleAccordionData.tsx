@@ -8,7 +8,7 @@ interface HeaderInfo {
   };
 }
 
-export const useAccordion = () => {
+export const useLocaleAccordionData = () => {
   const { t } = useTranslation('home');
 
   const headerInfo: HeaderInfo = t('accordion.headerInfo', {

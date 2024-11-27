@@ -5,8 +5,8 @@ import { FC } from 'react';
 
 import useMediaQuery from '@hooks/useMediaQuery';
 
-import { useFeedbacks } from '../../../hooks/useFeedbacks';
-import { useSwiperInteraction } from '../../../hooks/useSwiperInteraction';
+import { useLocaleFeedbacksData } from '../hooks/useLocaleFeedbacksData';
+import { useSwiperInteraction } from '../hooks/useSwiperInteraction';
 import { Card } from './Card';
 import styles from './slider.module.scss';
 
@@ -16,7 +16,7 @@ interface SliderProps {
 
 export const Slider: FC<SliderProps> = ({ t }) => {
   const isDesktop = useMediaQuery('(min-width: 1024px)');
-  const { feedbacks } = useFeedbacks(t);
+  const { feedbacks } = useLocaleFeedbacksData(t);
   const { handleMouseEnter, handleMouseLeave } =
     useSwiperInteraction(isDesktop);
 

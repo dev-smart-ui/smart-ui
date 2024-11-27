@@ -1,14 +1,14 @@
 'use client';
 
+import { useLocaleAccordionData } from '@components/Accordion/hooks/useLocaleAccordionData';
 import { Container } from '@components/Container';
 import { Section } from '@components/Section';
 import { SectionHeader } from '@components/SectionHeader';
 
-import { useAccordion } from '../../hooks/useAccordion';
 import { Content } from './Content';
 
 export const Accordion = () => {
-  const { accordionData, headerInfo } = useAccordion();
+  const { accordionData, headerInfo } = useLocaleAccordionData();
 
   return (
     <Section>

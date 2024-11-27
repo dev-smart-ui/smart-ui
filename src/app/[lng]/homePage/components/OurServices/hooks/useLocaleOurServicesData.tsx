@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 
-import serviceImg1 from '../components/OurServices/img/service1.png';
-import serviceImg2 from '../components/OurServices/img/service2.png';
-import serviceImg3 from '../components/OurServices/img/service3.png';
-import serviceImg4 from '../components/OurServices/img/service4.png';
+import serviceImg1 from '../img/service1.png';
+import serviceImg2 from '../img/service2.png';
+import serviceImg3 from '../img/service3.png';
+import serviceImg4 from '../img/service4.png';
 
 interface HeaderInfo {
   ourServices: string;
@@ -13,7 +13,7 @@ interface HeaderInfo {
   };
 }
 
-export const useOurServices = () => {
+export const useLocaleOurServicesData = () => {
   const { t } = useTranslation(['home', 'common']);
 
   const buttons = {
