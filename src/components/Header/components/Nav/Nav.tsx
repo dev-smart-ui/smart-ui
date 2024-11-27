@@ -1,3 +1,4 @@
+import { scrollToElement } from '@utils/scrollToElement';
 import classNames from 'classnames';
 
 import { FC, useEffect } from 'react';
@@ -40,6 +41,13 @@ export const Nav: FC<NavProps> = ({
     };
   }, [isOpen]);
 
+  const handleContactUsClick = () => {
+    onCloseMainMenu();
+    setTimeout(() => {
+      scrollToElement('contactForm');
+    }, 200);
+  };
+
   if (!isDesktop && !mounted && !isOpen) return null;
 
   return (
@@ -61,7 +69,11 @@ export const Nav: FC<NavProps> = ({
           />
         ))}
       </ul>
-      <Button className={styles.contactUsBtnMobile} text={buttonLabel} />
+      <Button
+        className={styles.contactUsBtnMobile}
+        text={buttonLabel}
+        onClick={handleContactUsClick}
+      />
     </nav>
   );
 };
