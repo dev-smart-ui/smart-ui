@@ -10,6 +10,11 @@
   }
 
   &.isSecondaryColor {
+    background: linear-gradient(to right, $fourthColor, $sixthColor);
+    -webkit-background-clip: text;
+  }
+
+  &.isThirdColor {
     background: linear-gradient(to right, $secondaryColor, $sixthColor);
     -webkit-background-clip: text;
   }

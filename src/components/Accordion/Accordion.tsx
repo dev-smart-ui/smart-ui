@@ -14,7 +14,7 @@ export const Accordion = () => {
     <Section>
       <Container>
         <SectionHeader
-          sectionName={headerInfo.frequentlyAskedQuestions}
+          sectionName={headerInfo.sectionName}
           title={headerInfo.title}
         />
         <Content data={accordionData} />

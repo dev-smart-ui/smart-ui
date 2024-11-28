@@ -8,10 +8,11 @@ interface AdvantageCard {
 }
 
 interface HeaderInfo {
-  ourAdvantages: string;
+  sectionName: string;
   title: {
     main: string;
     highlighted: string;
+    secondary: string;
   };
   subTitle: string;
 }

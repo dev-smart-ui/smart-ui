@@ -75,11 +75,11 @@
     }
   },
   "clients": {
-    "ourAwesomeClients": "Our Awesome Client"
+    "sectionName": "Our Awesome Client"
   },
   "advantages": {
     "headerInfo": {
-      "ourAdvantages": "Our Advantages",
+      "sectionName": "Our Advantages",
       "title": {
         "main": "Why Choose Us for",
         "highlighted": "Your Technology Needs"
@@ -115,7 +115,7 @@
   },
   "feedbacks": {
     "headerInfo": {
-      "clientFeedback": "Client Feedback",
+      "sectionName": "Client Feedback",
       "title": "What Our Clients Say About Us"
     },
     "feedback1": "Less than 24h turn around. Easy communication. Did exactly as offered, all around a perfect experience.",
@@ -136,7 +136,7 @@
   },
   "ourServices": {
     "headerInfo": {
-      "ourServices": "Our Services",
+      "sectionName": "Our Services",
       "title": {
         "main": "A Comprehensive Range of Services for",
         "highlighted": "Your Business"
@@ -161,7 +161,7 @@
   },
   "ourWork": {
     "headerInfo": {
-      "ourWork": "Our Work",
+      "sectionName": "Our Work",
       "title": {
         "main": "Explore Our Success Stories",
         "highlighted": "Project Highlights"
@@ -170,7 +170,7 @@
   },
   "accordion": {
     "headerInfo": {
-      "frequentlyAskedQuestions": "Frequently Asked Questions",
+      "sectionName": "Frequently Asked Questions",
       "title": {
         "main": "Answers to Your Most Common",
         "highlighted": "Questions"

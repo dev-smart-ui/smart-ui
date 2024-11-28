@@ -1,0 +1,64 @@
+@import "@styles/vars";
+
+.wrapper {
+  position: relative;
+  min-height: 356px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 875px;
+
+  @include breakpoint(md) {
+    gap: 32px;
+  }
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.image {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar {
+  max-width: 120px;
+  min-width: 120px;
+}
+
+.title {
+  font-size: 26px;
+  color: $textColor2;
+
+  @include breakpoint(md) {
+    font-size: 32px;
+  }
+}
+
+.description {
+  color: $textColor;
+  font-size: 20px;
+
+  @include breakpoint(md) {
+    font-size: 24px;
+  }
+}

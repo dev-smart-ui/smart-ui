@@ -23,7 +23,7 @@ export const ClientFeedback: FC = () => {
         <Container>
           <SectionHeader
             position="left"
-            sectionName={t('feedbacks.headerInfo.clientFeedback')}
+            sectionName={t('feedbacks.headerInfo.sectionName')}
           />
           <FeedbackHeader t={t} />
           <Slider t={t} />

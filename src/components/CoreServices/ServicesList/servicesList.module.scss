@@ -1,0 +1,48 @@
+@import "@styles/vars";
+
+.wrapper {
+  margin-top: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid $borderColor4;
+}
+
+.item {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  border: 1px solid $borderColor4;
+
+  @include breakpoint(md) {
+    gap: 40px;
+    padding: 32px;
+  }
+  @include breakpoint(lg) {
+    width: 50%;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  align-self: flex-start;
+}
+
+.image {
+  max-width: 88px;
+  min-width: 88px;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 1.4;
+  color: white;
+}
+
+.description {
+  color: $textColor;
+  font-size: 20px;
+}

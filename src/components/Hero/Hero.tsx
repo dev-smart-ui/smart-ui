@@ -16,15 +16,17 @@ import styles from './hero.module.scss';
 import bgImage from './img/heroBg.png';
 
 interface HeroProps {
-  page?: 'home' | 'wordpressService';
+  page?: string;
   image?: StaticImageData;
   bottomBgImage?: StaticImageData;
+  colorGradiant?: 'Primary' | 'Secondary' | 'Third';
 }
 
 export const Hero: FC<HeroProps> = ({
   page = 'home',
   image,
   bottomBgImage,
+  colorGradiant,
 }) => {
   const { t } = useTranslation([page, 'common']);
   const isHomePage = page === 'home';
@@ -42,7 +44,7 @@ export const Hero: FC<HeroProps> = ({
       >
         <div className={styles.contentWrapper}>
           {isHomePage && <Trust description={t('hero.trust')} />}
-          <Content t={t} />
+          <Content colorGradiant={colorGradiant} t={t} />
           <Navigation t={t} isHomePage={isHomePage} />
         </div>
         {!isHomePage && !!image && (
@@ -57,7 +59,9 @@ export const Hero: FC<HeroProps> = ({
         )}
       </Container>
       {!isHomePage && !!bottomBgImage && (
-        <div className={styles.bottomBgImage}>
+        <div
+          className={classNames(styles.bottomBgImage, styles[`${page}Section`])}
+        >
           <Image src={bottomBgImage} alt="bgImage" />
         </div>
       )}

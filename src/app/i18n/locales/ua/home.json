@@ -75,11 +75,11 @@
     }
   },
   "clients": {
-    "ourAwesomeClients": "Наші чудові клієнти"
+    "sectionName": "Наші чудові клієнти"
   },
   "advantages": {
     "headerInfo": {
-      "ourAdvantages": "Наші переваги",
+      "sectionName": "Наші переваги",
       "title": {
         "main": "Чому Обирають Нас для",
         "highlighted": "Ваших Технологічних Потреб",
@@ -115,7 +115,7 @@
   },
   "feedbacks": {
     "headerInfo": {
-      "clientFeedback": "Відгуки клієнтів",
+      "sectionName": "Відгуки клієнтів",
       "title": "Що кажуть наші клієнти про нас"
     },
     "feedback1": "Менше ніж за 24 години. Легка комунікація. Виконано точно так, як було запропоновано, все на найвищому рівні.",
@@ -136,7 +136,7 @@
   },
   "ourServices": {
     "headerInfo": {
-      "ourServices": "Наші послуги",
+      "sectionName": "Наші послуги",
       "title": {
         "main": "Комплексний набір послуг для",
         "highlighted": "Вашого бізнесу"
@@ -161,7 +161,7 @@
   },
   "ourWork": {
     "headerInfo": {
-      "ourWork": "Наші роботи",
+      "sectionName": "Наші роботи",
       "title": {
         "main": "Ознайомтесь з нашими історіями успіху",
         "highlighted": "Ключові проєкти"
@@ -170,7 +170,7 @@
   },
   "accordion": {
     "headerInfo": {
-      "frequentlyAskedQuestions": "Часті запитання",
+      "sectionName": "Часті запитання",
       "title": {
         "main": "Відповіді на ваші найпоширеніші",
         "highlighted": "Запитання"

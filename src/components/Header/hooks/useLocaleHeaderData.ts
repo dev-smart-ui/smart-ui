@@ -32,7 +32,7 @@ export const useLocaleHeaderData = () => {
             icon: servicesImg2,
             label: t('submenuServices.link2.title'),
             desc: t('submenuServices.link2.description'),
-            path: `/${lng}${ROUTES.WORDPRESS_SERVICE}`,
+            path: `/${lng}${ROUTES.CMS_SERVICE}`,
           },
           {
             icon: servicesImg3,
