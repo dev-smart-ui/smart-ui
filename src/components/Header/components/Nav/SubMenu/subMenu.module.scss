@@ -16,7 +16,7 @@
     }
   }
 
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     position: fixed;
     top: 80px;
     left: 0;
@@ -30,29 +30,70 @@
   transition: all $transition2 ease;
   max-width: 1280px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
   padding: 0 16px;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "frontend"
+    "cms"
+    "backend"
+    "uxUi"
+    "qa"
+    "customService"
+    "web3";
 
-  @include breakpoint(md) {
-    flex-direction: row;
-    overflow: initial;
+  @include breakpoint(lg) {
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr); // Три колонки
+    grid-template-areas:
+      "frontend uxUi web3"
+      "cms qa ."
+      "backend customService .";
   }
 }
 
-.item {
-  padding: 5px 0;
+.frontend {
+  grid-area: frontend;
+}
+
+.cms {
+  grid-area: cms;
+}
+
+.backend {
+  grid-area: backend;
+}
+
+.uXUi {
+  grid-area: uXUi;
+}
+
+.qa {
+  grid-area: qa;
+}
+
+.customService {
+  grid-area: customService;
+}
+
+.web3 {
+  grid-area: web3;
 }
 
 .link {
   display: flex;
   gap: 6px;
-  max-width: 300px;
+  width: 100%;
+  max-width: 100%;
   padding: 12px;
+
+  @include breakpoint(lg) {
+    max-width: 400px;
+  }
 }
 
 .title {

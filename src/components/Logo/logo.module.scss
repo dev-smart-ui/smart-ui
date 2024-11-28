@@ -4,6 +4,7 @@
   display: flex;
   width: 100%;
   max-width: 162px;
+  min-width: 142px;
 
   &.isLink {
     cursor: pointer;

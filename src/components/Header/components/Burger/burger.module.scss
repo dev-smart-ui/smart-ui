@@ -24,7 +24,7 @@
     }
   }
 
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     display: none;
   }
 }

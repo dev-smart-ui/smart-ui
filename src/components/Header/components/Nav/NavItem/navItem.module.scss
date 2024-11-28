@@ -3,7 +3,6 @@
 .wrapper {
   position: relative;
   height: 100%;
-  min-width: max-content;
   width: 100%;
   color: $textColor2;
 
@@ -51,7 +50,7 @@
   padding: 12px 0;
   color: $textColor2;
 
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     padding: 0 5px;
     height: 100%;
 
@@ -83,7 +82,7 @@
     color: $primaryColor;
   }
 
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     &.active {
       color: inherit;
 
@@ -111,7 +110,7 @@
   margin-top: -3px;
   transition: $transition2;
 
-  @include max-breakpoint(md) {
+  @include max-breakpoint(lg) {
     &.active {
       margin-top: 4px;
       transform: rotate(225deg);

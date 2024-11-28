@@ -1,20 +1,15 @@
 import { StaticImageData } from 'next/image';
 
-interface ISubMenuItem {
+export interface ISubMenuItem {
   label: string;
   path: string;
   desc: string;
   icon: StaticImageData | string;
-}
-
-export interface ISubMenu {
-  firstColumn: ISubMenuItem[];
-  secondColumn: ISubMenuItem[];
-  lastColumn: ISubMenuItem[];
+  gridArea: string;
 }
 
 export interface ILink {
   label: string;
-  submenu?: ISubMenu;
+  submenu?: ISubMenuItem[];
   path?: string;
 }
