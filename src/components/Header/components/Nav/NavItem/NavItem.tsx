@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { FC, useRef, useState } from 'react';
 
 import { SubMenu } from '@components/Header/components/Nav/SubMenu';
-import { ILink, ISubMenu } from '@components/Header/types/types';
+import { ILink, ISubMenuItem } from '@components/Header/types/types';
 
 import { useOpen } from '@hooks/useOpen';
 import { useResetStatesOnResize } from '@hooks/useResetStateOnResize';
@@ -14,7 +14,7 @@ import styles from './navItem.module.scss';
 
 interface NavItemProps {
   link: ILink;
-  submenu?: ISubMenu;
+  submenu?: ISubMenuItem[];
   onCloseMainMenu: () => void;
 }
 

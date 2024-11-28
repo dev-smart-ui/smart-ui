@@ -12,7 +12,6 @@ import { TechnologyStack } from '@components/TechnologyStack';
 import bottomBgImage from './img/bg.png';
 import heroImg from './img/heroImg.png';
 import technologyImg from './img/technologyImg.png';
-import styles from './page.module.scss';
 
 export default async function FrontendDevelopmentPage() {
   const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
@@ -23,19 +22,19 @@ export default async function FrontendDevelopmentPage() {
   const singleProjectsData = singleProjects?.data || [];
 
   return (
-    <div className={styles.wrapper}>
+    <>
       <Hero
-        page="frontendDevelopmentPage"
+        page="frontendDevelopment"
         image={heroImg}
         bottomBgImage={bottomBgImage}
         colorGradiant="Third"
       />
-      <TechnologyStack image={technologyImg} page="frontendDevelopmentPage" />
-      <CoreServices page="frontendDevelopmentPage" />
+      <TechnologyStack image={technologyImg} page="frontendDevelopment" />
+      <CoreServices page="frontendDevelopment" />
       <Clients />
       <OurWork data={singleProjectsData} />
       <Accordion />
       <ContactForm />
-    </div>
+    </>
   );
 }

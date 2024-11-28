@@ -20,56 +20,57 @@ export const useLocaleHeaderData = () => {
     { label: t('home'), path: `/${lng}${ROUTES.HOME}` },
     {
       label: t('services'),
-      submenu: {
-        firstColumn: [
-          {
-            icon: servicesImg1,
-            label: t('submenuServices.link1.title'),
-            desc: t('submenuServices.link1.description'),
-            path: `/${lng}${ROUTES.FRONTEND_DEVELOPMENT}`,
-          },
-          {
-            icon: servicesImg2,
-            label: t('submenuServices.link2.title'),
-            desc: t('submenuServices.link2.description'),
-            path: `/${lng}${ROUTES.CMS}`,
-          },
-          {
-            icon: servicesImg3,
-            label: t('submenuServices.link3.title'),
-            desc: t('submenuServices.link3.description'),
-            path: `/${lng}${ROUTES.BACKEND_DEVELOPMENT}`,
-          },
-        ],
-        secondColumn: [
-          {
-            icon: servicesImg4,
-            label: t('submenuServices.link4.title'),
-            desc: t('submenuServices.link4.description'),
-            path: `/${lng}${ROUTES.UI_UX_DESIGN}`,
-          },
-          {
-            icon: servicesImg5,
-            label: t('submenuServices.link5.title'),
-            desc: t('submenuServices.link5.description'),
-            path: `/${lng}${ROUTES.QA}`,
-          },
-          {
-            icon: servicesImg6,
-            label: t('submenuServices.link6.title'),
-            desc: t('submenuServices.link6.description'),
-            path: `/${lng}${ROUTES.CUSTOM_SERVICES}`,
-          },
-        ],
-        lastColumn: [
-          {
-            icon: servicesImg7,
-            label: t('submenuServices.link7.title'),
-            desc: t('submenuServices.link7.description'),
-            path: `/${lng}${ROUTES.WEB3}`,
-          },
-        ],
-      },
+      submenu: [
+        {
+          icon: servicesImg1,
+          label: t('submenuServices.link1.title'),
+          desc: t('submenuServices.link1.description'),
+          path: `/${lng}${ROUTES.FRONTEND_DEVELOPMENT}`,
+          gridArea: 'frontend',
+        },
+        {
+          icon: servicesImg2,
+          label: t('submenuServices.link2.title'),
+          desc: t('submenuServices.link2.description'),
+          path: `/${lng}${ROUTES.CMS}`,
+          gridArea: 'cms',
+        },
+        {
+          icon: servicesImg3,
+          label: t('submenuServices.link3.title'),
+          desc: t('submenuServices.link3.description'),
+          path: `/${lng}${ROUTES.BACKEND_DEVELOPMENT}`,
+          gridArea: 'backend',
+        },
+        {
+          icon: servicesImg4,
+          label: t('submenuServices.link4.title'),
+          desc: t('submenuServices.link4.description'),
+          path: `/${lng}${ROUTES.UI_UX_DESIGN}`,
+          gridArea: 'uxUi',
+        },
+        {
+          icon: servicesImg5,
+          label: t('submenuServices.link5.title'),
+          desc: t('submenuServices.link5.description'),
+          path: `/${lng}${ROUTES.QA}`,
+          gridArea: 'qa',
+        },
+        {
+          icon: servicesImg6,
+          label: t('submenuServices.link6.title'),
+          desc: t('submenuServices.link6.description'),
+          path: `/${lng}${ROUTES.CUSTOM_SERVICES}`,
+          gridArea: 'customService',
+        },
+        {
+          icon: servicesImg7,
+          label: t('submenuServices.link7.title'),
+          desc: t('submenuServices.link7.description'),
+          path: `/${lng}${ROUTES.WEB3}`,
+          gridArea: 'web3',
+        },
+      ],
     },
     { label: t('ourWork'), path: `/${lng}${ROUTES.OUR_WORK}` },
     { label: t('aboutUs'), path: `/${lng}${ROUTES.ABOUT_US}` },
