@@ -14,7 +14,7 @@ type TTitleObj = {
 };
 
 interface SectionHeaderProps {
-  sectionName: string;
+  sectionName?: string;
   title?: TTitleObj | string;
   subTitle?: string;
   position?: 'left' | 'center' | 'right';
@@ -34,9 +34,11 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
 
   return (
     <div className={classNames(styles.wrapper, styles[`${position}Position`])}>
-      <TextGradientBackground className={styles.sectionName}>
-        {sectionName}
-      </TextGradientBackground>
+      {!!sectionName && (
+        <TextGradientBackground className={styles.sectionName}>
+          {sectionName}
+        </TextGradientBackground>
+      )}
       {!!title && (
         <h2 className={styles.title}>
           {isTitleObject(title) ? (

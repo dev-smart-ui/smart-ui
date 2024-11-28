@@ -4,6 +4,7 @@ import { fetchGraphQL } from '@lib/fetchGraphQL';
 import { Accordion } from '@components/Accordion';
 import { Clients } from '@components/Clients';
 import { ContactForm } from '@components/ContactForm';
+import { CoreServices } from '@components/CoreServices';
 import { Hero } from '@components/Hero';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
@@ -23,8 +24,14 @@ export default async function CmsService() {
 
   return (
     <div className={styles.wrapper}>
-      <Hero page="cmsService" image={heroImg} bottomBgImage={bottomBgImage} />
+      <Hero
+        page="cmsService"
+        image={heroImg}
+        bottomBgImage={bottomBgImage}
+        colorGradiant="Third"
+      />
       <TechnologyStack image={technologyImg} />
+      <CoreServices />
       <Clients />
       <OurWork data={singleProjectsData} />
       <Accordion />
