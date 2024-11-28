@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 
 import img from '../img/img.png';
 
-export const useLocaleServicesData = () => {
-  const { t } = useTranslation(['cmsService', 'common']);
+export const useLocaleServicesData = (page?: string) => {
+  const { t } = useTranslation([page, 'common']);
 
   const headerInfo = t('coreServices.headerInfo', {
     returnObjects: true,

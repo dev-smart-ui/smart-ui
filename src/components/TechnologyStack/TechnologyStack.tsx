@@ -17,7 +17,7 @@ interface TechnologyStackProps {
 }
 
 export const TechnologyStack: FC<TechnologyStackProps> = ({
-  page = 'cmsService',
+  page = 'cms',
   image,
 }) => {
   const { t } = useTranslation(page);
