@@ -14,7 +14,7 @@ import heroImg from './img/heroImg.png';
 import technologyImg from './img/technologyImg.jpg';
 import styles from './page.module.scss';
 
-export default async function CmsService() {
+export default async function CmsPage() {
   const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
     locale: 'en',
     pagination: { limit: 5 },
@@ -25,7 +25,7 @@ export default async function CmsService() {
   return (
     <div className={styles.wrapper}>
       <Hero
-        page="cmsService"
+        page="cms"
         image={heroImg}
         bottomBgImage={bottomBgImage}
         colorGradiant="Third"

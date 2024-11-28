@@ -9,8 +9,13 @@ import { useLocaleServicesData } from '@components/CoreServices/hooks/useLocaleC
 import { Section } from '@components/Section';
 import { SectionHeader } from '@components/SectionHeader';
 
-export const CoreServices: FC = () => {
-  const { headerInfo, coreServicesData, bottomBlock } = useLocaleServicesData();
+interface CoreServicesProps {
+  page?: string;
+}
+
+export const CoreServices: FC<CoreServicesProps> = ({ page = 'cms' }) => {
+  const { headerInfo, coreServicesData, bottomBlock } =
+    useLocaleServicesData(page);
   return (
     <Section>
       <Container>

@@ -1,18 +1,11 @@
+import { IHeaderInfo } from '@app-types/interfaces/global';
+
 import { useTranslation } from 'react-i18next';
 
 import serviceImg1 from '../img/service1.png';
 import serviceImg2 from '../img/service2.png';
 import serviceImg3 from '../img/service3.png';
 import serviceImg4 from '../img/service4.png';
-
-interface HeaderInfo {
-  sectionName: string;
-  title: {
-    main: string;
-    highlighted: string;
-    secondary: string;
-  };
-}
 
 export const useLocaleOurServicesData = () => {
   const { t } = useTranslation(['home', 'common']);
@@ -21,9 +14,9 @@ export const useLocaleOurServicesData = () => {
     learnMore: t('buttons.learnMore', { ns: 'common' }),
   };
 
-  const headerInfo: HeaderInfo = t('ourServices.headerInfo', {
+  const headerInfo = t('ourServices.headerInfo', {
     returnObjects: true,
-  }) as HeaderInfo;
+  }) as IHeaderInfo;
 
   const services = [
     {

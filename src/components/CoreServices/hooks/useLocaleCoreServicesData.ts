@@ -1,35 +1,21 @@
+import { IBottomBlock, IHeaderInfo } from '@app-types/interfaces/global';
+
 import { useTranslation } from 'react-i18next';
 
 import img from '../img/img.png';
 
-interface HeaderInfo {
-  sectionName: string;
-  title: {
-    main: string;
-    highlighted: string;
-    secondary: string;
-  };
-  subTitle: string;
-}
+export const useLocaleServicesData = (page?: string) => {
+  const { t } = useTranslation([page, 'common']);
 
-interface BottomBlock {
-  title: string;
-  description: string;
-  buttonLabel: string;
-}
-
-export const useLocaleServicesData = () => {
-  const { t } = useTranslation(['cmsService', 'common']);
-
-  const headerInfo: HeaderInfo = t('coreServices.headerInfo', {
+  const headerInfo = t('coreServices.headerInfo', {
     returnObjects: true,
-  }) as HeaderInfo;
+  }) as IHeaderInfo;
 
   const bottomBlock = {
     title: t('coreServices.bottomBlock.title'),
     description: t('coreServices.bottomBlock.description'),
     buttonLabel: t('buttons.getInTouch', { ns: 'common' }),
-  } as BottomBlock;
+  } as IBottomBlock;
 
   const coreServicesData = [
     {

@@ -14,13 +14,15 @@ interface NavigationProps {
 }
 
 export const Navigation: FC<NavigationProps> = ({ t, isHomePage }) => {
+  const buttonLabel = isHomePage ? 'buttons.getStart' : 'buttons.requestQuote';
+
   return (
     <div className={styles.wrapper}>
       <Button
         onClick={() => scrollToElement('contactForm')}
         className={styles.btn}
         isBig
-        text={t('buttons.getStart', { ns: 'common' })}
+        text={t(buttonLabel, { ns: 'common' })}
       />
       {isHomePage && (
         <div className={styles.socialButtons}>

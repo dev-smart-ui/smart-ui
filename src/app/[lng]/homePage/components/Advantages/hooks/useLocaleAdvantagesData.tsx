@@ -1,3 +1,5 @@
+import { IHeaderInfo } from '@app-types/interfaces/global';
+
 import { useTranslation } from 'react-i18next';
 
 import { Icons } from '@components/CustomIcons';
@@ -7,22 +9,12 @@ interface AdvantageCard {
   description: string;
 }
 
-interface HeaderInfo {
-  sectionName: string;
-  title: {
-    main: string;
-    highlighted: string;
-    secondary: string;
-  };
-  subTitle: string;
-}
-
 export const useLocaleAdvantagesData = () => {
   const { t } = useTranslation('home');
 
-  const headerInfo: HeaderInfo = t('advantages.headerInfo', {
+  const headerInfo = t('advantages.headerInfo', {
     returnObjects: true,
-  }) as HeaderInfo;
+  }) as IHeaderInfo;
 
   const cardsData: AdvantageCard[] = t('advantages.cardsData', {
     returnObjects: true,
