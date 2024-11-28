@@ -12,7 +12,6 @@ import { TechnologyStack } from '@components/TechnologyStack';
 import bottomBgImage from './img/bg.png';
 import heroImg from './img/heroImg.png';
 import technologyImg from './img/technologyImg.jpg';
-import styles from './page.module.scss';
 
 export default async function CmsPage() {
   const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
@@ -23,7 +22,7 @@ export default async function CmsPage() {
   const singleProjectsData = singleProjects?.data || [];
 
   return (
-    <div className={styles.wrapper}>
+    <>
       <Hero
         page="cms"
         image={heroImg}
@@ -36,6 +35,6 @@ export default async function CmsPage() {
       <OurWork data={singleProjectsData} />
       <Accordion />
       <ContactForm />
-    </div>
+    </>
   );
 }

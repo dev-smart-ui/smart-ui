@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "title": {
+      "main": "Building Scalable",
+      "highlighted": "Backend Systems",
+      "secondary": "for Your Growth"
+    },
+    "description": "We deliver secure, high-performance backend solutions that are tailored to your needs, ensuring seamless scalability, speed, and reliability for your business"
+  },
+  "technologyStack": {
+    "sectionName": "Our Technology Stack ",
+    "title": "We Build the Backbone of Your Digital Presence",
+    "subTitle": "Harnessing the power of advanced CMS platforms and custom solutions, we deliver flexible, scalable, and user-friendly systems. Our expertise ensures seamless content management and adaptability to future needs"
+  },
+  "coreServices": {
+    "headerInfo": {
+      "title": {
+        "main": "Core Backend Development",
+        "highlighted": "Services"
+      },
+      "subTitle": "Here is a list of Backend Development services we've designed for you"
+    },
+    "coreService1": {
+      "title": "Custom Backend Development",
+      "description": "We build tailored backend solutions using technologies like Node.js, Python, Ruby on Rails, and Java, ensuring flexibility and performance tailored to your needs"
+    },
+    "coreService2": {
+      "title": "API Development & Integration",
+      "description": "We design and develop robust RESTful APIs and GraphQL, ensuring smooth integration with frontend systems and third-party services, allowing real-time data exchange"
+    },
+    "coreService3": {
+      "title": "Database Design & Management",
+      "description": "We create efficient database systems (SQL and NoSQL) that are scalable, secure, and optimized for performance, ensuring seamless data storage and retrieval"
+    },
+    "coreService4": {
+      "title": "Microservices Architecture",
+      "description": "We design scalable backend systems using a microservices architecture, enabling flexible deployment, scalability, and resilience across various services"
+    },
+    "coreService5": {
+      "title": "Cloud Solutions",
+      "description": "We provide cloud-based backend solutions using platforms like AWS, Azure, and Google Cloud, ensuring high availability, security, and cost-efficiency"
+    },
+    "coreService6": {
+      "title": "Authentication & Authorization",
+      "description": "We implement secure user authentication and authorization systems with technologies like JWT, OAuth, and SSO, ensuring data protection and secure user access"
+    },
+    "coreService7": {
+      "title": "Real-time Applications",
+      "description": "We build real-time applications with WebSockets, enabling features like live chat, notifications, and live updates, enhancing user engagement"
+    },
+    "coreService8": {
+      "title": "Backend Performance Optimization",
+      "description": "We optimize backend performance with caching, load balancing, and database optimization to reduce response times and improve scalability"
+    },
+    "coreService9": {
+      "title": "Serverless Architecture",
+      "description": "We leverage serverless technologies (AWS Lambda, Google Cloud Functions) to build scalable, cost-effective backend systems without managing servers"
+    },
+    "coreService10": {
+      "title": "DevOps & Continuous Integration/Continuous Deployment (CI/CD)",
+      "description": "We implement DevOps best practices, ensuring automated testing, integration, and deployment pipelines for fast and reliable delivery of backend systems"
+    },
+    "bottomBlock": {
+      "title": "Let's Build Your Scalable Backend Today",
+      "description": "Contact us now to build a backend system that drives your business growth with performance, security, and scalability"
+    }
+  }
+}
