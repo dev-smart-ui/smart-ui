@@ -1,20 +1,13 @@
-import { useTranslation } from 'react-i18next';
+import { IHeaderInfo } from '@app-types/interfaces/global';
 
-interface HeaderInfo {
-  sectionName: string;
-  title: {
-    main: string;
-    highlighted: string;
-    secondary: string;
-  };
-}
+import { useTranslation } from 'react-i18next';
 
 export const useLocaleAccordionData = () => {
   const { t } = useTranslation('home');
 
-  const headerInfo: HeaderInfo = t('accordion.headerInfo', {
+  const headerInfo = t('accordion.headerInfo', {
     returnObjects: true,
-  }) as HeaderInfo;
+  }) as IHeaderInfo;
 
   const accordionData = [
     {
