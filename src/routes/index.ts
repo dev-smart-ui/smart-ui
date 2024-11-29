@@ -8,6 +8,6 @@ export const ROUTES = {
   BACKEND_DEVELOPMENT: '/backend-development',
   UI_UX_DESIGN: '/ui-ux-design',
   QA: '/qa',
-  CUSTOM_SERVICES: '/custom-services',
+  CUSTOM_SERVICES: '/custom-service',
   WEB3: '/web3',
 };
