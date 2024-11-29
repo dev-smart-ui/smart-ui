@@ -44,7 +44,7 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
           {isTitleObject(title) ? (
             <>
               {title.main}{' '}
-              <GradientText color="Secondary">{title.highlighted}</GradientText>
+              <GradientText color="Secondary">{title.highlighted}</GradientText>{' '}
               {title.secondary ? title.secondary : ''}{' '}
             </>
           ) : (
