@@ -52,7 +52,7 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
           )}
         </h2>
       )}
-      {subTitle && <p className={styles.subTitle}>{subTitle}</p>}
+      {!!subTitle && <p className={styles.subTitle}>{subTitle}</p>}
     </div>
   );
 };
