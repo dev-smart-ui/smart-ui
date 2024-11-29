@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "title": {
+      "main": "Empowering Your Business with",
+      "highlighted": "Custom Services",
+      "secondary": ""
+    },
+    "description": "From idea to execution, we build bespoke solutions that meet your unique requirements, delivering results that drive growth and enhance performance"
+  },
+  "technologyStack": {
+    "sectionName": "Our Technology Stack ",
+    "title": "We Build the Backbone of Your Digital Presence",
+    "subTitle": "Harnessing the power of advanced CMS platforms and custom solutions, we deliver flexible, scalable, and user-friendly systems. Our expertise ensures seamless content management and adaptability to future needs"
+  },
+  "coreServices": {
+    "headerInfo": {
+      "title": {
+        "main": "Our Custom",
+        "highlighted": "Services"
+      },
+      "subTitle": "Here is a list of Custom Services we've designed for you"
+    },
+    "coreService1": {
+      "title": "Custom Software Development",
+      "description": "We create bespoke software solutions tailored to your business needs, streamlining operations and enhancing productivity with custom-built applications"
+    },
+    "coreService2": {
+      "title": "Website & Web Application Development",
+      "description": "Whether it's a dynamic website or a complex web application, we provide custom development services to ensure your site meets your exact needs"
+    },
+    "coreService3": {
+      "title": "UI/UX Design & Development",
+      "description": "Our design team specializes in creating intuitive, user-centric interfaces and experiences that drive engagement and ensure a positive user journey"
+    },
+    "coreService4": {
+      "title": "Cloud Solutions & Integrations",
+      "description": "We help you harness the power of the cloud with custom cloud infrastructure, storage, and integrations that improve scalability and performance"
+    },
+    "coreService5": {
+      "title": "API Development & Integrations",
+      "description": "We design and develop custom APIs that connect your applications, enabling seamless communication and data flow between systems and third-party services"
+    },
+    "coreService6": {
+      "title": "Automation Solutions",
+      "description": "Our automation services help businesses reduce manual effort, increase productivity, and streamline operations with custom workflows and systems"
+    },
+    "coreService7": {
+      "title": "Consulting & Strategy",
+      "description": "Our team works with you to define your goals and create a custom strategy that ensures the success of your digital transformation and business growth"
+    },
+    "coreService8": {
+      "title": "Email Templates Coding",
+      "description": "We design and code custom email templates that align with your brand, ensuring they are responsive, engaging, and optimized for all email clients"
+    },
+    "coreService9": {
+      "title": "Website Maintenance",
+      "description": "Keep your website running smoothly with our ongoing maintenance services, including updates, performance optimization, security patches, and content management"
+    },
+    "coreService10": {
+      "title": "Website Redesign",
+      "description": "Revamp your website with a fresh, modern design. We offer complete redesign services, ensuring your site is visually appealing, user-friendly, and optimized for performance"
+    },
+    "bottomBlock": {
+      "title": "Let’s Build Your Perfect Solution Together",
+      "description": "Whether you need custom software, a new website, or a digital strategy, we’re here to help. Reach out to get started on your custom solution"
+    }
+  }
+}

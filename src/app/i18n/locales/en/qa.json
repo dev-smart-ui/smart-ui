@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "title": {
+      "main": "Transform Your Business with",
+      "highlighted": "Tailored Digital Solutions",
+      "secondary": ""
+    },
+    "description": "At QA, we specialize in crafting custom websites, software, and digital strategies designed to drive growth and success for your business"
+  },
+  "technologyStack": {
+    "sectionName": "Our Technology Stack ",
+    "title": "We Build the Backbone of Your Digital Presence",
+    "subTitle": "Harnessing the power of advanced CMS platforms and custom solutions, we deliver flexible, scalable, and user-friendly systems. Our expertise ensures seamless content management and adaptability to future needs"
+  },
+  "coreServices": {
+    "headerInfo": {
+      "title": {
+        "main": "Core QA",
+        "highlighted": "Services",
+        "secondary": "Ensuring Quality at Every Stage of Development"
+      },
+      "subTitle": "Here is a list of QA services we've designed for you"
+    },
+    "coreService1": {
+      "title": "Functional Testing",
+      "description": "We thoroughly test every feature of your product to ensure it works as intended across all platforms and devices, delivering a seamless user experience"
+    },
+    "coreService2": {
+      "title": "Performance Testing",
+      "description": "Our team checks your product’s performance under various conditions to ensure it performs optimally, even during peak traffic times"
+    },
+    "coreService3": {
+      "title": "Security Testing",
+      "description": "We conduct in-depth security testing to identify vulnerabilities, ensuring your product is secure and protected from potential threats"
+    },
+    "coreService4": {
+      "title": "Usability Testing",
+      "description": "We evaluate the user interface and experience to ensure ease of use and user satisfaction, providing feedback for design improvements"
+    },
+    "coreService5": {
+      "title": "Regression Testing",
+      "description": "As your product evolves, we test new features to ensure that existing functionalities remain unaffected, ensuring smooth updates and releases"
+    },
+    "coreService6": {
+      "title": "Automation Testing",
+      "description": "We implement automation testing to reduce testing time and improve accuracy, particularly for repetitive tasks and high-volume scenarios"
+    },
+    "coreService7": {
+      "title": "Cross-Browser and Cross-Device Testing",
+      "description": "We ensure that your product delivers a consistent experience across various browsers, operating systems, and devices"
+    },
+    "coreService8": {
+      "title": "User Acceptance Testing (UAT)",
+      "description": "We work with your team to verify that the product meets business requirements and is ready for deployment, ensuring it aligns with user needs and expectations"
+    },
+    "coreService9": {
+      "title": "API Testing",
+      "description": "We test the integration of backend APIs to ensure data flows seamlessly between systems, optimizing communication between your product and third-party services"
+    },
+    "coreService10": {
+      "title": "End-to-End Testing",
+      "description": "From initial development to final release, we conduct end-to-end testing to verify the product works as expected in a real-world scenario, ensuring all components function together"
+    },
+    "bottomBlock": {
+      "title": "Ensure Your Product’s Success with Our QA Services",
+      "description": "Ready to launch a flawless product? Contact us today to ensure it meets the highest quality standards and provides a seamless user experience"
+    }
+  }
+}

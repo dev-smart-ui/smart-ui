@@ -13,6 +13,9 @@ export const metadata = {
   title: 'Smart UI - Web Application Development',
   description:
     'Smart UI specializes in building modern, high-quality web applications.',
+  icons: {
+    icon: '/assets/favicon.png',
+  },
 };
 
 export async function generateStaticParams() {

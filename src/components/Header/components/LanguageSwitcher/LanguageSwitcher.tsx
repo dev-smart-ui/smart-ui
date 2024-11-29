@@ -1,3 +1,4 @@
+import { useLanguage } from '@context/LanguageContext';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { FC } from 'react';
@@ -9,6 +10,7 @@ export const LanguageSwitcher: FC = () => {
   const router = useRouter();
   const pathname = usePathname();
   const { i18n } = useTranslation();
+  const lng = useLanguage();
 
   const handleLanguageChange = async () => {
     const newLanguage = i18n.language === 'ua' ? 'en' : 'ua';
@@ -24,7 +26,7 @@ export const LanguageSwitcher: FC = () => {
     <BorderGradientButton
       isMonotoneBorder
       isRounded="small"
-      text={i18n.language.toUpperCase()}
+      text={lng.toUpperCase()}
       onClick={handleLanguageChange}
     />
   );
