@@ -4,19 +4,19 @@
   overflow: hidden;
   position: relative;
   margin-top: 80px;
-  padding: 70px 16px 40px;
+  padding: 40px 16px 20px;
 
   @include breakpoint(lg) {
-    padding: 140px 16px 80px;
+    padding: 60px 16px 50px;
   }
 
-  &.isNoHomePage {
-    padding: 70px 16px 70px;
-
-    @include breakpoint(lg) {
-      padding: 140px 16px 140px;
-    }
-  }
+  //&.isNoHomePage {
+  //  padding: 70px 16px 70px;
+  //
+  //  @include breakpoint(lg) {
+  //    padding: 140px 16px 140px;
+  //  }
+  //}
 }
 
 .content {
@@ -47,15 +47,15 @@
 
 .homePageImage {
   position: absolute;
-  top: -80px;
-  right: -200px;
+  top: -40px;
+  right: -250px;
   width: 800px;
   z-index: -1;
 
   @include breakpoint(md) {
-    top: -150px;
-    right: -300px;
-    width: 1000px;
+    top: -60px;
+    right: -280px;
+    width: 900px;
   }
 }
 
