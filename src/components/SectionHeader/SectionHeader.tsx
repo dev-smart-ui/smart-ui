@@ -1,3 +1,4 @@
+import { TSectionHeaderGradientColor } from '@app-types/global';
 import classNames from 'classnames';
 
 import { FC } from 'react';
@@ -18,6 +19,7 @@ interface SectionHeaderProps {
   title?: TTitleObj | string;
   subTitle?: string;
   position?: 'left' | 'center' | 'right';
+  color?: TSectionHeaderGradientColor;
 }
 
 export const SectionHeader: FC<SectionHeaderProps> = ({
@@ -25,6 +27,7 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
   title,
   subTitle,
   position = 'center',
+  color,
 }) => {
   const isTitleObject = (value: TTitleObj | string): value is TTitleObj => {
     return (
@@ -44,7 +47,7 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
           {isTitleObject(title) ? (
             <>
               {title.main}{' '}
-              <GradientText color="Secondary">{title.highlighted}</GradientText>{' '}
+              <GradientText color={color}>{title.highlighted}</GradientText>{' '}
               {title.secondary ? title.secondary : ''}{' '}
             </>
           ) : (

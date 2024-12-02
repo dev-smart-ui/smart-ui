@@ -1,3 +1,4 @@
+import { TSectionHeaderGradientColor } from '@app-types/global';
 import classNames from 'classnames';
 
 import { FC, ReactNode } from 'react';
@@ -6,7 +7,7 @@ import styles from './gradientText.module.scss';
 
 interface GradientTextProps {
   children: ReactNode;
-  color?: 'Primary' | 'Secondary' | 'Third';
+  color?: TSectionHeaderGradientColor;
 }
 
 export const GradientText: FC<GradientTextProps> = ({

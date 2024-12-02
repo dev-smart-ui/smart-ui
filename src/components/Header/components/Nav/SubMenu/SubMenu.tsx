@@ -41,21 +41,21 @@ export const SubMenu: FC<SubMenuProps> = ({
       >
         <div className={styles.content}>
           {submenu?.map(({ label, path, icon, desc, gridArea }) => (
-            <div key={label} className={styles.item} style={{ gridArea }}>
-              <Link
-                href={path}
-                onClick={onCloseMainMenu}
-                className={styles.link}
-              >
-                <div className={styles.icon}>
-                  <Image src={icon} alt="serviceicon" />
-                </div>
-                <div className={styles.info}>
-                  <span className={styles.title}>{label}</span>
-                  <span className={styles.description}>{desc}</span>
-                </div>
-              </Link>
-            </div>
+            <Link
+              key={label}
+              style={{ gridArea }}
+              href={path}
+              onClick={onCloseMainMenu}
+              className={styles.link}
+            >
+              <div className={styles.icon}>
+                <Image src={icon} alt="serviceicon" />
+              </div>
+              <div className={styles.info}>
+                <span className={styles.title}>{label}</span>
+                <span className={styles.description}>{desc}</span>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -90,6 +90,27 @@
   width: 100%;
   max-width: 100%;
   padding: 12px;
+  position: relative;
+  transition: all $transition2 ease;
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 50%;
+    width: 2px;
+    height: 0;
+    transition: $transition2 ease;
+    background: rgba($textColor2 ,.5);
+  }
+
+  &:hover {
+    transform: translateX(6px);
+    &::after {
+      bottom: 0;
+      height: 100%;
+    }
+  }
 
   @include breakpoint(lg) {
     max-width: 400px;
