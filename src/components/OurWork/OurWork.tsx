@@ -1,7 +1,10 @@
 'use client';
 
 import { PageEnum } from '@app-types/enums';
+import { TSectionHeaderGradientColor } from '@app-types/global';
 import { IProjectData } from '@app-types/interfaces';
+import classNames from 'classnames';
+import Image, { StaticImageData } from 'next/image';
 
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -19,6 +22,9 @@ interface OurWorkProps {
   page?: string;
   handlePageClick?: (selectedItem: { selected: number }) => void;
   pageCount?: number;
+  bgImage?: StaticImageData;
+  color?: TSectionHeaderGradientColor;
+  isLoading?: boolean;
 }
 
 export const OurWork: FC<OurWorkProps> = ({
@@ -26,6 +32,9 @@ export const OurWork: FC<OurWorkProps> = ({
   page = PageEnum.Home,
   handlePageClick,
   pageCount = 1,
+  bgImage,
+  color,
+  isLoading,
 }) => {
   const { t } = useTranslation(page);
 
@@ -38,15 +47,24 @@ export const OurWork: FC<OurWorkProps> = ({
   };
 
   return (
-    <Section>
+    <Section
+      className={classNames(styles.section, {
+        [styles.isOurWorkPage]: page === PageEnum.OurWork,
+      })}
+    >
       <Container className={styles.content}>
         <SectionHeader
           sectionName={t('ourWork.headerInfo.sectionName')}
           title={headerInfo.title}
           subTitle={headerInfo.subtitle}
+          color={color}
         />
-        <Projects data={data} isOurWorkPage={page === PageEnum.OurWork} />
-        {page === PageEnum.OurWork && (
+        {isLoading ? (
+          <div>..loading</div>
+        ) : (
+          <Projects data={data} isOurWorkPage={page === PageEnum.OurWork} />
+        )}
+        {page === PageEnum.OurWork && data && data?.length > 0 && (
           <ReactPaginate
             className={styles.pagination}
             pageClassName={styles.page}
@@ -60,6 +78,11 @@ export const OurWork: FC<OurWorkProps> = ({
           />
         )}
       </Container>
+      {bgImage && (
+        <div className={styles.topBgImage}>
+          <Image src={bgImage} alt="backgraundImage" />
+        </div>
+      )}
     </Section>
   );
 };

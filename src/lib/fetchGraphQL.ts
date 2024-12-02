@@ -1,9 +1,17 @@
-export const fetchGraphQL = async (query: string, variables: object = {}) => {
+export const fetchGraphQL = async (
+  query: string,
+  variables: object,
+  callbacks?: {
+    onStart?: () => void;
+    onEnd?: () => void;
+  },
+) => {
   const strapiApiUrl =
     process.env.NEXT_PUBLIC_STRAPI_API_URL ??
     'https://strapi-smart-ui.smart-ui.pro/graphql';
 
   try {
+    callbacks?.onStart?.();
     const res = await fetch(strapiApiUrl, {
       method: 'POST',
       headers: {
@@ -17,9 +25,7 @@ export const fetchGraphQL = async (query: string, variables: object = {}) => {
     });
 
     if (!res.ok) {
-      /* eslint-disable no-console */
-      console.error('Failed to fetch data:', res.status, res.statusText);
-      return {};
+      throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
     }
 
     const { data } = await res.json();
@@ -28,5 +34,7 @@ export const fetchGraphQL = async (query: string, variables: object = {}) => {
     /* eslint-disable no-console */
     console.error('Error during GraphQL request:', error);
     return {};
+  } finally {
+    callbacks?.onEnd?.();
   }
 };
