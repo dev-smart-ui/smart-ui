@@ -1,5 +1,6 @@
 'use client';
 
+import { PageEnum } from '@app-types/enums';
 import { IProjectData } from '@app-types/interfaces';
 
 import { FC } from 'react';
@@ -14,13 +15,18 @@ import styles from './ourWork.module.scss';
 
 interface OurWorkProps {
   data?: IProjectData[];
+  page?: string;
 }
 
-export const OurWork: FC<OurWorkProps> = ({ data }) => {
-  const { t } = useTranslation('home');
-  const title = {
-    main: t('ourWork.headerInfo.title.main'),
-    highlighted: t('ourWork.headerInfo.title.highlighted'),
+export const OurWork: FC<OurWorkProps> = ({ data, page = PageEnum.Home }) => {
+  const { t } = useTranslation(page);
+
+  const headerInfo = {
+    title: {
+      main: t('ourWork.headerInfo.title.main'),
+      highlighted: t('ourWork.headerInfo.title.highlighted'),
+    },
+    subtitle: t('ourWork.headerInfo.subTitle'),
   };
 
   return (
@@ -28,9 +34,10 @@ export const OurWork: FC<OurWorkProps> = ({ data }) => {
       <Container className={styles.content}>
         <SectionHeader
           sectionName={t('ourWork.headerInfo.sectionName')}
-          title={title}
+          title={headerInfo.title}
+          subTitle={headerInfo.subtitle}
         />
-        <Projects data={data} />
+        <Projects data={data} isOurWorkPage={page === PageEnum.OurWork} />
       </Container>
     </Section>
   );

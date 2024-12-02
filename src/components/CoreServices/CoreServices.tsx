@@ -1,5 +1,7 @@
 'use client';
 
+import { PageEnum } from '@app-types/enums';
+
 import { FC } from 'react';
 
 import { Container } from '@components/Container';
@@ -13,7 +15,9 @@ interface CoreServicesProps {
   page?: string;
 }
 
-export const CoreServices: FC<CoreServicesProps> = ({ page = 'cms' }) => {
+export const CoreServices: FC<CoreServicesProps> = ({
+  page = PageEnum.Cms,
+}) => {
   const { headerInfo, coreServicesData, bottomBlock } =
     useLocaleServicesData(page);
   return (

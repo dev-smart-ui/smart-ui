@@ -1,18 +1,18 @@
 import { IProjectData } from '@app-types/interfaces';
-import Image from 'next/image';
+import classNames from 'classnames';
 import Link from 'next/link';
 
 import { FC } from 'react';
 
-import { GradientBorder } from '@components/GradientBorder';
-
+import { ProjectContent } from './ProjectContent';
 import styles from './project.module.scss';
 
 interface ProjectProps {
   project: IProjectData;
+  isOurWorkPage: boolean;
 }
 
-export const Project: FC<ProjectProps> = ({ project }) => {
+export const Project: FC<ProjectProps> = ({ project, isOurWorkPage }) => {
   const {
     main_img: mainImage,
     color,
@@ -21,24 +21,33 @@ export const Project: FC<ProjectProps> = ({ project }) => {
   } = project?.attributes || {};
 
   return (
-    <li key={project.id} className={styles.wrapper}>
-      <Link className={styles.content} href={siteUrl} target="_blank">
-        <GradientBorder color={color}>
-          <div className={styles.image}>
-            <Image
-              src={mainImage?.data?.attributes?.url || ''}
-              alt="projectImage"
-              layout="responsive"
-              width={366}
-              height={280}
-              objectFit="cover"
-            />
-          </div>
-        </GradientBorder>
-        <span className={styles.name} style={{ color }}>
-          {projectName}
-        </span>
-      </Link>
+    <li
+      key={project.id}
+      className={classNames(styles.wrapper, {
+        [styles.isOurWorkPage]: isOurWorkPage,
+      })}
+    >
+      {isOurWorkPage ? (
+        <div className={styles.content}>
+          <ProjectContent
+            projectName={projectName}
+            color={color}
+            mainImage={mainImage?.data?.attributes?.url}
+            isOurWorkPage={isOurWorkPage}
+            siteUrl={siteUrl}
+          />
+        </div>
+      ) : (
+        <Link className={styles.content} href={siteUrl} target="_blank">
+          <ProjectContent
+            projectName={projectName}
+            color={color}
+            mainImage={mainImage?.data?.attributes?.url}
+            isOurWorkPage={isOurWorkPage}
+            siteUrl={siteUrl}
+          />
+        </Link>
+      )}
     </li>
   );
 };

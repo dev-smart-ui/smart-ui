@@ -13,6 +13,15 @@
   @include breakpoint(lg) {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  &.isOurWorkPage {
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint(lg2) {
+      gap: 60px;
+    }
+  }
 }
 
 .more {

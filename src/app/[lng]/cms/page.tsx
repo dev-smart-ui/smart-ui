@@ -1,3 +1,4 @@
+import { PageEnum } from '@app-types/enums';
 import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
@@ -24,7 +25,7 @@ export default async function CmsPage() {
   return (
     <>
       <Hero
-        page="cms"
+        page={PageEnum.Cms}
         image={heroImg}
         bottomBgImage={bottomBgImage}
         colorGradiant="Third"

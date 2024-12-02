@@ -1,3 +1,4 @@
+import { PageEnum } from '@app-types/enums';
 import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
@@ -24,13 +25,13 @@ export default async function CustomServicePage() {
   return (
     <>
       <Hero
-        page="customService"
+        page={PageEnum.CustomService}
         image={heroImg}
         bottomBgImage={bottomBgImage}
         colorGradiant="Third"
       />
-      <TechnologyStack image={technologyImg} page="customService" />
-      <CoreServices page="customService" />
+      <TechnologyStack image={technologyImg} page={PageEnum.CustomService} />
+      <CoreServices page={PageEnum.CustomService} />
       <Clients />
       <OurWork data={singleProjectsData} />
       <Accordion />

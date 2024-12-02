@@ -165,7 +165,8 @@
       "title": {
         "main": "Explore Our Success Stories",
         "highlighted": "Project Highlights"
-      }
+      },
+      "subTitle": ""
     }
   },
   "accordion": {

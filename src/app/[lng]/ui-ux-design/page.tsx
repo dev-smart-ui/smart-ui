@@ -1,3 +1,4 @@
+import { PageEnum } from '@app-types/enums';
 import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
@@ -24,13 +25,13 @@ export default async function UiUxDesignPage() {
   return (
     <>
       <Hero
-        page="uiUxDesigne"
+        page={PageEnum.UiUxDesign}
         image={heroImg}
         bottomBgImage={bottomBgImage}
         colorGradiant="Third"
       />
-      <TechnologyStack image={technologyImg} page="uiUxDesigne" />
-      <CoreServices page="uiUxDesigne" />
+      <TechnologyStack image={technologyImg} page={PageEnum.UiUxDesign} />
+      <CoreServices page={PageEnum.UiUxDesign} />
       <Clients />
       <OurWork data={singleProjectsData} />
       <Accordion />

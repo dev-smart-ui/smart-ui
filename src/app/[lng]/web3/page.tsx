@@ -1,3 +1,4 @@
+import { PageEnum } from '@app-types/enums';
 import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
@@ -24,13 +25,13 @@ export default async function web3Page() {
   return (
     <>
       <Hero
-        page="customService"
+        page={PageEnum.Web3}
         image={heroImg}
         bottomBgImage={bottomBgImage}
         colorGradiant="Third"
       />
-      <TechnologyStack image={technologyImg} page="customService" />
-      <CoreServices page="customService" />
+      <TechnologyStack image={technologyImg} page={PageEnum.Web3} />
+      <CoreServices page={PageEnum.Web3} />
       <Clients />
       <OurWork data={singleProjectsData} />
       <Accordion />

@@ -1,3 +1,4 @@
+import { PageEnum } from '@app-types/enums';
 import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
@@ -24,13 +25,16 @@ export default async function FrontendDevelopmentPage() {
   return (
     <>
       <Hero
-        page="frontendDevelopment"
+        page={PageEnum.FrontendDevelopment}
         image={heroImg}
         bottomBgImage={bottomBgImage}
         colorGradiant="Third"
       />
-      <TechnologyStack image={technologyImg} page="frontendDevelopment" />
-      <CoreServices page="frontendDevelopment" />
+      <TechnologyStack
+        image={technologyImg}
+        page={PageEnum.FrontendDevelopment}
+      />
+      <CoreServices page={PageEnum.FrontendDevelopment} />
       <Clients />
       <OurWork data={singleProjectsData} />
       <Accordion />
