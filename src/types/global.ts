@@ -13,3 +13,5 @@ export interface IBottomBlock {
   description: string;
   buttonLabel: string;
 }
+
+export type TSectionHeaderGradientColor = 'Primary' | 'Secondary' | 'Third';

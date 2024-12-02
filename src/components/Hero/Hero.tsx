@@ -61,7 +61,7 @@ export const Hero: FC<HeroProps> = ({
       </Container>
       {!isHomePage && !!bottomBgImage && (
         <div
-          className={classNames(styles.bottomBgImage, styles[`${page}Section`])}
+          className={classNames(styles.bottomBgImage, styles[`${page}Page`])}
         >
           <Image src={bottomBgImage} alt="bgImage" />
         </div>

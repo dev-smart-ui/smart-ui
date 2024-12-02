@@ -1,4 +1,4 @@
-import { IHeaderInfo } from '@app-types/interfaces/global';
+import { IHeaderInfo } from '@app-types/global';
 
 import { useTranslation } from 'react-i18next';
 

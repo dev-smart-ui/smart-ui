@@ -9,14 +9,6 @@
   @include breakpoint(lg) {
     padding: 60px 16px 50px;
   }
-
-  //&.isNoHomePage {
-  //  padding: 70px 16px 70px;
-  //
-  //  @include breakpoint(lg) {
-  //    padding: 140px 16px 140px;
-  //  }
-  //}
 }
 
 .content {
@@ -79,13 +71,79 @@
     height: 4px;
   }
 
-  &.cmsServiceSection {
+  &.frontendDevelopmentPage {
+    &::after {
+      background: linear-gradient(
+                      to right,
+                      #123436 10%,
+                      #16181E 50%,
+                      #123436 90%
+      );
+    }
+  }
+
+  &.cmsPage {
     &::after {
       background: linear-gradient(
                       to right,
                       #31B76F 10%,
                       #16181E 50%,
                       #31B76F 90%
+      );
+    }
+  }
+
+  &.backendDevelopmentPage {
+    &::after {
+      background: linear-gradient(
+                      to right,
+                      #6730AB 10%,
+                      #181920 50%,
+                      #6730AB 90%
+      );
+    }
+  }
+
+  &.uiUxDesignPage {
+    &::after {
+      background: linear-gradient(
+                      to right,
+                      #113335 10%,
+                      #16181D 50%,
+                      #113335 90%
+      );
+    }
+  }
+
+  &.qaPage {
+    &::after {
+      background: linear-gradient(
+                      to right,
+                      #113335 10%,
+                      #16181D 50%,
+                      #113335 90%
+      );
+    }
+  }
+
+  &.customServicePage {
+    &::after {
+      background: linear-gradient(
+                      to right,
+                      #113335 10%,
+                      #16181D 50%,
+                      #113335 90%
+      );
+    }
+  }
+
+  &.web3Page {
+    &::after {
+      background: linear-gradient(
+                      to right,
+                      #113335 10%,
+                      #16181D 50%,
+                      #113335 90%
       );
     }
   }
