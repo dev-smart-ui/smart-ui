@@ -4,15 +4,16 @@
   overflow: hidden;
   position: relative;
   margin-top: 80px;
+  padding: 0;
+}
+
+.content {
+  position: relative;
   padding: 40px 16px 20px;
 
   @include breakpoint(lg) {
     padding: 60px 16px 50px;
   }
-}
-
-.content {
-  position: relative;
 
   &.isNoHomePage {
     display: flex;
@@ -34,6 +35,20 @@
 .allPageImage {
   @include breakpoint(xl) {
     margin-right: -110px;
+  }
+
+  &.isAboutUsPage {
+    margin: 0;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+
+    @include breakpoint(lg) {
+      top: 0;
+      right: 16px;
+    }
   }
 }
 
