@@ -1,6 +1,7 @@
 export const fetchGraphQL = async (query: string, variables: object = {}) => {
   const strapiApiUrl =
-    process.env.STRAPI_API_URL ?? 'http://localhost:1337/graphql';
+    process.env.NEXT_PUBLIC_STRAPI_API_URL ??
+    'https://strapi-smart-ui.smart-ui.pro/graphql';
 
   try {
     const res = await fetch(strapiApiUrl, {

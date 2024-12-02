@@ -42,7 +42,7 @@ export const ProjectContent: FC<{
             UI-UX design + Game Cross-Platform + Development
           </span>
           <Link
-            href={siteUrl}
+            href={siteUrl || '#'}
             target="_blank"
             className={styles.additionalLink}
           >
