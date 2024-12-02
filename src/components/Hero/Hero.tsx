@@ -1,5 +1,6 @@
 'use client';
 
+import { PageEnum } from '@app-types/enums';
 import classNames from 'classnames';
 import Image, { StaticImageData } from 'next/image';
 
@@ -23,13 +24,13 @@ interface HeroProps {
 }
 
 export const Hero: FC<HeroProps> = ({
-  page = 'home',
+  page = PageEnum.Home,
   image,
   bottomBgImage,
   colorGradiant,
 }) => {
   const { t } = useTranslation([page, 'common']);
-  const isHomePage = page === 'home';
+  const isHomePage = page === PageEnum.Home;
 
   return (
     <Section

@@ -1,5 +1,6 @@
 'use client';
 
+import { PageEnum } from '@app-types/enums';
 import { IProjectData } from '@app-types/interfaces';
 
 import { FC } from 'react';
@@ -17,7 +18,7 @@ interface OurWorkProps {
   page?: string;
 }
 
-export const OurWork: FC<OurWorkProps> = ({ data, page = 'home' }) => {
+export const OurWork: FC<OurWorkProps> = ({ data, page = PageEnum.Home }) => {
   const { t } = useTranslation(page);
 
   const headerInfo = {
@@ -36,7 +37,7 @@ export const OurWork: FC<OurWorkProps> = ({ data, page = 'home' }) => {
           title={headerInfo.title}
           subTitle={headerInfo.subtitle}
         />
-        <Projects data={data} isOurWorkPage={page === 'ourWork'} />
+        <Projects data={data} isOurWorkPage={page === PageEnum.OurWork} />
       </Container>
     </Section>
   );

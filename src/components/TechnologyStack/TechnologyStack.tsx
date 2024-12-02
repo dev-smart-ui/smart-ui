@@ -1,5 +1,6 @@
 'use client';
 
+import { PageEnum } from '@app-types/enums';
 import Image, { StaticImageData } from 'next/image';
 
 import { FC } from 'react';
@@ -17,7 +18,7 @@ interface TechnologyStackProps {
 }
 
 export const TechnologyStack: FC<TechnologyStackProps> = ({
-  page = 'cms',
+  page = PageEnum.Cms,
   image,
 }) => {
   const { t } = useTranslation(page);

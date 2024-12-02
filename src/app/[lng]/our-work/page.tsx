@@ -1,3 +1,4 @@
+import { PageEnum } from '@app-types/enums';
 import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
@@ -15,7 +16,7 @@ export default async function OurWorkPage() {
 
   return (
     <>
-      <OurWork data={singleProjectsData} page="ourWork" />
+      <OurWork data={singleProjectsData} page={PageEnum.OurWork} />
       <Clients />
       <ContactForm />
     </>
