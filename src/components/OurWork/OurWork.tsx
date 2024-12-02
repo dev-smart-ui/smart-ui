@@ -36,7 +36,7 @@ export const OurWork: FC<OurWorkProps> = ({ data, page = 'home' }) => {
           title={headerInfo.title}
           subTitle={headerInfo.subtitle}
         />
-        <Projects data={data} />
+        <Projects data={data} isOurWorkPage={page === 'ourWork'} />
       </Container>
     </Section>
   );

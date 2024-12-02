@@ -8,7 +8,7 @@ import { OurWork } from '@components/OurWork';
 export default async function OurWorkPage() {
   const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
     locale: 'en',
-    pagination: { limit: 5 },
+    pagination: { limit: 6 },
   });
 
   const singleProjectsData = singleProjects?.data || [];

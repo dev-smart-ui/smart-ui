@@ -4,10 +4,61 @@
   background: $cardColo3;
   border-radius: $borderRadius2;
   transition: $transition2 ease;
+  overflow: hidden;
 
   &:hover {
     transform: scale(1.05);
   }
+
+  .image {
+    border-radius: $borderRadius2;
+    overflow: hidden;
+    height: 280px;
+    display: flex;
+    transition: $transition2 ease;
+    padding: 0;
+  }
+
+  &.isOurWorkPage {
+    .content {
+      padding: 0;
+      gap: 0;
+    }
+
+    .info, .imgWrapper {
+      padding: 16px;
+
+      @include breakpoint(md) {
+        padding: 32px;
+      }
+    }
+    .image {
+      @include breakpoint(lg) {
+        height: 448px;
+      }
+    }
+
+    .name {
+      text-transform: capitalize;
+      color: $textColor2;
+      font-size: 22px;
+
+      @include breakpoint(md) {
+        font-size: 28px;
+      }
+    }
+
+    &:hover {
+      transform: initial;
+    }
+  }
+}
+
+.imgWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $cardColor;
 }
 
 .content {
@@ -15,16 +66,46 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px 20px 32px;
+  padding: 16px;
+
+  @include breakpoint(md) {
+    padding: 32px;
+  }
 }
 
-.image {
-  border-radius: $borderRadius2;
-  overflow: hidden;
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .name {
   font-size: 16px;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.shortDesc {
+  font-size: 16px;
+  font-weight: 300;
+  color: $textColor;
+}
+
+.additionalLink {
+  color: $primaryColor;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  max-width: max-content;
+  margin-top: 16px;
+
+  svg {
+    transition: $transition2 ease;
+  }
+
+  &:hover {
+    svg {
+      transform: translateX(3px);
+    }
+  }
 }
