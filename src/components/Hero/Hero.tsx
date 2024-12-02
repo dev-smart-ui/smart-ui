@@ -8,6 +8,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
+import { InfoCards } from '@components/Hero/InfoCards';
 import { Section } from '@components/Section';
 
 import { Content } from './Content';
@@ -31,13 +32,10 @@ export const Hero: FC<HeroProps> = ({
 }) => {
   const { t } = useTranslation([page, 'common']);
   const isHomePage = page === PageEnum.Home;
+  const isAboutUsPage = page === PageEnum.AboutUs;
 
   return (
-    <Section
-      className={classNames(styles.heroSection, {
-        [styles.isNoHomePage]: !isHomePage,
-      })}
-    >
+    <Section className={styles.heroSection}>
       <Container
         className={classNames(styles.content, {
           [styles.isNoHomePage]: !isHomePage,
@@ -46,10 +44,18 @@ export const Hero: FC<HeroProps> = ({
         <div className={styles.contentWrapper}>
           {isHomePage && <Trust description={t('hero.trust')} />}
           <Content colorGradiant={colorGradiant} t={t} />
-          <Navigation t={t} isHomePage={isHomePage} />
+          {isAboutUsPage ? (
+            <InfoCards t={t} />
+          ) : (
+            <Navigation t={t} isHomePage={isHomePage} />
+          )}
         </div>
         {!isHomePage && !!image && (
-          <div className={styles.allPageImage}>
+          <div
+            className={classNames(styles.allPageImage, {
+              [styles.isAboutUsPage]: isAboutUsPage,
+            })}
+          >
             <Image src={image} alt="backgroundImage" />
           </div>
         )}
