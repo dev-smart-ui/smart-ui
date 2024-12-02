@@ -20,5 +20,10 @@ query GetSingleProjectsData($locale: I18NLocaleCode!, $pagination: PaginationArg
         seo_description
       }
     }
+    meta {
+      pagination {
+        pageCount
+      }
+    }
   }
 }`;
