@@ -18,7 +18,13 @@ export const Team: FC<TeamProps> = ({ data }) => {
       {data.map(
         ({
           id,
-          attributes: { name, position, preview_photo: previewPhoto, linkedin },
+          attributes: {
+            name,
+            position,
+            preview_photo: previewPhoto,
+            linkedin,
+            behance,
+          },
         }) => (
           <div key={id} className={styles.item}>
             <div className={styles.imageWrapper}>
@@ -28,24 +34,30 @@ export const Team: FC<TeamProps> = ({ data }) => {
                 src={previewPhoto?.data?.attributes?.url}
                 alt="expertPicture"
               />
-              <div className={styles.hiddenInfo}>
-                <div className={styles.socials}>
-                  <Link
-                    href={linkedin ?? '#'}
-                    target="_blank"
-                    className={styles.socialBtn}
-                  >
-                    <Icons.Behance fill="#fff" />
-                  </Link>
-                  <Link
-                    href={linkedin ?? '#'}
-                    target="_blank"
-                    className={styles.socialBtn}
-                  >
-                    <Icons.Linkedin fill="#fff" />
-                  </Link>
+              {(linkedin || behance) && (
+                <div className={styles.hiddenInfo}>
+                  <div className={styles.socials}>
+                    {behance && (
+                      <Link
+                        href={behance}
+                        target="_blank"
+                        className={styles.socialBtn}
+                      >
+                        <Icons.Behance fill="#fff" />
+                      </Link>
+                    )}
+                    {linkedin && (
+                      <Link
+                        href={linkedin}
+                        target="_blank"
+                        className={styles.socialBtn}
+                      >
+                        <Icons.Linkedin fill="#fff" />
+                      </Link>
+                    )}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
             <div className={styles.info}>
               <span className={styles.name}>{name}</span>

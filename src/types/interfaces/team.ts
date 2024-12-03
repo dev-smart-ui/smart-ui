@@ -12,6 +12,7 @@ export interface IExpert {
     email: string;
     english_level: string;
     level: string;
+    behance: string;
     linkedin: string;
     telegram: string;
     name: string;
