@@ -3,7 +3,7 @@ export interface IHeaderInfo {
   title: {
     main: string;
     highlighted: string;
-    secondary: string;
+    secondary?: string;
   };
   subTitle: string;
 }

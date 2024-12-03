@@ -1,5 +1,7 @@
 'use client';
 
+import { IHeaderInfo } from '@app-types/global';
+
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -12,12 +14,13 @@ import styles from './drivingSuccess.module.scss';
 export const DrivingSuccess: FC = () => {
   const { t } = useTranslation('aboutUs');
 
-  const headerInfo = {
+  const headerInfo: IHeaderInfo = {
+    sectionName: t('drivingSuccess.sectionName'),
     title: {
       main: t('drivingSuccess.title.main'),
       highlighted: t('drivingSuccess.title.highlighted'),
     },
-    subtitle: t('drivingSuccess.description'),
+    subTitle: t('drivingSuccess.description'),
   };
 
   return (
@@ -25,9 +28,9 @@ export const DrivingSuccess: FC = () => {
       <Container className={styles.content}>
         <SectionHeader
           className={styles.sectionHeader}
-          sectionName={t('drivingSuccess.sectionName')}
+          sectionName={headerInfo.sectionName}
           title={headerInfo.title}
-          subTitle={headerInfo.subtitle}
+          subTitle={headerInfo.subTitle}
           color="Third"
         />
       </Container>

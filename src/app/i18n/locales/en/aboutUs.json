@@ -36,5 +36,16 @@
       "title": "Our Mission",
       "description": "Our mission is to deliver tailored solutions with a client-first approach, creating meaningful impact through cutting-edge technology. We are committed to building long-lasting partnerships based on trust, collaboration, and exceptional results"
     }
+  },
+  "ourExperts": {
+    "headerInfo": {
+      "sectionName": "Our Experts",
+      "title": {
+        "main": "Experts who bring",
+        "highlighted": "Your vision",
+        "secondary": "to life"
+      },
+      "description": "Our team is the heart of everything we do. Comprised of skilled professionals, creative thinkers, and problem-solvers, we work together to deliver exceptional IT solutions. Get to know the experts who are passionate about bringing your vision to life"
+    }
   }
 }
