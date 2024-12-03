@@ -1,0 +1,61 @@
+@import "@styles/vars";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+  }
+  @include breakpoint(lg) {
+    gap: 48px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px;
+  border: 1px solid $borderColor4;
+  border-radius: $borderRadius2;
+
+  @include breakpoint(lg) {
+    padding: 32px;
+    gap: 40px;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @include breakpoint(md) {
+    gap: 20px;
+  }
+}
+
+.title {
+  font-size: 28px;
+  line-height: 1.4;
+  color: white;
+
+  @include breakpoint(md) {
+    font-size: 32px;
+  }
+}
+
+.description {
+  font-size: 16px;
+  color: $textColor2;
+
+  @include breakpoint(md) {
+    font-size: 20px;
+  }
+}
+
+.image {
+  max-width: 88px;
+}
