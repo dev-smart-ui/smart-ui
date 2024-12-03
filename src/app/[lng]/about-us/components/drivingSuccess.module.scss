@@ -1,0 +1,24 @@
+@import "@styles/vars";
+
+.content {
+  .sectionHeader {
+    @include breakpoint(lg) {
+      flex-direction: row;
+      gap: 100px;
+
+      h2 {
+        text-align: left;
+      }
+
+      > div {
+        width: 41%;
+        align-items: flex-start;
+      }
+
+      p {
+        text-align: left;
+        width: 59%;
+      }
+    }
+  }
+}
