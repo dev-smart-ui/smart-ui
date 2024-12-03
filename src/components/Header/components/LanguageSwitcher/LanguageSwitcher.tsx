@@ -13,7 +13,7 @@ export const LanguageSwitcher: FC = () => {
   const lng = useLanguage();
 
   const handleLanguageChange = async () => {
-    const newLanguage = i18n.language === 'ua' ? 'en' : 'ua';
+    const newLanguage = i18n.language === 'uk-UA' ? 'en' : 'uk-UA';
 
     await i18n.changeLanguage(newLanguage);
     const segments = pathname.split('/');
@@ -26,7 +26,7 @@ export const LanguageSwitcher: FC = () => {
     <BorderGradientButton
       isMonotoneBorder
       isRounded="small"
-      text={lng.toUpperCase()}
+      text={(lng === 'uk-UA' ? 'ua' : 'en').toUpperCase()}
       onClick={handleLanguageChange}
     />
   );
