@@ -20,6 +20,7 @@ interface SectionHeaderProps {
   subTitle?: string;
   position?: 'left' | 'center' | 'right';
   color?: TSectionHeaderGradientColor;
+  className?: string;
 }
 
 export const SectionHeader: FC<SectionHeaderProps> = ({
@@ -28,6 +29,7 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
   subTitle,
   position = 'center',
   color,
+  className,
 }) => {
   const isTitleObject = (value: TTitleObj | string): value is TTitleObj => {
     return (
@@ -36,25 +38,33 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
   };
 
   return (
-    <div className={classNames(styles.wrapper, styles[`${position}Position`])}>
-      {!!sectionName && (
-        <TextGradientBackground className={styles.sectionName}>
-          {sectionName}
-        </TextGradientBackground>
+    <div
+      className={classNames(
+        styles.wrapper,
+        styles[`${position}Position`],
+        className ?? '',
       )}
-      {!!title && (
-        <h2 className={styles.title}>
-          {isTitleObject(title) ? (
-            <>
-              {title.main}{' '}
-              <GradientText color={color}>{title.highlighted}</GradientText>{' '}
-              {title.secondary ? title.secondary : ''}{' '}
-            </>
-          ) : (
-            title
-          )}
-        </h2>
-      )}
+    >
+      <div className={styles.titleWrapper}>
+        {!!sectionName && (
+          <TextGradientBackground className={styles.sectionName}>
+            {sectionName}
+          </TextGradientBackground>
+        )}
+        {!!title && (
+          <h2 className={styles.title}>
+            {isTitleObject(title) ? (
+              <>
+                {title.main}{' '}
+                <GradientText color={color}>{title.highlighted}</GradientText>{' '}
+                {title.secondary ? title.secondary : ''}{' '}
+              </>
+            ) : (
+              title
+            )}
+          </h2>
+        )}
+      </div>
       {!!subTitle && <p className={styles.subTitle}>{subTitle}</p>}
     </div>
   );

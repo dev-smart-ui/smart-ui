@@ -1,0 +1,96 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: minmax(440px, auto);
+  gap: 12px;
+  margin-top: 32px;
+
+  @include breakpoint(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoint(lg) {
+    margin-top: 62px;
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &:hover {
+    .hiddenInfo {
+      transform: translateY(0);
+      pointer-events: all;
+      padding: 32px;
+    }
+  }
+}
+
+.imageWrapper {
+  overflow: hidden;
+  min-height: 360px;
+  max-height: 360px;
+  border-radius: $borderRadius1;
+  position: relative;
+}
+
+.hiddenInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.6);
+  transition: $transition2;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 32px;
+  transform: translateY(100%);
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.socialBtn {
+  border-radius: $borderRadius1;
+  min-width: 48px;
+  height: 48px;
+  transition: $transition1;
+  align-self: flex-end;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: rgba($fourthColor, .8);
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 19px;
+  color: white;
+}
+
+.position {
+  color: $textColor8;
+  font-size: 16px;
+}

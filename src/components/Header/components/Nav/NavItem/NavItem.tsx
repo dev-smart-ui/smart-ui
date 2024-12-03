@@ -31,9 +31,11 @@ export const NavItem: FC<NavItemProps> = ({
   } = useOpen();
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const navItemRef = useRef<HTMLLIElement | null>(null);
-  const normalizedPathname = pathname.replace(/^\/[a-z]{2}/, '') || '/';
-  const normalizedLinkPath = link.path?.replace(/^\/[a-z]{2}/, '') || '/';
   useResetStatesOnResize([() => setIsSubmenuOpen(false), onCloseMainMenu]);
+  const normalizedPathname =
+    pathname.replace(/^\/[a-z]{2}(-[A-Z]{2})?/, '') || '/';
+  const normalizedLinkPath =
+    link.path?.replace(/^\/[a-z]{2}(-[A-Z]{2})?/, '') || '/';
 
   const isActive =
     link.path &&
