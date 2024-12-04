@@ -33,7 +33,7 @@ const LINKS = [
 export const Services: FC = () => {
   return (
     <div className={styles.wrapper}>
-      <h6 className={styles.title}>Services</h6>
+      <span className={styles.title}>Services</span>
       <ItemsList items={LINKS} />
     </div>
   );

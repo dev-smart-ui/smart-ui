@@ -24,7 +24,7 @@ export const Advantages: FC = () => {
           {cards.map(({ title, icon, description }) => (
             <li key={title} className={styles.card}>
               {icon}
-              <h5 className={styles.cardTitle}>{title}</h5>
+              <span className={styles.cardTitle}>{title}</span>
               <p className={styles.cardDescription}>{description}</p>
             </li>
           ))}
