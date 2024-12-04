@@ -29,7 +29,7 @@ export const Slider: FC<SliderProps> = ({ t }) => {
       <Swiper
         loop
         centeredSlides
-        simulateTouch={false}
+        allowTouchMove={false}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         speed={1000}
         loopAdditionalSlides={2}
@@ -51,7 +51,8 @@ export const Slider: FC<SliderProps> = ({ t }) => {
             slidesPerView: 3,
           },
         }}
-        className={styles.swiper}
+        className={styles.feedbackSwiper}
+        id="feedbackSwiper"
       >
         {feedbacks.map((feedback) => (
           <SwiperSlide

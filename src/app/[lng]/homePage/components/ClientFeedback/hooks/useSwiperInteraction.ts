@@ -14,7 +14,9 @@ export const useSwiperInteraction = (
     }
 
     const target = event.currentTarget as HTMLElement;
-    const swiperWrapper = document.querySelector('.swiper') as HTMLElement;
+    const swiperWrapper = document.querySelector(
+      '#feedbackSwiper',
+    ) as HTMLElement;
 
     if (swiperWrapper) {
       if (target.classList.contains('swiper-slide-active')) {
@@ -28,7 +30,9 @@ export const useSwiperInteraction = (
   };
 
   const handleMouseLeave = () => {
-    const swiperWrapper = document.querySelector('.swiper') as HTMLElement;
+    const swiperWrapper = document.querySelector(
+      '#feedbackSwiper',
+    ) as HTMLElement;
 
     if (swiperWrapper) {
       if (swiperRef.current) {

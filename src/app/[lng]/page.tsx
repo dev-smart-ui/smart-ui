@@ -3,7 +3,6 @@ import { fetchGraphQL } from '@lib/fetchGraphQL';
 import dynamic from 'next/dynamic';
 
 import { Accordion } from '@components/Accordion';
-import { Clients } from '@components/Clients';
 import { Hero } from '@components/Hero';
 import { OurWork } from '@components/OurWork';
 
@@ -24,6 +23,13 @@ const ClientFeedback = dynamic(
 
 const ContactForm = dynamic(
   () => import('@components/ContactForm').then((mod) => mod.ContactForm),
+  {
+    ssr: false,
+  },
+);
+
+const Clients = dynamic(
+  () => import('@components/Clients').then((mod) => mod.Clients),
   {
     ssr: false,
   },
