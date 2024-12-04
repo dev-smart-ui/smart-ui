@@ -33,15 +33,17 @@ export const Projects: FC<ProjectsProps> = ({ data, isOurWorkPage }) => {
         />
       ))}
       {!isOurWorkPage && (
-        <Link href={`/${lng}/${ROUTES.OUR_WORK}`} className={styles.more}>
-          <BorderGradientButton
-            className={styles.link}
-            icon={<Icons.ArrowRight width={50} height={50} />}
-            gradientDirection="toTopRight"
-            isRounded="large"
-          />
+        <li className={styles.more}>
+          <Link href={`/${lng}/${ROUTES.OUR_WORK}`}>
+            <BorderGradientButton
+              className={styles.link}
+              icon={<Icons.ArrowRight width={50} height={50} />}
+              gradientDirection="toTopRight"
+              isRounded="large"
+            />
+          </Link>
           <span className={styles.linkDesc}>View All Projects</span>
-        </Link>
+        </li>
       )}
     </ul>
   );
