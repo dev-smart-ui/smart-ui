@@ -11,37 +11,6 @@
     width: initial;
     padding: 0;
   }
-
-  @include breakpoint(lg) {
-    &:hover {
-      .navMenuBtn {
-        .arrow {
-          margin-top: 4px;
-          transform: rotate(225deg);
-        }
-
-        + div {
-          pointer-events: all;
-
-          + div {
-            &::before {
-              opacity: 1;
-            }
-          }
-
-          > div {
-            max-height: 500px;
-            padding: 10px 16px;
-            opacity: 1;
-          }
-        }
-
-        &::after {
-          opacity: 1;
-        }
-      }
-    }
-  }
 }
 
 .link, .navMenuBtn {
@@ -99,6 +68,17 @@
   align-items: center;
   gap: 7px;
   width: 100%;
+
+  &.active {
+    .arrow {
+      margin-top: 4px;
+      transform: rotate(225deg);
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
 }
 
 .arrow {
