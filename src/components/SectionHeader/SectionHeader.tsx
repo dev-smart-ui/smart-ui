@@ -28,7 +28,7 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
   title,
   subTitle,
   position = 'center',
-  color,
+  color = 'Secondary',
   className,
 }) => {
   const isTitleObject = (value: TTitleObj | string): value is TTitleObj => {

@@ -25,9 +25,10 @@
 
   &:hover {
     .hiddenInfo {
-      transform: translateY(0);
+      height: 100%;
       pointer-events: all;
       padding: 32px;
+      opacity: 1;
     }
   }
 }
@@ -44,16 +45,16 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  top: 0;
+  height: 0;
   width: 100%;
   pointer-events: none;
+  opacity: 0;
   background: rgba(0, 0, 0, 0.6);
   transition: $transition2;
   display: flex;
   justify-content: center;
   overflow: hidden;
   padding: 0 32px;
-  transform: translateY(100%);
 }
 
 .socials {
@@ -91,6 +92,6 @@
 }
 
 .position {
-  color: $textColor8;
+  color: $textColor4;
   font-size: 16px;
 }

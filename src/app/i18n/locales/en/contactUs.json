@@ -1,0 +1,24 @@
+{
+  "contactUs": {
+    "headerInfo": {
+      "sectionName": "Contact Us",
+      "title": {
+        "main": "Have a project idea!",
+        "highlighted": "Write down a quote",
+        "secondary": ""
+      },
+      "description": "We’re here to answer your questions and help you connect with the right team"
+    }
+  },
+  "contactBlock": {
+    "contact1": {
+      "label": "Contact Phone Number"
+    },
+    "contact2": {
+      "label": "Our Email Address"
+    },
+    "contact3": {
+      "label": "Our Location"
+    }
+  }
+}

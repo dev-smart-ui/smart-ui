@@ -1,0 +1,115 @@
+@import '@styles/vars';
+
+.wrapper {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @include breakpoint(md) {
+    align-items: center;
+  }
+  @include breakpoint(lg) {
+    margin-top: 160px;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .socialButtonsWrapper {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+
+    > div {
+      padding: 0;
+    }
+
+    span {
+      width: 100%;
+      display: block;
+      text-align: left;
+
+      @include breakpoint(lg) {
+        text-align: left;
+      }
+    }
+  }
+}
+
+.formWrapper {
+  max-width: 750px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @include breakpoint(md) {
+    gap: 32px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+
+  @include breakpoint(lg) {
+    align-items: flex-start;
+  }
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-self: flex-start;
+  justify-content: center;
+
+  @include breakpoint(lg) {
+    gap: 40px;
+  }
+}
+
+.icon {
+  display: inline-flex;
+  min-width: 60px;
+  height: 60px;
+  background: $backgroundColor4;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint(lg) {
+    min-width: 80px;
+    height: 80px;
+  }
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.label {
+  color: $textColor7;
+  font-size: 16px;
+
+  @include breakpoint(md) {
+    font-size: 20px;
+  }
+}
+
+.text {
+  font-size: 22px;
+  font-weight: 600;
+  color: $textColor2;
+
+  @include breakpoint(md) {
+    font-size: 28px;
+  }
+}

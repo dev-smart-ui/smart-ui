@@ -5,7 +5,7 @@
 }
 
 .swiper {
-  overflow: visible;
+  overflow: visible!important;
   transform: translateX(0px);
   transition: $transition2 ease;
 

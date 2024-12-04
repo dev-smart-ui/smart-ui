@@ -31,6 +31,7 @@ export const Navigation: FC<NavigationProps> = ({ t, isHomePage }) => {
               key={label}
               as={Link}
               href={link}
+              target="_blank"
               borderColorType={borderColor}
               icon={icon}
             />
