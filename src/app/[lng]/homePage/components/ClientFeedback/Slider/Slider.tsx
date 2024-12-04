@@ -1,4 +1,4 @@
-import { Navigation } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { FC } from 'react';
@@ -24,9 +24,11 @@ export const Slider: FC<SliderProps> = ({ t }) => {
     <div className={styles.wrapper}>
       <Swiper
         loop
-        loopAdditionalSlides={2}
         centeredSlides
-        modules={[Navigation]}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        speed={1000}
+        loopAdditionalSlides={2}
+        modules={[Navigation, Autoplay]}
         spaceBetween={20}
         slidesPerView={1}
         navigation={{

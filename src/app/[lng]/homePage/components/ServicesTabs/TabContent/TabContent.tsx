@@ -34,7 +34,7 @@ export const TabContent: FC<TabContentProps> = ({ data }) => {
         />
       </div>
       <div className={styles.image}>
-        <Image src={data.image} alt="serviceImage" />
+        <Image src={data.image} width={560} height={360} alt="serviceImage" />
       </div>
     </div>
   );

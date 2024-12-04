@@ -4,7 +4,6 @@ import dynamic from 'next/dynamic';
 
 import { Accordion } from '@components/Accordion';
 import { Clients } from '@components/Clients';
-import { ContactForm } from '@components/ContactForm';
 import { Hero } from '@components/Hero';
 import { OurWork } from '@components/OurWork';
 
@@ -18,6 +17,13 @@ const ClientFeedback = dynamic(
     import('./homePage/components/ClientFeedback').then(
       (mod) => mod.ClientFeedback,
     ),
+  {
+    ssr: false,
+  },
+);
+
+const ContactForm = dynamic(
+  () => import('@components/ContactForm').then((mod) => mod.ContactForm),
   {
     ssr: false,
   },
