@@ -33,7 +33,7 @@ export const Links: FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h6 className={styles.title}>Quick Links</h6>
+      <span className={styles.title}>Quick Links</span>
       <ItemsList items={LINKS} />
     </div>
   );

@@ -34,10 +34,11 @@ export const Projects: FC<ProjectsProps> = ({ data, isOurWorkPage }) => {
       ))}
       {!isOurWorkPage && (
         <li className={styles.more}>
-          <Link href={`/${lng}/${ROUTES.OUR_WORK}`}>
+          <Link href={`/${lng}${ROUTES.OUR_WORK}`}>
             <BorderGradientButton
               className={styles.link}
               icon={<Icons.ArrowRight width={50} height={50} />}
+              aria-label="Show More Works"
               gradientDirection="toTopRight"
               isRounded="large"
             />
