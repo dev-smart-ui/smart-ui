@@ -21,7 +21,7 @@ export const ConnectWith: FC<ConnectWithProps> = ({ className }) => {
             as={Link}
             href={link}
             target="_blank"
-            ariaLabel={ariaLabel}
+            aria-label={ariaLabel}
             borderColorType={borderColor}
             icon={icon}
           />
