@@ -15,12 +15,13 @@ export const ConnectWith: FC<ConnectWithProps> = ({ className }) => {
   return (
     <div className={`${styles.wrapper} ${className ?? ''}`}>
       <div className={styles.socialButtons}>
-        {SOCIALS.map(({ label, link, borderColor, icon }) => (
+        {SOCIALS.map(({ label, link, borderColor, icon, ariaLabel }) => (
           <BorderGradientButton
             key={label}
             as={Link}
             href={link}
             target="_blank"
+            ariaLabel={ariaLabel}
             borderColorType={borderColor}
             icon={icon}
           />

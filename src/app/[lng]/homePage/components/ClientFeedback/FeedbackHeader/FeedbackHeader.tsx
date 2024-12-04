@@ -16,12 +16,14 @@ export const FeedbackHeader: FC<FeedbackHeaderProps> = ({ t }) => {
       <div className={styles.navButton}>
         <BorderGradientButton
           id="prevButton"
+          aria-label="prevButton"
           isRounded="small"
           gradientDirection="toLeft"
           icon={<Icons.ArrowLeft />}
         />
         <BorderGradientButton
           id="nextButton"
+          aria-label="nextButton"
           isRounded="small"
           gradientDirection="toRight"
           icon={<Icons.ArrowRight />}

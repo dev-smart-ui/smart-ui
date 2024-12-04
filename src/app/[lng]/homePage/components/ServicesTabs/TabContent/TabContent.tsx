@@ -25,7 +25,7 @@ export const TabContent: FC<TabContentProps> = ({ data }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.left}>
-        <h3 className={styles.title}>{data.title}</h3>
+        <h2 className={styles.title}>{data.title}</h2>
         <List list={data.list} />
         <BorderGradientButton
           onClick={() => scrollToElement('contactForm')}

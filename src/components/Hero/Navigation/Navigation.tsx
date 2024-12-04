@@ -26,12 +26,13 @@ export const Navigation: FC<NavigationProps> = ({ t, isHomePage }) => {
       />
       {isHomePage && (
         <div className={styles.socialButtons}>
-          {SOCIALS.map(({ label, link, borderColor, icon }) => (
+          {SOCIALS.map(({ label, link, borderColor, icon, ariaLabel }) => (
             <BorderGradientButton
               key={label}
               as={Link}
               href={link}
               target="_blank"
+              aria-label={ariaLabel}
               borderColorType={borderColor}
               icon={icon}
             />
