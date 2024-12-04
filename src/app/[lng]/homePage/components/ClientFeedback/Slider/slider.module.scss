@@ -4,7 +4,7 @@
   position: relative;
 }
 
-.swiper {
+.feedbackSwiper {
   overflow: visible!important;
   transform: translateX(0px);
   transition: $transition2 ease;
@@ -50,7 +50,7 @@
 
             p {
               padding-top: 10px;
-              transform: scaleY(1.2);
+              transform: scale(1.05);
             }
 
             &::after {

@@ -1,11 +1,22 @@
-import { MouseEvent } from 'react';
+import { Swiper } from 'swiper/types';
 
-export const useSwiperInteraction = (isDesktop: boolean) => {
+import { MouseEvent, RefObject } from 'react';
+
+export const useSwiperInteraction = (
+  isDesktop: boolean,
+  swiperRef: RefObject<Swiper>,
+) => {
   const handleMouseEnter = (event: MouseEvent<HTMLElement>) => {
     if (!isDesktop) return;
 
+    if (swiperRef.current) {
+      swiperRef.current.autoplay.stop();
+    }
+
     const target = event.currentTarget as HTMLElement;
-    const swiperWrapper = document.querySelector('.swiper') as HTMLElement;
+    const swiperWrapper = document.querySelector(
+      '#feedbackSwiper',
+    ) as HTMLElement;
 
     if (swiperWrapper) {
       if (target.classList.contains('swiper-slide-active')) {
@@ -19,9 +30,14 @@ export const useSwiperInteraction = (isDesktop: boolean) => {
   };
 
   const handleMouseLeave = () => {
-    const swiperWrapper = document.querySelector('.swiper') as HTMLElement;
+    const swiperWrapper = document.querySelector(
+      '#feedbackSwiper',
+    ) as HTMLElement;
 
     if (swiperWrapper) {
+      if (swiperRef.current) {
+        swiperRef.current.autoplay.start();
+      }
       swiperWrapper.style.transform = 'translateX(0)';
     }
   };

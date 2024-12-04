@@ -1,7 +1,8 @@
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperType } from 'swiper/types';
 
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 
 import useMediaQuery from '@hooks/useMediaQuery';
 
@@ -17,20 +18,27 @@ interface SliderProps {
 export const Slider: FC<SliderProps> = ({ t }) => {
   const isDesktop = useMediaQuery('(min-width: 1024px)');
   const { feedbacks } = useLocaleFeedbacksData(t);
-  const { handleMouseEnter, handleMouseLeave } =
-    useSwiperInteraction(isDesktop);
+  const swiperRef = useRef<SwiperType | null>(null);
+  const { handleMouseEnter, handleMouseLeave } = useSwiperInteraction(
+    isDesktop,
+    swiperRef,
+  );
 
   return (
     <div className={styles.wrapper}>
       <Swiper
         loop
         centeredSlides
+        allowTouchMove={false}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         speed={1000}
         loopAdditionalSlides={2}
         modules={[Navigation, Autoplay]}
         spaceBetween={20}
         slidesPerView={1}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
         navigation={{
           prevEl: '#prevButton',
           nextEl: '#nextButton',
@@ -43,7 +51,8 @@ export const Slider: FC<SliderProps> = ({ t }) => {
             slidesPerView: 3,
           },
         }}
-        className={styles.swiper}
+        className={styles.feedbackSwiper}
+        id="feedbackSwiper"
       >
         {feedbacks.map((feedback) => (
           <SwiperSlide
