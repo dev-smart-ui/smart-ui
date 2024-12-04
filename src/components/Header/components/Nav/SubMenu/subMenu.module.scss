@@ -10,9 +10,16 @@
 
   &.active {
     pointer-events: all;
+
     & .content {
       max-height: 800px;
       opacity: 1;
+    }
+
+    @include breakpoint(lg) {
+      & .content {
+        max-height: 500px;
+      }
     }
   }
 

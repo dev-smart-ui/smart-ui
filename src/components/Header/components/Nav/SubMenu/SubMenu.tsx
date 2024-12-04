@@ -17,7 +17,6 @@ interface SubMenuProps {
   isSubMenu: boolean;
   onCloseSubMenu: () => void;
   navItemRef: RefObject<HTMLLIElement | null>;
-  isSubmenuOpen: boolean;
 }
 
 export const SubMenu: FC<SubMenuProps> = ({
@@ -26,10 +25,14 @@ export const SubMenu: FC<SubMenuProps> = ({
   isSubMenu,
   onCloseSubMenu,
   navItemRef,
-  isSubmenuOpen,
 }) => {
   const subMenuRef = useRef<HTMLDivElement | null>(null);
   useOnClickOutside(subMenuRef, onCloseSubMenu, navItemRef);
+
+  const onCloseMenus = () => {
+    onCloseMainMenu && onCloseMainMenu();
+    setTimeout(() => onCloseSubMenu(), 300);
+  };
 
   return (
     <>
@@ -45,7 +48,7 @@ export const SubMenu: FC<SubMenuProps> = ({
               key={label}
               style={{ gridArea }}
               href={path}
-              onClick={onCloseMainMenu}
+              onClick={onCloseMenus}
               className={styles.link}
             >
               <div className={styles.icon}>
@@ -59,7 +62,7 @@ export const SubMenu: FC<SubMenuProps> = ({
           ))}
         </div>
       </div>
-      <Overlay isActive={isSubmenuOpen} />
+      <Overlay isActive={isSubMenu} />
     </>
   );
 };

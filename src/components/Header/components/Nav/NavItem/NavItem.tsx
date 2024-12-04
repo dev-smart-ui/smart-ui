@@ -2,11 +2,12 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { FC, useRef, useState } from 'react';
+import { FC, useRef } from 'react';
 
 import { SubMenu } from '@components/Header/components/Nav/SubMenu';
 import { ILink, ISubMenuItem } from '@components/Header/types/types';
 
+import useMediaQuery from '@hooks/useMediaQuery';
 import { useOpen } from '@hooks/useOpen';
 import { useResetStatesOnResize } from '@hooks/useResetStateOnResize';
 
@@ -28,10 +29,11 @@ export const NavItem: FC<NavItemProps> = ({
     isOpen: isSubMenu,
     onToggle: onToggleSubMenu,
     onClose: onCloseSubMenu,
+    onOpen: OnOpenSubMenu,
   } = useOpen();
-  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
   const navItemRef = useRef<HTMLLIElement | null>(null);
-  useResetStatesOnResize([() => setIsSubmenuOpen(false), onCloseMainMenu]);
+  useResetStatesOnResize([() => onCloseSubMenu, onCloseMainMenu]);
   const normalizedPathname =
     pathname.replace(/^\/[a-z]{2}(-[A-Z]{2})?/, '') || '/';
   const normalizedLinkPath =
@@ -45,8 +47,8 @@ export const NavItem: FC<NavItemProps> = ({
 
   return (
     <li
-      onMouseEnter={() => setIsSubmenuOpen(true)}
-      onMouseLeave={() => setIsSubmenuOpen(false)}
+      onMouseEnter={() => isDesktop && OnOpenSubMenu()}
+      onMouseLeave={() => isDesktop && onCloseSubMenu()}
       ref={navItemRef}
       className={styles.wrapper}
       key={link.label}
@@ -62,7 +64,12 @@ export const NavItem: FC<NavItemProps> = ({
           {link.label}
         </Link>
       ) : (
-        <button className={styles.navMenuBtn} onClick={onToggleSubMenu}>
+        <button
+          className={classNames(styles.navMenuBtn, {
+            [styles.active]: isSubMenu,
+          })}
+          onClick={onToggleSubMenu}
+        >
           {link.label}
           <span
             className={classNames(styles.arrow, {
@@ -76,7 +83,6 @@ export const NavItem: FC<NavItemProps> = ({
           navItemRef={navItemRef}
           onCloseSubMenu={onCloseSubMenu}
           submenu={submenu}
-          isSubmenuOpen={isSubmenuOpen}
           isSubMenu={isSubMenu}
           onCloseMainMenu={onCloseMainMenu}
         />
