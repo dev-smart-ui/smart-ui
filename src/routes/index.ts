@@ -10,4 +10,5 @@ export const ROUTES = {
   QA: '/qa',
   CUSTOM_SERVICES: '/custom-service',
   WEB3: '/web3',
+  CONTACT_US: '/contact-us',
 };

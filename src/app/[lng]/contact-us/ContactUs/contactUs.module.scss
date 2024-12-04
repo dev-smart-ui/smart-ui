@@ -1,0 +1,15 @@
+.section {
+  margin-top: 260px;
+}
+
+.topBgImage {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  pointer-events: none;
+  max-width: 1920px;
+  height: 300px;
+  margin: 0 auto;
+}

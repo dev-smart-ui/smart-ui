@@ -9,4 +9,5 @@ export const PageEnum = {
   Web3: 'web3',
   OurWork: 'ourWork',
   AboutUs: 'aboutUs',
+  ContactUs: 'contactUs',
 };
