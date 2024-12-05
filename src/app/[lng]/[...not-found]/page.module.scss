@@ -1,0 +1,66 @@
+@import "@styles/vars";
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  color: white;
+  font-weight: 700;
+
+  @include breakpoint(md) {
+    font-size: 48px;
+  }
+}
+
+.description {
+  font-size: 16px;
+  color: $textColor;
+}
+
+.link {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 11px 16px;
+  color: $textColor2;
+  background: $backgroundColor2;
+  margin-top: 20px;
+  border-radius: $borderRadius2;
+
+  &:hover {
+    background: rgba($backgroundColor2, .7);
+  }
+}
+
+.bgText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  margin-top: -15%;
+
+  span {
+    color: $textColor8;
+    font-weight: 700;
+    font-size: clamp(10rem, 25vw, 28vw);
+  }
+
+  @include breakpoint(md) {
+    margin-top: initial;
+  }
+}

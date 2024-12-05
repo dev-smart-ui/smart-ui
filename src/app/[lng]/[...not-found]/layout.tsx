@@ -2,10 +2,6 @@ import { dir } from 'i18next';
 
 import { ReactNode } from 'react';
 
-import '../../styles/globals.scss';
-import { languages } from '../i18n/settings';
-import { Providers } from './providers';
-
 export const metadata = {
   title: 'Smart UI - Web Application Development',
   description:
@@ -15,29 +11,23 @@ export const metadata = {
   },
 };
 
-export async function generateStaticParams() {
-  return languages.map((lng) => ({ lng }));
-}
-
 interface Params {
   lng: string;
 }
 
-interface RootLayoutProps {
+interface NotFoundLayoutProps {
   children: ReactNode;
   params: Params;
 }
 
-export default function RootLayout({
+export default function NotFoundLayout({
   children,
   params: { lng },
-}: RootLayoutProps) {
+}: NotFoundLayoutProps) {
   return (
     <html lang={lng} dir={dir(lng)}>
       <body>
-        <Providers lng={lng}>
-          <main>{children}</main>
-        </Providers>
+        <main>{children}</main>
       </body>
     </html>
   );
