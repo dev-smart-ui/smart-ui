@@ -31,7 +31,7 @@ export const SubMenu: FC<SubMenuProps> = ({
 
   const onCloseMenus = () => {
     onCloseMainMenu && onCloseMainMenu();
-    setTimeout(() => onCloseSubMenu(), 300);
+    onCloseSubMenu();
   };
 
   return (
