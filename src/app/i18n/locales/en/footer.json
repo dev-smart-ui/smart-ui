@@ -4,17 +4,19 @@
     "infoLocation": "14, Lopatyns`kyi Ln / Kharkov City, Ukraine"
   },
   "services": {
-    "customSoftwareDevelopment": "Custom Software Development",
-    "cloudSolutions": "Cloud Solutions",
-    "systemIntegration": "System Integration",
-    "seoOptimization": "SEO Optimization",
-    "uiUxDesign": "UI/UX Design",
-    "appDesign": "App Design"
+    "frontendDevelopment": "Frontend Development",
+    "cms": "CMS",
+    "backendDevelopment": "Backend Development",
+    "uIUxDesign": "UI/UX Design",
+    "qa": "QA",
+    "customServices": "Custom Services",
+    "web3": "Web3 - Blockchain"
   },
   "quickLinks": {
     "portfolio": "Portfolio",
     "about": "About",
     "contact": "Contact",
+    "forAgency": "For Agency",
     "privacyPolicy": "Privacy Policy",
     "termsOfUse": "Terms of use"
   }

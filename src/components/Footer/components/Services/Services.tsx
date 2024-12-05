@@ -5,28 +5,32 @@ import styles from './services.module.scss';
 
 const LINKS = [
   {
-    label: 'services.customSoftwareDevelopment',
-    href: '#',
+    label: 'services.frontendDevelopment',
+    href: 'frontend-development',
   },
   {
-    label: 'services.cloudSolutions',
-    href: '#',
+    label: 'services.cms',
+    href: 'cms',
   },
   {
-    label: 'services.systemIntegration',
-    href: '#',
+    label: 'services.backendDevelopment',
+    href: 'backend-development',
   },
   {
-    label: 'services.seoOptimization',
-    href: '#',
+    label: 'services.uIUxDesign',
+    href: 'ui-ux-design',
   },
   {
-    label: 'services.uiUxDesign',
-    href: '#',
+    label: 'services.qa',
+    href: 'qa',
   },
   {
-    label: 'services.appDesign',
-    href: '#',
+    label: 'services.customServices',
+    href: 'custom-service',
+  },
+  {
+    label: 'services.web3',
+    href: 'web3',
   },
 ];
 
