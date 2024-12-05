@@ -29,16 +29,10 @@ export const Hero: FC<IHeroProps> = ({ page = PageEnum.ForAgency }) => {
             <div className={styles.image}>
               <Image src={avatarsImg} alt="avatars" />
             </div>
-            <span>Trusted by 1,500+ agencies</span>
+            <span>{t('hero.trustedCountTitle')}</span>
           </div>
-          <h1 className={styles.title}>Streamline Your Agency’s </h1>
-          <p className={styles.descriprion}>
-            Empower your agency to operate efficiently, meet client
-            expectations, and scale with ease. By optimizing processes,
-            leveraging expert talent, and utilizing agency-specific tools, you
-            can focus on growing your business while delivering exceptional
-            results
-          </p>
+          <h1 className={styles.title}>{t('hero.title')}</h1>
+          <p className={styles.descriprion}>{t('hero.description')}</p>
           <Button text={t('buttons.requestQuote', { ns: 'common' })} />
         </div>
         <Image src={agencyImg} alt="agencyImage" />
