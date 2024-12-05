@@ -3,5 +3,10 @@
     "trustedCountTitle": "Trusted by 1,500+ agencies",
     "title": "Streamline Your Agency’s",
     "description": "Empower your agency to operate efficiently, meet client expectations, and scale with ease. By optimizing processes, leveraging expert talent, and utilizing agency-specific tools, you can focus on growing your business while delivering exceptional results"
+  },
+  "technologyStack": {
+    "sectionName": "",
+    "title": "Work & Collaborate With the Tool of Your Choice",
+    "subTitle": "We understand that every agency has unique preferences and tools they rely on for success. That’s why SMART-UI integrates seamlessly with the most popular platforms and frameworks, ensuring a smooth workflow and effortless collaboration"
   }
 }
