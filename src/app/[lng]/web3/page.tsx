@@ -14,7 +14,7 @@ import bottomBgImage from './img/bg.png';
 import heroImg from './img/heroImg.png';
 import technologyImg from './img/technologyImg.png';
 
-export default async function web3Page() {
+export default async function Web3Page() {
   const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
     locale: 'en',
     pagination: { limit: 5 },

@@ -4,16 +4,22 @@
   overflow: hidden;
   position: relative;
   margin-top: 80px;
-  padding: 0;
+
+  &.isAboutUsPage {
+    padding: 0;
+
+    .content {
+      padding: 40px 16px 20px;
+
+      @include breakpoint(lg) {
+        padding: 60px 16px 50px;
+      }
+    }
+  }
 }
 
 .content {
   position: relative;
-  padding: 40px 16px 20px;
-
-  @include breakpoint(lg) {
-    padding: 60px 16px 50px;
-  }
 
   &.isNoHomePage {
     display: flex;
@@ -60,7 +66,7 @@
   z-index: -1;
 
   @include breakpoint(md) {
-    top: -60px;
+    top: -80px;
     right: -280px;
     width: 900px;
   }

@@ -35,7 +35,11 @@ export const Hero: FC<HeroProps> = ({
   const isAboutUsPage = page === PageEnum.AboutUs;
 
   return (
-    <Section className={styles.heroSection}>
+    <Section
+      className={classNames(styles.heroSection, {
+        [styles.isAboutUsPage]: isAboutUsPage,
+      })}
+    >
       <Container
         className={classNames(styles.content, {
           [styles.isNoHomePage]: !isHomePage,

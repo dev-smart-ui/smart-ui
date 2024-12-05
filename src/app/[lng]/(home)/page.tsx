@@ -6,16 +6,13 @@ import { Accordion } from '@components/Accordion';
 import { Hero } from '@components/Hero';
 import { OurWork } from '@components/OurWork';
 
-import { Advantages } from './homePage/components/Advantages';
-import { OurServices } from './homePage/components/OurServices';
-import { ServicesTabs } from './homePage/components/ServicesTabs';
-import { WorkTogether } from './homePage/components/WorkTogether';
+import { Advantages } from './components/Advantages';
+import { OurServices } from './components/OurServices';
+import { ServicesTabs } from './components/ServicesTabs';
+import { WorkTogether } from './components/WorkTogether';
 
 const ClientFeedback = dynamic(
-  () =>
-    import('./homePage/components/ClientFeedback').then(
-      (mod) => mod.ClientFeedback,
-    ),
+  () => import('./components/ClientFeedback').then((mod) => mod.ClientFeedback),
   {
     ssr: false,
   },
