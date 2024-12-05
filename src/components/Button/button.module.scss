@@ -95,6 +95,7 @@
   &.isOnlyIcon {
     padding: 12px;
     min-height: 46px;
+    max-height: 46px;
     min-width: 46px;
 
     &:hover .label {
