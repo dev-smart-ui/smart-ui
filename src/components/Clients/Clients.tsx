@@ -27,6 +27,8 @@ const CLIENTS_LOGO = [
   { key: 'unImg', image: unImg },
   { key: 'sanLorenzo', image: sanLorenzoImg },
   { key: 'duelmasters', image: duelmastersImg },
+  { key: 'duelmaster2', image: duelmastersImg },
+  { key: 'duelmaster3', image: duelmastersImg },
   { key: 'ecr', image: ecrImg },
   { key: 'tiger', image: tigerImg },
   { key: 'wsImg', image: wsImg },
@@ -42,9 +44,8 @@ export const Clients: FC = () => {
           <SectionHeader sectionName={t('clients.sectionName')} />
           <Swiper
             loop
-            // centeredSlides
             allowTouchMove={false}
-            autoplay={{ delay: 1000, disableOnInteraction: true }}
+            autoplay={{ delay: 2000, disableOnInteraction: false }}
             speed={1000}
             loopAdditionalSlides={2}
             modules={[Autoplay]}
@@ -62,7 +63,7 @@ export const Clients: FC = () => {
                 slidesPerView: 4,
               },
               1440: {
-                slidesPerView: 4,
+                slidesPerView: 6,
               },
             }}
             className={styles.logosSwiper}
