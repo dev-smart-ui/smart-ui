@@ -10,4 +10,5 @@ export const PageEnum = {
   OurWork: 'ourWork',
   AboutUs: 'aboutUs',
   ContactUs: 'contactUs',
+  ForAgency: 'forAgency',
 };

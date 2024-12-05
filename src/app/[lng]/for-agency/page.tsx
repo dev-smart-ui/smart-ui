@@ -5,6 +5,8 @@ import { Accordion } from '@components/Accordion';
 import { ContactForm } from '@components/ContactForm';
 import { OurWork } from '@components/OurWork';
 
+import { Hero } from './components';
+
 export default async function ForAgencyPage() {
   const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
     locale: 'en',
@@ -15,6 +17,7 @@ export default async function ForAgencyPage() {
 
   return (
     <>
+      <Hero />
       <OurWork data={singleProjectsData} />
       <Accordion />
       <ContactForm />
