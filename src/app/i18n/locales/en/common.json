@@ -6,6 +6,17 @@
     "getInTouch": "Get in Touch",
     "requestQuote": "Request a Quote"
   },
+  "infoCards": {
+    "card1": {
+      "label": "Happy Customers"
+    },
+    "card2": {
+      "label": "Completed Project"
+    },
+    "card3": {
+      "label": "Years of Experience"
+    }
+  },
   "404": {
     "title": "Page Not Found",
     "description": "It seems like the page you were trying to reach is either unavailable or has been moved.",
