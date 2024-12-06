@@ -8,7 +8,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
-import { InfoCards } from '@components/Hero/InfoCards';
+import { InfoCards } from '@components/InfoCards';
 import { Section } from '@components/Section';
 
 import { Content } from './Content';

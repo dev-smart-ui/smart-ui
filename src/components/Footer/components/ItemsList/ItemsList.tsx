@@ -1,3 +1,4 @@
+import { useLanguage } from '@context/LanguageContext';
 import Link from 'next/link';
 
 import { FC } from 'react';
@@ -15,13 +16,14 @@ interface ItemsListProps {
 }
 
 export const ItemsList: FC<ItemsListProps> = ({ items }) => {
+  const lng = useLanguage();
   const { t } = useTranslation('footer');
 
   return (
     <ul className={styles.wrapper}>
       {items.map(({ href, label }) => (
         <li key={label} className={styles.item}>
-          <Link href={href}>{t(label)}</Link>
+          <Link href={`/${lng}/${href}`}>{t(label)}</Link>
         </li>
       ))}
     </ul>

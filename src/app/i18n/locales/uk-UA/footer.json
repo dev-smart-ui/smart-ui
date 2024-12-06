@@ -4,17 +4,19 @@
     "infoLocation": "вул. Лопатинського, 14 / м. Харків, Україна"
   },
   "services": {
-    "customSoftwareDevelopment": "Розробка індивідуального програмного забезпечення",
-    "cloudSolutions": "Хмарні рішення",
-    "systemIntegration": "Системна інтеграція",
-    "seoOptimization": "SEO оптимізація",
-    "uiUxDesign": "UI/UX дизайн",
-    "appDesign": "Дизайн додатків"
+    "frontendDevelopment": "Фронтенд-розробка",
+    "cms": "CMS",
+    "backendDevelopment": "Бекенд-розробка",
+    "uIUxDesign": "UI/UX Дизайн",
+    "qa": "QA",
+    "customServices": "Індивідуальні послуги",
+    "web3": "Web3 - Блокчейн"
   },
   "quickLinks": {
     "portfolio": "Портфоліо",
     "about": "Про нас",
     "contact": "Контакти",
+    "forAgency": "Для агенцій",
     "privacyPolicy": "Політика конфіденційності",
     "termsOfUse": "Умови використання"
   }

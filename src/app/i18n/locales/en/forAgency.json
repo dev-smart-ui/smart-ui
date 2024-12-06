@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "trustedCountTitle": "Trusted by 1,500+ agencies",
+    "title": "Streamline Your Agency’s",
+    "description": "Empower your agency to operate efficiently, meet client expectations, and scale with ease. By optimizing processes, leveraging expert talent, and utilizing agency-specific tools, you can focus on growing your business while delivering exceptional results"
+  },
+  "technologyStack": {
+    "sectionName": "",
+    "title": "Work & Collaborate With the Tool of Your Choice",
+    "subTitle": "We understand that every agency has unique preferences and tools they rely on for success. That’s why SMART-UI integrates seamlessly with the most popular platforms and frameworks, ensuring a smooth workflow and effortless collaboration"
+  },
+  "bottomBlock": {
+    "title": "Still have questions?",
+    "description": "Can’t find the answer you’re looking for? Please chat to our friendly team."
+  },
+  "advantages": {
+    "headerInfo": {
+      "sectionName": "Our Advantages",
+      "title": "Why Partner with SMART-UI for Agencies?",
+      "description": "With SMART-UI, your agency gains more than just a toolset—it’s a partnership built to elevate your business. Maximize efficiency, expand your offerings, and deliver outstanding results to your clients. Here’s how we empower agencies like yours:"
+    },
+    "solutions": {
+      "title": "Tailored Solutions for Your Agency",
+      "subTitle": "Ornare ac sem tortor elementum morbi. Dictum imperdiet pharetra id nulla id cursus. Orci arcu egestas sed tempor. Aliquam at vitae orci velit nullam integer.",
+      "solution1": "Access to a Vast Talent Pool",
+      "solution2": "Dedicated Support",
+      "solution3": "Fast, Reliable Turnaround",
+      "solution4": "Confidentiality Guaranteed",
+      "solution5": "Transparent Communication"
+    }
+  }
+}

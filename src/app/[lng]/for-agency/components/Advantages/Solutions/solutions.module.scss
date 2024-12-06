@@ -1,0 +1,67 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+
+  @include breakpoint(lg) {
+    width: 50%;
+  }
+}
+
+.solutionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  background: $cardColor;
+  border-radius: $borderRadius2;
+}
+
+.solutionTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  color: white;
+
+  @include breakpoint(lg) {
+    font-size: 24px;
+  }
+}
+
+.solutionDesc {
+  font-size: 18px;
+  color: $textColor9;
+  padding-left: 30px;
+}
+
+.solutionList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 15px;
+
+  @include breakpoint(lg) {
+    gap: 32px;
+    padding: 20px;
+  }
+}
+
+.solutionItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: $textColor2;
+  font-size: 20px;
+  font-weight: 500;
+
+  @include breakpoint(lg) {
+    font-size: 24px;
+  }
+
+  svg {
+    min-width: 22px;
+  }
+}

@@ -5,18 +5,7 @@
       "highlighted": "Driving Success",
       "secondary": ""
     },
-    "description": "We are a team of passionate professionals dedicated to creating cutting-edge IT solutions that inspire growth and deliver impact",
-    "infoCards": {
-      "card1": {
-        "label": "Happy Customers"
-      },
-      "card2": {
-        "label": "Completed Project"
-      },
-      "card3": {
-        "label": "Years of Experience"
-      }
-    }
+    "description": "We are a team of passionate professionals dedicated to creating cutting-edge IT solutions that inspire growth and deliver impact"
   },
   "drivingSuccess": {
     "sectionName": "About Us",
