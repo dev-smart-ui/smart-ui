@@ -10,8 +10,8 @@ import { Button } from '@components/Button';
 import { Container } from '@components/Container';
 import { Section } from '@components/Section';
 
-import agencyImg from '../img/agencyImg.png';
-import avatarsImg from '../img/avatars.png';
+import agencyImg from '../../img/agencyImg.png';
+import avatarsImg from '../../img/avatars.png';
 import styles from './hero.module.scss';
 
 interface IHeroProps {
