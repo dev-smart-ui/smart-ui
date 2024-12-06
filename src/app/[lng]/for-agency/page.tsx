@@ -7,6 +7,7 @@ import { ContactForm } from '@components/ContactForm';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
+import { Advantages } from './components/Advantages';
 import { Hero } from './components/Hero';
 import { QuestionBlock } from './components/QuestionBlock';
 import technologyImg from './img/technologyImg.png';
@@ -22,6 +23,7 @@ export default async function ForAgencyPage() {
   return (
     <>
       <Hero />
+      <Advantages />
       <QuestionBlock />
       <TechnologyStack page={PageEnum.ForAgency} image={technologyImg} />
       <OurWork data={singleProjectsData} />

@@ -12,5 +12,10 @@
   "bottomBlock": {
     "title": "Still have questions?",
     "description": "Can’t find the answer you’re looking for? Please chat to our friendly team."
+  },
+  "advantages": {
+    "sectionName": "Our Advantages",
+    "title": "Why Partner with SMART-UI for Agencies?",
+    "description": "With SMART-UI, your agency gains more than just a toolset—it’s a partnership built to elevate your business. Maximize efficiency, expand your offerings, and deliver outstanding results to your clients. Here’s how we empower agencies like yours:"
   }
 }
