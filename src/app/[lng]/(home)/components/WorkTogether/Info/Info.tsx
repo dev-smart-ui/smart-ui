@@ -1,4 +1,4 @@
-import { scrollToElement } from '@utils/scrollToElement';
+import { scrollToElement } from '@utils/index';
 
 import { FC } from 'react';
 

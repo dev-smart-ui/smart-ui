@@ -33,50 +33,18 @@
     border-radius: var(--border-radius, $borderRadius2);
     z-index: -1;
     transition: all $transition1 ease;
-  }
 
-  &.greenBorderColor {
-    &::after {
-      background: linear-gradient(var(--gradient-direction, to bottom), rgba($primaryColor, 0.2), $primaryColor 100%);
-    }
-
-    &:hover {
-      background-color: $primaryColor;
-      color: white;
-    }
-  }
-  &.blueBorderColor {
-    &::after {
-      background: linear-gradient(var(--gradient-direction, to bottom), rgba($thirdColor, 0.2), $thirdColor 100%);
-    }
-
-    &:hover {
-      background-color: $thirdColor;
-      color: white;
-    }
-  }
-  &.lightBlueBorderColor {
-    &::after {
-      background: linear-gradient(var(--gradient-direction, to bottom), rgba($fourthColor, 0.2), $fourthColor 100%);
-    }
-
-    &:hover {
-      background-color: $fourthColor;
-      color: white;
-    }
-  }
-  &.darkGreenBorderColor {
-    &::after {
-      background: linear-gradient(var(--gradient-direction, to bottom), rgba($fifthColor, 0.2), $fifthColor 100%);
-    }
-
-    &:hover {
-      background-color: $fifthColor;
-      color: white;
-    }
+    background: linear-gradient(
+                    var(--gradient-direction, to bottom),
+                    rgba(var(--gradient-color-r), var(--gradient-color-g), var(--gradient-color-b), 0.2), /* 20% прозрачности */
+                    rgba(var(--gradient-color-r), var(--gradient-color-g), var(--gradient-color-b), 1) /* Полностью непрозрачный */
+    );
   }
 
   &:hover {
+    background-color: transparent;
+    color: white;
+
     &::after {
       height: calc(100%);
       width: calc(100%);
@@ -159,6 +127,10 @@
 
   &.isMonotoneBorder {
     border: 1px solid rgba($primaryColor, 0.2);
+
+    &:hover {
+      background: rgba($primaryColor, 0.9);
+    }
 
     &::after {
       background: initial;

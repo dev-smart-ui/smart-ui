@@ -1,3 +1,4 @@
+import { hexToRgb } from '@utils/index';
 import classNames from 'classnames';
 
 import { CSSProperties, FC, ReactNode } from 'react';
@@ -11,17 +12,6 @@ interface GradientBorderProps {
   direction?: 'top' | 'bottom' | 'both';
   className?: string;
 }
-
-/* eslint-disable no-bitwise */
-const hexToRgb = (hex: string): { r: number; g: number; b: number } => {
-  const cleanHex = hex.replace('#', '');
-  const bigint = parseInt(cleanHex, 16);
-  return {
-    r: (bigint >> 16) & 255,
-    g: (bigint >> 8) & 255,
-    b: bigint & 255,
-  };
-};
 
 export const GradientBorder: FC<GradientBorderProps> = ({
   children,

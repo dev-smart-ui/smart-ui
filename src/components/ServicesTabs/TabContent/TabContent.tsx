@@ -1,4 +1,4 @@
-import { scrollToElement } from '@utils/scrollToElement';
+import { scrollToElement } from '@utils/index';
 import Image, { StaticImageData } from 'next/image';
 
 import { FC } from 'react';

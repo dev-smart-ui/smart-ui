@@ -1,5 +1,5 @@
 import { SOCIALS } from '@constants/socials';
-import { scrollToElement } from '@utils/scrollToElement';
+import { scrollToElement } from '@utils/index';
 import Link from 'next/link';
 
 import { FC } from 'react';
@@ -26,14 +26,14 @@ export const Navigation: FC<NavigationProps> = ({ t, isHomePage }) => {
       />
       {isHomePage && (
         <div className={styles.socialButtons}>
-          {SOCIALS.map(({ label, link, borderColor, icon, ariaLabel }) => (
+          {SOCIALS.map(({ label, link, color, icon, ariaLabel }) => (
             <BorderGradientButton
               key={label}
               as={Link}
               href={link}
               target="_blank"
               aria-label={ariaLabel}
-              borderColorType={borderColor}
+              color={color}
               icon={icon}
             />
           ))}

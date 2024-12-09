@@ -4,8 +4,8 @@ import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { ContactForm } from '@components/ContactForm';
 import { Hero } from '@components/Hero';
+import { ServicesTabs } from '@components/ServicesTabs';
 
-import { ServicesTabs } from '../(home)/components/ServicesTabs';
 import { DrivingSuccess } from './components/DrivingSuccess';
 import { GoalsAndValues } from './components/GoalsAndValues';
 import { OurExperts } from './components/OurExperts';

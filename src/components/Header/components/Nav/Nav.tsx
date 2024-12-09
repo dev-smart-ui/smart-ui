@@ -1,4 +1,4 @@
-import { scrollToElement } from '@utils/scrollToElement';
+import { scrollToElement } from '@utils/index';
 import classNames from 'classnames';
 
 import { FC, useEffect } from 'react';

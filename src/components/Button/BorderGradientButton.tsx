@@ -1,6 +1,12 @@
+import { hexToRgb } from '@utils/index';
 import classNames from 'classnames';
 
-import { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
+import {
+  CSSProperties,
+  ComponentPropsWithoutRef,
+  ElementType,
+  ReactNode,
+} from 'react';
 
 import styles from './button.module.scss';
 
@@ -17,13 +23,13 @@ interface ButtonProps<T extends ElementType = 'button'> {
     | 'toLeft'
     | 'toRight'
     | 'toBottomLeft';
-  borderColorType?: 'green' | 'blue' | 'lightBlue' | 'darkGreen';
   isMonotoneBorder?: boolean;
   className?: string;
   fullWidth?: boolean;
   as?: T;
   isIconSeparated?: boolean;
   children?: ReactNode;
+  color?: string;
 }
 
 export const BorderGradientButton = <T extends ElementType = 'button'>({
@@ -34,16 +40,18 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
   disabled,
   isRounded,
   gradientDirection = 'toBottom',
-  borderColorType = 'green',
   isMonotoneBorder = false,
   isIconSeparated = false,
   fullWidth,
   className,
+  color = '#31B76F',
   as,
   ...rest
 }: ButtonProps<T> &
   Omit<ComponentPropsWithoutRef<T>, keyof ButtonProps<T>>) => {
   const Component = as || 'button';
+
+  const rgbColors = hexToRgb(color);
 
   return (
     <Component
@@ -51,7 +59,6 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
         styles.borderGradientBtn,
         styles[`isGradient${gradientDirection}`],
         styles[`isRounded${isRounded}`],
-        styles[`${borderColorType}BorderColor`],
         {
           [styles.isMonotoneBorder]: isMonotoneBorder,
           [styles.isOnlyIcon]: !!icon && !text,
@@ -59,6 +66,14 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
         },
         className,
       )}
+      style={
+        {
+          '--gradient-color': color,
+          '--gradient-color-r': rgbColors.r,
+          '--gradient-color-g': rgbColors.g,
+          '--gradient-color-b': rgbColors.b,
+        } as CSSProperties
+      }
       onClick={onClick}
       disabled={disabled}
       {...rest}

@@ -5,10 +5,10 @@ import dynamic from 'next/dynamic';
 import { Accordion } from '@components/Accordion';
 import { Hero } from '@components/Hero';
 import { OurWork } from '@components/OurWork';
+import { ServicesTabs } from '@components/ServicesTabs';
 
 import { Advantages } from './components/Advantages';
 import { OurServices } from './components/OurServices';
-import { ServicesTabs } from './components/ServicesTabs';
 import { WorkTogether } from './components/WorkTogether';
 
 const ClientFeedback = dynamic(
