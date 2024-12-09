@@ -1,3 +1,5 @@
+import { ROUTES } from '@routes/index';
+
 import { FC } from 'react';
 
 import { ItemsList } from '../ItemsList/ItemsList';
@@ -6,27 +8,27 @@ import styles from './links.module.scss';
 const LINKS = [
   {
     label: 'quickLinks.portfolio',
-    href: 'our-work',
+    href: ROUTES.OUR_WORK,
   },
   {
     label: 'quickLinks.about',
-    href: 'about-us',
+    href: ROUTES.ABOUT_US,
   },
   {
     label: 'quickLinks.contact',
-    href: 'contact-us',
+    href: ROUTES.CONTACT_US,
   },
   {
     label: 'quickLinks.forAgency',
-    href: 'for-agency',
+    href: ROUTES.FOR_AGENCY,
   },
   {
     label: 'quickLinks.privacyPolicy',
-    href: 'privacy-policy',
+    href: ROUTES.PRIVACY_POLICY,
   },
   {
     label: 'quickLinks.termsOfUse',
-    href: 'terms',
+    href: ROUTES.TERMS,
   },
 ];
 

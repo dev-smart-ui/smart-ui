@@ -1,0 +1,66 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+
+  @include breakpoint(lg) {
+    gap: 32px;
+    margin-top: 48px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  max-width: 100%;
+
+  @include breakpoint(lg) {
+    max-width: 390px;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+.image {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  max-width: 70px;
+  height: 70px;
+  background: $cardColor;
+  border-radius: $borderRadius1;
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+
+  @include breakpoint(md) {
+    font-size: 24px;
+  }
+}
+
+.description {
+  font-size: 16px;
+  color: $textColor;
+
+  @include breakpoint(md) {
+    font-size: 18px;
+  }
+}
