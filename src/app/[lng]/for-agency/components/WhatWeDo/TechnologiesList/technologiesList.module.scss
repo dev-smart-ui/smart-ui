@@ -1,0 +1,69 @@
+@import "@styles/vars";
+
+.wrapper {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include breakpoint(lg) {
+    margin-top: 80px;
+  }
+}
+
+.item {
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  border: 1px solid $borderColor4;
+
+  @include breakpoint(md) {
+    gap: 40px;
+    padding: 64px 32px;
+    width: 50%;
+  }
+  @include breakpoint(lg) {
+    width: 50%;
+  }
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 500;
+  color: white;
+
+  @include breakpoint(md) {
+    font-size: 32px;
+  }
+}
+
+.image {
+  max-width: 48px;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.technologiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-top: 20px;
+
+  @include breakpoint(md) {
+    margin-top: 40px;
+  }
+  @include breakpoint(lg) {
+    padding-left: 68px;
+  }
+}
+
+.technologyItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

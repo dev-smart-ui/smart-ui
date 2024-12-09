@@ -28,5 +28,20 @@
       "solution4": "Confidentiality Guaranteed",
       "solution5": "Transparent Communication"
     }
+  },
+  "whatWeDo": {
+    "headerInfo": {
+      "sectionName": "What We Can Do For You",
+      "title": {
+        "main": "Empowering Your Vision with",
+        "highlighted": "Tailored Solutions",
+        "secondary": ""
+      },
+      "description": "At SMART-UI, we are dedicated to transforming your challenges into opportunities. Here’s how we can help your business thrive"
+    },
+    "bottomBlock": {
+      "title": "Ready to find the best approach for your project?",
+      "description": "Contact us today to explore the perfect engagement model for your needs!"
+    }
   }
 }

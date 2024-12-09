@@ -21,7 +21,7 @@ export const QuestionBlock: FC = () => {
   } as IBottomBlock;
 
   return (
-    <Section>
+    <Section className={styles.section}>
       <Container className={styles.content}>
         <BottomBlock data={bottomBlock} />
       </Container>
