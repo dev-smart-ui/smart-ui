@@ -11,4 +11,7 @@ export const ROUTES = {
   CUSTOM_SERVICES: '/custom-service',
   WEB3: '/web3',
   CONTACT_US: '/contact-us',
+  FOR_AGENCY: '/for-agency',
+  PRIVACY_POLICY: '/privacy-policy',
+  TERMS: '/terms',
 };

@@ -8,6 +8,7 @@ import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
 import { Advantages } from './components/Advantages';
+import { Approaches } from './components/Approaches';
 import { Hero } from './components/Hero';
 import { QuestionBlock } from './components/QuestionBlock';
 import { WhatWeDo } from './components/WhatWeDo';
@@ -28,6 +29,7 @@ export default async function ForAgencyPage() {
       <QuestionBlock />
       <WhatWeDo />
       <TechnologyStack page={PageEnum.ForAgency} image={technologyImg} />
+      <Approaches />
       <OurWork data={singleProjectsData} />
       <Accordion />
       <ContactForm />

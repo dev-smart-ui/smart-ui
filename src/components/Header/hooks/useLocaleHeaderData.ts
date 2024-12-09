@@ -74,6 +74,7 @@ export const useLocaleHeaderData = () => {
     },
     { label: t('ourWork'), path: `/${lng}${ROUTES.OUR_WORK}` },
     { label: t('aboutUs'), path: `/${lng}${ROUTES.ABOUT_US}` },
+    { label: t('forAgency'), path: `/${lng}${ROUTES.FOR_AGENCY}` },
   ];
 
   return { lng, navLinks, buttonLabel };

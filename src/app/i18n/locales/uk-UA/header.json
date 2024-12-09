@@ -3,6 +3,7 @@
   "services": "Послуги",
   "ourWork": "Наша робота",
   "aboutUs": "Про нас",
+  "forAgency": "Для агенції",
   "submenuServices": {
     "link1": {
       "title": "Frontend Development",

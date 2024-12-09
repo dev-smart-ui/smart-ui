@@ -28,7 +28,7 @@ export const TechnologiesList: FC = () => {
 
             <ul className={styles.technologiesList}>
               {item.list.map((technology) => (
-                <li className={styles.technologyItem}>
+                <li key={technology} className={styles.technologyItem}>
                   <Icons.CheckCircle />
                   {technology}
                 </li>

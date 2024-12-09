@@ -1,5 +1,6 @@
 'use client';
 
+import { PageEnum } from '@app-types/enums';
 import { IBottomBlock, IHeaderInfo } from '@app-types/global';
 
 import { FC } from 'react';
@@ -12,8 +13,12 @@ import { SectionHeader } from '@components/SectionHeader';
 
 import { TechnologiesList } from './TechnologiesList';
 
-export const WhatWeDo: FC = () => {
-  const { t } = useTranslation(['forAgency', 'common']);
+interface WhatWeDoProps {
+  page?: string;
+}
+
+export const WhatWeDo: FC<WhatWeDoProps> = ({ page = PageEnum.ForAgency }) => {
+  const { t } = useTranslation([page, 'common']);
 
   const headerInfo: IHeaderInfo = {
     sectionName: t('whatWeDo.headerInfo.sectionName'),
