@@ -1,12 +1,4 @@
 {
-  "hero": {
-    "title": {
-      "main": "Streamline Your Workflow with Tailored",
-      "highlighted": "CMS Solutions",
-      "secondary": ""
-    },
-    "description": "Build, Customize, and Optimize Your WordPress Site with Our Expert Services"
-  },
   "technologyStack": {
     "sectionName": "Our Technology Stack",
     "title": "We Build the Backbone of Your Digital Presence",

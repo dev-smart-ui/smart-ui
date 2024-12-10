@@ -1,4 +1,4 @@
-import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
+import { HOME_PAGE_QUERY } from '@graphqlQueries/homePage';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 import dynamic from 'next/dynamic';
 
@@ -32,17 +32,24 @@ const Clients = dynamic(
   },
 );
 
-export default async function Home() {
-  const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
-    locale: 'en',
+interface HomePageProps {
+  params: {
+    lng: string;
+  };
+}
+
+export default async function Home({ params: { lng } }: HomePageProps) {
+  const { homePage, singleProjects } = await fetchGraphQL(HOME_PAGE_QUERY, {
+    locale: lng,
     pagination: { limit: 5 },
   });
 
+  const heroData = homePage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
 
   return (
     <>
-      <Hero />
+      <Hero data={heroData} />
       <ServicesTabs />
       <Clients />
       <Advantages />

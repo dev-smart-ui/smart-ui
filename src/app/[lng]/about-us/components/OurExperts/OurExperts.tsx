@@ -36,7 +36,6 @@ export const OurExperts: FC<OurExpertsProps> = ({ data }) => {
           sectionName={headerInfo.sectionName}
           title={headerInfo.title}
           subTitle={headerInfo.subTitle}
-          color="Secondary"
         />
         <Team data={data} />
       </Container>

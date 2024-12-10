@@ -1,5 +1,5 @@
 import { PageEnum } from '@app-types/enums';
-import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
+import { QA_PAGE_QUERY } from '@graphqlQueries/qaPage';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { Accordion } from '@components/Accordion';
@@ -10,26 +10,20 @@ import { Hero } from '@components/Hero';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
-import bottomBgImage from './img/bg.png';
-import heroImg from './img/heroImg.png';
 import technologyImg from './img/technologyImg.png';
 
 export default async function QaPage() {
-  const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
+  const { qaPage, singleProjects } = await fetchGraphQL(QA_PAGE_QUERY, {
     locale: 'en',
     pagination: { limit: 5 },
   });
 
+  const heroData = qaPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
 
   return (
     <>
-      <Hero
-        page={PageEnum.Qa}
-        image={heroImg}
-        bottomBgImage={bottomBgImage}
-        colorGradiant="Third"
-      />
+      <Hero page={PageEnum.Qa} data={heroData} />
       <TechnologyStack image={technologyImg} page={PageEnum.Qa} />
       <CoreServices page={PageEnum.Qa} />
       <Clients />

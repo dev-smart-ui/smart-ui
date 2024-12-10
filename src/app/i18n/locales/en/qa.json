@@ -1,12 +1,4 @@
 {
-  "hero": {
-    "title": {
-      "main": "Transform Your Business with",
-      "highlighted": "Tailored Digital Solutions",
-      "secondary": ""
-    },
-    "description": "At QA, we specialize in crafting custom websites, software, and digital strategies designed to drive growth and success for your business"
-  },
   "technologyStack": {
     "sectionName": "Our Technology Stack ",
     "title": "We Build the Backbone of Your Digital Presence",

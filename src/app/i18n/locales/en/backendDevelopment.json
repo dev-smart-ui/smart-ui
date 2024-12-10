@@ -1,12 +1,4 @@
 {
-  "hero": {
-    "title": {
-      "main": "Building Scalable",
-      "highlighted": "Backend Systems",
-      "secondary": "for Your Growth"
-    },
-    "description": "We deliver secure, high-performance backend solutions that are tailored to your needs, ensuring seamless scalability, speed, and reliability for your business"
-  },
   "technologyStack": {
     "sectionName": "Our Technology Stack ",
     "title": "We Build the Backbone of Your Digital Presence",

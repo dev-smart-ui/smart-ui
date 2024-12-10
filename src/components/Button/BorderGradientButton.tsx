@@ -1,5 +1,6 @@
 import { hexToRgb } from '@utils/index';
 import classNames from 'classnames';
+import Image from 'next/image';
 
 import {
   CSSProperties,
@@ -13,6 +14,7 @@ import styles from './button.module.scss';
 interface ButtonProps<T extends ElementType = 'button'> {
   text?: string;
   icon?: ReactNode;
+  imgUrl?: string;
   onClick?: () => void;
   disabled?: boolean;
   isRounded?: 'small' | 'large';
@@ -30,6 +32,7 @@ interface ButtonProps<T extends ElementType = 'button'> {
   isIconSeparated?: boolean;
   children?: ReactNode;
   color?: string;
+  iconAlt?: string;
 }
 
 export const BorderGradientButton = <T extends ElementType = 'button'>({
@@ -45,6 +48,8 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
   fullWidth,
   className,
   color = '#31B76F',
+  iconAlt = '',
+  imgUrl,
   as,
   ...rest
 }: ButtonProps<T> &
@@ -61,7 +66,7 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
         styles[`isRounded${isRounded}`],
         {
           [styles.isMonotoneBorder]: isMonotoneBorder,
-          [styles.isOnlyIcon]: !!icon && !text,
+          [styles.isOnlyIcon]: (!!icon || !!imgUrl) && !text,
           [styles.fullWidth]: fullWidth,
         },
         className,
@@ -87,6 +92,16 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
               })}
             >
               {icon}
+            </span>
+          )}
+
+          {imgUrl && (
+            <span
+              className={classNames(styles.icon, {
+                [styles.isIconSeparated]: isIconSeparated,
+              })}
+            >
+              <Image width={50} height={50} src={imgUrl} alt={iconAlt} />
             </span>
           )}
           {text}

@@ -31,7 +31,6 @@ export const DrivingSuccess: FC = () => {
           sectionName={headerInfo.sectionName}
           title={headerInfo.title}
           subTitle={headerInfo.subTitle}
-          color="Third"
         />
       </Container>
     </Section>

@@ -61,9 +61,9 @@
   }
 
   &.isOnlyIcon {
-    padding: 12px;
+    padding: 6px;
     min-height: 46px;
-    max-height: 46px;
+    max-width: 46px;
     min-width: 46px;
 
     &:hover .label {
@@ -83,20 +83,24 @@
 
   &.isRoundedsmall {
     min-width: 40px;
+    max-width: 40px;
     min-height: 40px;
 
     @include breakpoint(lg) {
       min-width: 46px;
+      max-width: 46px;
       min-height: 46px;
     }
   }
 
   &.isRoundedlarge {
     min-width: 80px;
+    max-width: 80px;
     min-height: 80px;
 
     @include breakpoint(lg) {
       min-width: 120px;
+      max-width: 120px;
       min-height: 120px;
     }
   }

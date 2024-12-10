@@ -1,5 +1,5 @@
 import { PageEnum } from '@app-types/enums';
-import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
+import { CUSTOM_SERVICES_PAGE_QUERY } from '@graphqlQueries/customServicesPage';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { Accordion } from '@components/Accordion';
@@ -10,26 +10,31 @@ import { Hero } from '@components/Hero';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
-import bottomBgImage from './img/bg.png';
-import heroImg from './img/heroImg.png';
 import technologyImg from './img/technologyImg.png';
 
-export default async function CustomServicePage() {
-  const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
-    locale: 'en',
-    pagination: { limit: 5 },
-  });
+interface CustomServicesPageProps {
+  params: {
+    lng: string;
+  };
+}
 
+export default async function CustomServicePage({
+  params: { lng },
+}: CustomServicesPageProps) {
+  const { customServicesPage, singleProjects } = await fetchGraphQL(
+    CUSTOM_SERVICES_PAGE_QUERY,
+    {
+      locale: lng,
+      pagination: { limit: 5 },
+    },
+  );
+
+  const heroData = customServicesPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
 
   return (
     <>
-      <Hero
-        page={PageEnum.CustomService}
-        image={heroImg}
-        bottomBgImage={bottomBgImage}
-        colorGradiant="Third"
-      />
+      <Hero page={PageEnum.CustomService} data={heroData} />
       <TechnologyStack image={technologyImg} page={PageEnum.CustomService} />
       <CoreServices page={PageEnum.CustomService} />
       <Clients />

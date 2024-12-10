@@ -55,7 +55,7 @@ export const OurWorkWrapper: FC = () => {
       handlePageClick={handlePageClick}
       pageCount={pageCountRef.current ?? 1}
       bgImage={bgImage}
-      color="Third"
+      colors={['#6D31B7', '#3B8FF3']}
       isLoading={isLoading}
     />
   );

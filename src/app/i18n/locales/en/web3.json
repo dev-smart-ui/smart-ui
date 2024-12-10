@@ -1,12 +1,4 @@
 {
-  "hero": {
-    "title": {
-      "main": "Empower Your Business with Next-Gen",
-      "highlighted": "Web3 and Blockchain",
-      "secondary": "Solutions"
-    },
-    "description": "Our team delivers blockchain and Web3 services to build secure, decentralized, and transparent digital solutions for growth in today’s digital landscape"
-  },
   "technologyStack": {
     "sectionName": "Our Technology Stack ",
     "title": "We Build the Backbone of Your Digital Presence",

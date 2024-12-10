@@ -53,7 +53,7 @@
 
     @include breakpoint(lg) {
       top: 0;
-      right: 16px;
+      right: -200px;
     }
   }
 }
@@ -74,6 +74,7 @@
 
 .bottomBgImage {
   position: absolute;
+  display: none;
   bottom: 0;
   left: 0;
   right: 0;
@@ -93,6 +94,7 @@
   }
 
   &.frontendDevelopmentPage {
+    display: block;
     &::after {
       background: linear-gradient(
                       to right,
@@ -104,6 +106,7 @@
   }
 
   &.cmsPage {
+    display: block;
     &::after {
       background: linear-gradient(
                       to right,
@@ -115,6 +118,7 @@
   }
 
   &.backendDevelopmentPage {
+    display: block;
     &::after {
       background: linear-gradient(
                       to right,
@@ -126,6 +130,7 @@
   }
 
   &.uiUxDesignPage {
+    display: block;
     &::after {
       background: linear-gradient(
                       to right,
@@ -137,6 +142,7 @@
   }
 
   &.qaPage {
+    display: block;
     &::after {
       background: linear-gradient(
                       to right,
@@ -148,6 +154,7 @@
   }
 
   &.customServicePage {
+    display: block;
     &::after {
       background: linear-gradient(
                       to right,
@@ -159,6 +166,7 @@
   }
 
   &.web3Page {
+    display: block;
     &::after {
       background: linear-gradient(
                       to right,

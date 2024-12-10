@@ -1,4 +1,4 @@
-import { SOCIALS } from '@constants/socials';
+import { IHeroData } from '@app-types/interfaces';
 import { scrollToElement } from '@utils/index';
 import Link from 'next/link';
 
@@ -9,34 +9,45 @@ import { BorderGradientButton, Button } from '@components/Button';
 import styles from './navigation.module.scss';
 
 interface NavigationProps {
-  t: (key: string, options: { ns: string }) => string;
   isHomePage: boolean;
+  data?: IHeroData;
 }
 
-export const Navigation: FC<NavigationProps> = ({ t, isHomePage }) => {
-  const buttonLabel = isHomePage ? 'buttons.getStart' : 'buttons.requestQuote';
-
+export const Navigation: FC<NavigationProps> = ({ isHomePage, data }) => {
   return (
     <div className={styles.wrapper}>
       <Button
         onClick={() => scrollToElement('contactForm')}
         className={styles.btn}
         isBig
-        text={t(buttonLabel, { ns: 'common' })}
+        text={data?.button?.label}
       />
       {isHomePage && (
         <div className={styles.socialButtons}>
-          {SOCIALS.map(({ label, link, color, icon, ariaLabel }) => (
-            <BorderGradientButton
-              key={label}
-              as={Link}
-              href={link}
-              target="_blank"
-              aria-label={ariaLabel}
-              color={color}
-              icon={icon}
-            />
-          ))}
+          {data?.socials?.map(
+            ({
+              ariaLabel,
+              color,
+              label,
+              url,
+              icon: {
+                data: {
+                  attributes: { url: iconUrl },
+                },
+              },
+            }) => (
+              <BorderGradientButton
+                key={label}
+                as={url ? Link : undefined}
+                href={url}
+                target="_blank"
+                aria-label={ariaLabel}
+                color={color}
+                imgUrl={iconUrl}
+                iconAlt={label}
+              />
+            ),
+          )}
         </div>
       )}
     </div>

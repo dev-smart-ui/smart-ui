@@ -1,13 +1,4 @@
 {
-  "hero": {
-    "trust": "1000+ Trust Customer",
-    "title": {
-      "main": "Develop Your:",
-      "highlighted": "Innovative Software",
-      "secondary": "with Tailored IT Solutions for Lasting Impact"
-    },
-    "description": "Your Partner for Streamlined IT Solutions"
-  },
   "services": {
     "tabs": {
       "softwareDevelopment": "Software Development",

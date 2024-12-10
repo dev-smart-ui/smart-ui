@@ -1,12 +1,4 @@
 {
-  "hero": {
-    "title": {
-      "main": "Empowering Your Business with",
-      "highlighted": "Custom Services",
-      "secondary": ""
-    },
-    "description": "From idea to execution, we build bespoke solutions that meet your unique requirements, delivering results that drive growth and enhance performance"
-  },
   "technologyStack": {
     "sectionName": "Our Technology Stack ",
     "title": "We Build the Backbone of Your Digital Presence",

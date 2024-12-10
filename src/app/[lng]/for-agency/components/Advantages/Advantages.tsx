@@ -11,11 +11,6 @@ import { SectionHeader } from '@components/SectionHeader';
 import { Solutions } from './Solutions';
 import styles from './advantages.module.scss';
 
-const infoCards = [
-  { count: '250+', label: 'infoCards.card1.label' },
-  { count: '117+', label: 'infoCards.card2.label' },
-];
-
 export const Advantages: FC = () => {
   const { t } = useTranslation(['forAgency', 'common']);
 
@@ -24,6 +19,11 @@ export const Advantages: FC = () => {
     title: t('advantages.headerInfo.title'),
     subTitle: t('advantages.headerInfo.description'),
   };
+
+  const infoCards = [
+    { Title: '250+', Text: t('infoCards.card1.label', { ns: 'common' }) },
+    { Title: '117+', Text: t('infoCards.card2.label', { ns: 'common' }) },
+  ];
 
   return (
     <Section>
@@ -35,7 +35,7 @@ export const Advantages: FC = () => {
             title={headerInfo.title}
             subTitle={headerInfo.subTitle}
           />
-          <InfoCards t={t} data={infoCards} className={styles.infoCards} />
+          <InfoCards data={infoCards} className={styles.infoCards} />
         </div>
         <Solutions t={t} />
       </Container>

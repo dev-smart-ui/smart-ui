@@ -1,5 +1,5 @@
 import { PageEnum } from '@app-types/enums';
-import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
+import { BACKEND_DEV_PAGE_QUERY } from '@graphqlQueries/backendDevPage';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { Accordion } from '@components/Accordion';
@@ -10,26 +10,31 @@ import { Hero } from '@components/Hero';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
-import bottomBgImage from './img/bg.png';
-import heroImg from './img/heroImg.png';
 import technologyImg from './img/technologyImg.png';
 
-export default async function BackendDevelopmentPage() {
-  const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
-    locale: 'en',
-    pagination: { limit: 5 },
-  });
+interface BackendDevelopmentPageProps {
+  params: {
+    lng: string;
+  };
+}
 
+export default async function BackendDevelopmentPage({
+  params: { lng },
+}: BackendDevelopmentPageProps) {
+  const { backendDevPage, singleProjects } = await fetchGraphQL(
+    BACKEND_DEV_PAGE_QUERY,
+    {
+      locale: lng,
+      pagination: { limit: 5 },
+    },
+  );
+
+  const heroData = backendDevPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
 
   return (
     <>
-      <Hero
-        page={PageEnum.BackendDevelopment}
-        image={heroImg}
-        bottomBgImage={bottomBgImage}
-        colorGradiant="Third"
-      />
+      <Hero page={PageEnum.BackendDevelopment} data={heroData} />
       <TechnologyStack
         image={technologyImg}
         page={PageEnum.BackendDevelopment}
