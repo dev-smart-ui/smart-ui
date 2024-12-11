@@ -21,7 +21,7 @@ interface BackendDevelopmentPageProps {
 export default async function BackendDevelopmentPage({
   params: { lng },
 }: BackendDevelopmentPageProps) {
-  const { backendDevPage, singleProjects } = await fetchGraphQL(
+  const { backendDevPage, singleProjects, clientsLogo } = await fetchGraphQL(
     BACKEND_DEV_PAGE_QUERY,
     {
       locale: lng,
@@ -32,6 +32,12 @@ export default async function BackendDevelopmentPage({
   const heroData = backendDevPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
 
+  const clientData = {
+    sectionName:
+      backendDevPage?.data?.attributes?.ClientsSection?.sectionName || '',
+    clients: clientsLogo?.data?.attributes.clients || {},
+  };
+
   return (
     <>
       <Hero page={PageEnum.BackendDevelopment} data={heroData} />
@@ -40,7 +46,7 @@ export default async function BackendDevelopmentPage({
         page={PageEnum.BackendDevelopment}
       />
       <CoreServices page={PageEnum.BackendDevelopment} />
-      <Clients />
+      <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion />
       <ContactForm />

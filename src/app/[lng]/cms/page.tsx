@@ -19,20 +19,28 @@ interface CmsPageProps {
 }
 
 export default async function CmsPage({ params: { lng } }: CmsPageProps) {
-  const { cmsPage, singleProjects } = await fetchGraphQL(CMS_PAGE_QUERY, {
-    locale: lng,
-    pagination: { limit: 5 },
-  });
+  const { cmsPage, singleProjects, clientsLogo } = await fetchGraphQL(
+    CMS_PAGE_QUERY,
+    {
+      locale: lng,
+      pagination: { limit: 5 },
+    },
+  );
 
   const heroData = cmsPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
+
+  const clientData = {
+    sectionName: cmsPage?.data?.attributes?.ClientsSection?.sectionName || '',
+    clients: clientsLogo?.data?.attributes.clients || {},
+  };
 
   return (
     <>
       <Hero page={PageEnum.Cms} data={heroData} />
       <TechnologyStack image={technologyImg} />
       <CoreServices />
-      <Clients />
+      <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion />
       <ContactForm />

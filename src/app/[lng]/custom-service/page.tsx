@@ -21,23 +21,27 @@ interface CustomServicesPageProps {
 export default async function CustomServicePage({
   params: { lng },
 }: CustomServicesPageProps) {
-  const { customServicesPage, singleProjects } = await fetchGraphQL(
-    CUSTOM_SERVICES_PAGE_QUERY,
-    {
+  const { customServicesPage, singleProjects, clientsLogo } =
+    await fetchGraphQL(CUSTOM_SERVICES_PAGE_QUERY, {
       locale: lng,
       pagination: { limit: 5 },
-    },
-  );
+    });
 
   const heroData = customServicesPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
+
+  const clientData = {
+    sectionName:
+      customServicesPage?.data?.attributes?.ClientsSection?.sectionName || '',
+    clients: clientsLogo?.data?.attributes.clients || {},
+  };
 
   return (
     <>
       <Hero page={PageEnum.CustomService} data={heroData} />
       <TechnologyStack image={technologyImg} page={PageEnum.CustomService} />
       <CoreServices page={PageEnum.CustomService} />
-      <Clients />
+      <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion />
       <ContactForm />

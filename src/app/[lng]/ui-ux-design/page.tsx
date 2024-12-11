@@ -21,7 +21,7 @@ interface UiUxDesignPageProps {
 export default async function UiUxDesignPage({
   params: { lng },
 }: UiUxDesignPageProps) {
-  const { uiUxDesignPage, singleProjects } = await fetchGraphQL(
+  const { uiUxDesignPage, singleProjects, clientsLogo } = await fetchGraphQL(
     UI_UX_DESIGN_PAGE_QUERY,
     {
       locale: lng,
@@ -32,12 +32,18 @@ export default async function UiUxDesignPage({
   const heroData = uiUxDesignPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
 
+  const clientData = {
+    sectionName:
+      uiUxDesignPage?.data?.attributes?.ClientsSection?.sectionName || '',
+    clients: clientsLogo?.data?.attributes.clients || {},
+  };
+
   return (
     <>
       <Hero page={PageEnum.UiUxDesign} data={heroData} />
       <TechnologyStack image={technologyImg} page={PageEnum.UiUxDesign} />
       <CoreServices page={PageEnum.UiUxDesign} />
-      <Clients />
+      <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion />
       <ContactForm />

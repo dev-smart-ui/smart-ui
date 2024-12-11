@@ -28,7 +28,7 @@ export const ServicesTabs: FC<ServicesTabsProps> = ({ data }) => {
     if (browser?.name === 'safari') setIsSafari(true);
   }, [browser]);
 
-  const currentTabContent = data?.tabsContent.find(
+  const currentTabContent = data?.tabsContent?.find(
     (tabContent) => tabContent.key === currentTab,
   );
 

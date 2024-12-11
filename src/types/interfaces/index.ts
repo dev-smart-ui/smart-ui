@@ -1,3 +1,11 @@
+interface IImage {
+  data: {
+    attributes: {
+      url: string;
+    };
+  };
+}
+
 // projects
 export interface IProjectData {
   id: string;
@@ -5,13 +13,7 @@ export interface IProjectData {
     project_name: string;
     description_text: string;
     google_page_speed: number;
-    main_img: {
-      data: {
-        attributes: {
-          url: string;
-        };
-      };
-    };
+    main_img: IImage;
     color: string;
     seo_title: string;
     seo_description: string;
@@ -25,13 +27,7 @@ export interface IProjectData {
 export interface IExpert {
   id: string;
   attributes: {
-    preview_photo: {
-      data: {
-        attributes: {
-          url: string;
-        };
-      };
-    };
+    preview_photo: IImage;
     direction: string;
     email: string;
     english_level: string;
@@ -45,26 +41,13 @@ export interface IExpert {
   };
 }
 
-interface IImage {
-  data: {
-    attributes: {
-      url: string;
-    };
-  };
-}
 // social
 export interface ISocial {
   color: string;
   ariaLabel: string;
   label: string;
   url: string;
-  icon: {
-    data: {
-      attributes: {
-        url: string;
-      };
-    };
-  };
+  icon: IImage;
 }
 
 interface IToolCard {
@@ -94,7 +77,6 @@ export interface IHeroData {
 }
 
 // services tabs
-
 interface ITab {
   label: string;
   value: string;
@@ -106,13 +88,7 @@ export interface ITabContent {
   list: {
     list: string[];
   };
-  image: {
-    data: {
-      attributes: {
-        url: string;
-      };
-    };
-  };
+  image: IImage;
   button: {
     text: string;
     ariaLabel: string;
@@ -123,4 +99,15 @@ export interface ITabContent {
 export interface IServicesTabs {
   tabs: ITab[];
   tabsContent: ITabContent[];
+}
+
+// clients
+interface IClients {
+  key: string;
+  image: IImage;
+}
+
+export interface IClientsSection {
+  sectionName: string;
+  clients: IClients[];
 }

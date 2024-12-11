@@ -1,4 +1,8 @@
-import { HERO_FRAGMENT, PROJECTS_FRAGMENT } from './fragments';
+import {
+  CLIENTS_LOGO_FRAGMENT,
+  HERO_FRAGMENT,
+  PROJECTS_FRAGMENT,
+} from './fragments';
 
 export const WEB3_PAGE_QUERY = `
 query GetWeb3PageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
@@ -7,6 +11,9 @@ query GetWeb3PageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
       attributes {
         Hero {
           ...HeroFragment
+        }
+        ClientsSection {
+          sectionName
         }
       }
     }
@@ -21,6 +28,10 @@ query GetWeb3PageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
       }
     }
   }
+  clientsLogo {
+    ...ClientsLogoFragment  
+  }
 }
 ${HERO_FRAGMENT}
-${PROJECTS_FRAGMENT}`;
+${PROJECTS_FRAGMENT}
+${CLIENTS_LOGO_FRAGMENT}`;

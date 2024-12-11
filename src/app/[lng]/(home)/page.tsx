@@ -39,20 +39,28 @@ interface HomePageProps {
 }
 
 export default async function Home({ params: { lng } }: HomePageProps) {
-  const { homePage, singleProjects } = await fetchGraphQL(HOME_PAGE_QUERY, {
-    locale: lng,
-    pagination: { limit: 5 },
-  });
+  const { homePage, singleProjects, clientsLogo } = await fetchGraphQL(
+    HOME_PAGE_QUERY,
+    {
+      locale: lng,
+      pagination: { limit: 5 },
+    },
+  );
 
   const heroData = homePage?.data?.attributes?.Hero || {};
   const servicesTabsData = homePage?.data?.attributes?.ServicesTabs || {};
   const singleProjectsData = singleProjects?.data || [];
 
+  const clientData = {
+    sectionName: homePage?.data?.attributes?.ClientsSection?.sectionName || '',
+    clients: clientsLogo?.data?.attributes.clients || {},
+  };
+
   return (
     <>
       <Hero data={heroData} />
       <ServicesTabs data={servicesTabsData} />
-      <Clients />
+      <Clients data={clientData} />
       <Advantages />
       <ClientFeedback />
       <WorkTogether />

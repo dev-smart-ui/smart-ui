@@ -117,3 +117,22 @@ fragment ServicesTabsFragment on ComponentSectionsServicesTabs {
     button
   }
 }`;
+
+// clients
+export const CLIENTS_LOGO_FRAGMENT = `
+fragment ClientsLogoFragment on ClientsLogoEntityResponse {
+	data {
+    attributes {
+      clients {
+        image {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        key
+      }
+    }
+  }
+}`;

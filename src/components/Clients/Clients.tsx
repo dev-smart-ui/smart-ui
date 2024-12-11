@@ -1,47 +1,28 @@
 'use client';
 
+import { IClientsSection } from '@app-types/interfaces';
 import Image from 'next/image';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
 import { Section } from '@components/Section';
 import { SectionHeader } from '@components/SectionHeader';
 
 import styles from './clients.module.scss';
-import duelmastersImg from './img/duelmasters.png';
-import ecrImg from './img/ecr.png';
-import houndDogImg from './img/houndDog.png';
-import montessoriImg from './img/montessori.png';
-import sanLorenzoImg from './img/sanLorenzo.png';
-import tigerImg from './img/tiger.png';
-import unImg from './img/un.png';
-import wsImg from './img/ws.png';
 
-const CLIENTS_LOGO = [
-  { key: 'montessori', image: montessoriImg },
-  { key: 'houndDOg', image: houndDogImg },
-  { key: 'unImg', image: unImg },
-  { key: 'sanLorenzo', image: sanLorenzoImg },
-  { key: 'duelmasters', image: duelmastersImg },
-  { key: 'duelmaster2', image: duelmastersImg },
-  { key: 'duelmaster3', image: duelmastersImg },
-  { key: 'ecr', image: ecrImg },
-  { key: 'tiger', image: tigerImg },
-  { key: 'wsImg', image: wsImg },
-];
+interface ClientsProps {
+  data: IClientsSection;
+}
 
-export const Clients: FC = () => {
-  const { t } = useTranslation('home');
-
+export const Clients: FC<ClientsProps> = ({ data }) => {
   return (
     <Section className={styles.section}>
       <Container className={styles.additionalContentWrapper}>
         <Container className={styles.content}>
-          <SectionHeader sectionName={t('clients.sectionName')} />
+          <SectionHeader sectionName={data?.sectionName} />
           <Swiper
             loop
             allowTouchMove={false}
@@ -69,10 +50,15 @@ export const Clients: FC = () => {
             className={styles.logosSwiper}
             id="clientSlider"
           >
-            {CLIENTS_LOGO.map(({ image, key }) => (
+            {data?.clients?.map(({ image, key }) => (
               <SwiperSlide key={key}>
                 <div className={styles.image}>
-                  <Image src={image} alt={key} />
+                  <Image
+                    width={200}
+                    height={50}
+                    src={image?.data?.attributes?.url}
+                    alt={key}
+                  />
                 </div>
               </SwiperSlide>
             ))}
