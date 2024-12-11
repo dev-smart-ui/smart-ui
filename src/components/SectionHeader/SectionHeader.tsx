@@ -7,15 +7,17 @@ import { TextGradientBackground } from '@components/TextGradientBackgraund';
 
 import styles from './sectionHeader.module.scss';
 
-type TTitleObj = {
-  main: string;
-  highlighted: string;
-  secondary?: string;
-};
+interface ITitleObj {
+  part1: string;
+  part2: string;
+  gradientPart: string;
+  color1: string;
+  color2: string;
+}
 
 interface SectionHeaderProps {
   sectionName?: string;
-  title?: TTitleObj | string;
+  title?: ITitleObj | string;
   subTitle?: string;
   position?: 'left' | 'center' | 'right';
   className?: string;
@@ -28,10 +30,8 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
   position = 'center',
   className,
 }) => {
-  const isTitleObject = (value: TTitleObj | string): value is TTitleObj => {
-    return (
-      typeof value === 'object' && 'main' in value && 'highlighted' in value
-    );
+  const isTitleObject = (value: ITitleObj | string): value is ITitleObj => {
+    return typeof value === 'object';
   };
 
   return (
@@ -52,8 +52,11 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
           <h2 className={styles.title}>
             {isTitleObject(title) ? (
               <>
-                {title.main} <GradientText>{title.highlighted}</GradientText>{' '}
-                {title.secondary ? title.secondary : ''}{' '}
+                {title?.part1}{' '}
+                <GradientText colors={[title?.color1, title?.color2]}>
+                  {title.gradientPart}
+                </GradientText>{' '}
+                {title?.part2 ? title?.part2 : ''}{' '}
               </>
             ) : (
               title

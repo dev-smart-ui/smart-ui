@@ -136,3 +136,28 @@ fragment ClientsLogoFragment on ClientsLogoEntityResponse {
     }
   }
 }`;
+
+// advantagesCards
+export const ADVANTAGES_CARDS_FRAGMENT = `
+fragment AdvantagesCardsFragment on ComponentSectionsAdvantagesHome {
+	sectionName
+	title {
+    part1
+    part2
+    gradientPart
+    color1
+    color2
+  }
+  subTitle
+  cards {
+    title
+    text
+  img {
+    data {
+      attributes {
+        url
+      }
+     }
+    }
+  }
+}`;

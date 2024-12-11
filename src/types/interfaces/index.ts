@@ -6,6 +6,14 @@ interface IImage {
   };
 }
 
+interface IGradientTitle {
+  part1: string;
+  gradientPart: string;
+  part2: string;
+  color1: string;
+  color2: string;
+}
+
 // projects
 export interface IProjectData {
   id: string;
@@ -60,13 +68,7 @@ export interface IHeroData {
   button: {
     label: string;
   };
-  title: {
-    part1: string;
-    gradientPart: string;
-    part2: string;
-    color1: string;
-    color2: string;
-  };
+  title: IGradientTitle;
   subTitle: string;
   trust: string;
   socials: ISocial[];
@@ -110,4 +112,18 @@ interface IClients {
 export interface IClientsSection {
   sectionName: string;
   clients: IClients[];
+}
+
+// advantagesCards
+interface IAdvantagesCard {
+  title: string;
+  text: string;
+  img: IImage;
+}
+
+export interface IAdvantagesCards {
+  sectionName: string;
+  title: IGradientTitle;
+  subTitle: string;
+  cards: IAdvantagesCard[];
 }
