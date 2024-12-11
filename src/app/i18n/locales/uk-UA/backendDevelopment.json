@@ -7,8 +7,10 @@
   "coreServices": {
     "headerInfo": {
       "title": {
-        "main": "Основні послуги з розробки",
-        "highlighted": "Backend"
+        "part1": "Основні послуги з розробки",
+        "gradientPart": "Backend",
+        "color1": "#2865B0",
+        "color2": "#3B8FF3"
       },
       "subTitle": "Ось список послуг з розробки Backend, які ми створили для вас"
     },

@@ -22,9 +22,11 @@ export const OurExperts: FC<OurExpertsProps> = ({ data }) => {
   const headerInfo: IHeaderInfo = {
     sectionName: t('ourExperts.headerInfo.sectionName'),
     title: {
-      main: t('ourExperts.headerInfo.title.main'),
-      highlighted: t('ourExperts.headerInfo.title.highlighted'),
-      secondary: t('ourExperts.headerInfo.title.secondary'),
+      part1: t('ourExperts.headerInfo.title.main'),
+      gradientPart: t('ourExperts.headerInfo.title.highlighted'),
+      part2: t('ourExperts.headerInfo.title.secondary'),
+      color1: '#2865B0',
+      color2: '#3B8FF3',
     },
     subTitle: t('ourExperts.headerInfo.description'),
   };

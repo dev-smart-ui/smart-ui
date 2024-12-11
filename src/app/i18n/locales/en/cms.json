@@ -7,8 +7,10 @@
   "coreServices": {
     "headerInfo": {
       "title": {
-        "main": "Core CMS",
-        "highlighted": "Services"
+        "part1": "Core CMS",
+        "gradientPart": "Services",
+        "color1": "#2865B0",
+        "color2": "#3B8FF3"
       },
       "subTitle": "Here is a list of CMS development services we've designed for you"
     },

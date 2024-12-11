@@ -23,8 +23,10 @@ export const WhatWeDo: FC<WhatWeDoProps> = ({ page = PageEnum.ForAgency }) => {
   const headerInfo: IHeaderInfo = {
     sectionName: t('whatWeDo.headerInfo.sectionName'),
     title: {
-      main: t('whatWeDo.headerInfo.title.main'),
-      highlighted: t('whatWeDo.headerInfo.title.highlighted'),
+      part1: t('whatWeDo.headerInfo.title.main'),
+      gradientPart: t('whatWeDo.headerInfo.title.highlighted'),
+      color1: '#2865B0',
+      color2: '#3B8FF3',
     },
     subTitle: t('whatWeDo.headerInfo.description'),
   };

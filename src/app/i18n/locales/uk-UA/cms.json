@@ -7,8 +7,10 @@
   "coreServices": {
     "headerInfo": {
       "title": {
-        "main": "Основні CMS",
-        "highlighted": "Послуги"
+        "part1": "Основні CMS",
+        "gradientPart": "Послуги",
+        "color1": "#2865B0",
+        "color2": "#3B8FF3"
       },
       "subTitle": "Ось перелік послуг з розробки CMS, які ми підготували для вас"
     },

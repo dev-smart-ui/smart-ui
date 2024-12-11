@@ -7,8 +7,10 @@
   "coreServices": {
     "headerInfo": {
       "title": {
-        "main": "Our Custom",
-        "highlighted": "Services"
+        "part1": "Our Custom",
+        "gradientPart": "Services",
+        "color1": "#2865B0",
+        "color2": "#3B8FF3"
       },
       "subTitle": "Here is a list of Custom Services we've designed for you"
     },

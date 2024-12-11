@@ -7,8 +7,10 @@
   "coreServices": {
     "headerInfo": {
       "title": {
-        "main": "Основні послуги дизайну",
-        "highlighted": "UI/UX"
+        "part1": "Основні послуги дизайну",
+        "gradientPart": "UI/UX",
+        "color1": "#2865B0",
+        "color2": "#3B8FF3"
       },
       "subTitle": "Ось перелік послуг з дизайну UI/UX, які ми розробили для вас"
     },

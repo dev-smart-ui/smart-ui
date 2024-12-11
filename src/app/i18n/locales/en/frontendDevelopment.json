@@ -7,8 +7,10 @@
   "coreServices": {
     "headerInfo": {
       "title": {
-        "main": "Core Frontend Development",
-        "highlighted": "Services"
+        "part1": "Core Frontend Development",
+        "gradientPart": "Services",
+        "color1": "#2865B0",
+        "color2": "#3B8FF3"
       },
       "subTitle": "Here’s a curated list of Frontend Development Services tailored to represent a wide range of offerings:"
     },

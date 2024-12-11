@@ -7,9 +7,11 @@
   "coreServices": {
     "headerInfo": {
       "title": {
-        "main": "Core QA",
-        "highlighted": "Services",
-        "secondary": "Ensuring Quality at Every Stage of Development"
+        "part1": "Core QA",
+        "gradientPart": "Services",
+        "part2": "Ensuring Quality at Every Stage of Development",
+        "color1": "#2865B0",
+        "color2": "#3B8FF3"
       },
       "subTitle": "Here is a list of QA services we've designed for you"
     },

@@ -20,8 +20,10 @@ export const ContactUs: FC = () => {
   const headerInfo: IHeaderInfo = {
     sectionName: t('contactUs.headerInfo.sectionName'),
     title: {
-      main: t('contactUs.headerInfo.title.main'),
-      highlighted: t('contactUs.headerInfo.title.highlighted'),
+      part1: t('contactUs.headerInfo.title.main'),
+      gradientPart: t('contactUs.headerInfo.title.highlighted'),
+      color1: '#2865B0',
+      color2: '#3B8FF3',
     },
     subTitle: t('contactUs.headerInfo.description'),
   };

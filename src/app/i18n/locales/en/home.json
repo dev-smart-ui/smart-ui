@@ -24,8 +24,11 @@
     "headerInfo": {
       "sectionName": "Our Services",
       "title": {
-        "main": "A Comprehensive Range of Services for",
-        "highlighted": "Your Business"
+        "part1": "A Comprehensive Range of Services for",
+        "gradientPart": "Your Business",
+        "part2": "",
+        "color1": "#2865B0",
+        "color2": "#3B8FF3"
       }
     },
     "service1": {
@@ -49,8 +52,8 @@
     "headerInfo": {
       "sectionName": "Our Work",
       "title": {
-        "main": "Explore Our Success Stories",
-        "highlighted": "Project Highlights"
+        "part1": "Explore Our Success Stories",
+        "gradientPart": "Project Highlights"
       },
       "subTitle": ""
     }
@@ -59,8 +62,10 @@
     "headerInfo": {
       "sectionName": "Frequently Asked Questions",
       "title": {
-        "main": "Answers to Your Most Common",
-        "highlighted": "Questions"
+        "part1": "Answers to Your Most Common",
+        "gradientPart": "Questions",
+        "color1": "#2865B0",
+        "color2": "#3B8FF3"
       }
     },
     "question1": {

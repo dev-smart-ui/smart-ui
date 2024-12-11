@@ -9,10 +9,10 @@ import styles from './sectionHeader.module.scss';
 
 interface ITitleObj {
   part1: string;
-  part2: string;
-  gradientPart: string;
-  color1: string;
-  color2: string;
+  part2?: string;
+  gradientPart?: string;
+  color1?: string;
+  color2?: string;
 }
 
 interface SectionHeaderProps {

@@ -1,6 +1,7 @@
 'use client';
 
 import { PageEnum } from '@app-types/enums';
+import { IHeaderInfo } from '@app-types/global';
 import { IProjectData } from '@app-types/interfaces';
 import classNames from 'classnames';
 import Image, { StaticImageData } from 'next/image';
@@ -35,12 +36,14 @@ export const OurWork: FC<OurWorkProps> = ({
 }) => {
   const { t } = useTranslation(page);
 
-  const headerInfo = {
+  const headerInfo: IHeaderInfo = {
     title: {
-      main: t('ourWork.headerInfo.title.main'),
-      highlighted: t('ourWork.headerInfo.title.highlighted'),
+      part1: t('ourWork.headerInfo.title.part1'),
+      gradientPart: t('ourWork.headerInfo.title.gradientPart'),
+      color1: '#2865B0',
+      color2: '#3B8FF3',
     },
-    subtitle: t('ourWork.headerInfo.subTitle'),
+    subTitle: t('ourWork.headerInfo.subTitle'),
   };
 
   return (
@@ -53,7 +56,7 @@ export const OurWork: FC<OurWorkProps> = ({
         <SectionHeader
           sectionName={t('ourWork.headerInfo.sectionName')}
           title={headerInfo.title}
-          subTitle={headerInfo.subtitle}
+          subTitle={headerInfo.subTitle}
         />
         {isLoading ? (
           <div>..loading</div>

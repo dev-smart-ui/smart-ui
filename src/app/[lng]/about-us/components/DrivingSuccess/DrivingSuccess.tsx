@@ -17,8 +17,10 @@ export const DrivingSuccess: FC = () => {
   const headerInfo: IHeaderInfo = {
     sectionName: t('drivingSuccess.sectionName'),
     title: {
-      main: t('drivingSuccess.title.main'),
-      highlighted: t('drivingSuccess.title.highlighted'),
+      part1: t('drivingSuccess.title.main'),
+      gradientPart: t('drivingSuccess.title.highlighted'),
+      color1: '#2865B0',
+      color2: '#3B8FF3',
     },
     subTitle: t('drivingSuccess.description'),
   };
