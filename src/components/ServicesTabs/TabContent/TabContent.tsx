@@ -1,40 +1,39 @@
+import { ITabContent } from '@app-types/interfaces';
 import { scrollToElement } from '@utils/index';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { BorderGradientButton } from '@components/Button';
 
 import { List } from './List';
 import styles from './tabContent.module.scss';
 
-type TServiceTab = {
-  title: string;
-  list: string[] | readonly string[];
-  image: StaticImageData;
-};
-
 interface TabContentProps {
-  data: TServiceTab;
+  data?: ITabContent;
 }
 
 export const TabContent: FC<TabContentProps> = ({ data }) => {
-  const { t } = useTranslation('common');
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.left}>
-        <h2 className={styles.title}>{data.title}</h2>
-        <List list={data.list} />
+        <h2 className={styles.title}>{data?.title}</h2>
+        <List list={data?.list?.list} />
         <BorderGradientButton
           onClick={() => scrollToElement('contactForm')}
           className={styles.serviceButton}
-          text={t('buttons.contact')}
+          color={data?.button?.color}
+          text={data?.button?.text}
+          aria-label={data?.button.ariaLabel}
         />
       </div>
       <div className={styles.image}>
-        <Image src={data.image} width={560} height={360} alt="serviceImage" />
+        <Image
+          src={data?.image?.data?.attributes?.url ?? ''}
+          width={560}
+          height={360}
+          alt="serviceImage"
+        />
       </div>
     </div>
   );

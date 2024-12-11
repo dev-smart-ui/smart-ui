@@ -92,3 +92,35 @@ export interface IHeroData {
   image: IImage;
   cards?: IToolCard[];
 }
+
+// services tabs
+
+interface ITab {
+  label: string;
+  value: string;
+}
+
+export interface ITabContent {
+  title: string;
+  key: string;
+  list: {
+    list: string[];
+  };
+  image: {
+    data: {
+      attributes: {
+        url: string;
+      };
+    };
+  };
+  button: {
+    text: string;
+    ariaLabel: string;
+    color: string;
+  };
+}
+
+export interface IServicesTabs {
+  tabs: ITab[];
+  tabsContent: ITabContent[];
+}

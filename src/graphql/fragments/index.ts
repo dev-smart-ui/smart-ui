@@ -76,23 +76,44 @@ fragment ProjectsFragment on SingleProjectEntity {
 export const TEAM_FRAGMENT = `
 fragment TeamFragment on TeamEntity {
   id
-    attributes {
-	    name
-	    position
-	    level
-	    direction
-	    price
-	    preview_photo {
-	      data {
-	          attributes {
-	            url
-	          }
-	        }
-	    }
-	    telegram
-	    linkedin
-	    english_level
-	    email
-	    direction
+  attributes {
+    name
+    position
+    level
+    direction
+    price
+    preview_photo {
+      data {
+          attributes {
+            url
+          }
+        }
     }
+    telegram
+    linkedin
+    english_level
+    email
+    direction
+  }
+}`;
+
+export const SERVICES_TABS_FRAGMENT = `
+fragment ServicesTabsFragment on ComponentSectionsServicesTabs {
+	tabs {
+    label
+    value
+  }
+  tabsContent{
+    title
+    key
+    list
+    image {
+	    data {
+	      attributes {
+	        url
+	      }
+	    }
+    }
+    button
+  }
 }`;

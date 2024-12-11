@@ -10,8 +10,8 @@ type TTab = {
 };
 
 interface ServicesTabsProps {
-  tabs: TTab[];
-  currentTab: string;
+  tabs?: TTab[];
+  currentTab?: string;
   setCurrentTab: (tab: string) => void;
 }
 
@@ -26,7 +26,7 @@ export const Tabs: FC<ServicesTabsProps> = ({
 
   return (
     <ul className={styles.wrapper}>
-      {tabs.map((tab) => {
+      {tabs?.map((tab) => {
         return (
           <li className={styles.listItem} key={tab.value}>
             <button

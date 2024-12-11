@@ -45,7 +45,7 @@ export const Hero: FC<HeroProps> = ({ page = PageEnum.Home, data }) => {
             <Navigation isHomePage={isHomePage} data={data} />
           )}
         </div>
-        {!isHomePage && data?.image && (
+        {!isHomePage && data?.image?.data?.attributes?.url && (
           <div
             className={classNames(styles.allPageImage, {
               [styles.isAboutUsPage]: isAboutUsPage,
@@ -59,7 +59,7 @@ export const Hero: FC<HeroProps> = ({ page = PageEnum.Home, data }) => {
             />
           </div>
         )}
-        {isHomePage && data?.backgroundImage && (
+        {isHomePage && data?.backgroundImage?.data?.attributes?.url && (
           <div className={styles.homePageImage}>
             <Image
               width={900}
@@ -70,7 +70,7 @@ export const Hero: FC<HeroProps> = ({ page = PageEnum.Home, data }) => {
           </div>
         )}
       </Container>
-      {!isHomePage && !!data?.backgroundBottomImage && (
+      {!isHomePage && data?.backgroundBottomImage?.data?.attributes?.url && (
         <div
           className={classNames(styles.bottomBgImage, styles[`${page}Page`])}
         >

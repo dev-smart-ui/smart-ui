@@ -24,13 +24,14 @@ export default async function AboutUsPage({
     pagination: { limit: -1 },
   });
 
+  const servicesTabsData = aboutUsPage?.data?.attributes?.ServicesTabs || {};
   const heroData = aboutUsPage?.data?.attributes?.Hero || {};
   const singleProjectsData = teams?.data || [];
   return (
     <>
       <Hero page={PageEnum.AboutUs} data={heroData} />
       <DrivingSuccess />
-      <ServicesTabs />
+      <ServicesTabs data={servicesTabsData} />
       <GoalsAndValues />
       <OurExperts data={singleProjectsData} />
       <ContactForm />

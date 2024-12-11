@@ -1,4 +1,8 @@
-import { HERO_FRAGMENT, PROJECTS_FRAGMENT } from './fragments';
+import {
+  HERO_FRAGMENT,
+  PROJECTS_FRAGMENT,
+  SERVICES_TABS_FRAGMENT,
+} from './fragments';
 
 export const HOME_PAGE_QUERY = `
 query GetHomePageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
@@ -7,6 +11,9 @@ query GetHomePageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
       attributes {
         Hero {
           ...HeroFragment
+        }
+        ServicesTabs {
+          ...ServicesTabsFragment
         }
       }
     }
@@ -23,4 +30,5 @@ query GetHomePageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
   }
 }
 ${HERO_FRAGMENT}
-${PROJECTS_FRAGMENT}`;
+${PROJECTS_FRAGMENT}
+${SERVICES_TABS_FRAGMENT}`;

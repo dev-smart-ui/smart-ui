@@ -1,27 +1,36 @@
 'use client';
 
+import { IServicesTabs } from '@app-types/interfaces';
 import classNames from 'classnames';
 import { detect } from 'detect-browser';
 
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { Container } from '@components/Container';
 import { Section } from '@components/Section';
 
 import { TabContent } from './TabContent';
 import { Tabs } from './Tabs';
-import { useLocaleTabsAndServicesData } from './hooks/useLocaleTabsAndServicesData';
 import styles from './servicesTabs.module.scss';
 
-export const ServicesTabs = () => {
-  const { tabs, servicesTabs } = useLocaleTabsAndServicesData();
-  const [currentTab, setCurrentTab] = useState(tabs[0].value);
+interface ServicesTabsProps {
+  data?: IServicesTabs;
+}
+
+export const ServicesTabs: FC<ServicesTabsProps> = ({ data }) => {
+  const [currentTab, setCurrentTab] = useState(
+    data?.tabsContent?.[0].key ?? 'softwareDevelopment',
+  );
   const [isSafari, setIsSafari] = useState(false);
   const browser = detect();
 
   useEffect(() => {
     if (browser?.name === 'safari') setIsSafari(true);
   }, [browser]);
+
+  const currentTabContent = data?.tabsContent.find(
+    (tabContent) => tabContent.key === currentTab,
+  );
 
   return (
     <Section>
@@ -33,13 +42,11 @@ export const ServicesTabs = () => {
           )}
         >
           <Tabs
-            tabs={tabs}
+            tabs={data?.tabs}
             currentTab={currentTab}
             setCurrentTab={setCurrentTab}
           />
-          <TabContent
-            data={servicesTabs[currentTab as keyof typeof servicesTabs]}
-          />
+          <TabContent data={currentTabContent} />
         </div>
       </Container>
     </Section>

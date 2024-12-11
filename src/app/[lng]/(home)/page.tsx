@@ -45,12 +45,13 @@ export default async function Home({ params: { lng } }: HomePageProps) {
   });
 
   const heroData = homePage?.data?.attributes?.Hero || {};
+  const servicesTabsData = homePage?.data?.attributes?.ServicesTabs || {};
   const singleProjectsData = singleProjects?.data || [];
 
   return (
     <>
       <Hero data={heroData} />
-      <ServicesTabs />
+      <ServicesTabs data={servicesTabsData} />
       <Clients />
       <Advantages />
       <ClientFeedback />
