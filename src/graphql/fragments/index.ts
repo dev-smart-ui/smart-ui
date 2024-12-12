@@ -1,3 +1,4 @@
+// hero
 export const HERO_FRAGMENT = `
 fragment HeroFragment on ComponentSectionsHero {
   title {
@@ -52,6 +53,7 @@ fragment HeroFragment on ComponentSectionsHero {
   }
 }`;
 
+// project
 export const PROJECTS_FRAGMENT = `
 fragment ProjectsFragment on SingleProjectEntity {
   id
@@ -73,6 +75,7 @@ fragment ProjectsFragment on SingleProjectEntity {
   }
 }`;
 
+// team
 export const TEAM_FRAGMENT = `
 fragment TeamFragment on TeamEntity {
   id
@@ -97,6 +100,7 @@ fragment TeamFragment on TeamEntity {
   }
 }`;
 
+// services tabs
 export const SERVICES_TABS_FRAGMENT = `
 fragment ServicesTabsFragment on ComponentSectionsServicesTabs {
 	tabs {
@@ -274,4 +278,24 @@ fragment OurWorkFragment on ComponentSectionsOurWork {
 		color2
 	}
 	subTitle
+}`;
+
+// accordion
+export const ACCORDION_FRAGMENT = `
+fragment AccordionFragment on AccordionEntity {
+	attributes {
+    sectionName
+    title {
+      part1
+      part2
+      gradientPart
+      color1
+      color2
+    }
+    cards {
+      id
+      label
+      hidedText
+    }
+  }
 }`;

@@ -189,3 +189,16 @@ export interface IOurWorkSection {
   title: IGradientTitle;
   subTitle: string;
 }
+
+// accordion
+export interface IAccordionCard {
+  id: string;
+  label: string;
+  hidedText: string;
+}
+
+export interface IAccordionSection {
+  sectionName: string;
+  title: IGradientTitle;
+  cards: IAccordionCard[];
+}

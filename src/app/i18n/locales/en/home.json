@@ -9,41 +9,6 @@
       "subTitle": ""
     }
   },
-  "accordion": {
-    "headerInfo": {
-      "sectionName": "Frequently Asked Questions",
-      "title": {
-        "part1": "Answers to Your Most Common",
-        "gradientPart": "Questions",
-        "color1": "#2865B0",
-        "color2": "#3B8FF3"
-      }
-    },
-    "question1": {
-      "label": "1. What types of projects do you specialize in?",
-      "hidedText": "We specialize in a variety of digital solutions, including web development, mobile app development, system integration, and UI/UX design. Our team tailors each project to meet your specific needs and goals"
-    },
-    "question2": {
-      "label": "2. How long does a typical project take?",
-      "hidedText": "We specialize in a variety of digital solutions, including web development, mobile app development, system integration, and UI/UX design. Our team tailors each project to meet your specific needs and goals"
-    },
-    "question3": {
-      "label": "3. What is the cost of your services?",
-      "hidedText": "We specialize in a variety of digital solutions, including web development, mobile app development, system integration, and UI/UX design. Our team tailors each project to meet your specific needs and goals"
-    },
-    "question4": {
-      "label": "4. Do you offer post-launch support?",
-      "hidedText": "We specialize in a variety of digital solutions, including web development, mobile app development, system integration, and UI/UX design. Our team tailors each project to meet your specific needs and goals"
-    },
-    "question5": {
-      "label": "5. How do you ensure data security in your projects?",
-      "hidedText": "We specialize in a variety of digital solutions, including web development, mobile app development, system integration, and UI/UX design. Our team tailors each project to meet your specific needs and goals"
-    },
-    "question6": {
-      "label": "6. Can I make changes during the development process?",
-      "hidedText": "We specialize in a variety of digital solutions, including web development, mobile app development, system integration, and UI/UX design. Our team tailors each project to meet your specific needs and goals"
-    }
-  },
   "contactForm": {
     "form": {
       "title": "Let's Get Started Now!",

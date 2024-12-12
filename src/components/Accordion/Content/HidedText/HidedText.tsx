@@ -7,7 +7,7 @@ import { useMount } from '@hooks/useMount';
 import styles from './hidedText.module.scss';
 
 interface HidedTextProps {
-  id: number;
+  id: string;
   hidedText: string;
   isActive: boolean;
 }

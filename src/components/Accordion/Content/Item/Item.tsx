@@ -10,7 +10,7 @@ interface ItemProps {
   isActive: boolean;
   label: string;
   hidedText: string;
-  id: number;
+  id: string;
 }
 
 export const Item: FC<ItemProps> = ({
