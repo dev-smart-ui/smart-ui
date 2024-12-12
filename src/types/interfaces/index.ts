@@ -141,7 +141,7 @@ export interface IClientFeedback {
 
 export interface IClientSection {
   sectionName: string;
-  title: IGradientTitle;
+  title: string;
   feedbacks: IClientFeedback[];
 }
 

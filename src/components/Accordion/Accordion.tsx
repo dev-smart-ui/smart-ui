@@ -11,7 +11,7 @@ import { SectionHeader } from '@components/SectionHeader';
 import { Content } from './Content';
 
 interface AccordionProps {
-  data: IAccordionSection;
+  data?: IAccordionSection;
 }
 
 export const Accordion: FC<AccordionProps> = ({ data }) => {
@@ -19,7 +19,7 @@ export const Accordion: FC<AccordionProps> = ({ data }) => {
     <Section>
       <Container>
         <SectionHeader sectionName={data?.sectionName} title={data?.title} />
-        <Content data={data?.cards} />
+        <Content data={data?.cards || []} />
       </Container>
     </Section>
   );
