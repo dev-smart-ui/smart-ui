@@ -1,10 +1,10 @@
 'use client';
 
+import { IClientSection } from '@app-types/interfaces';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
 import { Section } from '@components/Section';
@@ -14,19 +14,18 @@ import { FeedbackHeader } from './FeedbackHeader';
 import { Slider } from './Slider';
 import styles from './clientFeedback.module.scss';
 
-export const ClientFeedback: FC = () => {
-  const { t } = useTranslation(['home', 'common']);
+interface ClientFeedbackProps {
+  data: IClientSection;
+}
 
+export const ClientFeedback: FC<ClientFeedbackProps> = ({ data }) => {
   return (
     <Section>
       <Container className={styles.additionalContentWrapper}>
         <Container>
-          <SectionHeader
-            position="left"
-            sectionName={t('feedbacks.headerInfo.sectionName')}
-          />
-          <FeedbackHeader t={t} />
-          <Slider t={t} />
+          <SectionHeader position="left" sectionName={data?.sectionName} />
+          <FeedbackHeader title={data?.title} />
+          <Slider data={data?.feedbacks} />
         </Container>
       </Container>
     </Section>

@@ -1,4 +1,4 @@
-interface IImage {
+export interface IImage {
   data: {
     attributes: {
       url: string;
@@ -126,4 +126,21 @@ export interface IAdvantagesCards {
   title: IGradientTitle;
   subTitle: string;
   cards: IAdvantagesCard[];
+}
+
+// feedbacks
+export interface IClientFeedback {
+  id: string;
+  author: string;
+  work: string;
+  company: string;
+  feedback: string;
+  avatar: IImage;
+  image: IImage;
+}
+
+export interface IClientSection {
+  sectionName: string;
+  title: string;
+  feedbacks: IClientFeedback[];
 }

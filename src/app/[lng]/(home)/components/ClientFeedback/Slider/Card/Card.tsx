@@ -1,16 +1,17 @@
-import Image, { StaticImageData } from 'next/image';
+import { IImage } from '@app-types/interfaces';
+import Image from 'next/image';
 
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 
 import styles from './card.module.scss';
 
 interface CardProps {
-  image: StaticImageData;
+  avatar: IImage;
   author: string;
   work: string;
   company: string;
   feedback: string;
-  icon: ReactNode;
+  image: IImage;
 }
 
 export const Card: FC<CardProps> = ({
@@ -19,13 +20,18 @@ export const Card: FC<CardProps> = ({
   work,
   company,
   feedback,
-  icon,
+  avatar,
 }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.author}>
         <div className={styles.image}>
-          <Image src={image} alt="avatar" />
+          <Image
+            width={45}
+            height={45}
+            src={avatar?.data?.attributes?.url}
+            alt="avatar"
+          />
         </div>
         <div className={styles.info}>
           <span className={styles.name}>{author}</span>
@@ -35,7 +41,13 @@ export const Card: FC<CardProps> = ({
         </div>
       </div>
       <p className={styles.feedback}>{feedback}</p>
-      {icon}
+      <Image
+        className={styles.logo}
+        width={80}
+        height={30}
+        src={image?.data?.attributes?.url}
+        alt="companyLogo"
+      />
     </div>
   );
 };

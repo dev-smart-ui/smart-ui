@@ -1,6 +1,7 @@
 import {
   ADVANTAGES_CARDS_FRAGMENT,
   CLIENTS_LOGO_FRAGMENT,
+  CLIENT_FEEDBACK_FRAGMENT,
   HERO_FRAGMENT,
   PROJECTS_FRAGMENT,
   SERVICES_TABS_FRAGMENT,
@@ -23,6 +24,9 @@ query GetHomePageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
         AdvantagesSection {
           ...AdvantagesCardsFragment
         }
+        ClientFeedback {
+          ...ClientFeedbackFragment
+        }
       }
     }
   }
@@ -44,4 +48,5 @@ ${HERO_FRAGMENT}
 ${PROJECTS_FRAGMENT}
 ${SERVICES_TABS_FRAGMENT}
 ${CLIENTS_LOGO_FRAGMENT}
-${ADVANTAGES_CARDS_FRAGMENT}`;
+${ADVANTAGES_CARDS_FRAGMENT}
+${CLIENT_FEEDBACK_FRAGMENT}`;

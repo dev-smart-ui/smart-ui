@@ -1,3 +1,4 @@
+import { IClientFeedback } from '@app-types/interfaces';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper/types';
@@ -6,18 +7,16 @@ import { FC, useRef } from 'react';
 
 import useMediaQuery from '@hooks/useMediaQuery';
 
-import { useLocaleFeedbacksData } from '../hooks/useLocaleFeedbacksData';
 import { useSwiperInteraction } from '../hooks/useSwiperInteraction';
 import { Card } from './Card';
 import styles from './slider.module.scss';
 
 interface SliderProps {
-  t: (key: string) => string;
+  data: IClientFeedback[];
 }
 
-export const Slider: FC<SliderProps> = ({ t }) => {
+export const Slider: FC<SliderProps> = ({ data }) => {
   const isDesktop = useMediaQuery('(min-width: 1024px)');
-  const { feedbacks } = useLocaleFeedbacksData(t);
   const swiperRef = useRef<SwiperType | null>(null);
   const { handleMouseEnter, handleMouseLeave } = useSwiperInteraction(
     isDesktop,
@@ -54,7 +53,7 @@ export const Slider: FC<SliderProps> = ({ t }) => {
         className={styles.feedbackSwiper}
         id="feedbackSwiper"
       >
-        {feedbacks.map((feedback) => (
+        {data.map((feedback) => (
           <SwiperSlide
             key={feedback.id}
             onMouseEnter={handleMouseEnter}

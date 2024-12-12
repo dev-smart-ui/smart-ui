@@ -152,12 +152,40 @@ fragment AdvantagesCardsFragment on ComponentSectionsAdvantagesHome {
   cards {
     title
     text
-  img {
-    data {
-      attributes {
-        url
-      }
-     }
-    }
-  }
+	  img {
+	    data {
+	      attributes {
+	        url
+	      }
+	    }
+	  }
+	}
+}`;
+
+// feedbacks
+export const CLIENT_FEEDBACK_FRAGMENT = `
+fragment ClientFeedbackFragment on ComponentSectionsClientFeedback {
+	sectionName
+	title
+	feedbacks {
+		id
+		author
+		work
+		company
+		feedback
+		avatar {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		image {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
 }`;
