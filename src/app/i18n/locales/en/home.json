@@ -1,14 +1,4 @@
 {
-  "workTogether": {
-    "title": "Let’s work together",
-    "description": "Partner with us to turn your ideas into reality. Our team of experts is ready to understand your needs, provide insights, and create a custom solution that drives results.",
-    "cards": {
-      "category1": "Awards Rewarded",
-      "category2": "Happy Clients",
-      "category3": "Years of Experience",
-      "category4": "Completed Project"
-    }
-  },
   "ourServices": {
     "headerInfo": {
       "sectionName": "Our Services",

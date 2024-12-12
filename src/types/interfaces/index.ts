@@ -144,3 +144,24 @@ export interface IClientSection {
   title: string;
   feedbacks: IClientFeedback[];
 }
+
+// workTogether
+export interface IWorkTogetherCard {
+  id: string;
+  backgroundColor: string;
+  category: string;
+  count: string;
+  group: string;
+  image: IImage;
+}
+
+export interface IWorkTogetherSection {
+  title: string;
+  description: string;
+  backgroundImage: IImage;
+  button: {
+    label: string;
+    icon: IImage;
+  };
+  cards: IWorkTogetherCard[];
+}

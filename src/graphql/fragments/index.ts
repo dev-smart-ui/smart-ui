@@ -189,3 +189,41 @@ fragment ClientFeedbackFragment on ComponentSectionsClientFeedback {
 		}
 	}
 }`;
+
+// workTogether
+export const WORK_TOGETHER_FRAGMENT = `
+fragment WorkTogetherFragment on ComponentSectionsWorkTogether {
+	title
+	description
+	backgroundImage {
+		data {
+			attributes {
+				url
+			}
+		}
+	}
+	button {
+		label
+		icon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+	cards {
+		id
+		image {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		count
+		category
+		backgroundColor
+		group
+	}
+}`;

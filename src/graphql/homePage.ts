@@ -5,6 +5,7 @@ import {
   HERO_FRAGMENT,
   PROJECTS_FRAGMENT,
   SERVICES_TABS_FRAGMENT,
+  WORK_TOGETHER_FRAGMENT,
 } from './fragments';
 
 export const HOME_PAGE_QUERY = `
@@ -26,6 +27,9 @@ query GetHomePageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
         }
         ClientFeedback {
           ...ClientFeedbackFragment
+        }
+        WorkTogetherSection {
+          ...WorkTogetherFragment
         }
       }
     }
@@ -49,4 +53,5 @@ ${PROJECTS_FRAGMENT}
 ${SERVICES_TABS_FRAGMENT}
 ${CLIENTS_LOGO_FRAGMENT}
 ${ADVANTAGES_CARDS_FRAGMENT}
-${CLIENT_FEEDBACK_FRAGMENT}`;
+${CLIENT_FEEDBACK_FRAGMENT}
+${WORK_TOGETHER_FRAGMENT}`;

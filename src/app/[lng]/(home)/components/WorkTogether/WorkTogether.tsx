@@ -1,5 +1,6 @@
 'use client';
 
+import { IWorkTogetherSection } from '@app-types/interfaces';
 import Image from 'next/image';
 
 import { FC } from 'react';
@@ -8,21 +9,30 @@ import { Container } from '@components/Container';
 
 import { Cards } from './Cards';
 import { Info } from './Info';
-import { useLocaleWorkTogetherData } from './hooks/useLocaleWorkTogetherData';
-import bgImg from './img/bg.png';
 import styles from './workTogether.module.scss';
 
-export const WorkTogether: FC = () => {
-  const { cards, info } = useLocaleWorkTogetherData();
+interface WorkTogetherProps {
+  data: IWorkTogetherSection;
+}
 
+export const WorkTogether: FC<WorkTogetherProps> = ({ data }) => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.image}>
-        <Image src={bgImg} alt="bg" />
+        <Image
+          src={data?.backgroundImage?.data?.attributes?.url}
+          width={1920}
+          height={432}
+          alt="bg"
+        />
       </div>
       <Container className={styles.content}>
-        <Info info={info} />
-        <Cards cards={cards} />
+        <Info
+          title={data?.title}
+          description={data?.description}
+          buttonLabel={data?.button?.label}
+        />
+        <Cards data={data?.cards} />
       </Container>
     </section>
   );

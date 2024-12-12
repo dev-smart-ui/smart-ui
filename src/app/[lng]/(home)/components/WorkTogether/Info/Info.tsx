@@ -8,21 +8,19 @@ import { Icons } from '@components/CustomIcons';
 import styles from './info.module.scss';
 
 interface InfoProps {
-  info: {
-    title: string;
-    description: string;
-    buttonLabel: string;
-  };
+  title: string;
+  description: string;
+  buttonLabel: string;
 }
 
-export const Info: FC<InfoProps> = ({ info }) => {
+export const Info: FC<InfoProps> = ({ title, description, buttonLabel }) => {
   return (
     <div className={styles.wrapper}>
-      <h2 className={styles.title}>{info.title}</h2>
-      <p className={styles.description}>{info.description}</p>
+      <h2 className={styles.title}>{title}</h2>
+      <p className={styles.description}>{description}</p>
       <Button
         onClick={() => scrollToElement('contactForm')}
-        text={info.buttonLabel}
+        text={buttonLabel}
         icon={<Icons.ArrowRight fill="white" />}
       />
     </div>
