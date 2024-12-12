@@ -165,3 +165,20 @@ export interface IWorkTogetherSection {
   };
   cards: IWorkTogetherCard[];
 }
+
+// ourService
+export interface IOurServiceCard {
+  id: string;
+  title: string;
+  description: string;
+  image: IImage;
+  area: string;
+  buttonLabel: string;
+  buttonIcon: IImage;
+}
+
+export interface IOurServiceSection {
+  sectionName: string;
+  title: string;
+  cards: IOurServiceCard[];
+}

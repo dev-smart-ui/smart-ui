@@ -52,6 +52,7 @@ export default async function Home({ params: { lng } }: HomePageProps) {
   const advantagesCards = homePage?.data?.attributes?.AdvantagesSection || {};
   const feedbacksData = homePage?.data?.attributes?.ClientFeedback || {};
   const worTogetherData = homePage?.data?.attributes?.WorkTogetherSection || {};
+  const ourServiceData = homePage?.data?.attributes?.OurServiceSection || {};
   const singleProjectsData = singleProjects?.data || [];
 
   const clientData = {
@@ -67,7 +68,7 @@ export default async function Home({ params: { lng } }: HomePageProps) {
       <Advantages data={advantagesCards} />
       <ClientFeedback data={feedbacksData} />
       <WorkTogether data={worTogetherData} />
-      <OurServices />
+      <OurServices data={ourServiceData} />
       <OurWork data={singleProjectsData} />
       <Accordion />
       <ContactForm />

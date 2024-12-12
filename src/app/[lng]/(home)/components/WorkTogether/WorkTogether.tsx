@@ -31,6 +31,7 @@ export const WorkTogether: FC<WorkTogetherProps> = ({ data }) => {
           title={data?.title}
           description={data?.description}
           buttonLabel={data?.button?.label}
+          buttonIcon={data?.button?.icon}
         />
         <Cards data={data?.cards} />
       </Container>

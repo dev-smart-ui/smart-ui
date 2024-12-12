@@ -1,11 +1,11 @@
+import { IImage } from '@app-types/interfaces';
 import classNames from 'classnames';
 import { detect } from 'detect-browser';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 import { FC, useEffect, useState } from 'react';
 
 import { Button } from '@components/Button';
-import { Icons } from '@components/CustomIcons';
 import { GradientBorder } from '@components/GradientBorder';
 
 import styles from './card.module.scss';
@@ -13,9 +13,10 @@ import styles from './card.module.scss';
 interface CardProps {
   title: string;
   description: string;
-  image: StaticImageData;
+  image: IImage;
   area: string;
   buttonLabel: string;
+  buttonIcon: IImage;
 }
 
 export const Card: FC<CardProps> = ({
@@ -24,6 +25,7 @@ export const Card: FC<CardProps> = ({
   image,
   area,
   buttonLabel,
+  buttonIcon,
 }) => {
   const [isSafari, setIsSafari] = useState(false);
   const browser = detect();
@@ -42,7 +44,12 @@ export const Card: FC<CardProps> = ({
     >
       <GradientBorder color="#1B653D" borderRadius="lg">
         <div className={styles.image}>
-          <Image src={image} alt="serviceImage" />
+          <Image
+            src={image?.data?.attributes?.url}
+            width={540}
+            height={256}
+            alt="serviceImage"
+          />
         </div>
       </GradientBorder>
       <div className={styles.info}>
@@ -51,7 +58,7 @@ export const Card: FC<CardProps> = ({
         <Button
           text={buttonLabel}
           className={styles.button}
-          icon={<Icons.ArrowRight fill="white" />}
+          icon={buttonIcon?.data?.attributes?.url}
         />
       </div>
     </li>

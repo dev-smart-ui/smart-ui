@@ -227,3 +227,37 @@ fragment WorkTogetherFragment on ComponentSectionsWorkTogether {
 		group
 	}
 }`;
+
+// ourService
+export const OUR_SERVICE_FRAGMENT = `
+fragment OurServiceFragment on ComponentSectionsOurService {
+	sectionName
+	title {
+		part1
+		part2
+		gradientPart
+		color1
+		color2
+	}
+	cards {
+		id
+		title
+		description
+		area
+		buttonLabel
+		buttonIcon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		image {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+}`;

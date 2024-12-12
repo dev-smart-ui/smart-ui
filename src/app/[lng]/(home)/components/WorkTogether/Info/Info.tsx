@@ -1,9 +1,9 @@
+import { IImage } from '@app-types/interfaces';
 import { scrollToElement } from '@utils/index';
 
 import { FC } from 'react';
 
 import { Button } from '@components/Button';
-import { Icons } from '@components/CustomIcons';
 
 import styles from './info.module.scss';
 
@@ -11,9 +11,15 @@ interface InfoProps {
   title: string;
   description: string;
   buttonLabel: string;
+  buttonIcon: IImage;
 }
 
-export const Info: FC<InfoProps> = ({ title, description, buttonLabel }) => {
+export const Info: FC<InfoProps> = ({
+  title,
+  description,
+  buttonLabel,
+  buttonIcon,
+}) => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>{title}</h2>
@@ -21,7 +27,7 @@ export const Info: FC<InfoProps> = ({ title, description, buttonLabel }) => {
       <Button
         onClick={() => scrollToElement('contactForm')}
         text={buttonLabel}
-        icon={<Icons.ArrowRight fill="white" />}
+        icon={buttonIcon?.data?.attributes?.url}
       />
     </div>
   );
