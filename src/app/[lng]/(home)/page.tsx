@@ -53,6 +53,7 @@ export default async function Home({ params: { lng } }: HomePageProps) {
   const feedbacksData = homePage?.data?.attributes?.ClientFeedback || {};
   const worTogetherData = homePage?.data?.attributes?.WorkTogetherSection || {};
   const ourServiceData = homePage?.data?.attributes?.OurServiceSection || {};
+  const ourWorkData = homePage?.data?.attributes?.OurWorkSection || {};
   const singleProjectsData = singleProjects?.data || [];
 
   const clientData = {
@@ -69,7 +70,7 @@ export default async function Home({ params: { lng } }: HomePageProps) {
       <ClientFeedback data={feedbacksData} />
       <WorkTogether data={worTogetherData} />
       <OurServices data={ourServiceData} />
-      <OurWork data={singleProjectsData} />
+      <OurWork data={singleProjectsData} headerInfo={ourWorkData} />
       <Accordion />
       <ContactForm />
     </>

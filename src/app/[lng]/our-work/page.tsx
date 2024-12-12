@@ -19,6 +19,7 @@ export default async function OurWorkPage({
     locale: lng,
   });
 
+  const ourWorkData = ourWorkPage?.data?.attributes?.OurWorkSection || {};
   const clientData = {
     sectionName:
       ourWorkPage?.data?.attributes?.ClientsSection?.sectionName || '',
@@ -27,7 +28,7 @@ export default async function OurWorkPage({
 
   return (
     <>
-      <OurWorkWrapper />
+      <OurWorkWrapper headerInfo={ourWorkData} lng={lng} />
       <Clients data={clientData} />
       <ContactForm />
     </>

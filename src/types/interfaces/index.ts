@@ -141,7 +141,7 @@ export interface IClientFeedback {
 
 export interface IClientSection {
   sectionName: string;
-  title: string;
+  title: IGradientTitle;
   feedbacks: IClientFeedback[];
 }
 
@@ -179,6 +179,13 @@ export interface IOurServiceCard {
 
 export interface IOurServiceSection {
   sectionName: string;
-  title: string;
+  title: IGradientTitle;
   cards: IOurServiceCard[];
+}
+
+// ourWork
+export interface IOurWorkSection {
+  sectionName: string;
+  title: IGradientTitle;
+  subTitle: string;
 }

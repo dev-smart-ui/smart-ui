@@ -1,4 +1,4 @@
-import { CLIENTS_LOGO_FRAGMENT } from './fragments';
+import { CLIENTS_LOGO_FRAGMENT, OUR_WORK_FRAGMENT } from './fragments';
 
 export const OUR_WORK_PAGE_QUERY = `
 query GetOurWorkPageData($locale: I18NLocaleCode) {
@@ -8,6 +8,9 @@ query GetOurWorkPageData($locale: I18NLocaleCode) {
         ClientsSection {
           sectionName
         }
+        OurWorkSection {
+          ...OurWorkFragment
+        }
       }
     }
   }
@@ -15,4 +18,5 @@ query GetOurWorkPageData($locale: I18NLocaleCode) {
     ...ClientsLogoFragment  
   }
 }
-${CLIENTS_LOGO_FRAGMENT}`;
+${CLIENTS_LOGO_FRAGMENT}
+${OUR_WORK_FRAGMENT}`;

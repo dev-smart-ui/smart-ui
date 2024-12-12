@@ -24,6 +24,7 @@ interface OurWorkProps {
   pageCount?: number;
   bgImage?: StaticImageData;
   isLoading?: boolean;
+  headerInfo?: IHeaderInfo;
 }
 
 export const OurWork: FC<OurWorkProps> = ({
@@ -33,18 +34,9 @@ export const OurWork: FC<OurWorkProps> = ({
   pageCount = 1,
   bgImage,
   isLoading,
+  headerInfo,
 }) => {
   const { t } = useTranslation(page);
-
-  const headerInfo: IHeaderInfo = {
-    title: {
-      part1: t('ourWork.headerInfo.title.part1'),
-      gradientPart: t('ourWork.headerInfo.title.gradientPart'),
-      color1: '#2865B0',
-      color2: '#3B8FF3',
-    },
-    subTitle: t('ourWork.headerInfo.subTitle'),
-  };
 
   return (
     <Section
@@ -55,11 +47,11 @@ export const OurWork: FC<OurWorkProps> = ({
       <Container className={styles.content}>
         <SectionHeader
           sectionName={t('ourWork.headerInfo.sectionName')}
-          title={headerInfo.title}
-          subTitle={headerInfo.subTitle}
+          title={headerInfo?.title}
+          subTitle={headerInfo?.subTitle}
         />
         {isLoading ? (
-          <div>..loading</div>
+          <div>loading..</div>
         ) : (
           <Projects data={data} isOurWorkPage={page === PageEnum.OurWork} />
         )}

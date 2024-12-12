@@ -261,3 +261,17 @@ fragment OurServiceFragment on ComponentSectionsOurService {
 		}
 	}
 }`;
+
+// ourWork
+export const OUR_WORK_FRAGMENT = `
+fragment OurWorkFragment on ComponentSectionsOurWork {
+	sectionName
+	title {
+		part1
+		part2
+		gradientPart
+		color1
+		color2
+	}
+	subTitle
+}`;
