@@ -4,10 +4,10 @@ import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { Button } from '@components/Button';
-import { Icons } from '@components/CustomIcons';
 import { InputField } from '@components/Input';
 import { TextareaField } from '@components/TextAreaField';
 
+import rocketImg from '../../img/rocket.svg';
 import styles from './form.module.scss';
 
 interface FormValues {
@@ -90,7 +90,7 @@ export const Form: FC<FormProps> = ({ t }) => {
       <Button
         className={styles.submitButton}
         text={t('contactForm.form.buttonLabel')}
-        icon={<Icons.RocketSmall />}
+        icon={rocketImg}
       />
     </form>
   );
