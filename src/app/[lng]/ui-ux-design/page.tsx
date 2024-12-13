@@ -21,16 +21,15 @@ interface UiUxDesignPageProps {
 export default async function UiUxDesignPage({
   params: { lng },
 }: UiUxDesignPageProps) {
-  const { uiUxDesignPage, singleProjects, clientsLogo } = await fetchGraphQL(
-    UI_UX_DESIGN_PAGE_QUERY,
-    {
+  const { uiUxDesignPage, singleProjects, clientsLogo, accordion } =
+    await fetchGraphQL(UI_UX_DESIGN_PAGE_QUERY, {
       locale: lng,
       pagination: { limit: 5 },
-    },
-  );
+    });
 
   const heroData = uiUxDesignPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
+  const accordionData = accordion?.data?.attributes || [];
 
   const clientData = {
     sectionName:
@@ -45,7 +44,7 @@ export default async function UiUxDesignPage({
       <CoreServices page={PageEnum.UiUxDesign} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
-      <Accordion />
+      <Accordion data={accordionData} />
       <ContactForm />
     </>
   );

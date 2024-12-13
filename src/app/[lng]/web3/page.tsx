@@ -19,16 +19,15 @@ interface Web3PageProps {
 }
 
 export default async function Web3Page({ params: { lng } }: Web3PageProps) {
-  const { web3Page, singleProjects, clientsLogo } = await fetchGraphQL(
-    WEB3_PAGE_QUERY,
-    {
+  const { web3Page, singleProjects, clientsLogo, accordion } =
+    await fetchGraphQL(WEB3_PAGE_QUERY, {
       locale: lng,
       pagination: { limit: 5 },
-    },
-  );
+    });
 
   const heroData = web3Page?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
+  const accordionData = accordion?.data?.attributes || [];
 
   const clientData = {
     sectionName: web3Page?.data?.attributes?.ClientsSection?.sectionName || '',
@@ -42,7 +41,7 @@ export default async function Web3Page({ params: { lng } }: Web3PageProps) {
       <CoreServices page={PageEnum.Web3} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
-      <Accordion />
+      <Accordion data={accordionData} />
       <ContactForm />
     </>
   );

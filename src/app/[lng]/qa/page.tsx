@@ -13,7 +13,7 @@ import { TechnologyStack } from '@components/TechnologyStack';
 import technologyImg from './img/technologyImg.png';
 
 export default async function QaPage() {
-  const { qaPage, singleProjects, clientsLogo } = await fetchGraphQL(
+  const { qaPage, singleProjects, clientsLogo, accordion } = await fetchGraphQL(
     QA_PAGE_QUERY,
     {
       locale: 'en',
@@ -23,6 +23,7 @@ export default async function QaPage() {
 
   const heroData = qaPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
+  const accordionData = accordion?.data?.attributes || [];
 
   const clientData = {
     sectionName: qaPage?.data?.attributes?.ClientsSection?.sectionName || '',
@@ -36,7 +37,7 @@ export default async function QaPage() {
       <CoreServices page={PageEnum.Qa} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
-      <Accordion />
+      <Accordion data={accordionData} />
       <ContactForm />
     </>
   );

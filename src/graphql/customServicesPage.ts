@@ -1,4 +1,5 @@
 import {
+  ACCORDION_FRAGMENT,
   CLIENTS_LOGO_FRAGMENT,
   HERO_FRAGMENT,
   PROJECTS_FRAGMENT,
@@ -31,7 +32,13 @@ query GetCustomServicesPageData($locale: I18NLocaleCode, $pagination: Pagination
   clientsLogo {
     ...ClientsLogoFragment  
   }
+  accordion(locale: $locale) {
+    data {
+      ...AccordionFragment
+    }
+  }
 }
 ${HERO_FRAGMENT}
 ${PROJECTS_FRAGMENT}
-${CLIENTS_LOGO_FRAGMENT}`;
+${CLIENTS_LOGO_FRAGMENT}
+${ACCORDION_FRAGMENT}`;

@@ -21,16 +21,15 @@ interface BackendDevelopmentPageProps {
 export default async function BackendDevelopmentPage({
   params: { lng },
 }: BackendDevelopmentPageProps) {
-  const { backendDevPage, singleProjects, clientsLogo } = await fetchGraphQL(
-    BACKEND_DEV_PAGE_QUERY,
-    {
+  const { backendDevPage, singleProjects, clientsLogo, accordion } =
+    await fetchGraphQL(BACKEND_DEV_PAGE_QUERY, {
       locale: lng,
       pagination: { limit: 5 },
-    },
-  );
+    });
 
   const heroData = backendDevPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
+  const accordionData = accordion?.data?.attributes || [];
 
   const clientData = {
     sectionName:
@@ -48,7 +47,7 @@ export default async function BackendDevelopmentPage({
       <CoreServices page={PageEnum.BackendDevelopment} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
-      <Accordion />
+      <Accordion data={accordionData} />
       <ContactForm />
     </>
   );

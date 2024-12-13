@@ -21,7 +21,7 @@ interface CustomServicesPageProps {
 export default async function CustomServicePage({
   params: { lng },
 }: CustomServicesPageProps) {
-  const { customServicesPage, singleProjects, clientsLogo } =
+  const { customServicesPage, singleProjects, clientsLogo, accordion } =
     await fetchGraphQL(CUSTOM_SERVICES_PAGE_QUERY, {
       locale: lng,
       pagination: { limit: 5 },
@@ -29,6 +29,7 @@ export default async function CustomServicePage({
 
   const heroData = customServicesPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
+  const accordionData = accordion?.data?.attributes || [];
 
   const clientData = {
     sectionName:
@@ -43,7 +44,7 @@ export default async function CustomServicePage({
       <CoreServices page={PageEnum.CustomService} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
-      <Accordion />
+      <Accordion data={accordionData} />
       <ContactForm />
     </>
   );
