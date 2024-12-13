@@ -1,5 +1,5 @@
 import { PageEnum } from '@app-types/enums';
-import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
+import { CMS_PAGE_QUERY } from '@graphqlQueries/cmsPage';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { Accordion } from '@components/Accordion';
@@ -10,32 +10,40 @@ import { Hero } from '@components/Hero';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
-import bottomBgImage from './img/bg.png';
-import heroImg from './img/heroImg.png';
 import technologyImg from './img/technologyImg.jpg';
 
-export default async function CmsPage() {
-  const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
-    locale: 'en',
-    pagination: { limit: 5 },
-  });
+interface CmsPageProps {
+  params: {
+    lng: string;
+  };
+}
 
+export default async function CmsPage({ params: { lng } }: CmsPageProps) {
+  const { cmsPage, singleProjects, clientsLogo, accordion, contactForm } =
+    await fetchGraphQL(CMS_PAGE_QUERY, {
+      locale: lng,
+      pagination: { limit: 5 },
+    });
+
+  const heroData = cmsPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
+  const accordionData = accordion?.data?.attributes || [];
+  const contactFormData = contactForm?.data?.attributes || [];
+
+  const clientData = {
+    sectionName: cmsPage?.data?.attributes?.ClientsSection?.sectionName || '',
+    clients: clientsLogo?.data?.attributes.clients || {},
+  };
 
   return (
     <>
-      <Hero
-        page={PageEnum.Cms}
-        image={heroImg}
-        bottomBgImage={bottomBgImage}
-        colorGradiant="Third"
-      />
+      <Hero page={PageEnum.Cms} data={heroData} />
       <TechnologyStack image={technologyImg} />
       <CoreServices />
-      <Clients />
+      <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
-      <Accordion />
-      <ContactForm />
+      <Accordion data={accordionData} />
+      <ContactForm data={contactFormData} />
     </>
   );
 }

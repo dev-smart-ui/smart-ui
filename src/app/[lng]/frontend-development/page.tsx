@@ -1,5 +1,5 @@
 import { PageEnum } from '@app-types/enums';
-import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
+import { FRONTEND_DEV_PAGE_QUERY } from '@graphqlQueries/frontendDevPage';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { Accordion } from '@components/Accordion';
@@ -10,35 +10,50 @@ import { Hero } from '@components/Hero';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
-import bottomBgImage from './img/bg.png';
-import heroImg from './img/heroImg.png';
 import technologyImg from './img/technologyImg.png';
 
-export default async function FrontendDevelopmentPage() {
-  const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
-    locale: 'en',
+interface FrontendDevelopmentPageProps {
+  params: {
+    lng: string;
+  };
+}
+
+export default async function FrontendDevelopmentPage({
+  params: { lng },
+}: FrontendDevelopmentPageProps) {
+  const {
+    frontendDevPage,
+    singleProjects,
+    clientsLogo,
+    accordion,
+    contactForm,
+  } = await fetchGraphQL(FRONTEND_DEV_PAGE_QUERY, {
+    locale: lng,
     pagination: { limit: 5 },
   });
 
+  const heroData = frontendDevPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
+  const accordionData = accordion?.data?.attributes || [];
+  const clientData = {
+    sectionName:
+      frontendDevPage?.data?.attributes?.ClientsSection?.sectionName || '',
+    clients: clientsLogo?.data?.attributes.clients || {},
+  };
+  const contactFormData = contactForm?.data?.attributes || [];
 
   return (
     <>
-      <Hero
-        page={PageEnum.FrontendDevelopment}
-        image={heroImg}
-        bottomBgImage={bottomBgImage}
-        colorGradiant="Third"
-      />
+      <Hero page={PageEnum.FrontendDevelopment} data={heroData} />
       <TechnologyStack
         image={technologyImg}
         page={PageEnum.FrontendDevelopment}
       />
       <CoreServices page={PageEnum.FrontendDevelopment} />
-      <Clients />
+      <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
-      <Accordion />
-      <ContactForm />
+      <Accordion data={accordionData} />
+      <ContactForm data={contactFormData} />
     </>
   );
 }

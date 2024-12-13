@@ -28,12 +28,14 @@ export const Team: FC<TeamProps> = ({ data }) => {
         }) => (
           <div key={id} className={styles.item}>
             <div className={styles.imageWrapper}>
-              <Image
-                width={300}
-                height={360}
-                src={previewPhoto?.data?.attributes?.url}
-                alt="expertPicture"
-              />
+              {!!previewPhoto && (
+                <Image
+                  width={300}
+                  height={360}
+                  src={previewPhoto?.data?.attributes?.url}
+                  alt="expertPicture"
+                />
+              )}
               {(linkedin || behance) && (
                 <div className={styles.hiddenInfo}>
                   <div className={styles.socials}>

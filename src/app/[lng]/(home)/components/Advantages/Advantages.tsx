@@ -1,5 +1,8 @@
 'use client';
 
+import { IAdvantagesCards } from '@app-types/interfaces';
+import Image from 'next/image';
+
 import { FC } from 'react';
 
 import { Container } from '@components/Container';
@@ -7,25 +10,32 @@ import { Section } from '@components/Section';
 import { SectionHeader } from '@components/SectionHeader';
 
 import styles from './advantages.module.scss';
-import { useLocaleAdvantagesData } from './hooks/useLocaleAdvantagesData';
 
-export const Advantages: FC = () => {
-  const { cards, headerInfo } = useLocaleAdvantagesData();
+interface AdvantagesProps {
+  data?: IAdvantagesCards;
+}
 
+export const Advantages: FC<AdvantagesProps> = ({ data }) => {
   return (
     <Section className={styles.advantagesSection}>
       <Container className={styles.content}>
         <SectionHeader
-          sectionName={headerInfo.sectionName}
-          title={headerInfo.title}
-          subTitle={headerInfo.subTitle}
+          sectionName={data?.sectionName}
+          title={data?.title}
+          subTitle={data?.subTitle}
         />
         <ul className={styles.cards}>
-          {cards.map(({ title, icon, description }) => (
+          {data?.cards?.map(({ title, img, text }) => (
             <li key={title} className={styles.card}>
-              {icon}
+              <Image
+                className={styles.image}
+                src={img?.data?.attributes?.url}
+                alt="cardImg"
+                width={40}
+                height={40}
+              />
               <span className={styles.cardTitle}>{title}</span>
-              <p className={styles.cardDescription}>{description}</p>
+              <p className={styles.cardDescription}>{text}</p>
             </li>
           ))}
         </ul>

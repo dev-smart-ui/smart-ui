@@ -3,19 +3,4 @@
 .wrapper {
   display: inline;
   -webkit-text-fill-color: transparent;
-
-  &.isPrimaryColor {
-    background: linear-gradient(to right, $primaryColor, $accentColor);
-    -webkit-background-clip: text;
-  }
-
-  &.isSecondaryColor {
-    background: linear-gradient(to right, $fourthColor, $sixthColor);
-    -webkit-background-clip: text;
-  }
-
-  &.isThirdColor {
-    background: linear-gradient(to right, $secondaryColor, $sixthColor);
-    -webkit-background-clip: text;
-  }
 }

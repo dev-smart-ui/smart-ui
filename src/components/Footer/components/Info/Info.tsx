@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { FC } from 'react';
@@ -7,6 +8,8 @@ import { Icons } from '@components/CustomIcons';
 import { Logo } from '@components/Logo';
 
 import styles from './info.module.scss';
+
+const defaultLogo = '/assets/img/logo.png';
 
 const ITEMS = [
   {
@@ -34,7 +37,9 @@ export const Info: FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      <Logo />
+      <Logo>
+        <Image src={defaultLogo} width={160} height={32} alt="logo" />
+      </Logo>
       <p className={styles.text}>{t('info.infoDescription')}</p>
       <ul className={styles.items}>
         {ITEMS.map(({ isLink, label, href, icon }) =>

@@ -6,7 +6,7 @@ import { Item } from './Item';
 import styles from './content.module.scss';
 
 type ContentItem = {
-  id: number;
+  id: string;
   label: string;
   hidedText: string;
 };
@@ -16,9 +16,9 @@ interface ContentProps {
 }
 
 export const Content: FC<ContentProps> = ({ data }) => {
-  const [activeItems, setActiveItems] = useState<number[]>([]);
+  const [activeItems, setActiveItems] = useState<string[]>([]);
 
-  const toggleItem = (id: number) => {
+  const toggleItem = (id: string) => {
     setActiveItems((prev) =>
       prev.includes(id)
         ? prev.filter((itemId) => itemId !== id)
@@ -30,7 +30,7 @@ export const Content: FC<ContentProps> = ({ data }) => {
     <ul className={styles.wrapper}>
       {data.map((item) => (
         <Item
-          key={item.id}
+          key={item?.id}
           {...item}
           isActive={activeItems.includes(item.id)}
           onClickItem={() => toggleItem(item.id)}

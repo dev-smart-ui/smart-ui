@@ -3,8 +3,10 @@
     "headerInfo": {
       "sectionName": "Our Work",
       "title": {
-        "main": "Solutions Across",
-        "highlighted": "Technology"
+        "part1": "Solutions Across",
+        "gradientPart": "Technology",
+        "color1": "#2865B0",
+        "color2": "#3B8FF3"
       },
       "subTitle": "Explore a collection of projects spanning various IT fields, showcasing our commitment to innovation, performance, and user-focused design. See how our solutions help clients succeed in an ever-evolving digital landscape"
     }

@@ -1,30 +1,45 @@
 import { PageEnum } from '@app-types/enums';
-import { TEAM_QUERY } from '@graphqlQueries/allTeamQuery';
+import { ABOUT_US_PAGE_QUERY } from '@graphqlQueries/aboutUsPage';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { ContactForm } from '@components/ContactForm';
 import { Hero } from '@components/Hero';
+import { ServicesTabs } from '@components/ServicesTabs';
 
-import { ServicesTabs } from '../(home)/components/ServicesTabs';
 import { DrivingSuccess } from './components/DrivingSuccess';
 import { GoalsAndValues } from './components/GoalsAndValues';
 import { OurExperts } from './components/OurExperts';
-import heroImg from './img/heroImg.png';
 
-export default async function AboutUsPage() {
-  const { teams } = await fetchGraphQL(TEAM_QUERY, {
-    locale: 'en',
-    pagination: { limit: -1 },
-  });
+interface AboutUsPageProps {
+  params: {
+    lng: string;
+  };
+}
+
+export default async function AboutUsPage({
+  params: { lng },
+}: AboutUsPageProps) {
+  const { aboutUsPage, teams, contactForm } = await fetchGraphQL(
+    ABOUT_US_PAGE_QUERY,
+    {
+      locale: lng,
+      pagination: { limit: -1 },
+    },
+  );
+
+  const servicesTabsData = aboutUsPage?.data?.attributes?.ServicesTabs || {};
+  const heroData = aboutUsPage?.data?.attributes?.Hero || {};
+  const singleProjectsData = teams?.data || [];
+  const contactFormData = contactForm?.data?.attributes || [];
 
   return (
     <>
-      <Hero page={PageEnum.AboutUs} colorGradiant="Third" image={heroImg} />
+      <Hero page={PageEnum.AboutUs} data={heroData} />
       <DrivingSuccess />
-      <ServicesTabs />
+      <ServicesTabs data={servicesTabsData} />
       <GoalsAndValues />
-      <OurExperts data={teams.data} />
-      <ContactForm />
+      <OurExperts data={singleProjectsData} />
+      <ContactForm data={contactFormData} />
     </>
   );
 }

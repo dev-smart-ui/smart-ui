@@ -1,29 +1,33 @@
-import { scrollToElement } from '@utils/scrollToElement';
+import { IImage } from '@app-types/interfaces';
+import { scrollToElement } from '@utils/index';
 
 import { FC } from 'react';
 
 import { Button } from '@components/Button';
-import { Icons } from '@components/CustomIcons';
 
 import styles from './info.module.scss';
 
 interface InfoProps {
-  info: {
-    title: string;
-    description: string;
-    buttonLabel: string;
-  };
+  title: string;
+  description: string;
+  buttonLabel: string;
+  buttonIcon: IImage;
 }
 
-export const Info: FC<InfoProps> = ({ info }) => {
+export const Info: FC<InfoProps> = ({
+  title,
+  description,
+  buttonLabel,
+  buttonIcon,
+}) => {
   return (
     <div className={styles.wrapper}>
-      <h2 className={styles.title}>{info.title}</h2>
-      <p className={styles.description}>{info.description}</p>
+      <h2 className={styles.title}>{title}</h2>
+      <p className={styles.description}>{description}</p>
       <Button
         onClick={() => scrollToElement('contactForm')}
-        text={info.buttonLabel}
-        icon={<Icons.ArrowRight fill="white" />}
+        text={buttonLabel}
+        icon={buttonIcon?.data?.attributes?.url}
       />
     </div>
   );

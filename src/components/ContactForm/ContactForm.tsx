@@ -1,6 +1,8 @@
 'use client';
 
-import { useTranslation } from 'react-i18next';
+import { IContactForm } from '@app-types/interfaces';
+
+import { FC } from 'react';
 
 import { Container } from '@components/Container';
 import { GradientBorder } from '@components/GradientBorder';
@@ -10,17 +12,24 @@ import { FormWrapper } from './FormWrapper';
 import { SocialMediaBlock } from './SocialMediaBlock';
 import styles from './contactFrom.module.scss';
 
-export const ContactForm = () => {
-  const { t } = useTranslation(['home', 'common']);
+interface ContactFormProps {
+  data: IContactForm;
+}
+
+export const ContactForm: FC<ContactFormProps> = ({ data }) => {
+  const formData = {
+    title: data?.title,
+    subTitle: data?.subTitle,
+  };
 
   return (
     <Section id="contactForm">
       <Container>
         <div className={styles.content}>
           <GradientBorder direction="both" className={styles.gradientBorder}>
-            <SocialMediaBlock />
+            <SocialMediaBlock data={data} />
           </GradientBorder>
-          <FormWrapper t={t} />
+          <FormWrapper data={formData} button={data?.button} />
         </div>
       </Container>
     </Section>

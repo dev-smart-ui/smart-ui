@@ -1,12 +1,20 @@
+import { hexToRgb } from '@utils/index';
 import classNames from 'classnames';
+import Image from 'next/image';
 
-import { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
+import {
+  CSSProperties,
+  ComponentPropsWithoutRef,
+  ElementType,
+  ReactNode,
+} from 'react';
 
 import styles from './button.module.scss';
 
 interface ButtonProps<T extends ElementType = 'button'> {
   text?: string;
   icon?: ReactNode;
+  imgUrl?: string;
   onClick?: () => void;
   disabled?: boolean;
   isRounded?: 'small' | 'large';
@@ -17,13 +25,14 @@ interface ButtonProps<T extends ElementType = 'button'> {
     | 'toLeft'
     | 'toRight'
     | 'toBottomLeft';
-  borderColorType?: 'green' | 'blue' | 'lightBlue' | 'darkGreen';
   isMonotoneBorder?: boolean;
   className?: string;
   fullWidth?: boolean;
   as?: T;
   isIconSeparated?: boolean;
   children?: ReactNode;
+  color?: string;
+  iconAlt?: string;
 }
 
 export const BorderGradientButton = <T extends ElementType = 'button'>({
@@ -34,16 +43,20 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
   disabled,
   isRounded,
   gradientDirection = 'toBottom',
-  borderColorType = 'green',
   isMonotoneBorder = false,
   isIconSeparated = false,
   fullWidth,
   className,
+  color = '#31B76F',
+  iconAlt = '',
+  imgUrl,
   as,
   ...rest
 }: ButtonProps<T> &
   Omit<ComponentPropsWithoutRef<T>, keyof ButtonProps<T>>) => {
   const Component = as || 'button';
+
+  const rgbColors = hexToRgb(color);
 
   return (
     <Component
@@ -51,14 +64,21 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
         styles.borderGradientBtn,
         styles[`isGradient${gradientDirection}`],
         styles[`isRounded${isRounded}`],
-        styles[`${borderColorType}BorderColor`],
         {
           [styles.isMonotoneBorder]: isMonotoneBorder,
-          [styles.isOnlyIcon]: !!icon && !text,
+          [styles.isOnlyIcon]: (!!icon || !!imgUrl) && !text,
           [styles.fullWidth]: fullWidth,
         },
         className,
       )}
+      style={
+        {
+          '--gradient-color': color,
+          '--gradient-color-r': rgbColors.r,
+          '--gradient-color-g': rgbColors.g,
+          '--gradient-color-b': rgbColors.b,
+        } as CSSProperties
+      }
       onClick={onClick}
       disabled={disabled}
       {...rest}
@@ -72,6 +92,16 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
               })}
             >
               {icon}
+            </span>
+          )}
+
+          {imgUrl && (
+            <span
+              className={classNames(styles.icon, {
+                [styles.isIconSeparated]: isIconSeparated,
+              })}
+            >
+              <Image width={50} height={50} src={imgUrl} alt={iconAlt} />
             </span>
           )}
           {text}

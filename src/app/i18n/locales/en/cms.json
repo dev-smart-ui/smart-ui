@@ -1,12 +1,4 @@
 {
-  "hero": {
-    "title": {
-      "main": "Streamline Your Workflow with Tailored",
-      "highlighted": "CMS Solutions",
-      "secondary": ""
-    },
-    "description": "Build, Customize, and Optimize Your WordPress Site with Our Expert Services"
-  },
   "technologyStack": {
     "sectionName": "Our Technology Stack",
     "title": "We Build the Backbone of Your Digital Presence",
@@ -15,8 +7,10 @@
   "coreServices": {
     "headerInfo": {
       "title": {
-        "main": "Core CMS",
-        "highlighted": "Services"
+        "part1": "Core CMS",
+        "gradientPart": "Services",
+        "color1": "#2865B0",
+        "color2": "#3B8FF3"
       },
       "subTitle": "Here is a list of CMS development services we've designed for you"
     },

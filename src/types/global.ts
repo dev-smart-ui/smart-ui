@@ -1,9 +1,11 @@
 export interface IHeaderInfo {
-  sectionName: string;
+  sectionName?: string;
   title: {
-    main: string;
-    highlighted: string;
-    secondary?: string;
+    part1: string;
+    gradientPart?: string;
+    part2?: string;
+    color1?: string;
+    color2?: string;
   };
   subTitle: string;
 }
@@ -13,5 +15,3 @@ export interface IBottomBlock {
   description: string;
   buttonLabel: string;
 }
-
-export type TSectionHeaderGradientColor = 'Primary' | 'Secondary' | 'Third';

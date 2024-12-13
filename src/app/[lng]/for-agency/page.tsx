@@ -15,12 +15,13 @@ import { WhatWeDo } from './components/WhatWeDo';
 import technologyImg from './img/technologyImg.png';
 
 export default async function ForAgencyPage() {
-  const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
+  const { singleProjects, contactForm } = await fetchGraphQL(PROJECTS_QUERY, {
     locale: 'en',
     pagination: { limit: 5 },
   });
 
   const singleProjectsData = singleProjects?.data || [];
+  const contactFormData = contactForm?.data?.attributes || [];
 
   return (
     <>
@@ -32,7 +33,7 @@ export default async function ForAgencyPage() {
       <Approaches />
       <OurWork data={singleProjectsData} />
       <Accordion />
-      <ContactForm />
+      <ContactForm data={contactFormData} />
     </>
   );
 }

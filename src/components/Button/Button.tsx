@@ -1,12 +1,13 @@
 import classNames from 'classnames';
+import Image from 'next/image';
 
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 
 import styles from './button.module.scss';
 
 interface ButtonProps {
-  text: string;
-  icon?: ReactNode;
+  text?: string;
+  icon?: string;
   onClick?: () => void;
   disabled?: boolean;
   isBig?: boolean;
@@ -37,7 +38,11 @@ export const Button: FC<ButtonProps> = ({
       )}
     >
       {text}
-      {icon && <span className={styles.icon}>{icon}</span>}
+      {icon && (
+        <span className={styles.icon}>
+          <Image width={32} height={32} src={icon} alt="icon" />
+        </span>
+      )}
     </button>
   );
 };

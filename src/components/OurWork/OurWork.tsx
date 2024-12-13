@@ -1,7 +1,7 @@
 'use client';
 
 import { PageEnum } from '@app-types/enums';
-import { TSectionHeaderGradientColor } from '@app-types/global';
+import { IHeaderInfo } from '@app-types/global';
 import { IProjectData } from '@app-types/interfaces';
 import classNames from 'classnames';
 import Image, { StaticImageData } from 'next/image';
@@ -23,8 +23,8 @@ interface OurWorkProps {
   handlePageClick?: (selectedItem: { selected: number }) => void;
   pageCount?: number;
   bgImage?: StaticImageData;
-  color?: TSectionHeaderGradientColor;
   isLoading?: boolean;
+  headerInfo?: IHeaderInfo;
 }
 
 export const OurWork: FC<OurWorkProps> = ({
@@ -33,18 +33,10 @@ export const OurWork: FC<OurWorkProps> = ({
   handlePageClick,
   pageCount = 1,
   bgImage,
-  color,
   isLoading,
+  headerInfo,
 }) => {
   const { t } = useTranslation(page);
-
-  const headerInfo = {
-    title: {
-      main: t('ourWork.headerInfo.title.main'),
-      highlighted: t('ourWork.headerInfo.title.highlighted'),
-    },
-    subtitle: t('ourWork.headerInfo.subTitle'),
-  };
 
   return (
     <Section
@@ -55,12 +47,11 @@ export const OurWork: FC<OurWorkProps> = ({
       <Container className={styles.content}>
         <SectionHeader
           sectionName={t('ourWork.headerInfo.sectionName')}
-          title={headerInfo.title}
-          subTitle={headerInfo.subtitle}
-          color={color}
+          title={headerInfo?.title}
+          subTitle={headerInfo?.subTitle}
         />
         {isLoading ? (
-          <div>..loading</div>
+          <div>loading..</div>
         ) : (
           <Projects data={data} isOurWorkPage={page === PageEnum.OurWork} />
         )}

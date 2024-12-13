@@ -2,36 +2,24 @@ import { FC } from 'react';
 
 import styles from './infoCards.module.scss';
 
-type TCard = {
-  count: string;
-  label: string;
-};
+interface ICard {
+  Text: string;
+  Title: string;
+  Img?: string;
+}
 
 interface InfoCardsProps {
-  t: (key: string, { ns }: { ns?: string }) => string;
-  data?: TCard[];
+  data?: ICard[];
   className?: string;
 }
 
-const infoCards = [
-  { count: '250+', label: 'infoCards.card1.label' },
-  { count: '117+', label: 'infoCards.card2.label' },
-  { count: '10+', label: 'infoCards.card3.label' },
-];
-
-export const InfoCards: FC<InfoCardsProps> = ({
-  t,
-  data = infoCards,
-  className,
-}) => {
+export const InfoCards: FC<InfoCardsProps> = ({ data, className }) => {
   return (
     <ul className={`${styles.wrapper} ${className ?? ''}`}>
-      {data.map((card) => (
-        <li key={card.label} className={styles.card}>
-          <span className={styles.count}>{card.count}</span>
-          <span className={styles.label}>
-            {t(card.label, { ns: 'common' })}
-          </span>
+      {data?.map((card) => (
+        <li key={card?.Text} className={styles.card}>
+          <span className={styles.count}>{card?.Title}</span>
+          <span className={styles.label}>{card?.Text}</span>
         </li>
       ))}
     </ul>

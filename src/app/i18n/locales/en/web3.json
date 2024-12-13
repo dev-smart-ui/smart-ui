@@ -1,12 +1,4 @@
 {
-  "hero": {
-    "title": {
-      "main": "Empower Your Business with Next-Gen",
-      "highlighted": "Web3 and Blockchain",
-      "secondary": "Solutions"
-    },
-    "description": "Our team delivers blockchain and Web3 services to build secure, decentralized, and transparent digital solutions for growth in today’s digital landscape"
-  },
   "technologyStack": {
     "sectionName": "Our Technology Stack ",
     "title": "We Build the Backbone of Your Digital Presence",
@@ -15,10 +7,12 @@
   "coreServices": {
     "headerInfo": {
       "title": {
-        "main": "QA Services: \nEnsuring Quality at Every Stage of Development",
-        "highlighted": ""
+        "part1": "We Build the Backbone of Your Digital Presence",
+        "gradientPart": "",
+        "color1": "#2865B0",
+        "color2": "#3B8FF3"
       },
-      "subTitle": "We offer a wide range of quality assurance services to ensure your product functions flawlessly and meets all requirements"
+      "subTitle": "Harnessing the power of advanced CMS platforms and custom solutions, we deliver flexible, scalable, and user-friendly systems. Our expertise ensures seamless content management and adaptability to future needs"
     },
     "coreService1": {
       "title": "Smart Contract Development",

@@ -1,12 +1,4 @@
 {
-  "hero": {
-    "title": {
-      "main": "Empowering Your Business with",
-      "highlighted": "Custom Services",
-      "secondary": ""
-    },
-    "description": "From idea to execution, we build bespoke solutions that meet your unique requirements, delivering results that drive growth and enhance performance"
-  },
   "technologyStack": {
     "sectionName": "Our Technology Stack ",
     "title": "We Build the Backbone of Your Digital Presence",
@@ -15,8 +7,10 @@
   "coreServices": {
     "headerInfo": {
       "title": {
-        "main": "Our Custom",
-        "highlighted": "Services"
+        "part1": "Our Custom",
+        "gradientPart": "Services",
+        "color1": "#2865B0",
+        "color2": "#3B8FF3"
       },
       "subTitle": "Here is a list of Custom Services we've designed for you"
     },

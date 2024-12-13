@@ -1,6 +1,7 @@
 'use client';
 
 import { PageEnum } from '@app-types/enums';
+import { IHeaderInfo } from '@app-types/global';
 import { IProjectData } from '@app-types/interfaces';
 import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
@@ -11,7 +12,15 @@ import { OurWork } from '@components/OurWork';
 
 import bgImage from './img/bg.png';
 
-export const OurWorkWrapper: FC = () => {
+interface OurWorkWrapperProps {
+  headerInfo: IHeaderInfo;
+  lng: string;
+}
+
+export const OurWorkWrapper: FC<OurWorkWrapperProps> = ({
+  headerInfo,
+  lng,
+}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const pageCountRef = useRef<number | null>(null);
@@ -22,7 +31,7 @@ export const OurWorkWrapper: FC = () => {
       const { singleProjects } = await fetchGraphQL(
         PROJECTS_QUERY,
         {
-          locale: 'en',
+          locale: lng,
           pagination: { page: currentPage, pageSize: 10 },
         },
         {
@@ -41,8 +50,8 @@ export const OurWorkWrapper: FC = () => {
       pageCountRef.current = pageCount;
     };
 
-    fetchData();
-  }, [currentPage]);
+    fetchData().then();
+  }, [currentPage, lng]);
 
   const handlePageClick = (selectedItem: { selected: number }) => {
     setCurrentPage(selectedItem.selected + 1);
@@ -51,11 +60,11 @@ export const OurWorkWrapper: FC = () => {
   return (
     <OurWork
       data={data}
+      headerInfo={headerInfo}
       page={PageEnum.OurWork}
       handlePageClick={handlePageClick}
       pageCount={pageCountRef.current ?? 1}
       bgImage={bgImage}
-      color="Third"
       isLoading={isLoading}
     />
   );

@@ -1,10 +1,12 @@
 'use client';
 
+import { IImage } from '@app-types/interfaces';
+
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 import { Button } from '@components/Button';
-import { Icons } from '@components/CustomIcons';
 import { InputField } from '@components/Input';
 import { TextareaField } from '@components/TextAreaField';
 
@@ -19,10 +21,14 @@ interface FormValues {
 }
 
 interface FormProps {
-  t: (key: string) => string;
+  button: {
+    label: string;
+    icon: IImage;
+  };
 }
 
-export const Form: FC<FormProps> = ({ t }) => {
+export const Form: FC<FormProps> = ({ button }) => {
+  const { t } = useTranslation('home');
   const {
     register,
     handleSubmit,
@@ -89,8 +95,8 @@ export const Form: FC<FormProps> = ({ t }) => {
       />
       <Button
         className={styles.submitButton}
-        text={t('contactForm.form.buttonLabel')}
-        icon={<Icons.RocketSmall />}
+        text={button?.label}
+        icon={button?.icon?.data?.attributes?.url}
       />
     </form>
   );
