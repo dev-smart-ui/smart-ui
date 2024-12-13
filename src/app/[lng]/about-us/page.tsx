@@ -19,14 +19,19 @@ interface AboutUsPageProps {
 export default async function AboutUsPage({
   params: { lng },
 }: AboutUsPageProps) {
-  const { aboutUsPage, teams } = await fetchGraphQL(ABOUT_US_PAGE_QUERY, {
-    locale: lng,
-    pagination: { limit: -1 },
-  });
+  const { aboutUsPage, teams, contactForm } = await fetchGraphQL(
+    ABOUT_US_PAGE_QUERY,
+    {
+      locale: lng,
+      pagination: { limit: -1 },
+    },
+  );
 
   const servicesTabsData = aboutUsPage?.data?.attributes?.ServicesTabs || {};
   const heroData = aboutUsPage?.data?.attributes?.Hero || {};
   const singleProjectsData = teams?.data || [];
+  const contactFormData = contactForm?.data?.attributes || [];
+
   return (
     <>
       <Hero page={PageEnum.AboutUs} data={heroData} />
@@ -34,7 +39,7 @@ export default async function AboutUsPage({
       <ServicesTabs data={servicesTabsData} />
       <GoalsAndValues />
       <OurExperts data={singleProjectsData} />
-      <ContactForm />
+      <ContactForm data={contactFormData} />
     </>
   );
 }

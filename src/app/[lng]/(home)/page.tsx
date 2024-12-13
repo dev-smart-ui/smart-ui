@@ -39,7 +39,7 @@ interface HomePageProps {
 }
 
 export default async function Home({ params: { lng } }: HomePageProps) {
-  const { homePage, singleProjects, clientsLogo, accordion } =
+  const { homePage, singleProjects, clientsLogo, accordion, contactForm } =
     await fetchGraphQL(HOME_PAGE_QUERY, {
       locale: lng,
       pagination: { limit: 5 },
@@ -54,6 +54,7 @@ export default async function Home({ params: { lng } }: HomePageProps) {
   const ourWorkData = homePage?.data?.attributes?.OurWorkSection || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
+  const contactFormData = contactForm?.data?.attributes || [];
 
   const clientData = {
     sectionName: homePage?.data?.attributes?.ClientsSection?.sectionName || '',
@@ -71,7 +72,7 @@ export default async function Home({ params: { lng } }: HomePageProps) {
       <OurServices data={ourServiceData} />
       <OurWork data={singleProjectsData} headerInfo={ourWorkData} />
       <Accordion data={accordionData} />
-      <ContactForm />
+      <ContactForm data={contactFormData} />
     </>
   );
 }

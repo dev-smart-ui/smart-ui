@@ -1,6 +1,7 @@
 import {
   ACCORDION_FRAGMENT,
   CLIENTS_LOGO_FRAGMENT,
+  CONTACT_FORM_FRAGMENT,
   HERO_FRAGMENT,
   PROJECTS_FRAGMENT,
 } from './fragments';
@@ -37,8 +38,14 @@ query GetUiUxDesignPageData($locale: I18NLocaleCode, $pagination: PaginationArg)
       ...AccordionFragment
     }
   }
+  contactForm (locale: $locale) {
+    data {
+      ...ContactFormFragment
+    }
+  }
 }
 ${HERO_FRAGMENT}
 ${PROJECTS_FRAGMENT}
 ${CLIENTS_LOGO_FRAGMENT}
-${ACCORDION_FRAGMENT}`;
+${ACCORDION_FRAGMENT}
+${CONTACT_FORM_FRAGMENT}`;

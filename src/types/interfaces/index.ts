@@ -202,3 +202,32 @@ export interface IAccordionSection {
   title: IGradientTitle;
   cards: IAccordionCard[];
 }
+
+// contactForm
+export interface IContactForm {
+  backgroundImage: IImage;
+  logo: IImage;
+  socialsLabel: string;
+  title: string;
+  subTitle: string;
+  socials: ISocial[];
+  button: {
+    label: string;
+    icon: IImage;
+  };
+}
+
+// contactUsPage
+export interface IContactInfo {
+  id: string;
+  label: string;
+  text: string;
+  icon: IImage;
+}
+export interface IContactUsPage {
+  title: IGradientTitle;
+  sectionName: string;
+  subTitle: string;
+  topImage: IImage;
+  contactInfo: IContactInfo[];
+}

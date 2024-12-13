@@ -15,9 +15,12 @@ interface OurWorkPageProps {
 export default async function OurWorkPage({
   params: { lng },
 }: OurWorkPageProps) {
-  const { ourWorkPage, clientsLogo } = await fetchGraphQL(OUR_WORK_PAGE_QUERY, {
-    locale: lng,
-  });
+  const { ourWorkPage, clientsLogo, contactForm } = await fetchGraphQL(
+    OUR_WORK_PAGE_QUERY,
+    {
+      locale: lng,
+    },
+  );
 
   const ourWorkData = ourWorkPage?.data?.attributes?.OurWorkSection || {};
   const clientData = {
@@ -25,12 +28,13 @@ export default async function OurWorkPage({
       ourWorkPage?.data?.attributes?.ClientsSection?.sectionName || '',
     clients: clientsLogo?.data?.attributes.clients || {},
   };
+  const contactFormData = contactForm?.data?.attributes || [];
 
   return (
     <>
       <OurWorkWrapper headerInfo={ourWorkData} lng={lng} />
       <Clients data={clientData} />
-      <ContactForm />
+      <ContactForm data={contactFormData} />
     </>
   );
 }

@@ -19,7 +19,7 @@ interface CmsPageProps {
 }
 
 export default async function CmsPage({ params: { lng } }: CmsPageProps) {
-  const { cmsPage, singleProjects, clientsLogo, accordion } =
+  const { cmsPage, singleProjects, clientsLogo, accordion, contactForm } =
     await fetchGraphQL(CMS_PAGE_QUERY, {
       locale: lng,
       pagination: { limit: 5 },
@@ -28,6 +28,7 @@ export default async function CmsPage({ params: { lng } }: CmsPageProps) {
   const heroData = cmsPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
+  const contactFormData = contactForm?.data?.attributes || [];
 
   const clientData = {
     sectionName: cmsPage?.data?.attributes?.ClientsSection?.sectionName || '',
@@ -42,7 +43,7 @@ export default async function CmsPage({ params: { lng } }: CmsPageProps) {
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />
-      <ContactForm />
+      <ContactForm data={contactFormData} />
     </>
   );
 }

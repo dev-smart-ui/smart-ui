@@ -1,46 +1,43 @@
 'use client';
 
-import { IHeaderInfo } from '@app-types/global';
+import { IContactForm, IContactUsPage } from '@app-types/interfaces';
 import Image from 'next/image';
 
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
 import { Section } from '@components/Section';
 import { SectionHeader } from '@components/SectionHeader';
 
-import bgImage from '../img/bg.png';
 import { ContactBlock } from './ContactBlock';
 import styles from './contactUs.module.scss';
 
-export const ContactUs: FC = () => {
-  const { t } = useTranslation('contactUs');
-
-  const headerInfo: IHeaderInfo = {
-    sectionName: t('contactUs.headerInfo.sectionName'),
-    title: {
-      part1: t('contactUs.headerInfo.title.main'),
-      gradientPart: t('contactUs.headerInfo.title.highlighted'),
-      color1: '#2865B0',
-      color2: '#3B8FF3',
-    },
-    subTitle: t('contactUs.headerInfo.description'),
+interface ContactUsProps {
+  data: {
+    mainData: IContactUsPage;
+    contactFormData: IContactForm;
   };
+}
 
+export const ContactUs: FC<ContactUsProps> = ({ data }) => {
   return (
     <Section className={styles.section}>
       <Container>
         <SectionHeader
-          sectionName={headerInfo.sectionName}
-          title={headerInfo.title}
-          subTitle={headerInfo.subTitle}
+          sectionName={data?.mainData.sectionName}
+          title={data?.mainData.title}
+          subTitle={data?.mainData.subTitle}
         />
-        <ContactBlock />
+        <ContactBlock data={data} />
       </Container>
-      {bgImage && (
+      {data?.mainData?.topImage && (
         <div className={styles.topBgImage}>
-          <Image src={bgImage} alt="backgraundImage" />
+          <Image
+            src={data?.mainData?.topImage?.data?.attributes?.url}
+            width={1920}
+            height={600}
+            alt="backgraundImage"
+          />
         </div>
       )}
     </Section>

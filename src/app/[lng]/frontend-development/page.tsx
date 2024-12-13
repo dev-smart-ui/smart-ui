@@ -21,11 +21,16 @@ interface FrontendDevelopmentPageProps {
 export default async function FrontendDevelopmentPage({
   params: { lng },
 }: FrontendDevelopmentPageProps) {
-  const { frontendDevPage, singleProjects, clientsLogo, accordion } =
-    await fetchGraphQL(FRONTEND_DEV_PAGE_QUERY, {
-      locale: lng,
-      pagination: { limit: 5 },
-    });
+  const {
+    frontendDevPage,
+    singleProjects,
+    clientsLogo,
+    accordion,
+    contactForm,
+  } = await fetchGraphQL(FRONTEND_DEV_PAGE_QUERY, {
+    locale: lng,
+    pagination: { limit: 5 },
+  });
 
   const heroData = frontendDevPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
@@ -35,6 +40,7 @@ export default async function FrontendDevelopmentPage({
       frontendDevPage?.data?.attributes?.ClientsSection?.sectionName || '',
     clients: clientsLogo?.data?.attributes.clients || {},
   };
+  const contactFormData = contactForm?.data?.attributes || [];
 
   return (
     <>
@@ -47,7 +53,7 @@ export default async function FrontendDevelopmentPage({
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />
-      <ContactForm />
+      <ContactForm data={contactFormData} />
     </>
   );
 }

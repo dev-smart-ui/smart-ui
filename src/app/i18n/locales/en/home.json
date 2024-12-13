@@ -11,8 +11,6 @@
   },
   "contactForm": {
     "form": {
-      "title": "Let's Get Started Now!",
-      "subTitle": "We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us.",
       "firstName": {
         "placeholder": "First Name",
         "errorMessage": "First name is required"
@@ -32,8 +30,7 @@
       },
       "textarea": {
         "placeholder": "Message"
-      },
-      "buttonLabel": "Send Message"
+      }
     }
   }
 }

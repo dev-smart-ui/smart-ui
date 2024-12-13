@@ -299,3 +299,51 @@ fragment AccordionFragment on AccordionEntity {
     }
   }
 }`;
+
+// contactForm
+export const CONTACT_FORM_FRAGMENT = `
+fragment ContactFormFragment on ContactFormEntity {
+	attributes {
+		backgroundImage {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		logo {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		socialsLabel
+		title
+		subTitle
+		socials {
+			id
+			label
+			color
+			ariaLabel
+			url
+			icon {
+				data {
+					attributes {
+						url
+					}
+				}
+			}
+		}
+		button {
+			label
+			icon {
+				data {
+					attributes {
+						url
+					}
+				}
+			}
+		}
+	}
+}`;

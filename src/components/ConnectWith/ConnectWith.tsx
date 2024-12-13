@@ -1,4 +1,4 @@
-import { SOCIALS } from '@constants/socials';
+import { ISocial } from '@app-types/interfaces';
 import Link from 'next/link';
 
 import { FC } from 'react';
@@ -9,25 +9,44 @@ import styles from './connectWith.module.scss';
 
 interface ConnectWithProps {
   className?: string;
+  data?: ISocial[];
+  socialsLabel?: string;
 }
 
-export const ConnectWith: FC<ConnectWithProps> = ({ className }) => {
+export const ConnectWith: FC<ConnectWithProps> = ({
+  className,
+  data,
+  socialsLabel,
+}) => {
   return (
     <div className={`${styles.wrapper} ${className ?? ''}`}>
       <div className={styles.socialButtons}>
-        {SOCIALS.map(({ label, link, color, icon, ariaLabel }) => (
-          <BorderGradientButton
-            key={label}
-            as={Link}
-            href={link}
-            target="_blank"
-            aria-label={ariaLabel}
-            color={color}
-            icon={icon}
-          />
-        ))}
+        {data?.map(
+          ({
+            ariaLabel,
+            color,
+            label,
+            url,
+            icon: {
+              data: {
+                attributes: { url: iconUrl },
+              },
+            },
+          }) => (
+            <BorderGradientButton
+              key={label}
+              as={url ? Link : undefined}
+              href={url}
+              target="_blank"
+              aria-label={ariaLabel}
+              color={color}
+              imgUrl={iconUrl}
+              iconAlt={label}
+            />
+          ),
+        )}
       </div>
-      <span className={styles.text}>Connect with</span>
+      <span className={styles.text}>{socialsLabel}</span>
     </div>
   );
 };

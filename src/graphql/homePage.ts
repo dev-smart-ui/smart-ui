@@ -3,6 +3,7 @@ import {
   ADVANTAGES_CARDS_FRAGMENT,
   CLIENTS_LOGO_FRAGMENT,
   CLIENT_FEEDBACK_FRAGMENT,
+  CONTACT_FORM_FRAGMENT,
   HERO_FRAGMENT,
   OUR_SERVICE_FRAGMENT,
   OUR_WORK_FRAGMENT,
@@ -61,6 +62,11 @@ query GetHomePageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
       ...AccordionFragment
     }
   }
+  contactForm (locale: $locale) {
+    data {
+      ...ContactFormFragment
+    }
+  }
 }
 ${HERO_FRAGMENT}
 ${PROJECTS_FRAGMENT}
@@ -71,4 +77,5 @@ ${CLIENT_FEEDBACK_FRAGMENT}
 ${WORK_TOGETHER_FRAGMENT}
 ${OUR_SERVICE_FRAGMENT}
 ${OUR_WORK_FRAGMENT}
-${ACCORDION_FRAGMENT}`;
+${ACCORDION_FRAGMENT}
+${CONTACT_FORM_FRAGMENT}`;

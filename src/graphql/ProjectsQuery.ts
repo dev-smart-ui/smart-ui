@@ -1,3 +1,5 @@
+import { CONTACT_FORM_FRAGMENT } from '@graphqlQueries/fragments';
+
 export const PROJECTS_QUERY = `
 query GetSingleProjectsData($locale: I18NLocaleCode!, $pagination: PaginationArg) {
   singleProjects(locale: $locale, pagination: $pagination) {
@@ -26,4 +28,10 @@ query GetSingleProjectsData($locale: I18NLocaleCode!, $pagination: PaginationArg
       }
     }
   }
-}`;
+  contactForm (locale: $locale) {
+    data {
+      ...ContactFormFragment
+    }
+  }  
+}
+${CONTACT_FORM_FRAGMENT}`;

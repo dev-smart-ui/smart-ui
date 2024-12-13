@@ -1,34 +1,17 @@
 import classNames from 'classnames';
-import Image from 'next/image';
 import Link from 'next/link';
 
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 import styles from './logo.module.scss';
 
-const defaultLogo = '/assets/img/logo.png';
-const bigLogo = '/assets/img/bigLogo.png';
-
 interface LogoProps {
-  isBig?: boolean;
   isLink?: boolean;
   className?: string;
+  children?: ReactNode;
 }
 
-export const Logo: FC<LogoProps> = ({
-  isBig = false,
-  isLink = true,
-  className,
-}) => {
-  const logoImage = (
-    <Image
-      src={!isBig ? defaultLogo : bigLogo}
-      width={160}
-      height={32}
-      alt="logo"
-    />
-  );
-
+export const Logo: FC<LogoProps> = ({ isLink = true, className, children }) => {
   return isLink ? (
     <Link
       href="/"
@@ -40,9 +23,9 @@ export const Logo: FC<LogoProps> = ({
         className,
       )}
     >
-      {logoImage}
+      {children}
     </Link>
   ) : (
-    <div className={classNames(styles.wrapper, className)}>{logoImage}</div>
+    <div className={classNames(styles.wrapper, className)}>{children}</div>
   );
 };
