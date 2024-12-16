@@ -2,6 +2,7 @@ import {
   ACCORDION_FRAGMENT,
   CLIENTS_LOGO_FRAGMENT,
   CONTACT_FORM_FRAGMENT,
+  FOOTER_FRAGMENT,
   HEADER_FRAGMENT,
   HERO_FRAGMENT,
   PROJECTS_FRAGMENT,
@@ -49,10 +50,16 @@ query GetUiUxDesignPageData($locale: I18NLocaleCode, $pagination: PaginationArg)
       ...HeaderFragment
     }
   }
+  footer (locale: $locale) {
+    data {
+      ...FooterFragment
+    }
+  }
 }
 ${HERO_FRAGMENT}
 ${PROJECTS_FRAGMENT}
 ${CLIENTS_LOGO_FRAGMENT}
 ${ACCORDION_FRAGMENT}
 ${CONTACT_FORM_FRAGMENT}
-${HEADER_FRAGMENT}`;
+${HEADER_FRAGMENT}
+${FOOTER_FRAGMENT}`;

@@ -29,6 +29,7 @@ export default async function UiUxDesignPage({
     accordion,
     contactForm,
     header,
+    footer,
   } = await fetchGraphQL(UI_UX_DESIGN_PAGE_QUERY, {
     locale: lng,
     pagination: { limit: 5 },
@@ -45,9 +46,10 @@ export default async function UiUxDesignPage({
   };
   const contactFormData = contactForm?.data?.attributes || [];
   const headerData = header?.data?.attributes || {};
+  const footerData = footer?.data?.attributes || {};
 
   return (
-    <Layout headerData={headerData}>
+    <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.UiUxDesign} data={heroData} />
       <TechnologyStack image={technologyImg} page={PageEnum.UiUxDesign} />
       <CoreServices page={PageEnum.UiUxDesign} />

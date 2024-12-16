@@ -27,6 +27,7 @@ export default async function CmsPage({ params: { lng } }: CmsPageProps) {
     accordion,
     contactForm,
     header,
+    footer,
   } = await fetchGraphQL(CMS_PAGE_QUERY, {
     locale: lng,
     pagination: { limit: 5 },
@@ -37,6 +38,7 @@ export default async function CmsPage({ params: { lng } }: CmsPageProps) {
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
   const headerData = header?.data?.attributes || {};
+  const footerData = footer?.data?.attributes || {};
 
   const clientData = {
     sectionName: cmsPage?.data?.attributes?.ClientsSection?.sectionName || '',
@@ -44,7 +46,7 @@ export default async function CmsPage({ params: { lng } }: CmsPageProps) {
   };
 
   return (
-    <Layout headerData={headerData}>
+    <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.Cms} data={heroData} />
       <TechnologyStack image={technologyImg} />
       <CoreServices />

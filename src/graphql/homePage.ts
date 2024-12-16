@@ -4,6 +4,7 @@ import {
   CLIENTS_LOGO_FRAGMENT,
   CLIENT_FEEDBACK_FRAGMENT,
   CONTACT_FORM_FRAGMENT,
+  FOOTER_FRAGMENT,
   HEADER_FRAGMENT,
   HERO_FRAGMENT,
   OUR_SERVICE_FRAGMENT,
@@ -73,6 +74,11 @@ query GetHomePageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
       ...HeaderFragment
     }
   }
+  footer (locale: $locale) {
+    data {
+      ...FooterFragment
+    }
+  }
 }
 ${HERO_FRAGMENT}
 ${PROJECTS_FRAGMENT}
@@ -85,4 +91,5 @@ ${OUR_SERVICE_FRAGMENT}
 ${OUR_WORK_FRAGMENT}
 ${ACCORDION_FRAGMENT}
 ${CONTACT_FORM_FRAGMENT}
-${HEADER_FRAGMENT}`;
+${HEADER_FRAGMENT}
+${FOOTER_FRAGMENT}`;

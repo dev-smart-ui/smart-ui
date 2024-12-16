@@ -40,6 +40,46 @@ export interface IHeader {
   links: IHeaderLink[];
 }
 
+// footer
+export interface IFooterInfoItem {
+  id: string;
+  label: string;
+  url: string;
+  icon: IImage;
+}
+
+export interface IFooterLink {
+  id: string;
+  text: string;
+  url: string;
+}
+
+export interface IFooterServiceItem {
+  id: string;
+  text: string;
+  url: string;
+}
+
+export interface IFooterSocialItem {
+  id: string;
+  label: string;
+  url: string;
+  color: string;
+  ariaLabel: string;
+  icon: IImage;
+}
+
+export interface IFooter {
+  infoDescription: string;
+  linksTitle: string;
+  servicesTitle: string;
+  logo: IImage;
+  info: IFooterInfoItem[];
+  links: IFooterLink[];
+  services: IFooterServiceItem[];
+  socials: IFooterSocialItem[];
+}
+
 // projects
 export interface IProjectData {
   id: string;

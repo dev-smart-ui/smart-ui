@@ -16,7 +16,7 @@ import { WhatWeDo } from './components/WhatWeDo';
 import technologyImg from './img/technologyImg.png';
 
 export default async function ForAgencyPage() {
-  const { singleProjects, contactForm, header } = await fetchGraphQL(
+  const { singleProjects, contactForm, header, footer } = await fetchGraphQL(
     PROJECTS_QUERY,
     {
       locale: 'en',
@@ -27,9 +27,10 @@ export default async function ForAgencyPage() {
   const singleProjectsData = singleProjects?.data || [];
   const contactFormData = contactForm?.data?.attributes || [];
   const headerData = header?.data?.attributes || {};
+  const footerData = footer?.data?.attributes || {};
 
   return (
-    <Layout headerData={headerData}>
+    <Layout headerData={headerData} footerData={footerData}>
       <Hero />
       <Advantages />
       <QuestionBlock />

@@ -1,5 +1,6 @@
 import {
   CONTACT_FORM_FRAGMENT,
+  FOOTER_FRAGMENT,
   HEADER_FRAGMENT,
 } from '@graphqlQueries/fragments';
 
@@ -41,6 +42,12 @@ query GetSingleProjectsData($locale: I18NLocaleCode!, $pagination: PaginationArg
       ...HeaderFragment
     }
   }
+  footer (locale: $locale) {
+    data {
+      ...FooterFragment
+    }
+  }
 }
 ${CONTACT_FORM_FRAGMENT}
-${HEADER_FRAGMENT}`;
+${HEADER_FRAGMENT}
+${FOOTER_FRAGMENT}`;

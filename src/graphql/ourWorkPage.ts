@@ -1,6 +1,7 @@
 import {
   CLIENTS_LOGO_FRAGMENT,
   CONTACT_FORM_FRAGMENT,
+  FOOTER_FRAGMENT,
   HEADER_FRAGMENT,
   OUR_WORK_FRAGMENT,
 } from './fragments';
@@ -32,8 +33,14 @@ query GetOurWorkPageData($locale: I18NLocaleCode) {
       ...HeaderFragment
     }
   }
+  footer (locale: $locale) {
+    data {
+      ...FooterFragment
+    }
+  }
 }
 ${CLIENTS_LOGO_FRAGMENT}
 ${OUR_WORK_FRAGMENT}
 ${CONTACT_FORM_FRAGMENT}
-${HEADER_FRAGMENT}`;
+${HEADER_FRAGMENT}
+${FOOTER_FRAGMENT}`;

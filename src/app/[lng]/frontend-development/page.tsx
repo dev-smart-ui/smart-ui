@@ -29,6 +29,7 @@ export default async function FrontendDevelopmentPage({
     accordion,
     contactForm,
     header,
+    footer,
   } = await fetchGraphQL(FRONTEND_DEV_PAGE_QUERY, {
     locale: lng,
     pagination: { limit: 5 },
@@ -44,9 +45,10 @@ export default async function FrontendDevelopmentPage({
   };
   const contactFormData = contactForm?.data?.attributes || [];
   const headerData = header?.data?.attributes || {};
+  const footerData = footer?.data?.attributes || {};
 
   return (
-    <Layout headerData={headerData}>
+    <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.FrontendDevelopment} data={heroData} />
       <TechnologyStack
         image={technologyImg}

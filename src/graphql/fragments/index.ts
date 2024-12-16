@@ -390,3 +390,56 @@ fragment HeaderFragment on HeaderEntity {
 		}
 	}
 }`;
+
+// footer
+export const FOOTER_FRAGMENT = `
+fragment FooterFragment on FooterEntity {
+	attributes {
+		infoDescription
+		linksTitle
+		servicesTitle
+		logo {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		info {
+			id
+			icon {
+				data {
+					attributes {
+						url
+					}
+				}
+			}
+			url
+			label
+		}
+		links {
+			id
+			text
+			url
+		}
+		services {
+			id
+			text
+			url
+		}
+		socials {
+			id
+			icon {
+				data {
+					attributes {
+						url
+					}
+				}
+			}
+			url
+			label
+			color
+			ariaLabel
+		}
+	}
+}`;

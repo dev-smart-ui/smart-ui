@@ -1,42 +1,20 @@
-import { ROUTES } from '@routes/index';
+import { IFooterLink } from '@app-types/interfaces';
 
 import { FC } from 'react';
 
 import { ItemsList } from '../ItemsList/ItemsList';
 import styles from './links.module.scss';
 
-const LINKS = [
-  {
-    label: 'quickLinks.portfolio',
-    href: ROUTES.OUR_WORK,
-  },
-  {
-    label: 'quickLinks.about',
-    href: ROUTES.ABOUT_US,
-  },
-  {
-    label: 'quickLinks.contact',
-    href: ROUTES.CONTACT_US,
-  },
-  {
-    label: 'quickLinks.forAgency',
-    href: ROUTES.FOR_AGENCY,
-  },
-  {
-    label: 'quickLinks.privacyPolicy',
-    href: ROUTES.PRIVACY_POLICY,
-  },
-  {
-    label: 'quickLinks.termsOfUse',
-    href: ROUTES.TERMS,
-  },
-];
+interface LinksProps {
+  data: IFooterLink[];
+  title: string;
+}
 
-export const Links: FC = () => {
+export const Links: FC<LinksProps> = ({ data, title }) => {
   return (
     <div className={styles.wrapper}>
-      <span className={styles.title}>Quick Links</span>
-      <ItemsList items={LINKS} />
+      <span className={styles.title}>{title}</span>
+      <ItemsList items={data} />
     </div>
   );
 };

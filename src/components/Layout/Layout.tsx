@@ -1,4 +1,4 @@
-import { IHeader } from '@app-types/interfaces';
+import { IFooter, IHeader } from '@app-types/interfaces';
 
 import { ReactNode } from 'react';
 
@@ -8,14 +8,19 @@ import { Header } from '@components/Header';
 interface LayoutProps {
   children: ReactNode;
   headerData: IHeader;
+  footerData: IFooter;
 }
 
-export default function Layout({ children, headerData }: LayoutProps) {
+export default function Layout({
+  children,
+  headerData,
+  footerData,
+}: LayoutProps) {
   return (
     <>
       <Header headerData={headerData} />
       <main>{children}</main>
-      <Footer />
+      <Footer footerData={footerData} />
     </>
   );
 }
