@@ -6,7 +6,7 @@ export interface IImage {
   };
 }
 
-interface IGradientTitle {
+export interface IGradientTitle {
   part1: string;
   gradientPart: string;
   part2: string;

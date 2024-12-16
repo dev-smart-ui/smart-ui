@@ -4,10 +4,9 @@ import { PageEnum } from '@app-types/enums';
 import { IHeaderInfo } from '@app-types/global';
 import { IProjectData } from '@app-types/interfaces';
 import classNames from 'classnames';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 import ReactPaginate from 'react-paginate';
 
 import { Container } from '@components/Container';
@@ -22,7 +21,7 @@ interface OurWorkProps {
   page?: string;
   handlePageClick?: (selectedItem: { selected: number }) => void;
   pageCount?: number;
-  bgImage?: StaticImageData;
+  bgImage?: string;
   isLoading?: boolean;
   headerInfo?: IHeaderInfo;
 }
@@ -36,8 +35,6 @@ export const OurWork: FC<OurWorkProps> = ({
   isLoading,
   headerInfo,
 }) => {
-  const { t } = useTranslation(page);
-
   return (
     <Section
       className={classNames(styles.section, {
@@ -46,7 +43,7 @@ export const OurWork: FC<OurWorkProps> = ({
     >
       <Container className={styles.content}>
         <SectionHeader
-          sectionName={t('ourWork.headerInfo.sectionName')}
+          sectionName={headerInfo?.sectionName}
           title={headerInfo?.title}
           subTitle={headerInfo?.subTitle}
         />
@@ -71,7 +68,12 @@ export const OurWork: FC<OurWorkProps> = ({
       </Container>
       {bgImage && (
         <div className={styles.topBgImage}>
-          <Image src={bgImage} alt="backgraundImage" />
+          <Image
+            src={bgImage ?? ''}
+            width={1920}
+            height={600}
+            alt="backgraundImage"
+          />
         </div>
       )}
     </Section>

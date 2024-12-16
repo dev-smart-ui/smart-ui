@@ -17,6 +17,13 @@ query GetOurWorkPageData($locale: I18NLocaleCode) {
         OurWorkSection {
           ...OurWorkFragment
         }
+        topBgImage {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
       }
     }
   }

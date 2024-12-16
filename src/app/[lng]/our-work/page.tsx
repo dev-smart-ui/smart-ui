@@ -33,7 +33,13 @@ export default async function OurWorkPage({
 
   return (
     <Layout headerData={headerData} footerData={footerData}>
-      <OurWorkWrapper headerInfo={ourWorkData} lng={lng} />
+      <OurWorkWrapper
+        headerInfo={ourWorkData}
+        lng={lng}
+        bgImage={
+          ourWorkPage?.data?.attributes?.topBgImage?.data?.attributes?.url
+        }
+      />
       <Clients data={clientData} />
       <ContactForm data={contactFormData} />
     </Layout>

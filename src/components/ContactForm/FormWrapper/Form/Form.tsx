@@ -28,7 +28,7 @@ interface FormProps {
 }
 
 export const Form: FC<FormProps> = ({ button }) => {
-  const { t } = useTranslation('home');
+  const { t } = useTranslation('contactForm');
   const {
     register,
     handleSubmit,
