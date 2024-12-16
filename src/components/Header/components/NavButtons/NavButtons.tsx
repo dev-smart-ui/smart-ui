@@ -2,7 +2,7 @@ import { scrollToElement } from '@utils/index';
 
 import { FC } from 'react';
 
-import { BorderGradientButton } from '@components/Button';
+import { Button } from '@components/Button';
 import { BurgerMenu } from '@components/Header/components/Burger';
 
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
@@ -16,7 +16,7 @@ interface INavButtonsProps {
 export const NavButtons: FC<INavButtonsProps> = ({ onToggle, buttonLabel }) => {
   return (
     <div className={styles.wrapper}>
-      <BorderGradientButton
+      <Button
         onClick={() => scrollToElement('contactForm')}
         text={buttonLabel}
         className={styles.contactUsBtn}
