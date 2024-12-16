@@ -38,7 +38,7 @@ export const Project: FC<ProjectProps> = ({ project, isOurWorkPage }) => {
           />
         </div>
       ) : (
-        <Link className={styles.content} href={siteUrl} target="_blank">
+        <Link className={styles.content} href={siteUrl ?? ''} target="_blank">
           <ProjectContent
             projectName={projectName}
             color={color}
