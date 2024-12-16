@@ -5,6 +5,7 @@ import {
   HERO_FRAGMENT,
   SERVICES_TABS_FRAGMENT,
   TEAM_FRAGMENT,
+  WHO_WE_ARE_FRAGMENT,
 } from './fragments';
 
 export const ABOUT_US_PAGE_QUERY = `
@@ -14,6 +15,9 @@ query GetAboutUsPageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
       attributes {
         Hero {
           ...HeroFragment
+        }
+        WhoWeAre {
+          ...WhoWeAreFragment
         }
         ServicesTabs {
           ...ServicesTabsFragment
@@ -49,6 +53,7 @@ query GetAboutUsPageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
 }
 ${HERO_FRAGMENT}
 ${TEAM_FRAGMENT}
+${WHO_WE_ARE_FRAGMENT}
 ${SERVICES_TABS_FRAGMENT}
 ${CONTACT_FORM_FRAGMENT}
 ${HEADER_FRAGMENT}

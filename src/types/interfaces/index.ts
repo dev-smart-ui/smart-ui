@@ -297,3 +297,10 @@ export interface IContactUsPage {
   topImage: IImage;
   contactInfo: IContactInfo[];
 }
+
+// whoWeAreSection
+export interface IWhoWeAre {
+  sectionName: string;
+  title: IGradientTitle;
+  description: string;
+}

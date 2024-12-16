@@ -280,6 +280,20 @@ fragment OurWorkFragment on ComponentSectionsOurWork {
 	subTitle
 }`;
 
+// whoWeAre
+export const WHO_WE_ARE_FRAGMENT = `
+fragment WhoWeAreFragment on ComponentSectionsWhoWeAre {
+	sectionName
+	title {
+		part1
+		part2
+		gradientPart
+		color1
+		color2
+	}
+	description
+}`;
+
 // accordion
 export const ACCORDION_FRAGMENT = `
 fragment AccordionFragment on AccordionEntity {

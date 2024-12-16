@@ -7,9 +7,9 @@ import { Hero } from '@components/Hero';
 import Layout from '@components/Layout';
 import { ServicesTabs } from '@components/ServicesTabs';
 
-import { DrivingSuccess } from './components/DrivingSuccess';
 import { GoalsAndValues } from './components/GoalsAndValues';
 import { OurExperts } from './components/OurExperts';
+import { WhoWeAre } from './components/WhoWeAre';
 
 interface AboutUsPageProps {
   params: {
@@ -26,6 +26,7 @@ export default async function AboutUsPage({
       pagination: { limit: -1 },
     });
 
+  const whoWeAreData = aboutUsPage?.data?.attributes?.WhoWeAre || {};
   const servicesTabsData = aboutUsPage?.data?.attributes?.ServicesTabs || {};
   const heroData = aboutUsPage?.data?.attributes?.Hero || {};
   const singleProjectsData = teams?.data || [];
@@ -36,7 +37,7 @@ export default async function AboutUsPage({
   return (
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.AboutUs} data={heroData} />
-      <DrivingSuccess />
+      <WhoWeAre data={whoWeAreData} />
       <ServicesTabs data={servicesTabsData} />
       <GoalsAndValues />
       <OurExperts data={singleProjectsData} />
