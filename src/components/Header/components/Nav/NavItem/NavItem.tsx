@@ -1,4 +1,5 @@
 import { IHeaderLink, ISubMenuLink } from '@app-types/interfaces';
+import { ROUTES } from '@routes/index';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -20,6 +21,16 @@ interface NavItemProps {
   lng: string;
 }
 
+const servicesLinks = [
+  ROUTES.FRONTEND_DEVELOPMENT,
+  ROUTES.CMS,
+  ROUTES.BACKEND_DEVELOPMENT,
+  ROUTES.UI_UX_DESIGN,
+  ROUTES.QA,
+  ROUTES.CUSTOM_SERVICES,
+  ROUTES.WEB3,
+];
+
 export const NavItem: FC<NavItemProps> = ({
   link,
   onCloseMainMenu,
@@ -36,10 +47,8 @@ export const NavItem: FC<NavItemProps> = ({
   const isDesktop = useMediaQuery('(min-width: 1024px)');
   const navItemRef = useRef<HTMLLIElement | null>(null);
   useResetStatesOnResize([() => onCloseSubMenu, onCloseMainMenu]);
-  const normalizedPathname =
-    pathname.replace(/^\/[a-z]{2}(-[A-Z]{2})?/, '') || '/';
-  const normalizedLinkPath =
-    link?.path?.replace(/^\/[a-z]{2}(-[A-Z]{2})?/, '') || '/';
+  const normalizedPathname = pathname.replace(`/${lng}`, '') || '/';
+  const normalizedLinkPath = link?.path || '/';
 
   const isActive =
     link?.path &&
@@ -47,10 +56,12 @@ export const NavItem: FC<NavItemProps> = ({
       (normalizedPathname.startsWith(normalizedLinkPath) &&
         normalizedLinkPath !== '/'));
 
+  const isSubMenuBtnActive = servicesLinks.includes(normalizedPathname);
+
   return (
     <li
-      onMouseEnter={() => isDesktop && OnOpenSubMenu()}
-      onMouseLeave={() => isDesktop && onCloseSubMenu()}
+      onMouseEnter={() => !link?.path && isDesktop && OnOpenSubMenu()}
+      onMouseLeave={() => !link?.path && isDesktop && onCloseSubMenu()}
       ref={navItemRef}
       className={styles.wrapper}
       key={link?.label}
@@ -69,6 +80,7 @@ export const NavItem: FC<NavItemProps> = ({
         <button
           className={classNames(styles.navMenuBtn, {
             [styles.active]: isSubMenu,
+            [styles.isSomeSubItemActive]: isSubMenuBtnActive,
           })}
           onClick={onToggleSubMenu}
         >
@@ -82,6 +94,7 @@ export const NavItem: FC<NavItemProps> = ({
       )}
       {submenu && (
         <SubMenu
+          pathname={pathname}
           lng={lng}
           navItemRef={navItemRef}
           onCloseSubMenu={onCloseSubMenu}

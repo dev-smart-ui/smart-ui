@@ -18,6 +18,7 @@ interface SubMenuProps {
   onCloseSubMenu: () => void;
   navItemRef: RefObject<HTMLLIElement | null>;
   lng: string;
+  pathname: string;
 }
 
 export const SubMenu: FC<SubMenuProps> = ({
@@ -27,6 +28,7 @@ export const SubMenu: FC<SubMenuProps> = ({
   onCloseSubMenu,
   navItemRef,
   lng,
+  pathname,
 }) => {
   const subMenuRef = useRef<HTMLDivElement | null>(null);
   useOnClickOutside(subMenuRef, onCloseSubMenu, navItemRef);
@@ -34,6 +36,16 @@ export const SubMenu: FC<SubMenuProps> = ({
   const onCloseMenus = () => {
     onCloseMainMenu && onCloseMainMenu();
     onCloseSubMenu();
+  };
+
+  const checkActive = (path: string) => {
+    const normalizedPathname = pathname.replace(`/${lng}`, '') || '/';
+    const normalizedLinkPath = path || '/';
+
+    return (
+      normalizedPathname === normalizedLinkPath ||
+      normalizedPathname.startsWith(normalizedLinkPath)
+    );
   };
 
   return (
@@ -51,7 +63,9 @@ export const SubMenu: FC<SubMenuProps> = ({
               style={{ gridArea }}
               href={`/${lng}${path}`}
               onClick={onCloseMenus}
-              className={styles.link}
+              className={classNames(styles.link, {
+                [styles.isActive]: checkActive(path),
+              })}
             >
               <div className={styles.icon}>
                 <Image
