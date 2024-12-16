@@ -4,6 +4,7 @@ import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { ContactForm } from '@components/ContactForm';
 import { Hero } from '@components/Hero';
+import Layout from '@components/Layout';
 import { ServicesTabs } from '@components/ServicesTabs';
 
 import { DrivingSuccess } from './components/DrivingSuccess';
@@ -33,13 +34,13 @@ export default async function AboutUsPage({
   const contactFormData = contactForm?.data?.attributes || [];
 
   return (
-    <>
+    <Layout>
       <Hero page={PageEnum.AboutUs} data={heroData} />
       <DrivingSuccess />
       <ServicesTabs data={servicesTabsData} />
       <GoalsAndValues />
       <OurExperts data={singleProjectsData} />
       <ContactForm data={contactFormData} />
-    </>
+    </Layout>
   );
 }

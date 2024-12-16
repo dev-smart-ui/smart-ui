@@ -7,6 +7,7 @@ import { Clients } from '@components/Clients';
 import { ContactForm } from '@components/ContactForm';
 import { CoreServices } from '@components/CoreServices';
 import { Hero } from '@components/Hero';
+import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
@@ -30,7 +31,7 @@ export default async function QaPage() {
   const contactFormData = contactForm?.data?.attributes || [];
 
   return (
-    <>
+    <Layout>
       <Hero page={PageEnum.Qa} data={heroData} />
       <TechnologyStack image={technologyImg} page={PageEnum.Qa} />
       <CoreServices page={PageEnum.Qa} />
@@ -38,6 +39,6 @@ export default async function QaPage() {
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />
       <ContactForm data={contactFormData} />
-    </>
+    </Layout>
   );
 }

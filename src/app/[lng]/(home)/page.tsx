@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 
 import { Accordion } from '@components/Accordion';
 import { Hero } from '@components/Hero';
+import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { ServicesTabs } from '@components/ServicesTabs';
 
@@ -62,7 +63,7 @@ export default async function Home({ params: { lng } }: HomePageProps) {
   };
 
   return (
-    <>
+    <Layout>
       <Hero data={heroData} />
       <ServicesTabs data={servicesTabsData} />
       <Clients data={clientData} />
@@ -73,6 +74,6 @@ export default async function Home({ params: { lng } }: HomePageProps) {
       <OurWork data={singleProjectsData} headerInfo={ourWorkData} />
       <Accordion data={accordionData} />
       <ContactForm data={contactFormData} />
-    </>
+    </Layout>
   );
 }

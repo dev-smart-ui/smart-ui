@@ -2,6 +2,7 @@ import { CONTACT_US_QUERY } from '@graphqlQueries/contactUs';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { Accordion } from '@components/Accordion';
+import Layout from '@components/Layout';
 
 import { ContactUs } from './ContactUs';
 
@@ -28,9 +29,9 @@ export default async function ContactUsPage({
   };
 
   return (
-    <>
+    <Layout>
       <ContactUs data={contactUsPageData} />
       <Accordion data={accordionData} />
-    </>
+    </Layout>
   );
 }

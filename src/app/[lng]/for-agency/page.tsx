@@ -4,6 +4,7 @@ import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { Accordion } from '@components/Accordion';
 import { ContactForm } from '@components/ContactForm';
+import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
@@ -24,7 +25,7 @@ export default async function ForAgencyPage() {
   const contactFormData = contactForm?.data?.attributes || [];
 
   return (
-    <>
+    <Layout>
       <Hero />
       <Advantages />
       <QuestionBlock />
@@ -34,6 +35,6 @@ export default async function ForAgencyPage() {
       <OurWork data={singleProjectsData} />
       <Accordion />
       <ContactForm data={contactFormData} />
-    </>
+    </Layout>
   );
 }

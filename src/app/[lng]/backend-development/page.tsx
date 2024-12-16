@@ -7,6 +7,7 @@ import { Clients } from '@components/Clients';
 import { ContactForm } from '@components/ContactForm';
 import { CoreServices } from '@components/CoreServices';
 import { Hero } from '@components/Hero';
+import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
@@ -44,7 +45,7 @@ export default async function BackendDevelopmentPage({
   };
 
   return (
-    <>
+    <Layout>
       <Hero page={PageEnum.BackendDevelopment} data={heroData} />
       <TechnologyStack
         image={technologyImg}
@@ -55,6 +56,6 @@ export default async function BackendDevelopmentPage({
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />
       <ContactForm data={contactFormData} />
-    </>
+    </Layout>
   );
 }

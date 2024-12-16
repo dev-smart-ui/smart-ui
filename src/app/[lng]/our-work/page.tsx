@@ -3,6 +3,7 @@ import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { Clients } from '@components/Clients';
 import { ContactForm } from '@components/ContactForm';
+import Layout from '@components/Layout';
 
 import { OurWorkWrapper } from './OurWorkWrapper';
 
@@ -31,10 +32,10 @@ export default async function OurWorkPage({
   const contactFormData = contactForm?.data?.attributes || [];
 
   return (
-    <>
+    <Layout>
       <OurWorkWrapper headerInfo={ourWorkData} lng={lng} />
       <Clients data={clientData} />
       <ContactForm data={contactFormData} />
-    </>
+    </Layout>
   );
 }
