@@ -14,6 +14,32 @@ interface IGradientTitle {
   color2: string;
 }
 
+// header
+export interface ISubMenuLink {
+  id: string;
+  label: string;
+  path: string;
+  desc: string;
+  gridArea: string;
+  icon: IImage;
+}
+
+export interface IHeaderLink {
+  id: string;
+  label: string;
+  path: string;
+  subMenuLinks?: ISubMenuLink[];
+}
+
+export interface IHeader {
+  logo: IImage;
+  button: {
+    icon: IImage;
+    label: string;
+  };
+  links: IHeaderLink[];
+}
+
 // projects
 export interface IProjectData {
   id: string;

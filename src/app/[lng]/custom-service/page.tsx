@@ -28,6 +28,7 @@ export default async function CustomServicePage({
     clientsLogo,
     accordion,
     contactForm,
+    header,
   } = await fetchGraphQL(CUSTOM_SERVICES_PAGE_QUERY, {
     locale: lng,
     pagination: { limit: 5 },
@@ -43,9 +44,10 @@ export default async function CustomServicePage({
       customServicesPage?.data?.attributes?.ClientsSection?.sectionName || '',
     clients: clientsLogo?.data?.attributes.clients || {},
   };
+  const headerData = header?.data?.attributes || {};
 
   return (
-    <Layout>
+    <Layout headerData={headerData}>
       <Hero page={PageEnum.CustomService} data={heroData} />
       <TechnologyStack image={technologyImg} page={PageEnum.CustomService} />
       <CoreServices page={PageEnum.CustomService} />

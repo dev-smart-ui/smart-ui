@@ -14,11 +14,17 @@ import { TechnologyStack } from '@components/TechnologyStack';
 import technologyImg from './img/technologyImg.png';
 
 export default async function QaPage() {
-  const { qaPage, singleProjects, clientsLogo, accordion, contactForm } =
-    await fetchGraphQL(QA_PAGE_QUERY, {
-      locale: 'en',
-      pagination: { limit: 5 },
-    });
+  const {
+    qaPage,
+    singleProjects,
+    clientsLogo,
+    accordion,
+    contactForm,
+    header,
+  } = await fetchGraphQL(QA_PAGE_QUERY, {
+    locale: 'en',
+    pagination: { limit: 5 },
+  });
 
   const heroData = qaPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
@@ -29,9 +35,10 @@ export default async function QaPage() {
     clients: clientsLogo?.data?.attributes.clients || {},
   };
   const contactFormData = contactForm?.data?.attributes || [];
+  const headerData = header?.data?.attributes || {};
 
   return (
-    <Layout>
+    <Layout headerData={headerData}>
       <Hero page={PageEnum.Qa} data={heroData} />
       <TechnologyStack image={technologyImg} page={PageEnum.Qa} />
       <CoreServices page={PageEnum.Qa} />

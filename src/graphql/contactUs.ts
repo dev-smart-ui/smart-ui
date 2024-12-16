@@ -1,6 +1,7 @@
 import {
   ACCORDION_FRAGMENT,
   CONTACT_FORM_FRAGMENT,
+  HEADER_FRAGMENT,
 } from '@graphqlQueries/fragments';
 
 export const CONTACT_US_QUERY = `
@@ -49,6 +50,12 @@ query GetContactUsPageData($locale: I18NLocaleCode) {
       ...ContactFormFragment
     }
   }
+  header (locale: $locale) {
+    data {
+      ...HeaderFragment
+    }
+  }
 }
 ${ACCORDION_FRAGMENT}
-${CONTACT_FORM_FRAGMENT}`;
+${CONTACT_FORM_FRAGMENT}
+${HEADER_FRAGMENT}`;

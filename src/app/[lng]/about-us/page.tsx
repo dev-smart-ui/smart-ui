@@ -20,7 +20,7 @@ interface AboutUsPageProps {
 export default async function AboutUsPage({
   params: { lng },
 }: AboutUsPageProps) {
-  const { aboutUsPage, teams, contactForm } = await fetchGraphQL(
+  const { aboutUsPage, teams, contactForm, header } = await fetchGraphQL(
     ABOUT_US_PAGE_QUERY,
     {
       locale: lng,
@@ -32,9 +32,10 @@ export default async function AboutUsPage({
   const heroData = aboutUsPage?.data?.attributes?.Hero || {};
   const singleProjectsData = teams?.data || [];
   const contactFormData = contactForm?.data?.attributes || [];
+  const headerData = header?.data?.attributes || {};
 
   return (
-    <Layout>
+    <Layout headerData={headerData}>
       <Hero page={PageEnum.AboutUs} data={heroData} />
       <DrivingSuccess />
       <ServicesTabs data={servicesTabsData} />

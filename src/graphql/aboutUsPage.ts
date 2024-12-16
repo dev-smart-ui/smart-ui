@@ -1,5 +1,6 @@
 import {
   CONTACT_FORM_FRAGMENT,
+  HEADER_FRAGMENT,
   HERO_FRAGMENT,
   SERVICES_TABS_FRAGMENT,
   TEAM_FRAGMENT,
@@ -34,8 +35,14 @@ query GetAboutUsPageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
       ...ContactFormFragment
     }
   }
+  header (locale: $locale) {
+    data {
+      ...HeaderFragment
+    }
+  }
 }
 ${HERO_FRAGMENT}
 ${TEAM_FRAGMENT}
 ${SERVICES_TABS_FRAGMENT}
-${CONTACT_FORM_FRAGMENT}`;
+${CONTACT_FORM_FRAGMENT}
+${HEADER_FRAGMENT}`;

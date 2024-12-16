@@ -16,7 +16,7 @@ interface OurWorkPageProps {
 export default async function OurWorkPage({
   params: { lng },
 }: OurWorkPageProps) {
-  const { ourWorkPage, clientsLogo, contactForm } = await fetchGraphQL(
+  const { ourWorkPage, clientsLogo, contactForm, header } = await fetchGraphQL(
     OUR_WORK_PAGE_QUERY,
     {
       locale: lng,
@@ -30,9 +30,10 @@ export default async function OurWorkPage({
     clients: clientsLogo?.data?.attributes.clients || {},
   };
   const contactFormData = contactForm?.data?.attributes || [];
+  const headerData = header?.data?.attributes || {};
 
   return (
-    <Layout>
+    <Layout headerData={headerData}>
       <OurWorkWrapper headerInfo={ourWorkData} lng={lng} />
       <Clients data={clientData} />
       <ContactForm data={contactFormData} />

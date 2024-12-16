@@ -15,13 +15,14 @@ interface ContactUsPageProps {
 export default async function ContactUsPage({
   params: { lng },
 }: ContactUsPageProps) {
-  const { contactUsPage, accordion, contactForm } = await fetchGraphQL(
+  const { contactUsPage, accordion, contactForm, header } = await fetchGraphQL(
     CONTACT_US_QUERY,
     {
       locale: lng,
     },
   );
   const accordionData = accordion?.data?.attributes || [];
+  const headerData = header?.data?.attributes || {};
 
   const contactUsPageData = {
     mainData: contactUsPage?.data?.attributes || {},
@@ -29,7 +30,7 @@ export default async function ContactUsPage({
   };
 
   return (
-    <Layout>
+    <Layout headerData={headerData}>
       <ContactUs data={contactUsPageData} />
       <Accordion data={accordionData} />
     </Layout>

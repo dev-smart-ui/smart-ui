@@ -40,11 +40,17 @@ interface HomePageProps {
 }
 
 export default async function Home({ params: { lng } }: HomePageProps) {
-  const { homePage, singleProjects, clientsLogo, accordion, contactForm } =
-    await fetchGraphQL(HOME_PAGE_QUERY, {
-      locale: lng,
-      pagination: { limit: 5 },
-    });
+  const {
+    homePage,
+    singleProjects,
+    clientsLogo,
+    accordion,
+    contactForm,
+    header,
+  } = await fetchGraphQL(HOME_PAGE_QUERY, {
+    locale: lng,
+    pagination: { limit: 5 },
+  });
 
   const heroData = homePage?.data?.attributes?.Hero || {};
   const servicesTabsData = homePage?.data?.attributes?.ServicesTabs || {};
@@ -56,6 +62,7 @@ export default async function Home({ params: { lng } }: HomePageProps) {
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
+  const headerData = header?.data?.attributes || {};
 
   const clientData = {
     sectionName: homePage?.data?.attributes?.ClientsSection?.sectionName || '',
@@ -63,7 +70,7 @@ export default async function Home({ params: { lng } }: HomePageProps) {
   };
 
   return (
-    <Layout>
+    <Layout headerData={headerData}>
       <Hero data={heroData} />
       <ServicesTabs data={servicesTabsData} />
       <Clients data={clientData} />

@@ -20,16 +20,23 @@ interface CmsPageProps {
 }
 
 export default async function CmsPage({ params: { lng } }: CmsPageProps) {
-  const { cmsPage, singleProjects, clientsLogo, accordion, contactForm } =
-    await fetchGraphQL(CMS_PAGE_QUERY, {
-      locale: lng,
-      pagination: { limit: 5 },
-    });
+  const {
+    cmsPage,
+    singleProjects,
+    clientsLogo,
+    accordion,
+    contactForm,
+    header,
+  } = await fetchGraphQL(CMS_PAGE_QUERY, {
+    locale: lng,
+    pagination: { limit: 5 },
+  });
 
   const heroData = cmsPage?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
+  const headerData = header?.data?.attributes || {};
 
   const clientData = {
     sectionName: cmsPage?.data?.attributes?.ClientsSection?.sectionName || '',
@@ -37,7 +44,7 @@ export default async function CmsPage({ params: { lng } }: CmsPageProps) {
   };
 
   return (
-    <Layout>
+    <Layout headerData={headerData}>
       <Hero page={PageEnum.Cms} data={heroData} />
       <TechnologyStack image={technologyImg} />
       <CoreServices />

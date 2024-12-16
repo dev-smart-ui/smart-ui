@@ -20,16 +20,23 @@ interface Web3PageProps {
 }
 
 export default async function Web3Page({ params: { lng } }: Web3PageProps) {
-  const { web3Page, singleProjects, clientsLogo, accordion, contactForm } =
-    await fetchGraphQL(WEB3_PAGE_QUERY, {
-      locale: lng,
-      pagination: { limit: 5 },
-    });
+  const {
+    web3Page,
+    singleProjects,
+    clientsLogo,
+    accordion,
+    contactForm,
+    header,
+  } = await fetchGraphQL(WEB3_PAGE_QUERY, {
+    locale: lng,
+    pagination: { limit: 5 },
+  });
 
   const heroData = web3Page?.data?.attributes?.Hero || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
+  const headerData = header?.data?.attributes || {};
 
   const clientData = {
     sectionName: web3Page?.data?.attributes?.ClientsSection?.sectionName || '',
@@ -37,7 +44,7 @@ export default async function Web3Page({ params: { lng } }: Web3PageProps) {
   };
 
   return (
-    <Layout>
+    <Layout headerData={headerData}>
       <Hero page={PageEnum.Web3} data={heroData} />
       <TechnologyStack image={technologyImg} page={PageEnum.Web3} />
       <CoreServices page={PageEnum.Web3} />

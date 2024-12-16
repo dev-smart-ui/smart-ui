@@ -347,3 +347,46 @@ fragment ContactFormFragment on ContactFormEntity {
 		}
 	}
 }`;
+
+// header
+export const HEADER_FRAGMENT = `
+fragment HeaderFragment on HeaderEntity {
+	attributes {
+		logo {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		button {
+			label
+			icon {
+				data {
+					attributes {
+						url
+					}
+				}
+			}
+		}
+		links {
+			id
+			label
+			path
+			subMenuLinks {
+				id
+				label
+				desc
+				path
+				gridArea
+				icon {
+					data {
+						attributes {
+							url
+						}
+					}
+				}
+			}
+		}
+	}
+}`;

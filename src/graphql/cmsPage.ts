@@ -2,6 +2,7 @@ import {
   ACCORDION_FRAGMENT,
   CLIENTS_LOGO_FRAGMENT,
   CONTACT_FORM_FRAGMENT,
+  HEADER_FRAGMENT,
   HERO_FRAGMENT,
   PROJECTS_FRAGMENT,
 } from './fragments';
@@ -43,9 +44,15 @@ query GetCmsPageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
       ...ContactFormFragment
     }
   }
+  header (locale: $locale) {
+    data {
+      ...HeaderFragment
+    }
+  }
 }
 ${HERO_FRAGMENT}
 ${PROJECTS_FRAGMENT}
 ${CLIENTS_LOGO_FRAGMENT}
 ${ACCORDION_FRAGMENT}
-${CONTACT_FORM_FRAGMENT}`;
+${CONTACT_FORM_FRAGMENT}
+${HEADER_FRAGMENT}`;
