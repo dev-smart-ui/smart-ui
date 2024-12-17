@@ -552,3 +552,34 @@ fragment AdvantagesForAgencyFragment on ComponentSectionsAdvantagesForAgency {
 		}
 	}
 }`;
+
+// advantages forAgency
+export const QUESTION_SECTION_FRAGMENT = `
+fragment QuestionSectionFragment on ComponentSectionsQuestionSection {
+	title
+	text
+	image {
+		data {
+			attributes {
+				url
+			}
+		}
+	}
+	button {
+		label
+		icon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+	bgImage {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+}`;

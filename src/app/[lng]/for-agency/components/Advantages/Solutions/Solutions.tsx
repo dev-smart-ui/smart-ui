@@ -25,7 +25,7 @@ export const Solutions: FC<SolutionsProps> = ({ data }) => {
         <p className={styles.solutionDesc}>{data?.solutionDescription}</p>
       </div>
       <ul className={styles.solutionList}>
-        {data?.solutionsList.map((item) => (
+        {data?.solutionsList?.map((item) => (
           <li key={item.id} className={styles.solutionItem}>
             <Image
               src={item?.icon?.data?.attributes?.url}

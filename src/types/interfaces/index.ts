@@ -350,3 +350,15 @@ export interface IAdvantagesForAgency {
   solutionDescription: string;
   solutionsList: ISolutionItem[];
 }
+
+// questionSection
+export interface IQuestionSection {
+  title: string;
+  text: string;
+  image: IImage;
+  bgImage: IImage;
+  button: {
+    label: string;
+    icon: IImage;
+  };
+}
