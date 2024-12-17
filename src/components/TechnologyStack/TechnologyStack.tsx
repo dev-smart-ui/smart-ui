@@ -1,7 +1,7 @@
 'use client';
 
 import { PageEnum } from '@app-types/enums';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -14,12 +14,10 @@ import styles from './technologyStack.module.scss';
 
 interface TechnologyStackProps {
   page?: string;
-  image: StaticImageData;
 }
 
 export const TechnologyStack: FC<TechnologyStackProps> = ({
   page = PageEnum.Cms,
-  image,
 }) => {
   const { t } = useTranslation(page);
 
@@ -32,7 +30,7 @@ export const TechnologyStack: FC<TechnologyStackProps> = ({
           description={t('technologyStack.subTitle')}
         />
         <div className={styles.image}>
-          <Image src={image} alt="servicesImage" />
+          <Image src="" alt="servicesImage" />
         </div>
       </Container>
     </Section>

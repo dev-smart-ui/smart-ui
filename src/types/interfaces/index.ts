@@ -315,3 +315,17 @@ interface IGoalAndValueCard {
 export interface IGoalsAndValues {
   cards: IGoalAndValueCard[];
 }
+
+// heroForAgency
+export interface IHeroForAgency {
+  sectionName: string;
+  title: string;
+  description: string;
+  smallImage: IImage;
+  topSmallText: string;
+  button: {
+    label: string;
+    icon: IImage;
+  };
+  image: IImage;
+}

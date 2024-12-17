@@ -487,3 +487,36 @@ fragment FooterFragment on FooterEntity {
 		}
 	}
 }`;
+
+// forAgencyHero
+export const HERO_FOR_AGENCY_FRAGMENT = `
+fragment HeroForAgencyFragment on ComponentSectionsHeroForAgency {
+	sectionName
+  smallImage {
+    data {
+      attributes {
+        url
+      }
+    }
+  }
+  topSmallText
+  title
+  description
+  button {
+    label
+    icon {
+      data {
+        attributes {
+          url
+        }
+      }
+    }
+  }
+  image {
+    data {
+      attributes {
+        url
+      }
+    }
+  }
+}`;

@@ -1,5 +1,5 @@
 import { PageEnum } from '@app-types/enums';
-import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
+import { FOR_AGENCY_PAGE_QUERY } from '@graphqlQueries/forAgency';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { Accordion } from '@components/Accordion';
@@ -13,17 +13,23 @@ import { Approaches } from './components/Approaches';
 import { Hero } from './components/Hero';
 import { QuestionBlock } from './components/QuestionBlock';
 import { WhatWeDo } from './components/WhatWeDo';
-import technologyImg from './img/technologyImg.png';
 
-export default async function ForAgencyPage() {
-  const { singleProjects, contactForm, header, footer } = await fetchGraphQL(
-    PROJECTS_QUERY,
-    {
-      locale: 'en',
+interface ForAgencyPageProps {
+  params: {
+    lng: string;
+  };
+}
+
+export default async function ForAgencyPage({
+  params: { lng },
+}: ForAgencyPageProps) {
+  const { forAgency, singleProjects, contactForm, header, footer } =
+    await fetchGraphQL(FOR_AGENCY_PAGE_QUERY, {
+      locale: lng,
       pagination: { limit: 5 },
-    },
-  );
+    });
 
+  const heroData = forAgency?.data?.attributes?.hero || {};
   const singleProjectsData = singleProjects?.data || [];
   const contactFormData = contactForm?.data?.attributes || [];
   const headerData = header?.data?.attributes || {};
@@ -31,11 +37,11 @@ export default async function ForAgencyPage() {
 
   return (
     <Layout headerData={headerData} footerData={footerData}>
-      <Hero />
+      <Hero data={heroData} />
       <Advantages />
       <QuestionBlock />
       <WhatWeDo />
-      <TechnologyStack page={PageEnum.ForAgency} image={technologyImg} />
+      <TechnologyStack page={PageEnum.ForAgency} />
       <Approaches />
       <OurWork data={singleProjectsData} />
       <Accordion />
