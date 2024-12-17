@@ -29,7 +29,7 @@ export const BottomBlock: FC<BottomBlockProps> = ({ data }) => {
           <h3 className={styles.title}>{data?.title}</h3>
           <p className={styles.description}>{data?.text}</p>
         </div>
-        <Button text={data.button?.label} />
+        <Button text={data?.button?.label} />
       </div>
     </div>
   );

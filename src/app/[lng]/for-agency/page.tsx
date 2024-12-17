@@ -33,6 +33,7 @@ export default async function ForAgencyPage({
   const advantagesData = forAgency?.data?.attributes?.advantages || {};
   const singleProjectsData = singleProjects?.data || [];
   const questionData = forAgency?.data?.attributes.question || {};
+  const whatWeDoData = forAgency?.data?.attributes.whatWeCanDo || {};
   const contactFormData = contactForm?.data?.attributes || [];
   const headerData = header?.data?.attributes || {};
   const footerData = footer?.data?.attributes || {};
@@ -42,7 +43,7 @@ export default async function ForAgencyPage({
       <Hero data={heroData} />
       <Advantages data={advantagesData} />
       <QuestionBlock data={questionData} />
-      <WhatWeDo />
+      <WhatWeDo data={whatWeDoData} />
       <TechnologyStack page={PageEnum.ForAgency} />
       <Approaches />
       <OurWork data={singleProjectsData} />

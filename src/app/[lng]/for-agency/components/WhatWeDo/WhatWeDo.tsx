@@ -1,10 +1,8 @@
 'use client';
 
-import { PageEnum } from '@app-types/enums';
-import { IBottomBlock, IHeaderInfo } from '@app-types/global';
+import { IWhatWeCanDo } from '@app-types/interfaces';
 
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
 import { BottomBlock } from '@components/CoreServices/bottomBlock';
@@ -14,39 +12,26 @@ import { SectionHeader } from '@components/SectionHeader';
 import { TechnologiesList } from './TechnologiesList';
 
 interface WhatWeDoProps {
-  page?: string;
+  data: IWhatWeCanDo;
 }
 
-export const WhatWeDo: FC<WhatWeDoProps> = ({ page = PageEnum.ForAgency }) => {
-  const { t } = useTranslation([page, 'common']);
-
-  const headerInfo: IHeaderInfo = {
-    sectionName: t('whatWeDo.headerInfo.sectionName'),
-    title: {
-      part1: t('whatWeDo.headerInfo.title.main'),
-      gradientPart: t('whatWeDo.headerInfo.title.highlighted'),
-      color1: '#2865B0',
-      color2: '#3B8FF3',
-    },
-    description: t('whatWeDo.headerInfo.description'),
-  };
-
+export const WhatWeDo: FC<WhatWeDoProps> = ({ data }) => {
   const bottomBlock = {
-    title: t('bottomBlock.title'),
-    description: t('bottomBlock.description'),
-    buttonLabel: t('buttons.scheduleAConsultation', { ns: 'common' }),
-  } as IBottomBlock;
+    title: data?.bottomTitle,
+    text: data?.bottomText,
+    button: data?.bottomButton,
+  };
 
   return (
     <Section>
       <Container>
         <SectionHeader
-          sectionName={headerInfo.sectionName}
-          title={headerInfo.title}
-          description={headerInfo.description}
+          sectionName={data?.sectionName}
+          title={data?.title}
+          description={data?.description}
         />
-        <TechnologiesList />
-        <BottomBlock data={bottomBlock} isAvatars={false} />
+        <TechnologiesList data={data?.cards} />
+        <BottomBlock data={bottomBlock} />
       </Container>
     </Section>
   );

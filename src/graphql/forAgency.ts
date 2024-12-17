@@ -6,6 +6,7 @@ import {
   HERO_FOR_AGENCY_FRAGMENT,
   PROJECTS_FRAGMENT,
   QUESTION_SECTION_FRAGMENT,
+  WHAT_WE_CAN_DO_SECTION_FRAGMENT,
 } from './fragments';
 
 export const FOR_AGENCY_PAGE_QUERY = `
@@ -21,6 +22,9 @@ query GetForAgencyPageData($locale: I18NLocaleCode, $pagination: PaginationArg) 
         }
         question {
           ...QuestionSectionFragment
+        }
+        whatWeCanDo {
+          ...whatWeCanDoFragment
         }
       }
     }
@@ -55,6 +59,7 @@ ${PROJECTS_FRAGMENT}
 ${CONTACT_FORM_FRAGMENT}
 ${HERO_FOR_AGENCY_FRAGMENT}
 ${ADVANTAGES_FOR_AGENCY_FRAGMENT}
+${WHAT_WE_CAN_DO_SECTION_FRAGMENT}
 ${HEADER_FRAGMENT}
 ${QUESTION_SECTION_FRAGMENT}
 ${FOOTER_FRAGMENT}`;

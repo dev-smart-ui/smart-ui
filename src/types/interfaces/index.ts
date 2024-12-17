@@ -355,9 +355,29 @@ export interface IAdvantagesForAgency {
 export interface IQuestionSection {
   title: string;
   text: string;
-  image: IImage;
-  bgImage: IImage;
+  image?: IImage;
+  bgImage?: IImage;
   button: {
+    label: string;
+    icon: IImage;
+  };
+}
+
+// whatWeCanDo
+export interface IWhatWeCanDoCard {
+  title: string;
+  icon: IImage;
+  stackList: string[];
+}
+
+export interface IWhatWeCanDo {
+  sectionName: string;
+  title: IGradientTitle;
+  cards: IWhatWeCanDoCard[];
+  description: string;
+  bottomTitle: string;
+  bottomText: string;
+  bottomButton: {
     label: string;
     icon: IImage;
   };

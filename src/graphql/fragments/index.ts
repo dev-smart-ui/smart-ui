@@ -583,3 +583,40 @@ fragment QuestionSectionFragment on ComponentSectionsQuestionSection {
 			}
 		}
 }`;
+
+// whatWeDo forAgency
+export const WHAT_WE_CAN_DO_SECTION_FRAGMENT = `
+fragment whatWeCanDoFragment on ComponentSectionsWhatWeCanDo {
+	sectionName
+	title {
+		part1
+		part2
+		gradientPart
+		color1
+		color2
+	}
+	description
+	cards {
+		title
+		icon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		stackList
+	}
+	bottomTitle
+	bottomText
+	bottomButton {
+		label
+		icon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+}`;
