@@ -22,7 +22,7 @@ interface ForAgencyPageProps {
 export default async function ForAgencyPage({
   params: { lng },
 }: ForAgencyPageProps) {
-  const { forAgency, singleProjects, contactForm, header, footer } =
+  const { forAgency, singleProjects, contactForm, accordion, header, footer } =
     await fetchGraphQL(FOR_AGENCY_PAGE_QUERY, {
       locale: lng,
       pagination: { limit: 5 },
@@ -39,6 +39,7 @@ export default async function ForAgencyPage({
   const contactFormData = contactForm?.data?.attributes || [];
   const headerData = header?.data?.attributes || {};
   const footerData = footer?.data?.attributes || {};
+  const accordionData = accordion?.data?.attributes || [];
 
   return (
     <Layout headerData={headerData} footerData={footerData}>
@@ -49,7 +50,7 @@ export default async function ForAgencyPage({
       <TechnologyStack data={workAndCollaborateData} />
       <Approaches data={approachesData} />
       <OurWork data={singleProjectsData} />
-      <Accordion />
+      <Accordion data={accordionData} />
       <ContactForm data={contactFormData} />
     </Layout>
   );

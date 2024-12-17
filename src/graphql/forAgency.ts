@@ -1,4 +1,5 @@
 import {
+  ACCORDION_FRAGMENT,
   ADVANTAGES_FOR_AGENCY_FRAGMENT,
   APPROACHES_FRAGMENT,
   CONTACT_FORM_FRAGMENT,
@@ -52,6 +53,11 @@ query GetForAgencyPageData($locale: I18NLocaleCode, $pagination: PaginationArg) 
       ...ContactFormFragment
     }
   }
+  accordion(locale: $locale) {
+    data {
+      ...AccordionFragment
+    }
+  }
   header (locale: $locale) {
     data {
       ...HeaderFragment
@@ -69,6 +75,7 @@ ${HERO_FOR_AGENCY_FRAGMENT}
 ${ADVANTAGES_FOR_AGENCY_FRAGMENT}
 ${WORK_AND_COLLABORATE_FRAGMENT}
 ${WHAT_WE_CAN_DO_SECTION_FRAGMENT}
+${ACCORDION_FRAGMENT}
 ${APPROACHES_FRAGMENT}
 ${HEADER_FRAGMENT}
 ${QUESTION_SECTION_FRAGMENT}
