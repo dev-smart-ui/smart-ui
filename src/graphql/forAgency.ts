@@ -1,4 +1,5 @@
 import {
+  ADVANTAGES_FOR_AGENCY_FRAGMENT,
   CONTACT_FORM_FRAGMENT,
   FOOTER_FRAGMENT,
   HEADER_FRAGMENT,
@@ -13,6 +14,9 @@ query GetForAgencyPageData($locale: I18NLocaleCode, $pagination: PaginationArg) 
       attributes {
         hero {
           ...HeroForAgencyFragment
+        }
+        advantages {
+          ...AdvantagesForAgencyFragment
         }
       }
     }
@@ -46,5 +50,6 @@ query GetForAgencyPageData($locale: I18NLocaleCode, $pagination: PaginationArg) 
 ${PROJECTS_FRAGMENT}
 ${CONTACT_FORM_FRAGMENT}
 ${HERO_FOR_AGENCY_FRAGMENT}
+${ADVANTAGES_FOR_AGENCY_FRAGMENT}
 ${HEADER_FRAGMENT}
 ${FOOTER_FRAGMENT}`;

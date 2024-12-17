@@ -329,3 +329,24 @@ export interface IHeroForAgency {
   };
   image: IImage;
 }
+
+// advantages forAgency
+export interface ISolutionItem {
+  id: string;
+  text: string;
+  icon: IImage;
+}
+export interface IAdvantagesCardForAgency {
+  Title: string;
+  Text: string;
+}
+export interface IAdvantagesForAgency {
+  sectionName: string;
+  title: string;
+  description: string;
+  cards: IAdvantagesCardForAgency[];
+  solutionTitle: string;
+  solutionIcon: IImage;
+  solutionDescription: string;
+  solutionsList: ISolutionItem[];
+}

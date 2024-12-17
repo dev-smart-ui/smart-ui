@@ -1,7 +1,8 @@
 'use client';
 
+import { IAdvantagesForAgency } from '@app-types/interfaces';
+
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
 import { InfoCards } from '@components/InfoCards';
@@ -11,33 +12,24 @@ import { SectionHeader } from '@components/SectionHeader';
 import { Solutions } from './Solutions';
 import styles from './advantages.module.scss';
 
-export const Advantages: FC = () => {
-  const { t } = useTranslation(['forAgency', 'common']);
+interface AdvantagesProps {
+  data: IAdvantagesForAgency;
+}
 
-  const headerInfo = {
-    sectionName: t('advantages.headerInfo.sectionName'),
-    title: t('advantages.headerInfo.title'),
-    subTitle: t('advantages.headerInfo.description'),
-  };
-
-  const infoCards = [
-    { Title: '250+', Text: t('infoCards.card1.label', { ns: 'common' }) },
-    { Title: '117+', Text: t('infoCards.card2.label', { ns: 'common' }) },
-  ];
-
+export const Advantages: FC<AdvantagesProps> = ({ data }) => {
   return (
     <Section>
       <Container className={styles.content}>
         <div className={styles.advantages}>
           <SectionHeader
             className={styles.sectionHeader}
-            sectionName={headerInfo.sectionName}
-            title={headerInfo.title}
-            description={headerInfo.subTitle}
+            sectionName={data?.sectionName}
+            title={data?.title}
+            description={data?.description}
           />
-          <InfoCards data={infoCards} className={styles.infoCards} />
+          <InfoCards data={data?.cards} className={styles.infoCards} />
         </div>
-        <Solutions t={t} />
+        <Solutions data={data} />
       </Container>
     </Section>
   );

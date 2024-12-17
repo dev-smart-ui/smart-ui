@@ -520,3 +520,35 @@ fragment HeroForAgencyFragment on ComponentSectionsHeroForAgency {
     }
   }
 }`;
+
+// advantages forAgency
+export const ADVANTAGES_FOR_AGENCY_FRAGMENT = `
+fragment AdvantagesForAgencyFragment on ComponentSectionsAdvantagesForAgency {
+	sectionName
+	title
+	description
+	cards {
+		Title
+		Text
+	}
+	solutionTitle
+	solutionIcon {
+		data {
+			attributes {
+				url
+			}
+		}
+	}
+	solutionDescription
+	solutionsList {
+		id
+		text
+		icon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+}`;

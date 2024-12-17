@@ -30,6 +30,7 @@ export default async function ForAgencyPage({
     });
 
   const heroData = forAgency?.data?.attributes?.hero || {};
+  const advantagesData = forAgency?.data?.attributes?.advantages || {};
   const singleProjectsData = singleProjects?.data || [];
   const contactFormData = contactForm?.data?.attributes || [];
   const headerData = header?.data?.attributes || {};
@@ -38,7 +39,7 @@ export default async function ForAgencyPage({
   return (
     <Layout headerData={headerData} footerData={footerData}>
       <Hero data={heroData} />
-      <Advantages />
+      <Advantages data={advantagesData} />
       <QuestionBlock />
       <WhatWeDo />
       <TechnologyStack page={PageEnum.ForAgency} />

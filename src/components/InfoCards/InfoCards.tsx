@@ -1,15 +1,11 @@
+import { IAdvantagesCardForAgency } from '@app-types/interfaces';
+
 import { FC } from 'react';
 
 import styles from './infoCards.module.scss';
 
-interface ICard {
-  Text: string;
-  Title: string;
-  Img?: string;
-}
-
 interface InfoCardsProps {
-  data?: ICard[];
+  data?: IAdvantagesCardForAgency[];
   className?: string;
 }
 
