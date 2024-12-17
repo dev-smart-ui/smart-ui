@@ -382,3 +382,24 @@ export interface IWhatWeCanDo {
     icon: IImage;
   };
 }
+
+// approaches
+export interface IApproachCard {
+  id: string;
+  title: string;
+  text: string;
+  img: IImage;
+}
+export interface IApproaches {
+  sectionName: string;
+  title: string;
+  description: string;
+  cards: IApproachCard[];
+}
+
+// workAndCollaborate
+export interface IWorkAndCollaborate {
+  title: string;
+  description: string;
+  image: IImage;
+}

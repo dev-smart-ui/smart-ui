@@ -620,3 +620,37 @@ fragment whatWeCanDoFragment on ComponentSectionsWhatWeCanDo {
 		}
 	}
 }`;
+
+// approaches
+export const APPROACHES_FRAGMENT = `
+fragment ApproachesFragment on ComponentSectionsApproaches {
+	sectionName
+	title
+	description
+	cards {
+		id
+		title
+		text
+		img {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+}`;
+
+// workAndCollaborate
+export const WORK_AND_COLLABORATE_FRAGMENT = `
+fragment WorkAndCollaborateFragment on ComponentSectionsWorkAndCollaborate {
+	title
+	description
+	image {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+}`;

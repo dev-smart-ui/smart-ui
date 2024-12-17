@@ -1,4 +1,3 @@
-import { PageEnum } from '@app-types/enums';
 import { FOR_AGENCY_PAGE_QUERY } from '@graphqlQueries/forAgency';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
@@ -34,6 +33,9 @@ export default async function ForAgencyPage({
   const singleProjectsData = singleProjects?.data || [];
   const questionData = forAgency?.data?.attributes.question || {};
   const whatWeDoData = forAgency?.data?.attributes.whatWeCanDo || {};
+  const workAndCollaborateData =
+    forAgency?.data?.attributes.workAndCollaborate || {};
+  const approachesData = forAgency?.data?.attributes.approaches || {};
   const contactFormData = contactForm?.data?.attributes || [];
   const headerData = header?.data?.attributes || {};
   const footerData = footer?.data?.attributes || {};
@@ -44,8 +46,8 @@ export default async function ForAgencyPage({
       <Advantages data={advantagesData} />
       <QuestionBlock data={questionData} />
       <WhatWeDo data={whatWeDoData} />
-      <TechnologyStack page={PageEnum.ForAgency} />
-      <Approaches />
+      <TechnologyStack data={workAndCollaborateData} />
+      <Approaches data={approachesData} />
       <OurWork data={singleProjectsData} />
       <Accordion />
       <ContactForm data={contactFormData} />

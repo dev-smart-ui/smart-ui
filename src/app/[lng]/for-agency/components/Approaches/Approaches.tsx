@@ -1,9 +1,8 @@
 'use client';
 
-import { PageEnum } from '@app-types/enums';
+import { IApproaches } from '@app-types/interfaces';
 
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
 import { Section } from '@components/Section';
@@ -12,23 +11,19 @@ import { SectionHeader } from '@components/SectionHeader';
 import { Cards } from './Cards';
 
 interface ApproachesProps {
-  page?: string;
+  data: IApproaches;
 }
 
-export const Approaches: FC<ApproachesProps> = ({
-  page = PageEnum.ForAgency,
-}) => {
-  const { t } = useTranslation(page);
-
+export const Approaches: FC<ApproachesProps> = ({ data }) => {
   return (
     <Section>
       <Container>
         <SectionHeader
-          sectionName={t('ourApproaches.headerInfo.sectionName')}
-          title={t('ourApproaches.headerInfo.title')}
-          description={t('ourApproaches.headerInfo.description')}
+          sectionName={data?.sectionName}
+          title={data?.title}
+          description={data?.description}
         />
-        <Cards />
+        <Cards data={data?.cards} />
       </Container>
     </Section>
   );
