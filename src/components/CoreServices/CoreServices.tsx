@@ -25,7 +25,7 @@ export const CoreServices: FC<CoreServicesProps> = ({
       <Container>
         <SectionHeader
           title={headerInfo.title}
-          subTitle={headerInfo.subTitle}
+          description={headerInfo.subTitle}
         />
         <ServicesList data={coreServicesData} />
         <BottomBlock data={bottomBlock} />

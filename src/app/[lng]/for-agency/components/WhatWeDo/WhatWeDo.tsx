@@ -28,7 +28,7 @@ export const WhatWeDo: FC<WhatWeDoProps> = ({ page = PageEnum.ForAgency }) => {
       color1: '#2865B0',
       color2: '#3B8FF3',
     },
-    subTitle: t('whatWeDo.headerInfo.description'),
+    description: t('whatWeDo.headerInfo.description'),
   };
 
   const bottomBlock = {

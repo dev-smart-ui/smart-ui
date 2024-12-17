@@ -26,7 +26,7 @@ export const Approaches: FC<ApproachesProps> = ({
         <SectionHeader
           sectionName={t('ourApproaches.headerInfo.sectionName')}
           title={t('ourApproaches.headerInfo.title')}
-          subTitle={t('ourApproaches.headerInfo.description')}
+          description={t('ourApproaches.headerInfo.description')}
         />
         <Cards />
       </Container>

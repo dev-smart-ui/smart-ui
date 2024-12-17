@@ -277,7 +277,7 @@ fragment OurWorkFragment on ComponentSectionsOurWork {
 		color1
 		color2
 	}
-	subTitle
+	description
 }`;
 
 // whoWeAre

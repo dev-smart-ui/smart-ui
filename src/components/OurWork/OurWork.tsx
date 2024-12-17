@@ -45,7 +45,7 @@ export const OurWork: FC<OurWorkProps> = ({
         <SectionHeader
           sectionName={headerInfo?.sectionName}
           title={headerInfo?.title}
-          subTitle={headerInfo?.subTitle}
+          description={headerInfo?.description}
         />
         {isLoading ? (
           <div>loading..</div>

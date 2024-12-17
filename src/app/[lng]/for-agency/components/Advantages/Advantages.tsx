@@ -33,7 +33,7 @@ export const Advantages: FC = () => {
             className={styles.sectionHeader}
             sectionName={headerInfo.sectionName}
             title={headerInfo.title}
-            subTitle={headerInfo.subTitle}
+            description={headerInfo.subTitle}
           />
           <InfoCards data={infoCards} className={styles.infoCards} />
         </div>

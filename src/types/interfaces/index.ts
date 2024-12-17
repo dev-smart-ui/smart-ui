@@ -253,7 +253,7 @@ export interface IOurServiceSection {
 export interface IOurWorkSection {
   sectionName: string;
   title: IGradientTitle;
-  subTitle: string;
+  description: string;
 }
 
 // accordion

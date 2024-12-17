@@ -29,7 +29,7 @@ export const TechnologyStack: FC<TechnologyStackProps> = ({
         <SectionHeader
           sectionName={t('technologyStack.sectionName')}
           title={t('technologyStack.title')}
-          subTitle={t('technologyStack.subTitle')}
+          description={t('technologyStack.subTitle')}
         />
         <div className={styles.image}>
           <Image src={image} alt="servicesImage" />

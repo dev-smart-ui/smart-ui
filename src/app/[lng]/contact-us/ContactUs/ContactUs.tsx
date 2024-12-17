@@ -26,7 +26,7 @@ export const ContactUs: FC<ContactUsProps> = ({ data }) => {
         <SectionHeader
           sectionName={data?.mainData.sectionName}
           title={data?.mainData.title}
-          subTitle={data?.mainData.subTitle}
+          description={data?.mainData.subTitle}
         />
         <ContactBlock data={data} />
       </Container>
