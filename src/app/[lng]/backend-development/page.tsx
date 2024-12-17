@@ -11,8 +11,6 @@ import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
-import technologyImg from './img/technologyImg.png';
-
 interface BackendDevelopmentPageProps {
   params: {
     lng: string;
@@ -36,6 +34,8 @@ export default async function BackendDevelopmentPage({
   });
 
   const heroData = backendDevPage?.data?.attributes?.Hero || {};
+  const technologyStackData =
+    backendDevPage?.data?.attributes.technologyStack || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
@@ -51,10 +51,7 @@ export default async function BackendDevelopmentPage({
   return (
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.BackendDevelopment} data={heroData} />
-      <TechnologyStack
-        image={technologyImg}
-        page={PageEnum.BackendDevelopment}
-      />
+      <TechnologyStack data={technologyStackData} />
       <CoreServices page={PageEnum.BackendDevelopment} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />

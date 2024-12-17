@@ -399,6 +399,7 @@ export interface IApproaches {
 
 // workAndCollaborate
 export interface IWorkAndCollaborate {
+  sectionName: string;
   title: string;
   description: string;
   image: IImage;

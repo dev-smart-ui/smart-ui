@@ -19,7 +19,11 @@ export const TechnologyStack: FC<TechnologyStackProps> = ({ data }) => {
   return (
     <Section>
       <Container>
-        <SectionHeader title={data?.title} description={data?.description} />
+        <SectionHeader
+          sectionName={data?.sectionName}
+          title={data?.title}
+          description={data?.description}
+        />
         <div className={styles.image}>
           <Image
             src={data?.image?.data?.attributes?.url}

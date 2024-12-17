@@ -11,8 +11,6 @@ import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
-import technologyImg from './img/technologyImg.jpg';
-
 interface CmsPageProps {
   params: {
     lng: string;
@@ -34,6 +32,7 @@ export default async function CmsPage({ params: { lng } }: CmsPageProps) {
   });
 
   const heroData = cmsPage?.data?.attributes?.Hero || {};
+  const technologyStackData = cmsPage?.data?.attributes.technologyStack || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
@@ -48,7 +47,7 @@ export default async function CmsPage({ params: { lng } }: CmsPageProps) {
   return (
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.Cms} data={heroData} />
-      <TechnologyStack image={technologyImg} />
+      <TechnologyStack data={technologyStackData} />
       <CoreServices />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />

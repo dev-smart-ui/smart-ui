@@ -642,8 +642,9 @@ fragment ApproachesFragment on ComponentSectionsApproaches {
 }`;
 
 // workAndCollaborate
-export const WORK_AND_COLLABORATE_FRAGMENT = `
-fragment WorkAndCollaborateFragment on ComponentSectionsWorkAndCollaborate {
+export const TECHNOLOGY_STACK_FRAGMENT = `
+fragment TechnologyStackFragment on ComponentSectionsTechnologyStack {
+	sectionName
 	title
 	description
 	image {

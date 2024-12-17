@@ -11,8 +11,6 @@ import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
-import technologyImg from './img/technologyImg.png';
-
 interface CustomServicesPageProps {
   params: {
     lng: string;
@@ -36,6 +34,8 @@ export default async function CustomServicePage({
   });
 
   const heroData = customServicesPage?.data?.attributes?.Hero || {};
+  const technologyStackData =
+    customServicesPage?.data?.attributes.technologyStack || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
@@ -51,7 +51,7 @@ export default async function CustomServicePage({
   return (
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.CustomService} data={heroData} />
-      <TechnologyStack image={technologyImg} page={PageEnum.CustomService} />
+      <TechnologyStack data={technologyStackData} />
       <CoreServices page={PageEnum.CustomService} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />

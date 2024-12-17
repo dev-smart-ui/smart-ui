@@ -11,8 +11,6 @@ import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
-import technologyImg from './img/technologyImg.png';
-
 interface UiUxDesignPageProps {
   params: {
     lng: string;
@@ -36,6 +34,8 @@ export default async function UiUxDesignPage({
   });
 
   const heroData = uiUxDesignPage?.data?.attributes?.Hero || {};
+  const technologyStackData =
+    uiUxDesignPage?.data?.attributes.technologyStack || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
 
@@ -51,7 +51,7 @@ export default async function UiUxDesignPage({
   return (
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.UiUxDesign} data={heroData} />
-      <TechnologyStack image={technologyImg} page={PageEnum.UiUxDesign} />
+      <TechnologyStack data={technologyStackData} />
       <CoreServices page={PageEnum.UiUxDesign} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />

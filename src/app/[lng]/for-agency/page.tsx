@@ -33,8 +33,7 @@ export default async function ForAgencyPage({
   const singleProjectsData = singleProjects?.data || [];
   const questionData = forAgency?.data?.attributes.question || {};
   const whatWeDoData = forAgency?.data?.attributes.whatWeCanDo || {};
-  const workAndCollaborateData =
-    forAgency?.data?.attributes.workAndCollaborate || {};
+  const technologyStackData = forAgency?.data?.attributes.technologyStack || {};
   const approachesData = forAgency?.data?.attributes.approaches || {};
   const contactFormData = contactForm?.data?.attributes || [];
   const headerData = header?.data?.attributes || {};
@@ -47,7 +46,7 @@ export default async function ForAgencyPage({
       <Advantages data={advantagesData} />
       <QuestionBlock data={questionData} />
       <WhatWeDo data={whatWeDoData} />
-      <TechnologyStack data={workAndCollaborateData} />
+      <TechnologyStack data={technologyStackData} />
       <Approaches data={approachesData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />

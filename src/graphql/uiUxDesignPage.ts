@@ -6,6 +6,7 @@ import {
   HEADER_FRAGMENT,
   HERO_FRAGMENT,
   PROJECTS_FRAGMENT,
+  TECHNOLOGY_STACK_FRAGMENT,
 } from './fragments';
 
 export const UI_UX_DESIGN_PAGE_QUERY = `
@@ -15,6 +16,9 @@ query GetUiUxDesignPageData($locale: I18NLocaleCode, $pagination: PaginationArg)
       attributes {
         Hero {
           ...HeroFragment
+        }
+        technologyStack {
+          ...TechnologyStackFragment
         }
         ClientsSection {
           sectionName
@@ -57,6 +61,7 @@ query GetUiUxDesignPageData($locale: I18NLocaleCode, $pagination: PaginationArg)
   }
 }
 ${HERO_FRAGMENT}
+${TECHNOLOGY_STACK_FRAGMENT}
 ${PROJECTS_FRAGMENT}
 ${CLIENTS_LOGO_FRAGMENT}
 ${ACCORDION_FRAGMENT}

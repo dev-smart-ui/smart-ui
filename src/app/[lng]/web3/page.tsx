@@ -11,8 +11,6 @@ import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
-import technologyImg from './img/technologyImg.png';
-
 interface Web3PageProps {
   params: {
     lng: string;
@@ -34,6 +32,7 @@ export default async function Web3Page({ params: { lng } }: Web3PageProps) {
   });
 
   const heroData = web3Page?.data?.attributes?.Hero || {};
+  const technologyStackData = web3Page?.data?.attributes.technologyStack || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
@@ -48,7 +47,7 @@ export default async function Web3Page({ params: { lng } }: Web3PageProps) {
   return (
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.Web3} data={heroData} />
-      <TechnologyStack image={technologyImg} page={PageEnum.Web3} />
+      <TechnologyStack data={technologyStackData} />
       <CoreServices page={PageEnum.Web3} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />

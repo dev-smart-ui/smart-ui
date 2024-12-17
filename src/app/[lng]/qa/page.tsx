@@ -11,8 +11,6 @@ import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
-import technologyImg from './img/technologyImg.png';
-
 export default async function QaPage() {
   const {
     qaPage,
@@ -28,6 +26,7 @@ export default async function QaPage() {
   });
 
   const heroData = qaPage?.data?.attributes?.Hero || {};
+  const technologyStackData = qaPage?.data?.attributes.technologyStack || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
 
@@ -42,7 +41,7 @@ export default async function QaPage() {
   return (
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.Qa} data={heroData} />
-      <TechnologyStack image={technologyImg} page={PageEnum.Qa} />
+      <TechnologyStack data={technologyStackData} />
       <CoreServices page={PageEnum.Qa} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
