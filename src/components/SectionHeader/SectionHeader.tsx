@@ -18,7 +18,7 @@ interface ITitleObj {
 interface SectionHeaderProps {
   sectionName?: string;
   title?: ITitleObj | string;
-  subTitle?: string;
+  description?: string;
   position?: 'left' | 'center' | 'right';
   className?: string;
 }
@@ -26,7 +26,7 @@ interface SectionHeaderProps {
 export const SectionHeader: FC<SectionHeaderProps> = ({
   sectionName,
   title,
-  subTitle,
+  description,
   position = 'center',
   className,
 }) => {
@@ -53,7 +53,12 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
             {isTitleObject(title) ? (
               <>
                 {title?.part1}{' '}
-                <GradientText colors={[title?.color1, title?.color2]}>
+                <GradientText
+                  colors={[
+                    title?.color1 || '#2865B0',
+                    title?.color2 || '#3B8FF3',
+                  ]}
+                >
                   {title.gradientPart}
                 </GradientText>{' '}
                 {title?.part2 ? title?.part2 : ''}{' '}
@@ -64,7 +69,7 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
           </h2>
         )}
       </div>
-      {!!subTitle && <p className={styles.subTitle}>{subTitle}</p>}
+      {!!description && <p className={styles.subTitle}>{description}</p>}
     </div>
   );
 };

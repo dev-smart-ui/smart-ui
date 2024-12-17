@@ -22,7 +22,7 @@ export const WhoWeAre: FC<WhoWeAreProps> = ({ data }) => {
           className={styles.sectionHeader}
           sectionName={data?.sectionName}
           title={data?.title}
-          subTitle={data?.description}
+          description={data?.description}
         />
       </Container>
     </Section>

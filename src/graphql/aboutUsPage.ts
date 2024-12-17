@@ -1,8 +1,10 @@
 import {
   CONTACT_FORM_FRAGMENT,
   FOOTER_FRAGMENT,
+  GOALS_AND_VALUES_FRAGMENT,
   HEADER_FRAGMENT,
   HERO_FRAGMENT,
+  OUR_EXPERTS_FRAGMENT,
   SERVICES_TABS_FRAGMENT,
   TEAM_FRAGMENT,
   WHO_WE_ARE_FRAGMENT,
@@ -21,6 +23,12 @@ query GetAboutUsPageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
         }
         ServicesTabs {
           ...ServicesTabsFragment
+        }
+        GoalsAndValues {
+          ...GoalsAndValuesFragment
+        }
+        OurExperts {
+          ...OurExpertsFragment
         }
       }
     }
@@ -54,6 +62,8 @@ query GetAboutUsPageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
 ${HERO_FRAGMENT}
 ${TEAM_FRAGMENT}
 ${WHO_WE_ARE_FRAGMENT}
+${GOALS_AND_VALUES_FRAGMENT}
+${OUR_EXPERTS_FRAGMENT}
 ${SERVICES_TABS_FRAGMENT}
 ${CONTACT_FORM_FRAGMENT}
 ${HEADER_FRAGMENT}

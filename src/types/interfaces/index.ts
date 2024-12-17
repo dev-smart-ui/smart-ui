@@ -304,3 +304,14 @@ export interface IWhoWeAre {
   title: IGradientTitle;
   description: string;
 }
+
+// goalsAndValues
+interface IGoalAndValueCard {
+  Title: string;
+  Img: IImage;
+  Text: string;
+}
+
+export interface IGoalsAndValues {
+  cards: IGoalAndValueCard[];
+}

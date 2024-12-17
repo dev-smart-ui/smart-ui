@@ -4,7 +4,7 @@ export interface IHeaderInfo {
   topBgImage?: IImage;
   sectionName?: string;
   title: IGradientTitle;
-  subTitle: string;
+  description: string;
 }
 
 export interface IBottomBlock {

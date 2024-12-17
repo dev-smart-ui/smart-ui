@@ -29,6 +29,9 @@ export default async function AboutUsPage({
   const whoWeAreData = aboutUsPage?.data?.attributes?.WhoWeAre || {};
   const servicesTabsData = aboutUsPage?.data?.attributes?.ServicesTabs || {};
   const heroData = aboutUsPage?.data?.attributes?.Hero || {};
+  const goalsAndValuesData =
+    aboutUsPage?.data?.attributes?.GoalsAndValues || {};
+  const ourExpertsData = aboutUsPage?.data?.attributes?.OurExperts || {};
   const singleProjectsData = teams?.data || [];
   const contactFormData = contactForm?.data?.attributes || [];
   const headerData = header?.data?.attributes || {};
@@ -39,8 +42,8 @@ export default async function AboutUsPage({
       <Hero page={PageEnum.AboutUs} data={heroData} />
       <WhoWeAre data={whoWeAreData} />
       <ServicesTabs data={servicesTabsData} />
-      <GoalsAndValues />
-      <OurExperts data={singleProjectsData} />
+      <GoalsAndValues data={goalsAndValuesData} />
+      <OurExperts data={singleProjectsData} headerInfo={ourExpertsData} />
       <ContactForm data={contactFormData} />
     </Layout>
   );

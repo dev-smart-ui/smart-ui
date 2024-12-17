@@ -43,7 +43,7 @@ export const WhatWeDo: FC<WhatWeDoProps> = ({ page = PageEnum.ForAgency }) => {
         <SectionHeader
           sectionName={headerInfo.sectionName}
           title={headerInfo.title}
-          subTitle={headerInfo.subTitle}
+          description={headerInfo.description}
         />
         <TechnologiesList />
         <BottomBlock data={bottomBlock} isAvatars={false} />

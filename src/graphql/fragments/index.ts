@@ -294,6 +294,36 @@ fragment WhoWeAreFragment on ComponentSectionsWhoWeAre {
 	description
 }`;
 
+// goalsAndValuesSection
+export const GOALS_AND_VALUES_FRAGMENT = `
+fragment GoalsAndValuesFragment on ComponentSectionsGoalsAndValues {
+	cards {
+		Img {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		Title
+		Text
+	}
+}`;
+
+// ourExpertsSection
+export const OUR_EXPERTS_FRAGMENT = `
+fragment OurExpertsFragment on ComponentSectionsOurExperts {
+	sectionName
+	title {
+		part1
+		part2
+		gradientPart
+		color1
+		color2
+	}
+	description
+}`;
+
 // accordion
 export const ACCORDION_FRAGMENT = `
 fragment AccordionFragment on AccordionEntity {
