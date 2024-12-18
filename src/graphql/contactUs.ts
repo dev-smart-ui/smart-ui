@@ -30,6 +30,7 @@ query GetContactUsPageData($locale: I18NLocaleCode) {
 	        id
 	        label
 	        text
+	        href
 	        icon {
 	          data {
 	            attributes {
