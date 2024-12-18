@@ -19,6 +19,7 @@ interface NavItemProps {
   submenu?: ISubMenuLink[];
   onCloseMainMenu: () => void;
   lng: string;
+  setIsOverlay: (key: boolean) => void;
 }
 
 const servicesLinks = [
@@ -36,13 +37,14 @@ export const NavItem: FC<NavItemProps> = ({
   onCloseMainMenu,
   submenu,
   lng,
+  setIsOverlay,
 }) => {
   const pathname = usePathname();
   const {
     isOpen: isSubMenu,
     onToggle: onToggleSubMenu,
     onClose: onCloseSubMenu,
-    onOpen: OnOpenSubMenu,
+    onOpen: onOpenSubMenu,
   } = useOpen();
   const isDesktop = useMediaQuery('(min-width: 1024px)');
   const navItemRef = useRef<HTMLLIElement | null>(null);
@@ -58,10 +60,20 @@ export const NavItem: FC<NavItemProps> = ({
 
   const isSubMenuBtnActive = servicesLinks.includes(normalizedPathname);
 
+  const openSubMenu = () => {
+    onOpenSubMenu();
+    setIsOverlay(true);
+  };
+
+  const closeSubMenu = () => {
+    onCloseSubMenu();
+    setIsOverlay(false);
+  };
+
   return (
     <li
-      onMouseEnter={() => !link?.path && isDesktop && OnOpenSubMenu()}
-      onMouseLeave={() => !link?.path && isDesktop && onCloseSubMenu()}
+      onMouseEnter={() => !link?.path && isDesktop && openSubMenu()}
+      onMouseLeave={() => !link?.path && isDesktop && closeSubMenu()}
       ref={navItemRef}
       className={styles.wrapper}
       key={link?.label}
