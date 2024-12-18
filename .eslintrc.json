@@ -27,6 +27,7 @@
     "no-unused-expressions": ["error", { "allowShortCircuit": true }],
     "@typescript-eslint/no-unused-expressions": "off",
     "@typescript-eslint/no-explicit-any": "error",
+    "react/no-danger": "off",
     "no-console": "error",
     "semi": ["error", "always"],
     "quotes": ["error", "single"],

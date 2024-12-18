@@ -443,12 +443,18 @@ export interface ILegalContentItemObject {
   groups?: Array<{ subTitle: string; items: string[] }>;
   items?: string[];
   bottomText?: string;
+  info: {
+    email: string;
+    phone: string;
+  };
 }
 
 export interface ILegalContentItem {
   id: string;
   name: string;
   object: ILegalContentItemObject;
+  iconEmail: IImage;
+  iconPhone: IImage;
 }
 
 export interface ILegalDocument {

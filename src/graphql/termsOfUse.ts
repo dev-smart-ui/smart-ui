@@ -1,8 +1,8 @@
 import { FOOTER_FRAGMENT, HEADER_FRAGMENT } from './fragments';
 
-export const PRIVACY_POLICY_QUERY = `
-query GetPrivacyPolicyPageData($locale: I18NLocaleCode) {
-	privacyPolicyPage (locale: $locale) {
+export const TERMS_OF_USE_QUERY = `
+query GetTermsOfUsePageData($locale: I18NLocaleCode) {
+	termsOfUsePage (locale: $locale) {
 		data {
 			attributes {
 				sectionName
