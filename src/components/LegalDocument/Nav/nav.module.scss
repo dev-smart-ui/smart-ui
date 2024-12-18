@@ -1,0 +1,99 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: none;
+
+  @include breakpoint(md) {
+    display: block;
+    position: sticky;
+    top: 100px;
+    height: 100%;
+    overflow-y: auto;
+    width: 35%;
+  }
+}
+
+.item {
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  transition: $transition2 ease;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    height: 0;
+    width: 2px;
+    background: $primaryColor;
+    transition: $transition2 ease;
+  }
+
+  &.active {
+    color: $primaryColor;
+
+    &::before {
+      top: 0;
+      height: 100%;
+    }
+  }
+}
+
+.mobileSelect {
+  @include breakpoint(md) {
+    display: none;
+  }
+
+  :global {
+    .custom-select {
+      &__control {
+        background-color: #16181D;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid $cardColor;
+        transition: border-color $transition2 ease;
+      }
+
+      &__value-container {
+        padding: 16px;
+        border-left: 3px solid $primaryColor;
+      }
+
+      &__menu {
+        background-color: $cardColo3;
+        border-radius: 10px;
+      }
+
+      &__option {
+        color: white;
+
+        &:hover, &.custom-select__option--is-selected {
+          color: $primaryColor;
+          background: transparent;
+          border-left: 2px solid $primaryColor;
+        }
+      }
+
+      &__single-value {
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+      }
+
+      &__indicator-separator {
+        display: none;
+      }
+
+      &__dropdown-indicator {
+        color: white;
+
+        svg {
+          width: 26px;
+          height: 26px;
+        }
+      }
+    }
+  }
+}

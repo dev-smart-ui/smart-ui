@@ -429,3 +429,33 @@ export interface ICoreServices {
   bottomImage: IImage;
   bottomBgImage: IImage;
 }
+
+// privacyPolicy and terms
+export interface ILegalNavItem {
+  itemId: string;
+  text: string;
+}
+
+export interface ILegalContentItemObject {
+  id: string;
+  title: string;
+  subTitleDescription?: string;
+  groups?: Array<{ subTitle: string; items: string[] }>;
+  items?: string[];
+  bottomText?: string;
+}
+
+export interface ILegalContentItem {
+  id: string;
+  name: string;
+  object: ILegalContentItemObject;
+}
+
+export interface ILegalDocument {
+  sectionName: string;
+  description: string;
+  topImage: IImage;
+  title: IGradientTitle;
+  navigation: ILegalNavItem[];
+  content: ILegalContentItem[];
+}

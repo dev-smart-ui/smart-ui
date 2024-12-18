@@ -1,0 +1,28 @@
+@import "@styles/vars";
+
+.section {
+  margin-top: 64px;
+}
+
+.wrapper {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include breakpoint(md) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.topImage {
+  max-width: 1000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 100;
+}
