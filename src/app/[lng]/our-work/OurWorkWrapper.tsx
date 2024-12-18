@@ -10,16 +10,16 @@ import { FC, useEffect, useRef, useState } from 'react';
 
 import { OurWork } from '@components/OurWork';
 
-import bgImage from './img/bg.png';
-
 interface OurWorkWrapperProps {
   headerInfo: IHeaderInfo;
   lng: string;
+  bgImage: string;
 }
 
 export const OurWorkWrapper: FC<OurWorkWrapperProps> = ({
   headerInfo,
   lng,
+  bgImage,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);

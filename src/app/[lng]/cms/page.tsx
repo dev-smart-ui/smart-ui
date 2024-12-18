@@ -7,10 +7,9 @@ import { Clients } from '@components/Clients';
 import { ContactForm } from '@components/ContactForm';
 import { CoreServices } from '@components/CoreServices';
 import { Hero } from '@components/Hero';
+import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
-
-import technologyImg from './img/technologyImg.jpg';
 
 interface CmsPageProps {
   params: {
@@ -19,16 +18,27 @@ interface CmsPageProps {
 }
 
 export default async function CmsPage({ params: { lng } }: CmsPageProps) {
-  const { cmsPage, singleProjects, clientsLogo, accordion, contactForm } =
-    await fetchGraphQL(CMS_PAGE_QUERY, {
-      locale: lng,
-      pagination: { limit: 5 },
-    });
+  const {
+    cmsPage,
+    singleProjects,
+    clientsLogo,
+    accordion,
+    contactForm,
+    header,
+    footer,
+  } = await fetchGraphQL(CMS_PAGE_QUERY, {
+    locale: lng,
+    pagination: { limit: 5 },
+  });
 
   const heroData = cmsPage?.data?.attributes?.Hero || {};
+  const technologyStackData = cmsPage?.data?.attributes.technologyStack || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
+  const headerData = header?.data?.attributes || {};
+  const footerData = footer?.data?.attributes || {};
+  const coreServicesData = cmsPage?.data?.attributes?.coreServices || {};
 
   const clientData = {
     sectionName: cmsPage?.data?.attributes?.ClientsSection?.sectionName || '',
@@ -36,14 +46,14 @@ export default async function CmsPage({ params: { lng } }: CmsPageProps) {
   };
 
   return (
-    <>
+    <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.Cms} data={heroData} />
-      <TechnologyStack image={technologyImg} />
-      <CoreServices />
+      <TechnologyStack data={technologyStackData} />
+      <CoreServices data={coreServicesData} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />
       <ContactForm data={contactFormData} />
-    </>
+    </Layout>
   );
 }

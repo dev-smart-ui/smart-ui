@@ -7,10 +7,9 @@ import { Clients } from '@components/Clients';
 import { ContactForm } from '@components/ContactForm';
 import { CoreServices } from '@components/CoreServices';
 import { Hero } from '@components/Hero';
+import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
-
-import technologyImg from './img/technologyImg.png';
 
 interface CustomServicesPageProps {
   params: {
@@ -27,12 +26,18 @@ export default async function CustomServicePage({
     clientsLogo,
     accordion,
     contactForm,
+    header,
+    footer,
   } = await fetchGraphQL(CUSTOM_SERVICES_PAGE_QUERY, {
     locale: lng,
     pagination: { limit: 5 },
   });
 
   const heroData = customServicesPage?.data?.attributes?.Hero || {};
+  const technologyStackData =
+    customServicesPage?.data?.attributes.technologyStack || {};
+  const coreServicesData =
+    customServicesPage?.data?.attributes?.coreServices || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
@@ -42,16 +47,18 @@ export default async function CustomServicePage({
       customServicesPage?.data?.attributes?.ClientsSection?.sectionName || '',
     clients: clientsLogo?.data?.attributes.clients || {},
   };
+  const headerData = header?.data?.attributes || {};
+  const footerData = footer?.data?.attributes || {};
 
   return (
-    <>
+    <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.CustomService} data={heroData} />
-      <TechnologyStack image={technologyImg} page={PageEnum.CustomService} />
-      <CoreServices page={PageEnum.CustomService} />
+      <TechnologyStack data={technologyStackData} />
+      <CoreServices data={coreServicesData} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />
       <ContactForm data={contactFormData} />
-    </>
+    </Layout>
   );
 }

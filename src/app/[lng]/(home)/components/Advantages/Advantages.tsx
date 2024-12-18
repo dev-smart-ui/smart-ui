@@ -22,7 +22,7 @@ export const Advantages: FC<AdvantagesProps> = ({ data }) => {
         <SectionHeader
           sectionName={data?.sectionName}
           title={data?.title}
-          subTitle={data?.subTitle}
+          description={data?.subTitle}
         />
         <ul className={styles.cards}>
           {data?.cards?.map(({ title, img, text }) => (

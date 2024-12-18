@@ -1,3 +1,5 @@
+import { IHeaderLink } from '@app-types/interfaces';
+import { useLanguage } from '@context/LanguageContext';
 import { scrollToElement } from '@utils/index';
 import classNames from 'classnames';
 
@@ -5,7 +7,6 @@ import { FC, useEffect } from 'react';
 
 import { Button } from '@components/Button';
 import { NavItem } from '@components/Header/components/Nav/NavItem';
-import { ILink } from '@components/Header/types/types';
 
 import useMediaQuery from '@hooks/useMediaQuery';
 import { useMount } from '@hooks/useMount';
@@ -15,7 +16,7 @@ import styles from './nav.module.scss';
 interface NavProps {
   isOpen: boolean;
   onCloseMainMenu: () => void;
-  navLinks: ILink[];
+  navLinks: IHeaderLink[];
   buttonLabel: string;
 }
 
@@ -25,6 +26,7 @@ export const Nav: FC<NavProps> = ({
   navLinks,
   buttonLabel,
 }) => {
+  const lng = useLanguage();
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const { mounted } = useMount(isOpen);
@@ -57,11 +59,12 @@ export const Nav: FC<NavProps> = ({
       })}
     >
       <ul className={styles.navList}>
-        {navLinks.map(({ label, submenu, ...rest }) => (
+        {navLinks?.map(({ label, subMenuLinks, ...rest }) => (
           <NavItem
+            lng={lng}
             key={label}
             onCloseMainMenu={onCloseMainMenu}
-            submenu={submenu}
+            submenu={subMenuLinks}
             link={{
               ...rest,
               label,

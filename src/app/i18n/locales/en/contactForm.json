@@ -1,14 +1,4 @@
 {
-  "ourWork": {
-    "headerInfo": {
-      "sectionName": "Our Work",
-      "title": {
-        "part1": "Explore Our Success Stories",
-        "gradientPart": "Project Highlights"
-      },
-      "subTitle": ""
-    }
-  },
   "contactForm": {
     "form": {
       "firstName": {

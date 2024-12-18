@@ -1,10 +1,10 @@
+import { ISubMenuLink } from '@app-types/interfaces';
 import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { FC, RefObject, useRef } from 'react';
 
-import { ISubMenuItem } from '@components/Header/types/types';
 import { Overlay } from '@components/Overlay';
 
 import { useOnClickOutside } from '@hooks/useOnClickOutside';
@@ -12,11 +12,13 @@ import { useOnClickOutside } from '@hooks/useOnClickOutside';
 import styles from './subMenu.module.scss';
 
 interface SubMenuProps {
-  submenu?: ISubMenuItem[];
+  submenu?: ISubMenuLink[];
   onCloseMainMenu?: () => void;
   isSubMenu: boolean;
   onCloseSubMenu: () => void;
   navItemRef: RefObject<HTMLLIElement | null>;
+  lng: string;
+  pathname: string;
 }
 
 export const SubMenu: FC<SubMenuProps> = ({
@@ -25,6 +27,8 @@ export const SubMenu: FC<SubMenuProps> = ({
   isSubMenu,
   onCloseSubMenu,
   navItemRef,
+  lng,
+  pathname,
 }) => {
   const subMenuRef = useRef<HTMLDivElement | null>(null);
   useOnClickOutside(subMenuRef, onCloseSubMenu, navItemRef);
@@ -32,6 +36,16 @@ export const SubMenu: FC<SubMenuProps> = ({
   const onCloseMenus = () => {
     onCloseMainMenu && onCloseMainMenu();
     onCloseSubMenu();
+  };
+
+  const checkActive = (path: string) => {
+    const normalizedPathname = pathname.replace(`/${lng}`, '') || '/';
+    const normalizedLinkPath = path || '/';
+
+    return (
+      normalizedPathname === normalizedLinkPath ||
+      normalizedPathname.startsWith(normalizedLinkPath)
+    );
   };
 
   return (
@@ -47,12 +61,19 @@ export const SubMenu: FC<SubMenuProps> = ({
             <Link
               key={label}
               style={{ gridArea }}
-              href={path}
+              href={`/${lng}${path}`}
               onClick={onCloseMenus}
-              className={styles.link}
+              className={classNames(styles.link, {
+                [styles.isActive]: checkActive(path),
+              })}
             >
               <div className={styles.icon}>
-                <Image src={icon} alt="serviceicon" />
+                <Image
+                  src={icon?.data?.attributes?.url}
+                  width={28}
+                  height={28}
+                  alt="serviceicon"
+                />
               </div>
               <div className={styles.info}>
                 <span className={styles.title}>{label}</span>

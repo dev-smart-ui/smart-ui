@@ -1,33 +1,33 @@
 'use client';
 
-import { PageEnum } from '@app-types/enums';
+import { ICoreServices } from '@app-types/interfaces';
 
 import { FC } from 'react';
 
 import { Container } from '@components/Container';
 import { ServicesList } from '@components/CoreServices/ServicesList';
 import { BottomBlock } from '@components/CoreServices/bottomBlock';
-import { useLocaleServicesData } from '@components/CoreServices/hooks/useLocaleCoreServicesData';
 import { Section } from '@components/Section';
 import { SectionHeader } from '@components/SectionHeader';
 
 interface CoreServicesProps {
-  page?: string;
+  data: ICoreServices;
 }
 
-export const CoreServices: FC<CoreServicesProps> = ({
-  page = PageEnum.Cms,
-}) => {
-  const { headerInfo, coreServicesData, bottomBlock } =
-    useLocaleServicesData(page);
+export const CoreServices: FC<CoreServicesProps> = ({ data }) => {
+  const bottomBlock = {
+    title: data?.bottomTitle,
+    text: data?.bottomSubTitle,
+    image: data?.bottomImage,
+    bgImage: data?.bottomBgImage,
+    button: data?.bottomButton,
+  };
+
   return (
     <Section>
       <Container>
-        <SectionHeader
-          title={headerInfo.title}
-          subTitle={headerInfo.subTitle}
-        />
-        <ServicesList data={coreServicesData} />
+        <SectionHeader title={data?.title} description={data?.description} />
+        <ServicesList data={data?.cards || []} />
         <BottomBlock data={bottomBlock} />
       </Container>
     </Section>

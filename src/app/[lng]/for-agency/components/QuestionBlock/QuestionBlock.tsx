@@ -1,9 +1,8 @@
 'use client';
 
-import { IBottomBlock } from '@app-types/global';
+import { IQuestionSection } from '@app-types/interfaces';
 
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { Container } from '@components/Container';
 import { BottomBlock } from '@components/CoreServices/bottomBlock';
@@ -11,19 +10,15 @@ import { Section } from '@components/Section';
 
 import styles from './questionBlock.module.scss';
 
-export const QuestionBlock: FC = () => {
-  const { t } = useTranslation(['forAgency', 'common']);
+interface IQuestionBlockProps {
+  data: IQuestionSection;
+}
 
-  const bottomBlock = {
-    title: t('bottomBlock.title'),
-    description: t('bottomBlock.description'),
-    buttonLabel: t('buttons.getInTouch', { ns: 'common' }),
-  } as IBottomBlock;
-
+export const QuestionBlock: FC<IQuestionBlockProps> = ({ data }) => {
   return (
     <Section className={styles.section}>
       <Container className={styles.content}>
-        <BottomBlock data={bottomBlock} />
+        <BottomBlock data={data} />
       </Container>
     </Section>
   );

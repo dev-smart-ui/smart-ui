@@ -3,6 +3,7 @@ import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { Clients } from '@components/Clients';
 import { ContactForm } from '@components/ContactForm';
+import Layout from '@components/Layout';
 
 import { OurWorkWrapper } from './OurWorkWrapper';
 
@@ -15,12 +16,10 @@ interface OurWorkPageProps {
 export default async function OurWorkPage({
   params: { lng },
 }: OurWorkPageProps) {
-  const { ourWorkPage, clientsLogo, contactForm } = await fetchGraphQL(
-    OUR_WORK_PAGE_QUERY,
-    {
+  const { ourWorkPage, clientsLogo, contactForm, header, footer } =
+    await fetchGraphQL(OUR_WORK_PAGE_QUERY, {
       locale: lng,
-    },
-  );
+    });
 
   const ourWorkData = ourWorkPage?.data?.attributes?.OurWorkSection || {};
   const clientData = {
@@ -29,12 +28,20 @@ export default async function OurWorkPage({
     clients: clientsLogo?.data?.attributes.clients || {},
   };
   const contactFormData = contactForm?.data?.attributes || [];
+  const headerData = header?.data?.attributes || {};
+  const footerData = footer?.data?.attributes || {};
 
   return (
-    <>
-      <OurWorkWrapper headerInfo={ourWorkData} lng={lng} />
+    <Layout headerData={headerData} footerData={footerData}>
+      <OurWorkWrapper
+        headerInfo={ourWorkData}
+        lng={lng}
+        bgImage={
+          ourWorkPage?.data?.attributes?.topBgImage?.data?.attributes?.url
+        }
+      />
       <Clients data={clientData} />
       <ContactForm data={contactFormData} />
-    </>
+    </Layout>
   );
 }

@@ -1,41 +1,46 @@
 'use client';
 
-import { PageEnum } from '@app-types/enums';
+import { IHeroForAgency } from '@app-types/interfaces';
 import Image from 'next/image';
 
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { Button } from '@components/Button';
 import { Container } from '@components/Container';
 import { Section } from '@components/Section';
 
-import agencyImg from '../../img/agencyImg.png';
-import avatarsImg from '../../img/avatars.png';
 import styles from './hero.module.scss';
 
 interface IHeroProps {
-  page?: string;
+  data: IHeroForAgency;
 }
 
-export const Hero: FC<IHeroProps> = ({ page = PageEnum.ForAgency }) => {
-  const { t } = useTranslation([page, 'common']);
-
+export const Hero: FC<IHeroProps> = ({ data }) => {
   return (
     <Section className={styles.section}>
       <Container>
         <div className={styles.header}>
           <div className={styles.imageWrapper}>
             <div className={styles.image}>
-              <Image src={avatarsImg} alt="avatars" />
+              <Image
+                src={data?.smallImage?.data?.attributes?.url}
+                width={112}
+                height={40}
+                alt="avatars"
+              />
             </div>
-            <span>{t('hero.trustedCountTitle')}</span>
+            <span>{data?.topSmallText}</span>
           </div>
-          <h1 className={styles.title}>{t('hero.title')}</h1>
-          <p className={styles.descriprion}>{t('hero.description')}</p>
-          <Button text={t('buttons.requestQuote', { ns: 'common' })} />
+          <h1 className={styles.title}>{data?.title}</h1>
+          <p className={styles.descriprion}>{data?.description}</p>
+          <Button text={data?.button?.label} />
         </div>
-        <Image src={agencyImg} alt="agencyImage" />
+        <Image
+          src={data?.image?.data?.attributes?.url}
+          width={1240}
+          height={560}
+          alt="agencyImage"
+        />
       </Container>
     </Section>
   );

@@ -1,13 +1,4 @@
 {
-  "ourWork": {
-    "headerInfo": {
-      "sectionName": "Наші роботи",
-      "title": {
-        "part1": "Ознайомтесь з нашими історіями успіху",
-        "gradientPart": "Ключові проєкти"
-      }
-    }
-  },
   "contactForm": {
     "form": {
       "firstName": {

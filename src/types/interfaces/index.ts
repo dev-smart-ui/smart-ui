@@ -6,12 +6,78 @@ export interface IImage {
   };
 }
 
-interface IGradientTitle {
+export interface IGradientTitle {
   part1: string;
   gradientPart: string;
   part2: string;
   color1: string;
   color2: string;
+}
+
+// header
+export interface ISubMenuLink {
+  id: string;
+  label: string;
+  path: string;
+  desc: string;
+  gridArea: string;
+  icon: IImage;
+}
+
+export interface IHeaderLink {
+  id: string;
+  label: string;
+  path: string;
+  subMenuLinks?: ISubMenuLink[];
+}
+
+export interface IHeader {
+  logo: IImage;
+  button: {
+    icon: IImage;
+    label: string;
+  };
+  links: IHeaderLink[];
+}
+
+// footer
+export interface IFooterInfoItem {
+  id: string;
+  label: string;
+  url: string;
+  icon: IImage;
+}
+
+export interface IFooterLink {
+  id: string;
+  text: string;
+  url: string;
+}
+
+export interface IFooterServiceItem {
+  id: string;
+  text: string;
+  url: string;
+}
+
+export interface IFooterSocialItem {
+  id: string;
+  label: string;
+  url: string;
+  color: string;
+  ariaLabel: string;
+  icon: IImage;
+}
+
+export interface IFooter {
+  infoDescription: string;
+  linksTitle: string;
+  servicesTitle: string;
+  logo: IImage;
+  info: IFooterInfoItem[];
+  links: IFooterLink[];
+  services: IFooterServiceItem[];
+  socials: IFooterSocialItem[];
 }
 
 // projects
@@ -187,7 +253,7 @@ export interface IOurServiceSection {
 export interface IOurWorkSection {
   sectionName: string;
   title: IGradientTitle;
-  subTitle: string;
+  description: string;
 }
 
 // accordion
@@ -230,4 +296,135 @@ export interface IContactUsPage {
   subTitle: string;
   topImage: IImage;
   contactInfo: IContactInfo[];
+}
+
+// whoWeAreSection
+export interface IWhoWeAre {
+  sectionName: string;
+  title: IGradientTitle;
+  description: string;
+}
+
+// goalsAndValues
+interface IGoalAndValueCard {
+  Title: string;
+  Img: IImage;
+  Text: string;
+}
+
+export interface IGoalsAndValues {
+  cards: IGoalAndValueCard[];
+}
+
+// heroForAgency
+export interface IHeroForAgency {
+  sectionName: string;
+  title: string;
+  description: string;
+  smallImage: IImage;
+  topSmallText: string;
+  button: {
+    label: string;
+    icon: IImage;
+  };
+  image: IImage;
+}
+
+// advantages forAgency
+export interface ISolutionItem {
+  id: string;
+  text: string;
+  icon: IImage;
+}
+export interface IAdvantagesCardForAgency {
+  Title: string;
+  Text: string;
+}
+export interface IAdvantagesForAgency {
+  sectionName: string;
+  title: string;
+  description: string;
+  cards: IAdvantagesCardForAgency[];
+  solutionTitle: string;
+  solutionIcon: IImage;
+  solutionDescription: string;
+  solutionsList: ISolutionItem[];
+}
+
+// questionSection
+export interface IQuestionSection {
+  title: string;
+  text: string;
+  image?: IImage;
+  bgImage?: IImage;
+  button: {
+    label: string;
+    icon: IImage;
+  };
+}
+
+// whatWeCanDo
+export interface IWhatWeCanDoCard {
+  title: string;
+  icon: IImage;
+  stackList: string[];
+}
+
+export interface IWhatWeCanDo {
+  sectionName: string;
+  title: IGradientTitle;
+  cards: IWhatWeCanDoCard[];
+  description: string;
+  bottomTitle: string;
+  bottomText: string;
+  bottomButton: {
+    label: string;
+    icon: IImage;
+  };
+  bottomBgImage: IImage;
+}
+
+// approaches
+export interface IApproachCard {
+  id: string;
+  title: string;
+  text: string;
+  img: IImage;
+}
+export interface IApproaches {
+  sectionName: string;
+  title: string;
+  description: string;
+  cards: IApproachCard[];
+}
+
+// workAndCollaborate
+export interface IWorkAndCollaborate {
+  sectionName: string;
+  title: string;
+  description: string;
+  image: IImage;
+}
+
+// coreServices
+export interface ICoreServiceCard {
+  id: string;
+  title: string;
+  text: string;
+  img: IImage;
+}
+
+export interface ICoreServices {
+  sectionName: string;
+  title: IGradientTitle;
+  description: string;
+  cards: ICoreServiceCard[];
+  bottomTitle: string;
+  bottomSubTitle: string;
+  bottomButton: {
+    label: string;
+    icon: IImage;
+  };
+  bottomImage: IImage;
+  bottomBgImage: IImage;
 }

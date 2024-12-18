@@ -63,6 +63,7 @@
   &.isOnlyIcon {
     padding: 6px;
     min-height: 46px;
+    max-height: 46px;
     max-width: 46px;
     min-width: 46px;
 
@@ -85,11 +86,13 @@
     min-width: 40px;
     max-width: 40px;
     min-height: 40px;
+    max-height: 40px;
 
     @include breakpoint(lg) {
       min-width: 46px;
       max-width: 46px;
       min-height: 46px;
+      max-height: 46px;
     }
   }
 

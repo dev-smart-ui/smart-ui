@@ -277,7 +277,51 @@ fragment OurWorkFragment on ComponentSectionsOurWork {
 		color1
 		color2
 	}
-	subTitle
+	description
+}`;
+
+// whoWeAre
+export const WHO_WE_ARE_FRAGMENT = `
+fragment WhoWeAreFragment on ComponentSectionsWhoWeAre {
+	sectionName
+	title {
+		part1
+		part2
+		gradientPart
+		color1
+		color2
+	}
+	description
+}`;
+
+// goalsAndValuesSection
+export const GOALS_AND_VALUES_FRAGMENT = `
+fragment GoalsAndValuesFragment on ComponentSectionsGoalsAndValues {
+	cards {
+		Img {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		Title
+		Text
+	}
+}`;
+
+// ourExpertsSection
+export const OUR_EXPERTS_FRAGMENT = `
+fragment OurExpertsFragment on ComponentSectionsOurExperts {
+	sectionName
+	title {
+		part1
+		part2
+		gradientPart
+		color1
+		color2
+	}
+	description
 }`;
 
 // accordion
@@ -343,6 +387,329 @@ fragment ContactFormFragment on ContactFormEntity {
 						url
 					}
 				}
+			}
+		}
+	}
+}`;
+
+// header
+export const HEADER_FRAGMENT = `
+fragment HeaderFragment on HeaderEntity {
+	attributes {
+		logo {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		button {
+			label
+			icon {
+				data {
+					attributes {
+						url
+					}
+				}
+			}
+		}
+		links {
+			id
+			label
+			path
+			subMenuLinks {
+				id
+				label
+				desc
+				path
+				gridArea
+				icon {
+					data {
+						attributes {
+							url
+						}
+					}
+				}
+			}
+		}
+	}
+}`;
+
+// footer
+export const FOOTER_FRAGMENT = `
+fragment FooterFragment on FooterEntity {
+	attributes {
+		infoDescription
+		linksTitle
+		servicesTitle
+		logo {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		info {
+			id
+			icon {
+				data {
+					attributes {
+						url
+					}
+				}
+			}
+			url
+			label
+		}
+		links {
+			id
+			text
+			url
+		}
+		services {
+			id
+			text
+			url
+		}
+		socials {
+			id
+			icon {
+				data {
+					attributes {
+						url
+					}
+				}
+			}
+			url
+			label
+			color
+			ariaLabel
+		}
+	}
+}`;
+
+// forAgencyHero
+export const HERO_FOR_AGENCY_FRAGMENT = `
+fragment HeroForAgencyFragment on ComponentSectionsHeroForAgency {
+	sectionName
+  smallImage {
+    data {
+      attributes {
+        url
+      }
+    }
+  }
+  topSmallText
+  title
+  description
+  button {
+    label
+    icon {
+      data {
+        attributes {
+          url
+        }
+      }
+    }
+  }
+  image {
+    data {
+      attributes {
+        url
+      }
+    }
+  }
+}`;
+
+// advantages forAgency
+export const ADVANTAGES_FOR_AGENCY_FRAGMENT = `
+fragment AdvantagesForAgencyFragment on ComponentSectionsAdvantagesForAgency {
+	sectionName
+	title
+	description
+	cards {
+		Title
+		Text
+	}
+	solutionTitle
+	solutionIcon {
+		data {
+			attributes {
+				url
+			}
+		}
+	}
+	solutionDescription
+	solutionsList {
+		id
+		text
+		icon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+}`;
+
+// advantages forAgency
+export const QUESTION_SECTION_FRAGMENT = `
+fragment QuestionSectionFragment on ComponentSectionsQuestionSection {
+	title
+	text
+	image {
+		data {
+			attributes {
+				url
+			}
+		}
+	}
+	button {
+		label
+		icon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+	bgImage {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+}`;
+
+// whatWeDo forAgency
+export const WHAT_WE_CAN_DO_SECTION_FRAGMENT = `
+fragment whatWeCanDoFragment on ComponentSectionsWhatWeCanDo {
+	sectionName
+	title {
+		part1
+		part2
+		gradientPart
+		color1
+		color2
+	}
+	description
+	cards {
+		title
+		icon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		stackList
+	}
+	bottomTitle
+	bottomText
+	bottomButton {
+		label
+		icon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+	bottomBgImage {
+		data {
+			attributes {
+				url
+			}
+		}
+	}
+}`;
+
+// approaches
+export const APPROACHES_FRAGMENT = `
+fragment ApproachesFragment on ComponentSectionsApproaches {
+	sectionName
+	title
+	description
+	cards {
+		id
+		title
+		text
+		img {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+}`;
+
+// workAndCollaborate
+export const TECHNOLOGY_STACK_FRAGMENT = `
+fragment TechnologyStackFragment on ComponentSectionsTechnologyStack {
+	sectionName
+	title
+	description
+	image {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+}`;
+
+// coreServices
+export const CORE_SERVICES_FRAGMENT = `
+fragment CoreServicesFragment on ComponentSectionsCoreServices {
+	sectionName
+	title {
+		part1
+		part2
+		gradientPart
+		color1
+		color2
+	}
+	description
+	cards {
+		id
+		title
+		text
+		img {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+	bottomTitle
+	bottomSubTitle
+	bottomButton {
+		label
+		icon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+	bottomImage {
+		data {
+			attributes {
+				url
+			}
+		}
+	}
+	bottomBgImage {
+		data {
+			attributes {
+				url
 			}
 		}
 	}

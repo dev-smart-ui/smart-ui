@@ -1,5 +1,6 @@
 'use client';
 
+import { IHeader } from '@app-types/interfaces';
 import Image from 'next/image';
 
 import { FC } from 'react';
@@ -7,17 +8,17 @@ import { FC } from 'react';
 import { Container } from '@components/Container';
 import { Nav } from '@components/Header/components/Nav';
 import { NavButtons } from '@components/Header/components/NavButtons';
-import { useLocaleHeaderData } from '@components/Header/hooks/useLocaleHeaderData';
 import { Logo } from '@components/Logo';
 
 import { useOpen } from '@hooks/useOpen';
 
 import styles from './header.module.scss';
 
-const defaultLogo = '/assets/img/logo.png';
+interface HeaderProps {
+  headerData: IHeader;
+}
 
-export const Header: FC = () => {
-  const { navLinks, buttonLabel } = useLocaleHeaderData();
+export const Header: FC<HeaderProps> = ({ headerData }) => {
   const { isOpen, onToggle, onClose } = useOpen(false);
 
   return (
@@ -25,15 +26,23 @@ export const Header: FC = () => {
       <Container>
         <div className={styles.content}>
           <Logo>
-            <Image src={defaultLogo} width={160} height={32} alt="logo" />
+            <Image
+              src={headerData?.logo?.data?.attributes?.url}
+              width={160}
+              height={32}
+              alt="logo"
+            />
           </Logo>
           <Nav
             isOpen={isOpen}
             onCloseMainMenu={onClose}
-            navLinks={navLinks}
-            buttonLabel={buttonLabel}
+            navLinks={headerData?.links}
+            buttonLabel={headerData?.button?.label}
           />
-          <NavButtons onToggle={onToggle} buttonLabel={buttonLabel} />
+          <NavButtons
+            onToggle={onToggle}
+            buttonLabel={headerData?.button?.label}
+          />
         </div>
       </Container>
     </header>

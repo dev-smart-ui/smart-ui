@@ -1,44 +1,20 @@
+import { IFooterServiceItem } from '@app-types/interfaces';
+
 import { FC } from 'react';
 
 import { ItemsList } from '../ItemsList/ItemsList';
 import styles from './services.module.scss';
 
-const LINKS = [
-  {
-    label: 'services.frontendDevelopment',
-    href: 'frontend-development',
-  },
-  {
-    label: 'services.cms',
-    href: 'cms',
-  },
-  {
-    label: 'services.backendDevelopment',
-    href: 'backend-development',
-  },
-  {
-    label: 'services.uIUxDesign',
-    href: 'ui-ux-design',
-  },
-  {
-    label: 'services.qa',
-    href: 'qa',
-  },
-  {
-    label: 'services.customServices',
-    href: 'custom-service',
-  },
-  {
-    label: 'services.web3',
-    href: 'web3',
-  },
-];
+interface ServicesProps {
+  data: IFooterServiceItem[];
+  title: string;
+}
 
-export const Services: FC = () => {
+export const Services: FC<ServicesProps> = ({ data, title }) => {
   return (
     <div className={styles.wrapper}>
-      <span className={styles.title}>Services</span>
-      <ItemsList items={LINKS} />
+      <span className={styles.title}>{title}</span>
+      <ItemsList items={data} />
     </div>
   );
 };

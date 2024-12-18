@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 
 import { Accordion } from '@components/Accordion';
 import { Hero } from '@components/Hero';
+import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { ServicesTabs } from '@components/ServicesTabs';
 
@@ -39,11 +40,18 @@ interface HomePageProps {
 }
 
 export default async function Home({ params: { lng } }: HomePageProps) {
-  const { homePage, singleProjects, clientsLogo, accordion, contactForm } =
-    await fetchGraphQL(HOME_PAGE_QUERY, {
-      locale: lng,
-      pagination: { limit: 5 },
-    });
+  const {
+    homePage,
+    singleProjects,
+    clientsLogo,
+    accordion,
+    contactForm,
+    header,
+    footer,
+  } = await fetchGraphQL(HOME_PAGE_QUERY, {
+    locale: lng,
+    pagination: { limit: 5 },
+  });
 
   const heroData = homePage?.data?.attributes?.Hero || {};
   const servicesTabsData = homePage?.data?.attributes?.ServicesTabs || {};
@@ -55,6 +63,8 @@ export default async function Home({ params: { lng } }: HomePageProps) {
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
+  const headerData = header?.data?.attributes || {};
+  const footerData = footer?.data?.attributes || {};
 
   const clientData = {
     sectionName: homePage?.data?.attributes?.ClientsSection?.sectionName || '',
@@ -62,7 +72,7 @@ export default async function Home({ params: { lng } }: HomePageProps) {
   };
 
   return (
-    <>
+    <Layout headerData={headerData} footerData={footerData}>
       <Hero data={heroData} />
       <ServicesTabs data={servicesTabsData} />
       <Clients data={clientData} />
@@ -73,6 +83,6 @@ export default async function Home({ params: { lng } }: HomePageProps) {
       <OurWork data={singleProjectsData} headerInfo={ourWorkData} />
       <Accordion data={accordionData} />
       <ContactForm data={contactFormData} />
-    </>
+    </Layout>
   );
 }

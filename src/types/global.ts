@@ -1,13 +1,10 @@
+import { IGradientTitle, IImage } from '@app-types/interfaces';
+
 export interface IHeaderInfo {
+  topBgImage?: IImage;
   sectionName?: string;
-  title: {
-    part1: string;
-    gradientPart?: string;
-    part2?: string;
-    color1?: string;
-    color2?: string;
-  };
-  subTitle: string;
+  title: IGradientTitle;
+  description: string;
 }
 
 export interface IBottomBlock {

@@ -2,8 +2,12 @@ import {
   ACCORDION_FRAGMENT,
   CLIENTS_LOGO_FRAGMENT,
   CONTACT_FORM_FRAGMENT,
+  CORE_SERVICES_FRAGMENT,
+  FOOTER_FRAGMENT,
+  HEADER_FRAGMENT,
   HERO_FRAGMENT,
   PROJECTS_FRAGMENT,
+  TECHNOLOGY_STACK_FRAGMENT,
 } from './fragments';
 
 export const CUSTOM_SERVICES_PAGE_QUERY = `
@@ -13,6 +17,12 @@ query GetCustomServicesPageData($locale: I18NLocaleCode, $pagination: Pagination
       attributes {
         Hero {
           ...HeroFragment
+        }
+        technologyStack {
+          ...TechnologyStackFragment
+        }
+        coreServices {
+          ...CoreServicesFragment
         }
         ClientsSection {
           sectionName
@@ -43,9 +53,23 @@ query GetCustomServicesPageData($locale: I18NLocaleCode, $pagination: Pagination
       ...ContactFormFragment
     }
   }
+  header (locale: $locale) {
+    data {
+      ...HeaderFragment
+    }
+  }
+  footer (locale: $locale) {
+    data {
+      ...FooterFragment
+    }
+  }
 }
 ${HERO_FRAGMENT}
+${TECHNOLOGY_STACK_FRAGMENT}
+${CORE_SERVICES_FRAGMENT}
 ${PROJECTS_FRAGMENT}
 ${CLIENTS_LOGO_FRAGMENT}
 ${ACCORDION_FRAGMENT}
-${CONTACT_FORM_FRAGMENT}`;
+${CONTACT_FORM_FRAGMENT}
+${HEADER_FRAGMENT}
+${FOOTER_FRAGMENT}`;

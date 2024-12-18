@@ -1,4 +1,4 @@
-import { SOCIALS } from '@constants/socials';
+import { IFooterSocialItem } from '@app-types/interfaces';
 import Link from 'next/link';
 
 import { FC } from 'react';
@@ -7,22 +7,26 @@ import { BorderGradientButton } from '@components/Button';
 
 import styles from './socials.module.scss';
 
-export const Socials: FC = () => {
+interface SocialsProps {
+  data: IFooterSocialItem[];
+}
+
+export const Socials: FC<SocialsProps> = ({ data }) => {
   return (
     <div className={styles.wrapper}>
-      {SOCIALS.map(({ link, label, color, icon, ariaLabel }) => (
+      {data?.map(({ url, label, color, icon, ariaLabel }) => (
         <BorderGradientButton
           fullWidth
           isIconSeparated
-          key={link}
+          key={url}
           as={Link}
-          href={link}
+          href={url}
           aria-label={ariaLabel}
           target="_blank"
           text={label}
           className={styles.socialBtn}
           color={color}
-          icon={icon}
+          imgUrl={icon?.data?.attributes?.url}
         />
       ))}
     </div>

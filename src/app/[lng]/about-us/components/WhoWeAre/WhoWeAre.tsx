@@ -1,6 +1,6 @@
 'use client';
 
-import { IApproaches } from '@app-types/interfaces';
+import { IWhoWeAre } from '@app-types/interfaces';
 
 import { FC } from 'react';
 
@@ -8,22 +8,22 @@ import { Container } from '@components/Container';
 import { Section } from '@components/Section';
 import { SectionHeader } from '@components/SectionHeader';
 
-import { Cards } from './Cards';
+import styles from './whoWeAre.module.scss';
 
-interface ApproachesProps {
-  data: IApproaches;
+interface WhoWeAreProps {
+  data: IWhoWeAre;
 }
 
-export const Approaches: FC<ApproachesProps> = ({ data }) => {
+export const WhoWeAre: FC<WhoWeAreProps> = ({ data }) => {
   return (
     <Section>
-      <Container>
+      <Container className={styles.content}>
         <SectionHeader
+          className={styles.sectionHeader}
           sectionName={data?.sectionName}
           title={data?.title}
           description={data?.description}
         />
-        <Cards data={data?.cards} />
       </Container>
     </Section>
   );

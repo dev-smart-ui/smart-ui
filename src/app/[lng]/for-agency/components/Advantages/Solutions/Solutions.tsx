@@ -1,38 +1,39 @@
-import { FC } from 'react';
+import { IAdvantagesForAgency } from '@app-types/interfaces';
+import Image from 'next/image';
 
-import { Icons } from '@components/CustomIcons';
+import { FC } from 'react';
 
 import styles from './solutions.module.scss';
 
 interface SolutionsProps {
-  t: (key: string) => string;
+  data: IAdvantagesForAgency;
 }
 
-const solutionsList = [
-  { icon: <Icons.StarTransparent />, label: 'advantages.solutions.solution1' },
-  { icon: <Icons.Lightning />, label: 'advantages.solutions.solution2' },
-  { icon: <Icons.Target />, label: 'advantages.solutions.solution3' },
-  { icon: <Icons.Flag />, label: 'advantages.solutions.solution4' },
-  { icon: <Icons.Flag />, label: 'advantages.solutions.solution5' },
-];
-
-export const Solutions: FC<SolutionsProps> = ({ t }) => {
+export const Solutions: FC<SolutionsProps> = ({ data }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.solutionInfo}>
         <div className={styles.solutionTitle}>
-          <Icons.Pencil />
-          {t('advantages.solutions.title')}
+          <Image
+            src={data?.solutionIcon?.data?.attributes?.url}
+            width={20}
+            height={20}
+            alt="pencilIcon"
+          />
+          {data?.solutionTitle}
         </div>
-        <p className={styles.solutionDesc}>
-          {t('advantages.solutions.subTitle')}
-        </p>
+        <p className={styles.solutionDesc}>{data?.solutionDescription}</p>
       </div>
       <ul className={styles.solutionList}>
-        {solutionsList.map((item) => (
-          <li key={item.label} className={styles.solutionItem}>
-            {item.icon}
-            {t(item.label)}
+        {data?.solutionsList?.map((item) => (
+          <li key={item.id} className={styles.solutionItem}>
+            <Image
+              src={item?.icon?.data?.attributes?.url}
+              width={20}
+              height={20}
+              alt="solutionIcon"
+            />
+            {item.text}
           </li>
         ))}
       </ul>

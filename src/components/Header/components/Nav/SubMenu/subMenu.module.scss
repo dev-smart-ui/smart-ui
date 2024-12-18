@@ -4,7 +4,6 @@
   width: 100%;
   transition: all $transition2 ease;
   pointer-events: none;
-  border-radius: $borderRadius2;
   z-index: 100;
   background: $surfaceColor;
 
@@ -111,7 +110,7 @@
     background: rgba($textColor2 ,.5);
   }
 
-  &:hover {
+  &:hover, &.isActive {
     transform: translateX(6px);
     &::after {
       bottom: 0;
