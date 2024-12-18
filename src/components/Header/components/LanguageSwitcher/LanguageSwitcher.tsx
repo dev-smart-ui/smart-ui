@@ -26,7 +26,7 @@ export const LanguageSwitcher: FC = () => {
     <BorderGradientButton
       isMonotoneBorder
       isRounded="small"
-      text={(lng === 'uk-UA' ? 'ua' : 'en').toUpperCase()}
+      text={(lng === 'uk-UA' ? 'en' : 'ua').toUpperCase()}
       onClick={handleLanguageChange}
     />
   );
