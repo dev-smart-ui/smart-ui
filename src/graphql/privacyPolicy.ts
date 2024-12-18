@@ -18,6 +18,20 @@ query GetPrivacyPolicyPageData($locale: I18NLocaleCode) {
 					id
 					name
 					object
+					iconEmail {
+						data {
+							attributes {
+								url
+							}
+						}
+					}
+					iconPhone {
+						data {
+							attributes {
+								url
+							}
+						}
+					}
 				}
 				navigation {
 					itemId

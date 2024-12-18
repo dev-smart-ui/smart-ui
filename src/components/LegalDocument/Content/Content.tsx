@@ -12,7 +12,7 @@ interface ContentProps {
 export const Content: FC<ContentProps> = ({ data }) => {
   return (
     <div className={styles.wrapper}>
-      {data?.map((item) => <ContentItem key={item?.id} data={item?.object} />)}
+      {data?.map((item) => <ContentItem key={item?.id} data={item} />)}
     </div>
   );
 };

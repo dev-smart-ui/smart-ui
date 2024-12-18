@@ -54,3 +54,27 @@
   color: $infoColor;
   }
 }
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: $textColor2;
+  font-size: 16px;
+  margin-top: 20px;
+
+  a {
+    color: inherit;
+    font-size: inherit;
+  }
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  max-width: 20px;
+}
