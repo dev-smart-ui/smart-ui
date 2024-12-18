@@ -20,6 +20,7 @@ export const WhatWeDo: FC<WhatWeDoProps> = ({ data }) => {
     title: data?.bottomTitle,
     text: data?.bottomText,
     button: data?.bottomButton,
+    bgImage: data?.bottomBgImage,
   };
 
   return (

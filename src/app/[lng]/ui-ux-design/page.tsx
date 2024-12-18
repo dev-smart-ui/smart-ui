@@ -45,6 +45,7 @@ export default async function UiUxDesignPage({
     clients: clientsLogo?.data?.attributes.clients || {},
   };
   const contactFormData = contactForm?.data?.attributes || [];
+  const coreServicesData = uiUxDesignPage?.data?.attributes?.coreServices || {};
   const headerData = header?.data?.attributes || {};
   const footerData = footer?.data?.attributes || {};
 
@@ -52,7 +53,7 @@ export default async function UiUxDesignPage({
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.UiUxDesign} data={heroData} />
       <TechnologyStack data={technologyStackData} />
-      <CoreServices page={PageEnum.UiUxDesign} />
+      <CoreServices data={coreServicesData} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />

@@ -4,8 +4,6 @@ import Image from 'next/image';
 import { FC } from 'react';
 
 import { Button } from '@components/Button';
-import avatarGroup from '@components/CoreServices/img/avatarGroup.png';
-import imgBottom from '@components/CoreServices/img/imageBottom.jpg';
 
 import styles from './bottomBlock.module.scss';
 
@@ -16,13 +14,25 @@ interface BottomBlockProps {
 export const BottomBlock: FC<BottomBlockProps> = ({ data }) => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.image}>
-        <Image src={imgBottom} alt="imageBottom" />
-      </div>
+      {data?.bgImage && (
+        <div className={styles.image}>
+          <Image
+            src={data?.bgImage?.data?.attributes?.url}
+            width={1240}
+            height={540}
+            alt="imageBottom"
+          />
+        </div>
+      )}
       <div className={styles.content}>
         {data?.image && (
           <div className={styles.avatar}>
-            <Image src={avatarGroup} alt="avatar" />
+            <Image
+              src={data?.image?.data?.attributes?.url}
+              width={120}
+              height={56}
+              alt="avatar"
+            />
           </div>
         )}
         <div className={styles.textContent}>

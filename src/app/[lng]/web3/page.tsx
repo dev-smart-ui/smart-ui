@@ -33,6 +33,7 @@ export default async function Web3Page({ params: { lng } }: Web3PageProps) {
 
   const heroData = web3Page?.data?.attributes?.Hero || {};
   const technologyStackData = web3Page?.data?.attributes.technologyStack || {};
+  const coreServicesData = web3Page?.data?.attributes?.coreServices || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
@@ -48,7 +49,7 @@ export default async function Web3Page({ params: { lng } }: Web3PageProps) {
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.Web3} data={heroData} />
       <TechnologyStack data={technologyStackData} />
-      <CoreServices page={PageEnum.Web3} />
+      <CoreServices data={coreServicesData} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />

@@ -2,6 +2,7 @@ import {
   ACCORDION_FRAGMENT,
   CLIENTS_LOGO_FRAGMENT,
   CONTACT_FORM_FRAGMENT,
+  CORE_SERVICES_FRAGMENT,
   FOOTER_FRAGMENT,
   HEADER_FRAGMENT,
   HERO_FRAGMENT,
@@ -19,6 +20,9 @@ query GetCmsPageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
         }
         technologyStack {
           ...TechnologyStackFragment
+        }
+        coreServices {
+          ...CoreServicesFragment
         }
         ClientsSection {
           sectionName
@@ -62,6 +66,7 @@ query GetCmsPageData($locale: I18NLocaleCode, $pagination: PaginationArg) {
 }
 ${HERO_FRAGMENT}
 ${TECHNOLOGY_STACK_FRAGMENT}
+${CORE_SERVICES_FRAGMENT}
 ${PROJECTS_FRAGMENT}
 ${CLIENTS_LOGO_FRAGMENT}
 ${ACCORDION_FRAGMENT}

@@ -381,6 +381,7 @@ export interface IWhatWeCanDo {
     label: string;
     icon: IImage;
   };
+  bottomBgImage: IImage;
 }
 
 // approaches
@@ -403,4 +404,27 @@ export interface IWorkAndCollaborate {
   title: string;
   description: string;
   image: IImage;
+}
+
+// coreServices
+export interface ICoreServiceCard {
+  id: string;
+  title: string;
+  text: string;
+  img: IImage;
+}
+
+export interface ICoreServices {
+  sectionName: string;
+  title: IGradientTitle;
+  description: string;
+  cards: ICoreServiceCard[];
+  bottomTitle: string;
+  bottomSubTitle: string;
+  bottomButton: {
+    label: string;
+    icon: IImage;
+  };
+  bottomImage: IImage;
+  bottomBgImage: IImage;
 }

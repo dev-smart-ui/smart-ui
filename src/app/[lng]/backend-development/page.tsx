@@ -39,6 +39,7 @@ export default async function BackendDevelopmentPage({
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
+  const coreServicesData = backendDevPage?.data?.attributes?.coreServices || {};
   const headerData = header?.data?.attributes || {};
   const footerData = footer?.data?.attributes || {};
 
@@ -52,7 +53,7 @@ export default async function BackendDevelopmentPage({
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.BackendDevelopment} data={heroData} />
       <TechnologyStack data={technologyStackData} />
-      <CoreServices page={PageEnum.BackendDevelopment} />
+      <CoreServices data={coreServicesData} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />

@@ -619,6 +619,13 @@ fragment whatWeCanDoFragment on ComponentSectionsWhatWeCanDo {
 			}
 		}
 	}
+	bottomBgImage {
+		data {
+			attributes {
+				url
+			}
+		}
+	}
 }`;
 
 // approaches
@@ -654,4 +661,56 @@ fragment TechnologyStackFragment on ComponentSectionsTechnologyStack {
 				}
 			}
 		}
+}`;
+
+// coreServices
+export const CORE_SERVICES_FRAGMENT = `
+fragment CoreServicesFragment on ComponentSectionsCoreServices {
+	sectionName
+	title {
+		part1
+		part2
+		gradientPart
+		color1
+		color2
+	}
+	description
+	cards {
+		id
+		title
+		text
+		img {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+	bottomTitle
+	bottomSubTitle
+	bottomButton {
+		label
+		icon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+	bottomImage {
+		data {
+			attributes {
+				url
+			}
+		}
+	}
+	bottomBgImage {
+		data {
+			attributes {
+				url
+			}
+		}
+	}
 }`;

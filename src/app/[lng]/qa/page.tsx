@@ -29,6 +29,7 @@ export default async function QaPage() {
   const technologyStackData = qaPage?.data?.attributes.technologyStack || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
+  const coreServicesData = qaPage?.data?.attributes?.coreServices || {};
 
   const clientData = {
     sectionName: qaPage?.data?.attributes?.ClientsSection?.sectionName || '',
@@ -42,7 +43,7 @@ export default async function QaPage() {
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.Qa} data={heroData} />
       <TechnologyStack data={technologyStackData} />
-      <CoreServices page={PageEnum.Qa} />
+      <CoreServices data={coreServicesData} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />

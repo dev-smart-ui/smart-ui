@@ -38,6 +38,7 @@ export default async function CmsPage({ params: { lng } }: CmsPageProps) {
   const contactFormData = contactForm?.data?.attributes || [];
   const headerData = header?.data?.attributes || {};
   const footerData = footer?.data?.attributes || {};
+  const coreServicesData = cmsPage?.data?.attributes?.coreServices || {};
 
   const clientData = {
     sectionName: cmsPage?.data?.attributes?.ClientsSection?.sectionName || '',
@@ -48,7 +49,7 @@ export default async function CmsPage({ params: { lng } }: CmsPageProps) {
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.Cms} data={heroData} />
       <TechnologyStack data={technologyStackData} />
-      <CoreServices />
+      <CoreServices data={coreServicesData} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />

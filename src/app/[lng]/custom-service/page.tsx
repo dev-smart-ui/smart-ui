@@ -36,6 +36,8 @@ export default async function CustomServicePage({
   const heroData = customServicesPage?.data?.attributes?.Hero || {};
   const technologyStackData =
     customServicesPage?.data?.attributes.technologyStack || {};
+  const coreServicesData =
+    customServicesPage?.data?.attributes?.coreServices || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const contactFormData = contactForm?.data?.attributes || [];
@@ -52,7 +54,7 @@ export default async function CustomServicePage({
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.CustomService} data={heroData} />
       <TechnologyStack data={technologyStackData} />
-      <CoreServices page={PageEnum.CustomService} />
+      <CoreServices data={coreServicesData} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />

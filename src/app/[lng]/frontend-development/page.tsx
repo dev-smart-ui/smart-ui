@@ -35,14 +35,16 @@ export default async function FrontendDevelopmentPage({
 
   const heroData = frontendDevPage?.data?.attributes?.Hero || {};
   const technologyStackData =
-    frontendDevPage?.data?.attributes.technologyStack || {};
+    frontendDevPage?.data?.attributes?.technologyStack || {};
   const singleProjectsData = singleProjects?.data || [];
   const accordionData = accordion?.data?.attributes || [];
   const clientData = {
     sectionName:
       frontendDevPage?.data?.attributes?.ClientsSection?.sectionName || '',
-    clients: clientsLogo?.data?.attributes.clients || {},
+    clients: clientsLogo?.data?.attributes?.clients || {},
   };
+  const coreServicesData =
+    frontendDevPage?.data?.attributes?.coreServices || {};
   const contactFormData = contactForm?.data?.attributes || [];
   const headerData = header?.data?.attributes || {};
   const footerData = footer?.data?.attributes || {};
@@ -51,7 +53,7 @@ export default async function FrontendDevelopmentPage({
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.FrontendDevelopment} data={heroData} />
       <TechnologyStack data={technologyStackData} />
-      <CoreServices page={PageEnum.FrontendDevelopment} />
+      <CoreServices data={coreServicesData} />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />
