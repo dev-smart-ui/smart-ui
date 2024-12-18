@@ -3,10 +3,11 @@ import { useLanguage } from '@context/LanguageContext';
 import { scrollToElement } from '@utils/index';
 import classNames from 'classnames';
 
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { Button } from '@components/Button';
 import { NavItem } from '@components/Header/components/Nav/NavItem';
+import { Overlay } from '@components/Overlay';
 
 import useMediaQuery from '@hooks/useMediaQuery';
 import { useMount } from '@hooks/useMount';
@@ -28,6 +29,7 @@ export const Nav: FC<NavProps> = ({
 }) => {
   const lng = useLanguage();
   const isDesktop = useMediaQuery('(min-width: 768px)');
+  const [isOverlay, setIsOverlay] = useState(false);
 
   const { mounted } = useMount(isOpen);
 
@@ -53,30 +55,34 @@ export const Nav: FC<NavProps> = ({
   if (!isDesktop && !mounted && !isOpen) return null;
 
   return (
-    <nav
-      className={classNames(styles.wrapper, {
-        [styles.isOpen]: mounted && isOpen,
-      })}
-    >
-      <ul className={styles.navList}>
-        {navLinks?.map(({ label, subMenuLinks, ...rest }) => (
-          <NavItem
-            lng={lng}
-            key={label}
-            onCloseMainMenu={onCloseMainMenu}
-            submenu={subMenuLinks}
-            link={{
-              ...rest,
-              label,
-            }}
-          />
-        ))}
-      </ul>
-      <Button
-        className={styles.contactUsBtnMobile}
-        text={buttonLabel}
-        onClick={handleContactUsClick}
-      />
-    </nav>
+    <>
+      <nav
+        className={classNames(styles.wrapper, {
+          [styles.isOpen]: mounted && isOpen,
+        })}
+      >
+        <ul className={styles.navList}>
+          {navLinks?.map(({ label, subMenuLinks, ...rest }) => (
+            <NavItem
+              setIsOverlay={setIsOverlay}
+              lng={lng}
+              key={label}
+              onCloseMainMenu={onCloseMainMenu}
+              submenu={subMenuLinks}
+              link={{
+                ...rest,
+                label,
+              }}
+            />
+          ))}
+        </ul>
+        <Button
+          className={styles.contactUsBtnMobile}
+          text={buttonLabel}
+          onClick={handleContactUsClick}
+        />
+      </nav>
+      <Overlay isActive={isOverlay} />
+    </>
   );
 };

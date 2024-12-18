@@ -5,8 +5,6 @@ import Link from 'next/link';
 
 import { FC, RefObject, useRef } from 'react';
 
-import { Overlay } from '@components/Overlay';
-
 import { useOnClickOutside } from '@hooks/useOnClickOutside';
 
 import styles from './subMenu.module.scss';
@@ -49,41 +47,38 @@ export const SubMenu: FC<SubMenuProps> = ({
   };
 
   return (
-    <>
-      <div
-        ref={subMenuRef}
-        className={classNames(styles.wrapper, {
-          [styles.active]: isSubMenu,
-        })}
-      >
-        <div className={styles.content}>
-          {submenu?.map(({ label, path, icon, desc, gridArea }) => (
-            <Link
-              key={label}
-              style={{ gridArea }}
-              href={`/${lng}${path}`}
-              onClick={onCloseMenus}
-              className={classNames(styles.link, {
-                [styles.isActive]: checkActive(path),
-              })}
-            >
-              <div className={styles.icon}>
-                <Image
-                  src={icon?.data?.attributes?.url}
-                  width={28}
-                  height={28}
-                  alt="serviceicon"
-                />
-              </div>
-              <div className={styles.info}>
-                <span className={styles.title}>{label}</span>
-                <span className={styles.description}>{desc}</span>
-              </div>
-            </Link>
-          ))}
-        </div>
+    <div
+      ref={subMenuRef}
+      className={classNames(styles.wrapper, {
+        [styles.active]: isSubMenu,
+      })}
+    >
+      <div className={styles.content}>
+        {submenu?.map(({ label, path, icon, desc, gridArea }) => (
+          <Link
+            key={label}
+            style={{ gridArea }}
+            href={`/${lng}${path}`}
+            onClick={onCloseMenus}
+            className={classNames(styles.link, {
+              [styles.isActive]: checkActive(path),
+            })}
+          >
+            <div className={styles.icon}>
+              <Image
+                src={icon?.data?.attributes?.url}
+                width={28}
+                height={28}
+                alt="serviceicon"
+              />
+            </div>
+            <div className={styles.info}>
+              <span className={styles.title}>{label}</span>
+              <span className={styles.description}>{desc}</span>
+            </div>
+          </Link>
+        ))}
       </div>
-      <Overlay isActive={isSubMenu} />
-    </>
+    </div>
   );
 };
