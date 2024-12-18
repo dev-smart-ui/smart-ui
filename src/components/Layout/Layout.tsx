@@ -7,8 +7,8 @@ import { Header } from '@components/Header';
 
 interface LayoutProps {
   children: ReactNode;
-  headerData?: IHeader;
-  footerData?: IFooter;
+  headerData: IHeader;
+  footerData: IFooter;
 }
 
 export default function Layout({
