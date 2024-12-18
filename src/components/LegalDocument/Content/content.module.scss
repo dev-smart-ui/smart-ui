@@ -1,0 +1,11 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include breakpoint(md) {
+    width: 65%;
+  }
+}
