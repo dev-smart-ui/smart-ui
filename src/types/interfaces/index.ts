@@ -288,6 +288,7 @@ export interface IContactInfo {
   id: string;
   label: string;
   text: string;
+  href: string;
   icon: IImage;
 }
 export interface IContactUsPage {

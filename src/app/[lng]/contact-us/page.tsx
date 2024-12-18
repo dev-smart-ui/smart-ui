@@ -2,6 +2,7 @@ import { CONTACT_US_QUERY } from '@graphqlQueries/contactUs';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { Accordion } from '@components/Accordion';
+import { CalendlyWidget } from '@components/CalendlyWidget';
 import Layout from '@components/Layout';
 
 import { ContactUs } from './ContactUs';
@@ -31,6 +32,7 @@ export default async function ContactUsPage({
   return (
     <Layout headerData={headerData} footerData={footerData}>
       <ContactUs data={contactUsPageData} />
+      <CalendlyWidget />
       <Accordion data={accordionData} />
     </Layout>
   );

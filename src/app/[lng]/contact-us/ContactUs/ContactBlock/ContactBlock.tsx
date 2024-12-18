@@ -1,5 +1,6 @@
 import { IContactForm, IContactUsPage } from '@app-types/interfaces';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { FC } from 'react';
 
@@ -32,7 +33,13 @@ export const ContactBlock: FC<ContactBlockProps> = ({ data }) => {
               </span>
               <div className={styles.textWrapper}>
                 <span className={styles.label}>{item.label}</span>
-                <span className={styles.text}>{item.text}</span>
+                {item?.href ? (
+                  <Link className={styles.text} href={item?.href}>
+                    {item.text}
+                  </Link>
+                ) : (
+                  <span className={styles.text}>{item.text}</span>
+                )}
               </div>
             </li>
           ))}

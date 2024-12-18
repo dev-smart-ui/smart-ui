@@ -14,3 +14,26 @@
     }
   }
 }
+
+.contactUsBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: max-content;
+  padding: 9px 32px;
+  font-weight: 600;
+  background: $primaryColor2;
+  color: $textColor2;
+  font-size: 18px;
+  transition: $transition2 ease;
+  border-radius: $borderRadius2;
+
+  &:hover {
+    background-color: $primaryColor;
+    color: white;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 24px;
+  }
+}
