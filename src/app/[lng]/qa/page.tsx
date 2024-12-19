@@ -11,7 +11,13 @@ import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
 import { TechnologyStack } from '@components/TechnologyStack';
 
-export default async function QaPage() {
+interface QaPageProps {
+  params: {
+    lng: string;
+  };
+}
+
+export default async function QaPage({ params: { lng } }: QaPageProps) {
   const {
     qaPage,
     singleProjects,
@@ -21,7 +27,7 @@ export default async function QaPage() {
     header,
     footer,
   } = await fetchGraphQL(QA_PAGE_QUERY, {
-    locale: 'en',
+    locale: lng,
     pagination: { limit: 5 },
   });
 
