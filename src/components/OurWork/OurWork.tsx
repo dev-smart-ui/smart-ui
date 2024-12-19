@@ -22,7 +22,6 @@ interface OurWorkProps {
   handlePageClick?: (selectedItem: { selected: number }) => void;
   pageCount?: number;
   bgImage?: string;
-  isLoading?: boolean;
   headerInfo?: IHeaderInfo;
 }
 
@@ -32,7 +31,6 @@ export const OurWork: FC<OurWorkProps> = ({
   handlePageClick,
   pageCount = 1,
   bgImage,
-  isLoading,
   headerInfo,
 }) => {
   return (
@@ -47,11 +45,7 @@ export const OurWork: FC<OurWorkProps> = ({
           title={headerInfo?.title}
           description={headerInfo?.description}
         />
-        {isLoading ? (
-          <div>loading..</div>
-        ) : (
-          <Projects data={data} isOurWorkPage={page === PageEnum.OurWork} />
-        )}
+        <Projects data={data} isOurWorkPage={page === PageEnum.OurWork} />
         {page === PageEnum.OurWork && data && data?.length > 0 && (
           <ReactPaginate
             className={styles.pagination}

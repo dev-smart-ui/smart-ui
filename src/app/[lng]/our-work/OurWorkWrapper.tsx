@@ -22,23 +22,15 @@ export const OurWorkWrapper: FC<OurWorkWrapperProps> = ({
   bgImage,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
   const pageCountRef = useRef<number | null>(null);
   const [data, setData] = useState<IProjectData[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const { singleProjects } = await fetchGraphQL(
-        PROJECTS_QUERY,
-        {
-          locale: lng,
-          pagination: { page: currentPage, pageSize: 10 },
-        },
-        {
-          onStart: () => setIsLoading(true),
-          onEnd: () => setIsLoading(false),
-        },
-      );
+      const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
+        locale: lng,
+        pagination: { page: currentPage, pageSize: 10 },
+      });
 
       const pageCount = singleProjects?.meta?.pagination?.pageCount;
 
@@ -65,7 +57,6 @@ export const OurWorkWrapper: FC<OurWorkWrapperProps> = ({
       handlePageClick={handlePageClick}
       pageCount={pageCountRef.current ?? 1}
       bgImage={bgImage}
-      isLoading={isLoading}
     />
   );
 };

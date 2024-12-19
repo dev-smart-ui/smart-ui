@@ -79,6 +79,16 @@
       opacity: 1;
     }
   }
+
+  @include max-breakpoint(lg) {
+    &.isSomeSubItemActive {
+      color: $primaryColor;
+
+      .arrow {
+        border-color: $primaryColor;
+      }
+    }
+  }
 }
 
 .arrow {
