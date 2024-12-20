@@ -354,9 +354,11 @@ export interface IAdvantagesForAgency {
   description: string;
   cards: IAdvantagesCardForAgency[];
   solutionTitle: string;
+  technologiesTitle: string;
   solutionIcon: IImage;
   solutionDescription: string;
-  solutionsList: ISolutionItem[];
+  solutionList: ISolutionItem[];
+  technologiesList: Array<{ text: string; id: string }>;
 }
 
 // questionSection

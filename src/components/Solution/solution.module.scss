@@ -1,5 +1,13 @@
 @import "@styles/vars";
 
+.section {
+  padding: 0 0 40px;
+
+  @include breakpoint(lg) {
+    padding: 0 0 80px;
+  }
+}
+
 .content {
   display: flex;
   flex-direction: column;

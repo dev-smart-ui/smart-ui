@@ -105,6 +105,37 @@ fragment ProjectOverviewFragment on ComponentSectionsProjectOverview {
     list
   }
 }`;
+export const SOLUTION_FRAGMENT = `
+fragment ProjectSolutionFragment on ComponentSectionsProjectSolution {
+  sectionName
+	title
+	description
+	technologiesTitle
+	technologiesList {
+		text
+		id
+	}
+	solutionTitle
+	solutionIcon {
+		data {
+			attributes {
+				url
+			}
+		}
+	}
+	solutionDescription
+	solutionList {
+		id
+		text
+		icon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+}`;
 
 // team
 export const TEAM_FRAGMENT = `
@@ -571,7 +602,7 @@ fragment AdvantagesForAgencyFragment on ComponentSectionsAdvantagesForAgency {
 		}
 	}
 	solutionDescription
-	solutionsList {
+	solutionList {
 		id
 		text
 		icon {

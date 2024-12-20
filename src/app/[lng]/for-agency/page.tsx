@@ -5,9 +5,9 @@ import { Accordion } from '@components/Accordion';
 import { ContactForm } from '@components/ContactForm';
 import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
+import { Solution } from '@components/Solution';
 import { TechnologyStack } from '@components/TechnologyStack';
 
-import { Advantages } from './components/Advantages';
 import { Approaches } from './components/Approaches';
 import { Hero } from './components/Hero';
 import { QuestionBlock } from './components/QuestionBlock';
@@ -43,7 +43,7 @@ export default async function ForAgencyPage({
   return (
     <Layout headerData={headerData} footerData={footerData}>
       <Hero data={heroData} />
-      <Advantages data={advantagesData} />
+      <Solution data={advantagesData} />
       <QuestionBlock data={questionData} />
       <WhatWeDo data={whatWeDoData} />
       <TechnologyStack data={technologyStackData} />

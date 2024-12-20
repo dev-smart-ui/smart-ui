@@ -4,6 +4,7 @@ import {
   HERO_FRAGMENT,
   PROJECTS_FRAGMENT,
   PROJECT_OVERVIEW_FRAGMENT,
+  SOLUTION_FRAGMENT,
 } from './fragments';
 
 export const PROJECT_DETAIL_QUERY = `
@@ -17,6 +18,9 @@ query GetProjectDetailPageData($locale: I18NLocaleCode, $pagination: PaginationA
         }
         projectOverview {
           ...ProjectOverviewFragment
+        }
+        solution {
+          ...ProjectSolutionFragment
         }
       }
     }
@@ -39,6 +43,7 @@ query GetProjectDetailPageData($locale: I18NLocaleCode, $pagination: PaginationA
 }
 ${HERO_FRAGMENT}
 ${PROJECT_OVERVIEW_FRAGMENT}
+${SOLUTION_FRAGMENT}
 ${PROJECTS_FRAGMENT}
 ${HEADER_FRAGMENT}
 ${FOOTER_FRAGMENT}`;

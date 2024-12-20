@@ -1,0 +1,54 @@
+@import "@styles/vars";
+
+.wrapper {
+  background: $cardColo3;
+  border-radius: $borderRadius2;
+  padding: 16px 14px;
+  margin-top: 32px;
+
+  @include breakpoint(md) {
+    padding: 24px 20px;
+  }
+}
+
+.title {
+  font-size: 26px;
+  color: white;
+  font-weight: 500;
+  margin: 0 auto 16px auto;
+  text-align: center;
+
+  @include breakpoint(md) {
+    font-size: 32px;
+  }
+  @include breakpoint(lg) {
+    text-align: left;
+    margin: 0 0 16px 0;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+
+  @include breakpoint(lg) {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.liItem {
+  font-size: 18px;
+  color: $textColor;
+
+  @include breakpoint(lg) {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-left: 48px;
+    text-indent: -26px;
+    padding-left: 26px;
+  }
+}
