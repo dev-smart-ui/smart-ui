@@ -13,6 +13,17 @@ fragment HeroFragment on ComponentSectionsHero {
   }
   subTitle
   trust
+  projectInfo {
+    text
+    id
+  }
+  topBgImage {
+    data {
+      attributes {
+        url
+      }
+    }
+  }
   backgroundImage {
     data {
       attributes {
@@ -68,10 +79,30 @@ fragment ProjectsFragment on SingleProjectEntity {
       }
     }
     color
+    slug
     site_url
     google_page_speed
     seo_title
     seo_description
+  }
+}`;
+
+export const PROJECT_OVERVIEW_FRAGMENT = `
+fragment ProjectOverviewFragment on ComponentSectionsProjectOverview {
+  id
+  title
+  description
+  image {
+    data {
+      attributes {
+        url
+      }
+    }
+  }
+  strategicRoadmap {
+    id
+    title
+    list
   }
 }`;
 

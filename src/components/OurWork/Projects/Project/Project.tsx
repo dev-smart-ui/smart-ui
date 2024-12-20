@@ -1,4 +1,5 @@
 import { IProjectData } from '@app-types/interfaces';
+import { ROUTES } from '@routes/index';
 import classNames from 'classnames';
 import Link from 'next/link';
 
@@ -10,15 +11,19 @@ import styles from './project.module.scss';
 interface ProjectProps {
   project: IProjectData;
   isOurWorkPage: boolean;
+  lng: string;
 }
 
-export const Project: FC<ProjectProps> = ({ project, isOurWorkPage }) => {
+export const Project: FC<ProjectProps> = ({ project, isOurWorkPage, lng }) => {
   const {
     main_img: mainImage,
     color,
     project_name: projectName,
     site_url: siteUrl = '#',
+    slug,
   } = project?.attributes || {};
+
+  const projectUrl = slug ? `/${lng}${ROUTES.OUR_WORK}/${slug}` : siteUrl;
 
   return (
     <li
@@ -34,17 +39,16 @@ export const Project: FC<ProjectProps> = ({ project, isOurWorkPage }) => {
             color={color}
             mainImage={mainImage?.data?.attributes?.url}
             isOurWorkPage={isOurWorkPage}
-            siteUrl={siteUrl}
+            url={projectUrl}
           />
         </div>
       ) : (
-        <Link className={styles.content} href={siteUrl ?? ''} target="_blank">
+        <Link className={styles.content} href={projectUrl}>
           <ProjectContent
             projectName={projectName}
             color={color}
             mainImage={mainImage?.data?.attributes?.url}
             isOurWorkPage={isOurWorkPage}
-            siteUrl={siteUrl}
           />
         </Link>
       )}

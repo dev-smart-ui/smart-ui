@@ -35,6 +35,7 @@ export const OurWork: FC<OurWorkProps> = ({
 }) => {
   return (
     <Section
+      id="projects"
       className={classNames(styles.section, {
         [styles.isOurWorkPage]: page === PageEnum.OurWork,
       })}

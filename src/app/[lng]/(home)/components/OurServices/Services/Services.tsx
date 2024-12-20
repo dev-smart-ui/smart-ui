@@ -2,7 +2,8 @@ import { IOurServiceCard } from '@app-types/interfaces';
 
 import { FC } from 'react';
 
-import { Card } from './Card';
+import { Card } from '@components/Card';
+
 import styles from './services.module.scss';
 
 interface ServicesProps {

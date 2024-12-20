@@ -19,6 +19,7 @@ interface ProjectsProps {
 
 export const Projects: FC<ProjectsProps> = ({ data, isOurWorkPage }) => {
   const lng = useLanguage();
+
   return (
     <ul
       className={classNames(styles.wrapper, {
@@ -27,6 +28,7 @@ export const Projects: FC<ProjectsProps> = ({ data, isOurWorkPage }) => {
     >
       {data?.map((project) => (
         <Project
+          lng={lng}
           key={project.id}
           project={project}
           isOurWorkPage={isOurWorkPage}

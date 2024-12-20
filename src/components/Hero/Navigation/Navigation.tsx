@@ -16,12 +16,18 @@ interface NavigationProps {
 export const Navigation: FC<NavigationProps> = ({ isHomePage, data }) => {
   return (
     <div className={styles.wrapper}>
-      <Button
-        onClick={() => scrollToElement('contactForm')}
-        className={styles.btn}
-        isBig
-        text={data?.button?.label}
-      />
+      {data?.siteUrl ? (
+        <Link href={data?.siteUrl} target="_blank" className={styles.link}>
+          {data?.button?.label}
+        </Link>
+      ) : (
+        <Button
+          onClick={() => scrollToElement('contactForm')}
+          className={styles.btn}
+          isBig
+          text={data?.button?.label}
+        />
+      )}
       {isHomePage && (
         <div className={styles.socialButtons}>
           {data?.socials?.map(

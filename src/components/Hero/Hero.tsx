@@ -24,7 +24,7 @@ interface HeroProps {
 export const Hero: FC<HeroProps> = ({ page = PageEnum.Home, data }) => {
   const isHomePage = page === PageEnum.Home;
   const isAboutUsPage = page === PageEnum.AboutUs;
-
+  const isProjectPage = page === PageEnum.ProjectDetail;
   return (
     <Section
       className={classNames(styles.heroSection, {
@@ -37,7 +37,7 @@ export const Hero: FC<HeroProps> = ({ page = PageEnum.Home, data }) => {
         })}
       >
         <div className={styles.contentWrapper}>
-          {isHomePage && <Trust description={data?.trust} />}
+          {data?.trust && <Trust description={data?.trust} />}
           <Content data={data} />
           {isAboutUsPage && data?.cards ? (
             <InfoCards data={data?.cards} />
@@ -45,10 +45,11 @@ export const Hero: FC<HeroProps> = ({ page = PageEnum.Home, data }) => {
             <Navigation isHomePage={isHomePage} data={data} />
           )}
         </div>
-        {!isHomePage && data?.image?.data?.attributes?.url && (
+        {data?.image?.data?.attributes?.url && (
           <div
             className={classNames(styles.allPageImage, {
               [styles.isAboutUsPage]: isAboutUsPage,
+              [styles.isProjectPage]: isProjectPage,
             })}
           >
             <Image
@@ -59,7 +60,7 @@ export const Hero: FC<HeroProps> = ({ page = PageEnum.Home, data }) => {
             />
           </div>
         )}
-        {isHomePage && data?.backgroundImage?.data?.attributes?.url && (
+        {data?.backgroundImage?.data?.attributes?.url && (
           <div className={styles.homePageImage}>
             <Image
               width={900}
@@ -70,7 +71,7 @@ export const Hero: FC<HeroProps> = ({ page = PageEnum.Home, data }) => {
           </div>
         )}
       </Container>
-      {!isHomePage && data?.backgroundBottomImage?.data?.attributes?.url && (
+      {data?.backgroundBottomImage?.data?.attributes?.url && (
         <div
           className={classNames(styles.bottomBgImage, styles[`${page}Page`])}
         >
@@ -78,6 +79,16 @@ export const Hero: FC<HeroProps> = ({ page = PageEnum.Home, data }) => {
             width={1920}
             height={300}
             src={data?.backgroundBottomImage?.data?.attributes?.url}
+            alt="bgImage"
+          />
+        </div>
+      )}
+      {data?.topBgImage?.data?.attributes?.url && (
+        <div className={styles.topBgImage}>
+          <Image
+            width={1920}
+            height={300}
+            src={data?.topBgImage?.data?.attributes?.url}
             alt="bgImage"
           />
         </div>

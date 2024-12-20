@@ -1,0 +1,19 @@
+@import "@styles/vars";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include breakpoint(lg) {
+    gap: 80px;
+  }
+}
+
+.card {
+  > div {
+    > div {
+      padding: 0;
+    }
+  }
+}

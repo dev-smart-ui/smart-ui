@@ -12,8 +12,8 @@ export const ProjectContent: FC<{
   color: string | undefined;
   mainImage: string | undefined;
   isOurWorkPage: boolean;
-  siteUrl: string;
-}> = ({ projectName, color, mainImage, isOurWorkPage, siteUrl }) => (
+  url?: string;
+}> = ({ projectName, color, mainImage, isOurWorkPage, url }) => (
   <>
     <div className={styles.imgWrapper}>
       <GradientBorder color={color}>
@@ -41,11 +41,7 @@ export const ProjectContent: FC<{
           <span className={styles.shortDesc}>
             UI-UX design + Game Cross-Platform + Development
           </span>
-          <Link
-            href={siteUrl || '#'}
-            target="_blank"
-            className={styles.additionalLink}
-          >
+          <Link href={url || '#'} className={styles.additionalLink}>
             View Case Study
             <Icons.ArrowRight fill="#31B76F" width={20} />
           </Link>

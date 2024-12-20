@@ -56,6 +56,11 @@
       right: -200px;
     }
   }
+
+  &.isProjectPage {
+    right: 0;
+    margin-right: 0;
+  }
 }
 
 .homePageImage {
@@ -176,6 +181,16 @@
       );
     }
   }
+}
+
+.topBgImage {
+  max-width: 1000px;
+  position: absolute;
+  top: -80px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: -1;
 }
 
 .contentWrapper {

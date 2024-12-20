@@ -94,6 +94,7 @@ export interface IProjectData {
     site_url: string;
     about_project: string;
     technologies: Array<{ name: string }> | null;
+    slug: string;
   };
 }
 
@@ -138,10 +139,16 @@ export interface IHeroData {
   subTitle: string;
   trust: string;
   socials: ISocial[];
+  topBgImage: IImage;
   backgroundImage: IImage;
   backgroundBottomImage: IImage;
   image: IImage;
   cards?: IToolCard[];
+  projectInfo: Array<{
+    text: string;
+    id: string;
+  }>;
+  siteUrl?: string;
 }
 
 // services tabs
@@ -464,4 +471,18 @@ export interface ILegalDocument {
   title: IGradientTitle;
   navigation: ILegalNavItem[];
   content: ILegalContentItem[];
+}
+
+// project
+export interface IStrategicRoadmapItem {
+  id: string;
+  title: string;
+  list: string[];
+}
+export interface IProjectOverviewData {
+  id: string;
+  title: string;
+  description: string;
+  image: IImage;
+  strategicRoadmap: IStrategicRoadmapItem[];
 }
