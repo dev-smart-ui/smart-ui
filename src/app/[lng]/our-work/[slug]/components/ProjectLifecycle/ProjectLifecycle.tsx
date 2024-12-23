@@ -6,6 +6,7 @@ import { FC } from 'react';
 
 import { Container } from '@components/Container';
 import { Section } from '@components/Section';
+import { SectionHeader } from '@components/SectionHeader';
 
 import { LifecycleCards } from './LifecycleCards';
 import styles from './projectLifecycle.module.scss';
@@ -18,7 +19,7 @@ export const ProjectLifecycle: FC<ProjectLifecycleProps> = ({ data }) => {
   return (
     <Section>
       <Container className={styles.wrapper}>
-        <h2 className={styles.title}>{data?.title}</h2>
+        <SectionHeader title={data?.title} position="left" />
         <LifecycleCards data={data?.cards} />
       </Container>
     </Section>

@@ -5,13 +5,3 @@
   flex-direction: column;
   gap: 32px;
 }
-
-.title {
-  color: white;
-  font-size: 32px;
-  font-weight: 600;
-
-  @include breakpoint(md) {
-    font-size: 48px;
-  }
-}

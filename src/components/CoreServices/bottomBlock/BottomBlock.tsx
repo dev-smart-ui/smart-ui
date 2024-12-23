@@ -14,7 +14,7 @@ interface BottomBlockProps {
 export const BottomBlock: FC<BottomBlockProps> = ({ data }) => {
   return (
     <div className={styles.wrapper}>
-      {data?.bgImage && (
+      {data?.bgImage?.data && (
         <div className={styles.image}>
           <Image
             src={data?.bgImage?.data?.attributes?.url}
@@ -25,7 +25,7 @@ export const BottomBlock: FC<BottomBlockProps> = ({ data }) => {
         </div>
       )}
       <div className={styles.content}>
-        {data?.image && (
+        {data?.image?.data?.attributes?.url && (
           <div className={styles.avatar}>
             <Image
               src={data?.image?.data?.attributes?.url}

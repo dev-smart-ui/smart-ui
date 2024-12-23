@@ -1,8 +1,16 @@
 export interface IImage {
   data: {
+    id: string;
     attributes: {
       url: string;
     };
+  };
+}
+
+export interface IImagesArray {
+  id: string;
+  attributes: {
+    url: string;
   };
 }
 
@@ -499,4 +507,13 @@ export interface IProjectLifecycleCard {
 export interface IProjectLifecycle {
   title: string;
   cards: IProjectLifecycleCard[];
+}
+
+// withImages
+export interface IWithImages {
+  title: string;
+  sectionName: string;
+  images: {
+    data: IImagesArray[];
+  };
 }

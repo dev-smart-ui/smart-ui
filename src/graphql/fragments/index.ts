@@ -155,6 +155,20 @@ fragment ProjectLifecycleFragment on ComponentSectionsProjectLifecycle {
   }
 }`;
 
+export const WITH_IMAGES_FRAGMENT = `
+fragment WithImagesFragment on ComponentSectionsWithImages {
+  title
+  sectionName
+  images {
+    data {
+      id
+      attributes {
+        url
+      }
+    }
+  }
+}`;
+
 // team
 export const TEAM_FRAGMENT = `
 fragment TeamFragment on TeamEntity {
