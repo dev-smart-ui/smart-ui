@@ -488,3 +488,15 @@ export interface IProjectOverviewData {
   image: IImage;
   strategicRoadmap: IStrategicRoadmapItem[];
 }
+
+// projectLifecycle
+export interface IProjectLifecycleCard {
+  id: string;
+  Title: string;
+  Text: string;
+  Img: IImage;
+}
+export interface IProjectLifecycle {
+  title: string;
+  cards: IProjectLifecycleCard[];
+}

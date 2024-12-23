@@ -6,6 +6,7 @@ import { Hero } from '@components/Hero';
 import Layout from '@components/Layout';
 import { Solution } from '@components/Solution';
 
+import { ProjectLifecycle } from './components/ProjectLifecycle';
 import { ProjectOverview } from './components/ProjectOverview';
 
 interface ProjectDetailPageProps {
@@ -31,6 +32,8 @@ export default async function ProjectDetailPage({
   const projectOverviewData =
     singleProjects?.data[0].attributes?.projectOverview || {};
   const solutionData = singleProjects?.data[0].attributes?.solution || {};
+  const projectLifecycleData =
+    singleProjects?.data[0].attributes?.projectLifecycle || {};
 
   const headerData = header?.data?.attributes || {};
   const footerData = footer?.data?.attributes || {};
@@ -43,6 +46,7 @@ export default async function ProjectDetailPage({
       />
       <ProjectOverview data={projectOverviewData} />
       <Solution data={solutionData} />
+      <ProjectLifecycle data={projectLifecycleData} />
     </Layout>
   );
 }

@@ -105,6 +105,7 @@ fragment ProjectOverviewFragment on ComponentSectionsProjectOverview {
     list
   }
 }`;
+
 export const SOLUTION_FRAGMENT = `
 fragment ProjectSolutionFragment on ComponentSectionsProjectSolution {
   sectionName
@@ -135,6 +136,23 @@ fragment ProjectSolutionFragment on ComponentSectionsProjectSolution {
 			}
 		}
 	}
+}`;
+
+export const PROJECT_LIFECYCLE_FRAGMENT = `
+fragment ProjectLifecycleFragment on ComponentSectionsProjectLifecycle {
+  title
+  cards {
+    id
+    Title
+    Text
+    Img {
+      data {
+        attributes {
+          url
+        }
+      }
+    }
+  }
 }`;
 
 // team

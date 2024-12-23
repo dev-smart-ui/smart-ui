@@ -3,6 +3,7 @@ import {
   HEADER_FRAGMENT,
   HERO_FRAGMENT,
   PROJECTS_FRAGMENT,
+  PROJECT_LIFECYCLE_FRAGMENT,
   PROJECT_OVERVIEW_FRAGMENT,
   SOLUTION_FRAGMENT,
 } from './fragments';
@@ -21,6 +22,9 @@ query GetProjectDetailPageData($locale: I18NLocaleCode, $pagination: PaginationA
         }
         solution {
           ...ProjectSolutionFragment
+        }
+        projectLifecycle {
+          ...ProjectLifecycleFragment
         }
       }
     }
@@ -44,6 +48,7 @@ query GetProjectDetailPageData($locale: I18NLocaleCode, $pagination: PaginationA
 ${HERO_FRAGMENT}
 ${PROJECT_OVERVIEW_FRAGMENT}
 ${SOLUTION_FRAGMENT}
+${PROJECT_LIFECYCLE_FRAGMENT}
 ${PROJECTS_FRAGMENT}
 ${HEADER_FRAGMENT}
 ${FOOTER_FRAGMENT}`;
