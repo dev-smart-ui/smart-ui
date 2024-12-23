@@ -1,7 +1,10 @@
 export const scrollToElement = (id: string) => {
   const section = document.getElementById(id);
   if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
+    const headerHeight = 80;
+    const y =
+      section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+    window.scrollTo({ top: y, behavior: 'smooth' });
   }
 };
 

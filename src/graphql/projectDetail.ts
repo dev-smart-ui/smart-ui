@@ -43,6 +43,13 @@ query GetProjectDetailPageData($locale: I18NLocaleCode, $pagination: PaginationA
         consultation {
           ...QuestionSectionFragment
         }
+        ourWorks {
+          part1
+          part2
+          gradientPart
+          color1
+          color2  
+        }
       }
     }
     meta {

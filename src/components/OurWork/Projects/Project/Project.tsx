@@ -23,7 +23,9 @@ export const Project: FC<ProjectProps> = ({ project, isOurWorkPage, lng }) => {
     slug,
   } = project?.attributes || {};
 
-  const projectUrl = slug ? `/${lng}${ROUTES.OUR_WORK}/${slug}` : siteUrl;
+  const projectUrl = slug
+    ? `/${lng}${ROUTES.OUR_WORK}/${slug}`
+    : siteUrl || '#';
 
   return (
     <li

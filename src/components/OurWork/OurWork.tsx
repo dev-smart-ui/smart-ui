@@ -46,20 +46,21 @@ export const OurWork: FC<OurWorkProps> = ({
           title={headerInfo?.title}
           description={headerInfo?.description}
         />
-        <Projects data={data} isOurWorkPage={page === PageEnum.OurWork} />
-        {page === PageEnum.OurWork && data && data?.length > 0 && (
-          <ReactPaginate
-            className={styles.pagination}
-            pageClassName={styles.page}
-            breakLabel="..."
-            nextLabel=">"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={5}
-            pageCount={pageCount}
-            previousLabel="<"
-            renderOnZeroPageCount={null}
-          />
-        )}
+        <Projects data={data} page={page} />
+        {page === PageEnum.OurWork ||
+          (page === PageEnum.ProjectDetail && data && data?.length > 0 && (
+            <ReactPaginate
+              className={styles.pagination}
+              pageClassName={styles.page}
+              breakLabel="..."
+              nextLabel=">"
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={3}
+              pageCount={pageCount}
+              previousLabel="<"
+              renderOnZeroPageCount={null}
+            />
+          ))}
       </Container>
       {bgImage && (
         <div className={styles.topBgImage}>

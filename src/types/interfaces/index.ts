@@ -16,10 +16,10 @@ export interface IImagesArray {
 
 export interface IGradientTitle {
   part1: string;
-  gradientPart: string;
-  part2: string;
-  color1: string;
-  color2: string;
+  gradientPart?: string;
+  part2?: string;
+  color1?: string;
+  color2?: string;
 }
 
 // header

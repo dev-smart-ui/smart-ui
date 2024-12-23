@@ -7,6 +7,7 @@ import Layout from '@components/Layout';
 import { Solution } from '@components/Solution';
 
 import { QuestionBlock } from '../../for-agency/components/QuestionBlock';
+import { OurWorkWrapper } from '../OurWorkWrapper';
 import { ImageSection } from './components/ImageSection';
 import { ProjectLifecycle } from './components/ProjectLifecycle';
 import { ProjectOverview } from './components/ProjectOverview';
@@ -42,6 +43,7 @@ export default async function ProjectDetailPage({
   const desktopData = singleProjects?.data[0]?.attributes?.desktop || {};
   const mobileData = singleProjects?.data[0]?.attributes?.mobile || {};
   const questionData = singleProjects?.data[0]?.attributes.consultation || {};
+  const ourWorksData = singleProjects?.data[0]?.attributes.ourWorks || {};
 
   const headerData = header?.data?.attributes || {};
   const footerData = footer?.data?.attributes || {};
@@ -60,6 +62,12 @@ export default async function ProjectDetailPage({
       <ImageSection data={desktopData} />
       <ImageSection data={mobileData} />
       <QuestionBlock data={questionData} />
+      <OurWorkWrapper
+        lng={lng}
+        headerInfo={{ title: ourWorksData }}
+        page={PageEnum.ProjectDetail}
+        pagSize={3}
+      />
     </Layout>
   );
 }
