@@ -37,6 +37,9 @@ query GetProjectDetailPageData($locale: I18NLocaleCode, $pagination: PaginationA
         desktop {
           ...WithImagesFragment
         }
+        otherPages {
+          ...WithImagesFragment
+        }
         mobile {
           ...WithImagesFragment
         }

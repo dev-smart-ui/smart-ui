@@ -42,6 +42,7 @@ export default async function ProjectDetailPage({
   const colorPaletteData =
     singleProjects?.data[0]?.attributes?.colorPalette || {};
   const desktopData = singleProjects?.data[0]?.attributes?.desktop || {};
+  const otherPagesData = singleProjects?.data[0]?.attributes?.otherPages || {};
   const mobileData = singleProjects?.data[0]?.attributes?.mobile || {};
   const questionData = singleProjects?.data[0]?.attributes.consultation || {};
   const ourWorksData = singleProjects?.data[0]?.attributes.ourWorks || {};
@@ -61,6 +62,9 @@ export default async function ProjectDetailPage({
       <ImageSection data={userFlowData} />
       <ImageSection data={colorPaletteData} />
       <ImageSection data={desktopData} />
+      {otherPagesData && Object.keys(otherPagesData).length > 0 && (
+        <ImageSection data={otherPagesData} />
+      )}
       <ImageSection data={mobileData} />
       <Container>
         <QuestionBlock data={questionData} lng={lng} />
