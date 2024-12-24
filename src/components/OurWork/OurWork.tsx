@@ -33,6 +33,9 @@ export const OurWork: FC<OurWorkProps> = ({
   bgImage,
   headerInfo,
 }) => {
+  const isOurWorkPage = page === PageEnum.OurWork;
+  const isProjectDetailPage = page === PageEnum.ProjectDetail;
+
   return (
     <Section
       id="projects"
@@ -47,20 +50,19 @@ export const OurWork: FC<OurWorkProps> = ({
           description={headerInfo?.description}
         />
         <Projects data={data} page={page} />
-        {page === PageEnum.OurWork ||
-          (page === PageEnum.ProjectDetail && data && data?.length > 0 && (
-            <ReactPaginate
-              className={styles.pagination}
-              pageClassName={styles.page}
-              breakLabel="..."
-              nextLabel=">"
-              onPageChange={handlePageClick}
-              pageRangeDisplayed={3}
-              pageCount={pageCount}
-              previousLabel="<"
-              renderOnZeroPageCount={null}
-            />
-          ))}
+        {(isOurWorkPage || isProjectDetailPage) && data && data?.length > 0 && (
+          <ReactPaginate
+            className={styles.pagination}
+            pageClassName={styles.page}
+            breakLabel="..."
+            nextLabel=">"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={3}
+            pageCount={pageCount}
+            previousLabel="<"
+            renderOnZeroPageCount={null}
+          />
+        )}
       </Container>
       {bgImage && (
         <div className={styles.topBgImage}>

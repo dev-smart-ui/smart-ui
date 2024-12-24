@@ -2,6 +2,7 @@ import { PageEnum } from '@app-types/enums';
 import { PROJECT_DETAIL_QUERY } from '@graphqlQueries/projectDetail';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 
+import { Container } from '@components/Container';
 import { Hero } from '@components/Hero';
 import Layout from '@components/Layout';
 import { Solution } from '@components/Solution';
@@ -61,7 +62,9 @@ export default async function ProjectDetailPage({
       <ImageSection data={colorPaletteData} />
       <ImageSection data={desktopData} />
       <ImageSection data={mobileData} />
-      <QuestionBlock data={questionData} />
+      <Container>
+        <QuestionBlock data={questionData} />
+      </Container>
       <OurWorkWrapper
         lng={lng}
         headerInfo={{ title: ourWorksData }}
