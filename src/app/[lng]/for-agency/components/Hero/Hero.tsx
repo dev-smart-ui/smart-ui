@@ -1,6 +1,7 @@
 'use client';
 
 import { IHeroForAgency } from '@app-types/interfaces';
+import { scrollToElement } from '@utils/index';
 import Image from 'next/image';
 
 import { FC } from 'react';
@@ -33,7 +34,10 @@ export const Hero: FC<IHeroProps> = ({ data }) => {
           </div>
           <h1 className={styles.title}>{data?.title}</h1>
           <p className={styles.descriprion}>{data?.description}</p>
-          <Button text={data?.button?.label} />
+          <Button
+            text={data?.button?.label}
+            onClick={() => scrollToElement('contactForm')}
+          />
         </div>
         <Image
           src={data?.image?.data?.attributes?.url}

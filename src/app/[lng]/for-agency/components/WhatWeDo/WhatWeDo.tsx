@@ -13,9 +13,11 @@ import { TechnologiesList } from './TechnologiesList';
 
 interface WhatWeDoProps {
   data: IWhatWeCanDo;
+  lng?: string;
+  callToAction?: string;
 }
 
-export const WhatWeDo: FC<WhatWeDoProps> = ({ data }) => {
+export const WhatWeDo: FC<WhatWeDoProps> = ({ data, lng, callToAction }) => {
   const bottomBlock = {
     title: data?.bottomTitle,
     text: data?.bottomText,
@@ -32,7 +34,7 @@ export const WhatWeDo: FC<WhatWeDoProps> = ({ data }) => {
           description={data?.description}
         />
         <TechnologiesList data={data?.cards} />
-        <BottomBlock data={bottomBlock} />
+        <BottomBlock data={bottomBlock} lng={lng} callToAction={callToAction} />
       </Container>
     </Section>
   );

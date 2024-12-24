@@ -49,7 +49,7 @@ export default async function CmsPage({ params: { lng } }: CmsPageProps) {
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.Cms} data={heroData} />
       <TechnologyStack data={technologyStackData} />
-      <CoreServices data={coreServicesData} />
+      <CoreServices data={coreServicesData} lng={lng} callToAction="" />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />

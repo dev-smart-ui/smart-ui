@@ -49,7 +49,11 @@ export default async function Web3Page({ params: { lng } }: Web3PageProps) {
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.Web3} data={heroData} />
       <TechnologyStack data={technologyStackData} />
-      <CoreServices data={coreServicesData} />
+      <CoreServices
+        data={coreServicesData}
+        lng={lng}
+        callToAction="contactForm"
+      />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />

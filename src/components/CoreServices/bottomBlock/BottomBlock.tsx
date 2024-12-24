@@ -1,5 +1,8 @@
 import { IQuestionSection } from '@app-types/interfaces';
+import { ROUTES } from '@routes/index';
+import { scrollToElement } from '@utils/index';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { FC } from 'react';
 
@@ -9,9 +12,15 @@ import styles from './bottomBlock.module.scss';
 
 interface BottomBlockProps {
   data: IQuestionSection;
+  callToAction?: string;
+  lng?: string;
 }
 
-export const BottomBlock: FC<BottomBlockProps> = ({ data }) => {
+export const BottomBlock: FC<BottomBlockProps> = ({
+  data,
+  lng,
+  callToAction = '',
+}) => {
   return (
     <div className={styles.wrapper}>
       {data?.bgImage?.data && (
@@ -39,7 +48,16 @@ export const BottomBlock: FC<BottomBlockProps> = ({ data }) => {
           <h3 className={styles.title}>{data?.title}</h3>
           <p className={styles.description}>{data?.text}</p>
         </div>
-        <Button text={data?.button?.label} />
+        {callToAction ? (
+          <Button
+            text={data?.button?.label}
+            onClick={() => scrollToElement(callToAction)}
+          />
+        ) : (
+          <Link href={`/${lng}${ROUTES.CONTACT_US}`} className={styles.link}>
+            {data?.button?.label}
+          </Link>
+        )}
       </div>
     </div>
   );

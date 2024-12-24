@@ -44,8 +44,8 @@ export default async function ForAgencyPage({
     <Layout headerData={headerData} footerData={footerData}>
       <Hero data={heroData} />
       <Solution data={advantagesData} />
-      <QuestionBlock data={questionData} />
-      <WhatWeDo data={whatWeDoData} />
+      <QuestionBlock data={questionData} lng={lng} callToAction="contactForm" />
+      <WhatWeDo data={whatWeDoData} lng={lng} callToAction="contactForm" />
       <TechnologyStack data={technologyStackData} />
       <Approaches data={approachesData} />
       <OurWork data={singleProjectsData} />

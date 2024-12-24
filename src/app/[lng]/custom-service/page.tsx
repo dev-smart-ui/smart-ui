@@ -54,7 +54,11 @@ export default async function CustomServicePage({
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.CustomService} data={heroData} />
       <TechnologyStack data={technologyStackData} />
-      <CoreServices data={coreServicesData} />
+      <CoreServices
+        data={coreServicesData}
+        lng={lng}
+        callToAction="contactForm"
+      />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />
