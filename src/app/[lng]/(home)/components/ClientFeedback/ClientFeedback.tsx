@@ -20,7 +20,7 @@ interface ClientFeedbackProps {
 
 export const ClientFeedback: FC<ClientFeedbackProps> = ({ data }) => {
   return (
-    <Section>
+    <Section className={styles.section}>
       <Container className={styles.additionalContentWrapper}>
         <Container>
           <SectionHeader position="left" sectionName={data?.sectionName} />

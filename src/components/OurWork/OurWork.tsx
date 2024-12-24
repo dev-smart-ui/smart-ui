@@ -13,6 +13,8 @@ import { Container } from '@components/Container';
 import { Section } from '@components/Section';
 import { SectionHeader } from '@components/SectionHeader';
 
+import useMediaQuery from '@hooks/useMediaQuery';
+
 import { Projects } from './Projects';
 import styles from './ourWork.module.scss';
 
@@ -35,6 +37,7 @@ export const OurWork: FC<OurWorkProps> = ({
 }) => {
   const isOurWorkPage = page === PageEnum.OurWork;
   const isProjectDetailPage = page === PageEnum.ProjectDetail;
+  const isTabletsAndDesktops = useMediaQuery('(min-width: 768px)');
 
   return (
     <Section
@@ -57,7 +60,8 @@ export const OurWork: FC<OurWorkProps> = ({
             breakLabel="..."
             nextLabel=">"
             onPageChange={handlePageClick}
-            pageRangeDisplayed={3}
+            pageRangeDisplayed={1}
+            marginPagesDisplayed={isTabletsAndDesktops ? 3 : 1}
             pageCount={pageCount}
             previousLabel="<"
             renderOnZeroPageCount={null}
