@@ -350,6 +350,7 @@ export interface IHeroForAgency {
 export interface ISolutionItem {
   id: string;
   text: string;
+  description: string;
   icon: IImage;
 }
 export interface IAdvantagesCardForAgency {
@@ -361,10 +362,7 @@ export interface IAdvantagesForAgency {
   title: string;
   description: string;
   cards: IAdvantagesCardForAgency[];
-  solutionTitle: string;
   technologiesTitle: string;
-  solutionIcon: IImage;
-  solutionDescription: string;
   solutionList: ISolutionItem[];
   technologiesList: Array<{ text: string; id: string }>;
 }
