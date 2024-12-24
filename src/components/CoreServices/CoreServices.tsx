@@ -12,9 +12,15 @@ import { SectionHeader } from '@components/SectionHeader';
 
 interface CoreServicesProps {
   data: ICoreServices;
+  lng?: string;
+  callToAction?: string;
 }
 
-export const CoreServices: FC<CoreServicesProps> = ({ data }) => {
+export const CoreServices: FC<CoreServicesProps> = ({
+  data,
+  lng,
+  callToAction,
+}) => {
   const bottomBlock = {
     title: data?.bottomTitle,
     text: data?.bottomSubTitle,
@@ -28,7 +34,7 @@ export const CoreServices: FC<CoreServicesProps> = ({ data }) => {
       <Container>
         <SectionHeader title={data?.title} description={data?.description} />
         <ServicesList data={data?.cards || []} />
-        <BottomBlock data={bottomBlock} />
+        <BottomBlock data={bottomBlock} lng={lng} callToAction={callToAction} />
       </Container>
     </Section>
   );

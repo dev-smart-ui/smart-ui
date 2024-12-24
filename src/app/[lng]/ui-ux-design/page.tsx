@@ -53,7 +53,11 @@ export default async function UiUxDesignPage({
     <Layout headerData={headerData} footerData={footerData}>
       <Hero page={PageEnum.UiUxDesign} data={heroData} />
       <TechnologyStack data={technologyStackData} />
-      <CoreServices data={coreServicesData} />
+      <CoreServices
+        data={coreServicesData}
+        lng={lng}
+        callToAction="contactForm"
+      />
       <Clients data={clientData} />
       <OurWork data={singleProjectsData} />
       <Accordion data={accordionData} />

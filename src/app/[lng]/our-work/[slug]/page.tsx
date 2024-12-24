@@ -63,7 +63,7 @@ export default async function ProjectDetailPage({
       <ImageSection data={desktopData} />
       <ImageSection data={mobileData} />
       <Container>
-        <QuestionBlock data={questionData} />
+        <QuestionBlock data={questionData} lng={lng} />
       </Container>
       <OurWorkWrapper
         lng={lng}

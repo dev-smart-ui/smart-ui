@@ -12,13 +12,19 @@ import styles from './questionBlock.module.scss';
 
 interface IQuestionBlockProps {
   data: IQuestionSection;
+  lng?: string;
+  callToAction?: string;
 }
 
-export const QuestionBlock: FC<IQuestionBlockProps> = ({ data }) => {
+export const QuestionBlock: FC<IQuestionBlockProps> = ({
+  data,
+  lng,
+  callToAction,
+}) => {
   return (
     <Section className={styles.section}>
       <Container className={styles.content}>
-        <BottomBlock data={data} />
+        <BottomBlock data={data} lng={lng} callToAction={callToAction} />
       </Container>
     </Section>
   );

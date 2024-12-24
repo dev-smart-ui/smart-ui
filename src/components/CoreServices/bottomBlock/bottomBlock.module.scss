@@ -62,3 +62,22 @@
     font-size: 24px;
   }
 }
+
+.link {
+  background: $primaryColor2;
+  color: $textColor2;
+  font-size: 18px;
+  border-radius: $borderRadius2;
+  padding: 9px 32px;
+  font-weight: 600;
+  transition: background-color $transition1 ease, color $transition1 ease;
+  min-width: max-content;
+
+  &:hover {
+    background-color: $primaryColor;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 24px;
+  }
+}
