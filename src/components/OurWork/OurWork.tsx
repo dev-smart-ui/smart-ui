@@ -37,7 +37,7 @@ export const OurWork: FC<OurWorkProps> = ({
 }) => {
   const isOurWorkPage = page === PageEnum.OurWork;
   const isProjectDetailPage = page === PageEnum.ProjectDetail;
-  const isTabletsAndDesktops = useMediaQuery('(min-width: 768px)');
+  const isTabletAndDesktop = useMediaQuery('(min-width: 768px)');
 
   return (
     <Section
@@ -61,7 +61,7 @@ export const OurWork: FC<OurWorkProps> = ({
             nextLabel=">"
             onPageChange={handlePageClick}
             pageRangeDisplayed={1}
-            marginPagesDisplayed={isTabletsAndDesktops ? 3 : 1}
+            marginPagesDisplayed={isTabletAndDesktop ? 3 : 1}
             pageCount={pageCount}
             previousLabel="<"
             renderOnZeroPageCount={null}
