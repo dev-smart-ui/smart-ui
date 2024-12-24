@@ -116,18 +116,10 @@ fragment ProjectSolutionFragment on ComponentSectionsProjectSolution {
 		text
 		id
 	}
-	solutionTitle
-	solutionIcon {
-		data {
-			attributes {
-				url
-			}
-		}
-	}
-	solutionDescription
 	solutionList {
 		id
 		text
+		description
 		icon {
 			data {
 				attributes {
@@ -625,18 +617,10 @@ fragment AdvantagesForAgencyFragment on ComponentSectionsAdvantagesForAgency {
 		Title
 		Text
 	}
-	solutionTitle
-	solutionIcon {
-		data {
-			attributes {
-				url
-			}
-		}
-	}
-	solutionDescription
 	solutionList {
 		id
 		text
+		description
 		icon {
 			data {
 				attributes {
