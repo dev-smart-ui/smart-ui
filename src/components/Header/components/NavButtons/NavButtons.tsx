@@ -18,7 +18,10 @@ export const NavButtons: FC<INavButtonsProps> = ({ onToggle, buttonLabel }) => {
   const lng = useLanguage();
   return (
     <div className={styles.wrapper}>
-      <Link href={`${lng}${ROUTES.CONTACT_US}`} className={styles.contactUsBtn}>
+      <Link
+        href={`/${lng}${ROUTES.CONTACT_US}`}
+        className={styles.contactUsBtn}
+      >
         {buttonLabel}
       </Link>
       <LanguageSwitcher />

@@ -21,3 +21,29 @@
   display: flex;
   gap: 20px;
 }
+
+.link {
+  width: 100%;
+  max-width: 260px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: $borderRadius2;
+  padding: 14px 32px;
+  font-weight: 600;
+  transition: background-color $transition1 ease, color $transition1 ease;
+  min-width: max-content;
+  background: $primaryColor2;
+  color: $textColor2;
+  font-size: 18px;
+
+  &:hover {
+    background-color: $primaryColor;
+    color: white;
+  }
+
+  @include breakpoint(md) {
+    font-size: 20px;
+  }
+}

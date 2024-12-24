@@ -1,17 +1,25 @@
 export interface IImage {
   data: {
+    id: string;
     attributes: {
       url: string;
     };
   };
 }
 
+export interface IImagesArray {
+  id: string;
+  attributes: {
+    url: string;
+  };
+}
+
 export interface IGradientTitle {
   part1: string;
-  gradientPart: string;
-  part2: string;
-  color1: string;
-  color2: string;
+  gradientPart?: string;
+  part2?: string;
+  color1?: string;
+  color2?: string;
 }
 
 // header
@@ -94,6 +102,7 @@ export interface IProjectData {
     site_url: string;
     about_project: string;
     technologies: Array<{ name: string }> | null;
+    slug: string;
   };
 }
 
@@ -138,10 +147,16 @@ export interface IHeroData {
   subTitle: string;
   trust: string;
   socials: ISocial[];
+  topBgImage: IImage;
   backgroundImage: IImage;
   backgroundBottomImage: IImage;
   image: IImage;
   cards?: IToolCard[];
+  projectInfo: Array<{
+    text: string;
+    id: string;
+  }>;
+  siteUrl?: string;
 }
 
 // services tabs
@@ -347,9 +362,11 @@ export interface IAdvantagesForAgency {
   description: string;
   cards: IAdvantagesCardForAgency[];
   solutionTitle: string;
+  technologiesTitle: string;
   solutionIcon: IImage;
   solutionDescription: string;
-  solutionsList: ISolutionItem[];
+  solutionList: ISolutionItem[];
+  technologiesList: Array<{ text: string; id: string }>;
 }
 
 // questionSection
@@ -464,4 +481,39 @@ export interface ILegalDocument {
   title: IGradientTitle;
   navigation: ILegalNavItem[];
   content: ILegalContentItem[];
+}
+
+// project
+export interface IStrategicRoadmapItem {
+  id: string;
+  title: string;
+  list: string[];
+}
+export interface IProjectOverviewData {
+  id: string;
+  title: string;
+  description: string;
+  image: IImage;
+  strategicRoadmap: IStrategicRoadmapItem[];
+}
+
+// projectLifecycle
+export interface IProjectLifecycleCard {
+  id: string;
+  Title: string;
+  Text: string;
+  Img: IImage;
+}
+export interface IProjectLifecycle {
+  title: string;
+  cards: IProjectLifecycleCard[];
+}
+
+// withImages
+export interface IWithImages {
+  title: string;
+  sectionName: string;
+  images: {
+    data: IImagesArray[];
+  };
 }

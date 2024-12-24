@@ -2,29 +2,14 @@ import {
   CONTACT_FORM_FRAGMENT,
   FOOTER_FRAGMENT,
   HEADER_FRAGMENT,
+  PROJECTS_FRAGMENT,
 } from '@graphqlQueries/fragments';
 
 export const PROJECTS_QUERY = `
 query GetSingleProjectsData($locale: I18NLocaleCode!, $pagination: PaginationArg) {
   singleProjects(locale: $locale, pagination: $pagination) {
     data {
-      id
-      attributes {
-        project_name
-        description_text
-        main_img {
-          data {
-            attributes {
-              url
-            }
-          }
-        }
-        color
-        site_url
-        google_page_speed
-        seo_title
-        seo_description
-      }
+      ...ProjectsFragment
     }
     meta {
       pagination {
@@ -49,5 +34,6 @@ query GetSingleProjectsData($locale: I18NLocaleCode!, $pagination: PaginationArg
   }
 }
 ${CONTACT_FORM_FRAGMENT}
+${PROJECTS_FRAGMENT}
 ${HEADER_FRAGMENT}
 ${FOOTER_FRAGMENT}`;

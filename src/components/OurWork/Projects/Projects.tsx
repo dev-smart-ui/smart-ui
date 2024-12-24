@@ -1,3 +1,4 @@
+import { PageEnum } from '@app-types/enums';
 import { IProjectData } from '@app-types/interfaces';
 import { useLanguage } from '@context/LanguageContext';
 import { ROUTES } from '@routes/index';
@@ -14,11 +15,14 @@ import styles from './projects.module.scss';
 
 interface ProjectsProps {
   data?: IProjectData[];
-  isOurWorkPage: boolean;
+  page: string;
 }
 
-export const Projects: FC<ProjectsProps> = ({ data, isOurWorkPage }) => {
+export const Projects: FC<ProjectsProps> = ({ data, page }) => {
   const lng = useLanguage();
+  const isOurWorkPage = page === PageEnum.OurWork;
+  const isProjectDetail = page === PageEnum.ProjectDetail;
+
   return (
     <ul
       className={classNames(styles.wrapper, {
@@ -27,12 +31,13 @@ export const Projects: FC<ProjectsProps> = ({ data, isOurWorkPage }) => {
     >
       {data?.map((project) => (
         <Project
+          lng={lng}
           key={project.id}
           project={project}
           isOurWorkPage={isOurWorkPage}
         />
       ))}
-      {!isOurWorkPage && (
+      {!isOurWorkPage && !isProjectDetail && (
         <li className={styles.more}>
           <Link href={`/${lng}${ROUTES.OUR_WORK}`}>
             <BorderGradientButton

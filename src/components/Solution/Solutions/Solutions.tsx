@@ -13,7 +13,7 @@ export const Solutions: FC<SolutionsProps> = ({ data }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.solutionInfo}>
-        <div className={styles.solutionTitle}>
+        <h3 className={styles.solutionTitle}>
           <Image
             src={data?.solutionIcon?.data?.attributes?.url}
             width={20}
@@ -21,11 +21,11 @@ export const Solutions: FC<SolutionsProps> = ({ data }) => {
             alt="pencilIcon"
           />
           {data?.solutionTitle}
-        </div>
+        </h3>
         <p className={styles.solutionDesc}>{data?.solutionDescription}</p>
       </div>
       <ul className={styles.solutionList}>
-        {data?.solutionsList?.map((item) => (
+        {data?.solutionList?.map((item) => (
           <li key={item.id} className={styles.solutionItem}>
             <Image
               src={item?.icon?.data?.attributes?.url}

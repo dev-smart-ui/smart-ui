@@ -13,6 +13,17 @@ fragment HeroFragment on ComponentSectionsHero {
   }
   subTitle
   trust
+  projectInfo {
+    text
+    id
+  }
+  topBgImage {
+    data {
+      attributes {
+        url
+      }
+    }
+  }
   backgroundImage {
     data {
       attributes {
@@ -68,10 +79,93 @@ fragment ProjectsFragment on SingleProjectEntity {
       }
     }
     color
+    slug
     site_url
     google_page_speed
     seo_title
     seo_description
+  }
+}`;
+
+export const PROJECT_OVERVIEW_FRAGMENT = `
+fragment ProjectOverviewFragment on ComponentSectionsProjectOverview {
+  id
+  title
+  description
+  image {
+    data {
+      attributes {
+        url
+      }
+    }
+  }
+  strategicRoadmap {
+    id
+    title
+    list
+  }
+}`;
+
+export const SOLUTION_FRAGMENT = `
+fragment ProjectSolutionFragment on ComponentSectionsProjectSolution {
+  sectionName
+	title
+	description
+	technologiesTitle
+	technologiesList {
+		text
+		id
+	}
+	solutionTitle
+	solutionIcon {
+		data {
+			attributes {
+				url
+			}
+		}
+	}
+	solutionDescription
+	solutionList {
+		id
+		text
+		icon {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+	}
+}`;
+
+export const PROJECT_LIFECYCLE_FRAGMENT = `
+fragment ProjectLifecycleFragment on ComponentSectionsProjectLifecycle {
+  title
+  cards {
+    id
+    Title
+    Text
+    Img {
+      data {
+        attributes {
+          url
+        }
+      }
+    }
+  }
+}`;
+
+export const WITH_IMAGES_FRAGMENT = `
+fragment WithImagesFragment on ComponentSectionsWithImages {
+  title
+  sectionName
+  images {
+    data {
+      id
+      attributes {
+        url
+      }
+    }
   }
 }`;
 
@@ -540,7 +634,7 @@ fragment AdvantagesForAgencyFragment on ComponentSectionsAdvantagesForAgency {
 		}
 	}
 	solutionDescription
-	solutionsList {
+	solutionList {
 		id
 		text
 		icon {

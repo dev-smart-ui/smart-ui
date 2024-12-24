@@ -13,6 +13,13 @@ interface ContentProps {
 export const Content: FC<ContentProps> = ({ data }) => {
   return (
     <div className={styles.content}>
+      {data?.projectInfo && data?.projectInfo?.length > 0 && (
+        <div className={styles.projectInfo}>
+          {data?.projectInfo?.map((item) => (
+            <span key={item?.id}>{item?.text}</span>
+          ))}
+        </div>
+      )}
       <h1 className={styles.title}>
         {data?.title?.part1}{' '}
         <GradientText colors={[data?.title?.color1, data?.title?.color2]}>

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { detect } from 'detect-browser';
 import Image from 'next/image';
 
-import { FC, useEffect, useState } from 'react';
+import { FC, createElement, useEffect, useState } from 'react';
 
 import { Button } from '@components/Button';
 import { GradientBorder } from '@components/GradientBorder';
@@ -12,20 +12,24 @@ import styles from './card.module.scss';
 
 interface CardProps {
   title: string;
+  titleTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   description: string;
   image: IImage;
-  area: string;
-  buttonLabel: string;
-  buttonIcon: IImage;
+  area?: string;
+  buttonLabel?: string;
+  buttonIcon?: IImage;
+  className?: string;
 }
 
 export const Card: FC<CardProps> = ({
   title,
+  titleTag = 'h3',
   description,
   image,
   area,
   buttonLabel,
   buttonIcon,
+  className,
 }) => {
   const [isSafari, setIsSafari] = useState(false);
   const browser = detect();
@@ -38,8 +42,9 @@ export const Card: FC<CardProps> = ({
     <li
       className={classNames(
         styles.wrapper,
+        className,
         isSafari ? styles.isEllipseSafari : styles.isEllipseAllBrowsers,
-        styles[area],
+        styles[area ?? ''],
       )}
     >
       <GradientBorder color="#1B653D" borderRadius="lg">
@@ -53,13 +58,15 @@ export const Card: FC<CardProps> = ({
         </div>
       </GradientBorder>
       <div className={styles.info}>
-        <h3 className={styles.title}>{title}</h3>
+        {createElement(titleTag, { className: styles.title }, title)}
         <p className={styles.description}>{description}</p>
-        <Button
-          text={buttonLabel}
-          className={styles.button}
-          icon={buttonIcon?.data?.attributes?.url}
-        />
+        {buttonLabel && (
+          <Button
+            text={buttonLabel}
+            className={styles.button}
+            icon={buttonIcon?.data?.attributes?.url}
+          />
+        )}
       </div>
     </li>
   );

@@ -10,15 +10,16 @@ import { Section } from '@components/Section';
 import { SectionHeader } from '@components/SectionHeader';
 
 import { Solutions } from './Solutions';
-import styles from './advantages.module.scss';
+import { Technologies } from './Technologies';
+import styles from './solution.module.scss';
 
 interface AdvantagesProps {
   data: IAdvantagesForAgency;
 }
 
-export const Advantages: FC<AdvantagesProps> = ({ data }) => {
+export const Solution: FC<AdvantagesProps> = ({ data }) => {
   return (
-    <Section>
+    <Section className={styles.section}>
       <Container className={styles.content}>
         <div className={styles.advantages}>
           <SectionHeader
@@ -27,7 +28,15 @@ export const Advantages: FC<AdvantagesProps> = ({ data }) => {
             title={data?.title}
             description={data?.description}
           />
-          <InfoCards data={data?.cards} className={styles.infoCards} />
+          {data?.cards?.length > 0 && (
+            <InfoCards data={data?.cards} className={styles.infoCards} />
+          )}
+          {data?.technologiesList?.length > 0 && (
+            <Technologies
+              title={data?.technologiesTitle}
+              data={data?.technologiesList}
+            />
+          )}
         </div>
         <Solutions data={data} />
       </Container>
