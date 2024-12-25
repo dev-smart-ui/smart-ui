@@ -11,22 +11,28 @@
   flex-direction: column;
   gap: 16px;
   padding: 15px;
+  width: 100%;
 
   @include breakpoint(lg) {
     gap: 32px;
     padding: 20px;
+    width: 100%;
   }
 }
 
-.solutionItems {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.solutionItemWrapper {
+  display: grid;
+  grid-template-rows: 32px 0fr;
+  transition: $transition2 ease;
+  padding: 0 24px;
+  gap: 0;
 
-  &.isDescription {
-    padding: 24px;
+  &.isCurrentTab {
     background: $cardColor;
     border-radius: $borderRadius2;
+    padding: 24px;
+    gap: 8px;
+    grid-template-rows: 32px 1fr;
   }
 }
 
@@ -45,6 +51,11 @@
   img {
     min-width: 24px;
     max-width: 24px;
+    max-height: 24px;
+  }
+
+  &.isDescription {
+    cursor: pointer;
   }
 }
 
@@ -54,4 +65,13 @@
   line-height: 27px;
   color: $textColor;
   padding-left: 34px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  white-space: pre-line;
+
+  &.isCurrentTab {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
