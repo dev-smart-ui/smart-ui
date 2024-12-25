@@ -43,6 +43,7 @@
   color: $textColor2;
   font-size: 20px;
   font-weight: 500;
+  text-align: left;
 
   @include breakpoint(lg) {
     font-size: 24px;
