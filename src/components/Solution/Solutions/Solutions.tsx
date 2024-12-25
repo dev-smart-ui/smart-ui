@@ -1,8 +1,9 @@
 import { IAdvantagesForAgency } from '@app-types/interfaces';
+import { ANIMATION_TRANSITION_TIME2 } from '@constants/common';
 import classNames from 'classnames';
 import Image from 'next/image';
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import styles from './solutions.module.scss';
 
@@ -11,17 +12,32 @@ interface SolutionsProps {
 }
 
 export const Solutions: FC<SolutionsProps> = ({ data }) => {
+  const [currentTab, setCurrentTab] = useState(data?.solutionList[0]?.id);
+
+  const onChangeTab = (id: string) => {
+    if (id !== currentTab) {
+      setCurrentTab('');
+      setTimeout(() => setCurrentTab(id), ANIMATION_TRANSITION_TIME2);
+    }
+  };
+
   return (
     <div className={styles.wrapper}>
       <ul className={styles.solutionList}>
         {data?.solutionList?.map((item) => (
           <li
             key={item.id}
-            className={classNames(styles.solutionItems, {
-              [styles.isDescription]: item?.description,
+            className={classNames(styles.solutionItemWrapper, {
+              [styles.isCurrentTab]: currentTab === item?.id,
             })}
           >
-            <span className={styles.solutionItem}>
+            <button
+              onClick={() => item?.description && onChangeTab(item?.id)}
+              tabIndex={0}
+              className={classNames(styles.solutionItem, {
+                [styles.isDescription]: !!item?.description,
+              })}
+            >
               <Image
                 src={item?.icon?.data?.attributes?.url}
                 width={20}
@@ -29,9 +45,15 @@ export const Solutions: FC<SolutionsProps> = ({ data }) => {
                 alt="solutionIcon"
               />
               {item.text}
-            </span>
+            </button>
             {item?.description && (
-              <p className={styles.description}>{item?.description}</p>
+              <p
+                className={classNames(styles.description, {
+                  [styles.isCurrentTab]: currentTab === item?.id,
+                })}
+              >
+                {item?.description}
+              </p>
             )}
           </li>
         ))}
