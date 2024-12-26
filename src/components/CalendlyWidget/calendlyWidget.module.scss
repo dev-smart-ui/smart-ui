@@ -1,3 +1,14 @@
+@import "@styles/vars";
+
 .wrapper {
   padding: 0 16px;
+}
+
+.calendlyWrapper {
+  min-width: 320px;
+  height: 460px;
+
+  @media screen and (min-width: 680px) {
+    height: 700px;
+  }
 }

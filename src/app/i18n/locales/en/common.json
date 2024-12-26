@@ -1,12 +1,4 @@
 {
-  "buttons": {
-    "contact": "Contact Us",
-    "getStart": "Get Start",
-    "learnMore": "Learn More",
-    "getInTouch": "Get in Touch",
-    "requestQuote": "Request a Quote",
-    "scheduleAConsultation": "Schedule a Consultation"
-  },
   "404": {
     "title": "Page Not Found",
     "description": "It seems like the page you were trying to reach is either unavailable or has been moved.",

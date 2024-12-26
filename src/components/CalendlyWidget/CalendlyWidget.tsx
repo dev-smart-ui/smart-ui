@@ -16,9 +16,8 @@ export const CalendlyWidget: FC<CalendlyWidgetProps> = ({
   return (
     <Section className={styles.wrapper}>
       <div
-        className="calendly-inline-widget"
+        className={`calendly-inline-widget ${styles.calendlyWrapper}`}
         data-url={url}
-        style={{ minWidth: '320px', height: '700px' }}
       />
       <Script
         type="text/javascript"
