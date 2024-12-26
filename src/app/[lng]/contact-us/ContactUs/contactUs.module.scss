@@ -1,5 +1,11 @@
+@import "@styles/vars";
+
 .section {
-  margin-top: 260px;
+  margin-top: 120px;
+
+  @include breakpoint(lg) {
+    margin-top: 240px;
+  }
 }
 
 .topBgImage {

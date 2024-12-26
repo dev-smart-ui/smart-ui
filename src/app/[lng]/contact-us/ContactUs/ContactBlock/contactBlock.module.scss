@@ -1,7 +1,7 @@
 @import '@styles/vars';
 
 .wrapper {
-  margin-top: 80px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -10,7 +10,7 @@
     align-items: center;
   }
   @include breakpoint(lg) {
-    margin-top: 160px;
+    margin-top: 80px;
     flex-direction: row;
     align-items: stretch;
   }
