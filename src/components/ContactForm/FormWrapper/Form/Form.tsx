@@ -1,6 +1,7 @@
 'use client';
 
-import { IImage } from '@app-types/interfaces';
+import { sendForm } from '@api/contactForm';
+import { FormValues, IImage } from '@app-types/interfaces';
 
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
@@ -11,14 +12,6 @@ import { InputField } from '@components/Input';
 import { TextareaField } from '@components/TextAreaField';
 
 import styles from './form.module.scss';
-
-interface FormValues {
-  lastName: string;
-  firstName: string;
-  email: string;
-  phone: string;
-  message: string;
-}
 
 interface FormProps {
   button: {
@@ -32,12 +25,26 @@ export const Form: FC<FormProps> = ({ button }) => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
-  } = useForm<FormValues>();
+  } = useForm<FormValues>({
+    reValidateMode: 'onSubmit',
+    shouldUnregister: false,
+  });
 
   const onSubmit = (formData: FormValues) => {
-    /* eslint-disable no-console */
-    console.log(formData);
+    sendForm({ type: 'request consultation', data: formData })
+      .then(() => {
+        setValue('firstName', '');
+        setValue('lastName', '');
+        setValue('email', '');
+        setValue('phone', '');
+        setValue('message', '');
+      })
+      .catch((error) => {
+        /* eslint-disable no-console */
+        console.error('Error sending formData', error);
+      });
   };
 
   return (
@@ -79,7 +86,7 @@ export const Form: FC<FormProps> = ({ button }) => {
         className={styles.inputPhone}
         placeholder={t('contactForm.form.phone.placeholder')}
         register={register('phone', {
-          required: t('contactForm.form.phone.errorMessage'),
+          // required: t('contactForm.form.phone.errorMessage'),
           pattern: {
             value: /^[+]?[0-9]{10,15}$/,
             message: t('contactForm.form.phone.patternMessage'),
