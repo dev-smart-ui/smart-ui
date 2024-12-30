@@ -16,15 +16,17 @@ import styles from './projects.module.scss';
 interface ProjectsProps {
   data?: IProjectData[];
   page: string;
+  id?: string;
 }
 
-export const Projects: FC<ProjectsProps> = ({ data, page }) => {
+export const Projects: FC<ProjectsProps> = ({ data, page, id }) => {
   const lng = useLanguage();
   const isOurWorkPage = page === PageEnum.OurWork;
   const isProjectDetail = page === PageEnum.ProjectDetail;
 
   return (
     <ul
+      id={id}
       className={classNames(styles.wrapper, {
         [styles.isOurWorkPage]: isOurWorkPage,
       })}
