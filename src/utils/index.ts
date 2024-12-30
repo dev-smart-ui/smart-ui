@@ -4,7 +4,7 @@ export const scrollToElement = (id: string) => {
     const headerHeight = 80;
     const y =
       section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-    window.scrollTo({ top: y, behavior: 'smooth' });
+    setTimeout(() => window.scrollTo({ top: y, behavior: 'smooth' }), 300);
   }
 };
 

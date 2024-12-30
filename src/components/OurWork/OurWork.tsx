@@ -41,7 +41,6 @@ export const OurWork: FC<OurWorkProps> = ({
 
   return (
     <Section
-      id="projects"
       className={classNames(styles.section, {
         [styles.isOurWorkPage]: page === PageEnum.OurWork,
       })}
@@ -52,7 +51,7 @@ export const OurWork: FC<OurWorkProps> = ({
           title={headerInfo?.title}
           description={headerInfo?.description}
         />
-        <Projects data={data} page={page} />
+        <Projects id="projects" data={data} page={page} />
         {(isOurWorkPage || isProjectDetailPage) && data && data?.length > 0 && (
           <ReactPaginate
             className={styles.pagination}
