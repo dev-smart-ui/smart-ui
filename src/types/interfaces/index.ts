@@ -1,3 +1,11 @@
+export interface FormValues {
+  lastName?: string;
+  firstName: string;
+  email: string;
+  phone?: string;
+  message?: string;
+}
+
 export interface IImage {
   data: {
     id: string;
