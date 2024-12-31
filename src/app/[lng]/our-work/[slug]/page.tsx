@@ -59,7 +59,9 @@ export default async function ProjectDetailPage({
       <ProjectOverview data={projectOverviewData} />
       <Solution data={solutionData} />
       <ProjectLifecycle data={projectLifecycleData} />
-      <ImageSection data={userFlowData} />
+      {userFlowData && Object.keys(userFlowData).length > 0 && (
+        <ImageSection data={userFlowData} />
+      )}
       <ImageSection data={colorPaletteData} />
       <ImageSection data={desktopData} />
       {otherPagesData && Object.keys(otherPagesData).length > 0 && (
