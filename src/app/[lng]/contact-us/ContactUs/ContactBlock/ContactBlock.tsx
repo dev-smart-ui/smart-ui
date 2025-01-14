@@ -51,6 +51,7 @@ export const ContactBlock: FC<ContactBlockProps> = ({ data }) => {
         />
       </div>
       <FormWrapper
+        isContactUsPage
         className={styles.formWrapper}
         data={data?.contactFormData}
         button={data?.contactFormData?.button}
