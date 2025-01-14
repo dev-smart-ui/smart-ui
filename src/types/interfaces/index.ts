@@ -304,6 +304,9 @@ export interface IContactForm {
     label: string;
     icon: IImage;
   };
+  formSuccessImage: IImage;
+  formSuccessTitle: string;
+  formSuccessText: string;
 }
 
 // contactUsPage

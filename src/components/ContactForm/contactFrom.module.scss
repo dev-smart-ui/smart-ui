@@ -14,6 +14,10 @@
   @include breakpoint(lg) {
     flex-direction: row;
   }
+
+  &.isFormSent {
+    background: $backgroundColor5;
+  }
 }
 
 .gradientBorder {
@@ -24,5 +28,44 @@
 
   @include breakpoint(md) {
     min-height: 536px;
+    min-width: 516px;
   }
+}
+
+.formSuccess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+}
+
+.image {
+  max-width: 180px;
+
+  @include breakpoint(lg) {
+    max-width: 240px;
+  }
+}
+
+.formSuccessTitle {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.4;
+  display: block;
+  color: white;
+  margin-bottom: 8px;
+
+  @include breakpoint(md) {
+    font-size: 30px;
+  }
+}
+
+.formSuccessText {
+  font-size: 18px;
+  color: $textColor;
+}
+
+.formSuccessBtn {
+  width: 100%;
 }

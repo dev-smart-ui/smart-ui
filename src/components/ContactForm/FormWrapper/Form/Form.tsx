@@ -1,5 +1,3 @@
-'use client';
-
 import { sendForm } from '@api/contactForm';
 import { FormValues, IImage } from '@app-types/interfaces';
 
@@ -18,9 +16,10 @@ interface FormProps {
     label: string;
     icon: IImage;
   };
+  setIsFormSent: (key: boolean) => void;
 }
 
-export const Form: FC<FormProps> = ({ button }) => {
+export const Form: FC<FormProps> = ({ button, setIsFormSent }) => {
   const { t } = useTranslation('contactForm');
   const {
     register,
@@ -40,6 +39,7 @@ export const Form: FC<FormProps> = ({ button }) => {
         setValue('email', '');
         setValue('phone', '');
         setValue('message', '');
+        setIsFormSent(true);
       })
       .catch((error) => {
         /* eslint-disable no-console */

@@ -2,8 +2,9 @@
 
 import { IContactForm } from '@app-types/interfaces';
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
+import { FormSuccess } from '@components/ContactForm/FormSuccess/FormSuccess';
 import { Container } from '@components/Container';
 import { GradientBorder } from '@components/GradientBorder';
 import { Section } from '@components/Section';
@@ -17,6 +18,8 @@ interface ContactFormProps {
 }
 
 export const ContactForm: FC<ContactFormProps> = ({ data }) => {
+  const [isFormSent, setIsFormSent] = useState(false);
+
   const formData = {
     title: data?.title,
     subTitle: data?.subTitle,
@@ -25,11 +28,21 @@ export const ContactForm: FC<ContactFormProps> = ({ data }) => {
   return (
     <Section id="contactForm">
       <Container>
-        <div className={styles.content}>
+        <div
+          className={`${styles.content} ${isFormSent ? styles.isFormSent : ''}`}
+        >
           <GradientBorder direction="both" className={styles.gradientBorder}>
             <SocialMediaBlock data={data} />
           </GradientBorder>
-          <FormWrapper data={formData} button={data?.button} />
+          {isFormSent ? (
+            <FormSuccess data={data} setIsFormSent={setIsFormSent} />
+          ) : (
+            <FormWrapper
+              data={formData}
+              button={data?.button}
+              setIsFormSent={setIsFormSent}
+            />
+          )}
         </div>
       </Container>
     </Section>
