@@ -5,10 +5,15 @@ import { toast } from 'react-toastify';
 
 import { API, sendTelegram } from './api';
 
-const sendDataToStrapi = async (formData: {
-  type: string;
-  data_message: FormValues;
-}) => {
+const sendDataToStrapi = async (
+  formData: {
+    type: string;
+    data_message: FormValues;
+  },
+  type: string,
+) => {
+  const dataToString = JSON.stringify(formData).split(',').join('\n');
+
   return axios
     .post(API.CONTACT_FORM, { data: formData })
     .catch((e) => {
@@ -19,7 +24,7 @@ const sendDataToStrapi = async (formData: {
     })
     .then((response) => {
       if (response?.status === 200) {
-        toast.success('Message sent successfully', { theme: 'dark' });
+        sendTelegram({ type, dataToString });
       }
       return response;
     });
@@ -37,7 +42,5 @@ export const sendForm = ({
     data_message: validatedData,
     type,
   };
-  const dataToString = JSON.stringify(data).split(',').join('\n');
-  sendTelegram({ type, dataToString });
-  return sendDataToStrapi(formData);
+  return sendDataToStrapi(formData, type);
 };

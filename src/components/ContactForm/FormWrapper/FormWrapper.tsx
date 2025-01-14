@@ -15,12 +15,16 @@ interface FormWrapperProps {
     label: string;
     icon: IImage;
   };
+  setIsFormSent?: (key: boolean) => void;
+  isContactUsPage?: boolean;
 }
 
 export const FormWrapper: FC<FormWrapperProps> = ({
   className,
   data,
   button,
+  setIsFormSent,
+  isContactUsPage,
 }) => {
   return (
     <div className={`${styles.wrapper} ${className ?? ''}`}>
@@ -28,7 +32,11 @@ export const FormWrapper: FC<FormWrapperProps> = ({
         <span className={styles.title}>{data?.title}</span>
         <p className={styles.subTitle}>{data?.subTitle}</p>
       </div>
-      <Form button={button} />
+      <Form
+        button={button}
+        setIsFormSent={setIsFormSent}
+        isContactUsPage={isContactUsPage}
+      />
     </div>
   );
 };

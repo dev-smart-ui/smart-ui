@@ -475,6 +475,15 @@ fragment ContactFormFragment on ContactFormEntity {
 				}
 			}
 		}
+		formSuccessImage {
+			data {
+				attributes {
+					url
+				}
+			}
+		}
+		formSuccessTitle
+		formSuccessText
 	}
 }`;
 

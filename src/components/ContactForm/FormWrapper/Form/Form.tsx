@@ -1,11 +1,10 @@
-'use client';
-
 import { sendForm } from '@api/contactForm';
 import { FormValues, IImage } from '@app-types/interfaces';
 
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { toast } from 'react-toastify';
 
 import { Button } from '@components/Button';
 import { InputField } from '@components/Input';
@@ -18,9 +17,15 @@ interface FormProps {
     label: string;
     icon: IImage;
   };
+  setIsFormSent?: (key: boolean) => void;
+  isContactUsPage?: boolean;
 }
 
-export const Form: FC<FormProps> = ({ button }) => {
+export const Form: FC<FormProps> = ({
+  button,
+  setIsFormSent,
+  isContactUsPage,
+}) => {
   const { t } = useTranslation('contactForm');
   const {
     register,
@@ -40,6 +45,9 @@ export const Form: FC<FormProps> = ({ button }) => {
         setValue('email', '');
         setValue('phone', '');
         setValue('message', '');
+        setIsFormSent && setIsFormSent(true);
+        isContactUsPage &&
+          toast.success('Message sent successfully', { theme: 'dark' });
       })
       .catch((error) => {
         /* eslint-disable no-console */
