@@ -9,7 +9,7 @@ import {
   ReactNode,
 } from 'react';
 
-import styles from './button.module.scss';
+import styles from './borderGradientButton.module.scss';
 
 interface ButtonProps<T extends ElementType = 'button'> {
   text?: string;
@@ -33,6 +33,7 @@ interface ButtonProps<T extends ElementType = 'button'> {
   children?: ReactNode;
   color?: string;
   iconAlt?: string;
+  isLeftPosition?: boolean;
 }
 
 export const BorderGradientButton = <T extends ElementType = 'button'>({
@@ -50,6 +51,7 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
   color = '#31B76F',
   iconAlt = '',
   imgUrl,
+  isLeftPosition = false,
   as,
   ...rest
 }: ButtonProps<T> &
@@ -84,7 +86,11 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
       {...rest}
     >
       {children || (
-        <span className={styles.label}>
+        <span
+          className={classNames(styles.label, {
+            [styles.isLeftPosition]: isLeftPosition,
+          })}
+        >
           {icon && (
             <span
               className={classNames(styles.icon, {
@@ -101,7 +107,7 @@ export const BorderGradientButton = <T extends ElementType = 'button'>({
                 [styles.isIconSeparated]: isIconSeparated,
               })}
             >
-              <Image width={50} height={50} src={imgUrl} alt={iconAlt} />
+              <Image width={36} height={22} src={imgUrl} alt={iconAlt} />
             </span>
           )}
           {text}

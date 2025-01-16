@@ -41,7 +41,8 @@ export const Projects: FC<ProjectsProps> = ({ data, page, id }) => {
       ))}
       {!isOurWorkPage && !isProjectDetail && (
         <li className={styles.more}>
-          <Link href={`/${lng}${ROUTES.OUR_WORK}`}>
+          <span className={styles.linkDesc}>View All Projects</span>
+          <Link className={styles.moreLink} href={`/${lng}${ROUTES.OUR_WORK}`}>
             <BorderGradientButton
               className={styles.link}
               icon={<Icons.ArrowRight width={50} height={50} />}
@@ -50,7 +51,6 @@ export const Projects: FC<ProjectsProps> = ({ data, page, id }) => {
               isRounded="large"
             />
           </Link>
-          <span className={styles.linkDesc}>View All Projects</span>
         </li>
       )}
     </ul>

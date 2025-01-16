@@ -21,7 +21,7 @@
   border-radius: $borderRadius2;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  min-width: 270px;
 
   @include breakpoint(sm) {
     width: max-content;

@@ -1,6 +1,9 @@
 @import '@styles/vars';
 
-.mainBtn, .borderGradientBtn {
+.mainBtn {
+  background: $primaryColor2;
+  color: $textColor2;
+  font-size: 18px;
   font-family: $primaryFont;
   position: relative;
   display: inline-flex;
@@ -18,141 +21,6 @@
   &.fullWidth {
     width: 100%;
   }
-}
-
-.borderGradientBtn {
-  font-size: 16px;
-  color: $textColor;
-  background: $surfaceColor;
-
-  &::after {
-    position: absolute;
-    content: '';
-    height: calc(100% + 3px);
-    width: calc(100% + 3px);
-    border-radius: var(--border-radius, $borderRadius2);
-    z-index: -1;
-    transition: all $transition1 ease;
-
-    background: linear-gradient(
-                    var(--gradient-direction, to bottom),
-                    rgba(var(--gradient-color-r), var(--gradient-color-g), var(--gradient-color-b), 0.2), /* 20% прозрачности */
-                    rgba(var(--gradient-color-r), var(--gradient-color-g), var(--gradient-color-b), 1) /* Полностью непрозрачный */
-    );
-  }
-
-  &:hover {
-    background-color: transparent;
-    color: white;
-
-    &::after {
-      height: calc(100%);
-      width: calc(100%);
-    }
-  }
-
-  &:disabled {
-    opacity: .8;
-    pointer-events: none;
-
-    &::after {
-      background: transparent;
-    }
-  }
-
-  &.isOnlyIcon {
-    padding: 6px;
-    min-height: 46px;
-    max-height: 46px;
-    max-width: 46px;
-    min-width: 46px;
-
-    &:hover .label {
-      transform: scale(1.1);
-    }
-  }
-
-  &.isRoundedsmall, &.isRoundedlarge {
-    --border-radius: 50%;
-    font-size: 16px;
-    padding: 12px;
-
-    &:hover .label {
-      transform: scale(1.1);
-    }
-  }
-
-  &.isRoundedsmall {
-    min-width: 40px;
-    max-width: 40px;
-    min-height: 40px;
-    max-height: 40px;
-
-    @include breakpoint(lg) {
-      min-width: 46px;
-      max-width: 46px;
-      min-height: 46px;
-      max-height: 46px;
-    }
-  }
-
-  &.isRoundedlarge {
-    min-width: 80px;
-    max-width: 80px;
-    min-height: 80px;
-
-    @include breakpoint(lg) {
-      min-width: 120px;
-      max-width: 120px;
-      min-height: 120px;
-    }
-  }
-
-  &.isGradienttoTop {
-    --gradient-direction: to top;
-  }
-
-  &.isGradienttoBottom {
-    --gradient-direction: to bottom;
-  }
-
-  &.isGradienttoTopRight {
-    --gradient-direction: to top right;
-  }
-
-  &.isGradienttoBottomLeft {
-    --gradient-direction: to bottom left;
-  }
-
-  &.isGradienttoLeft {
-    --gradient-direction: to left;
-  }
-
-  &.isGradienttoRight {
-    --gradient-direction: to right;
-  }
-
-  &.isMonotoneBorder {
-    border: 1px solid rgba($primaryColor, 0.2);
-
-    &:hover {
-      background: rgba($primaryColor, 0.9);
-    }
-
-    &::after {
-      background: initial;
-    }
-  }
-
-  @include breakpoint(lg) {
-    font-size: 20px;
-  }
-}
-
-.mainBtn {
-  background: $primaryColor2;
-  color: $textColor2;
-  font-size: 18px;
 
   .icon {
     transition: transform $transition2 ease;
@@ -186,22 +54,5 @@
 
   @include breakpoint(lg) {
     font-size: 24px;
-  }
-}
-
-.label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  &.isIconSeparated {
-    padding-right: 10px;
-    border-right: 1px solid rgba($borderColor3, 0.2);
   }
 }
