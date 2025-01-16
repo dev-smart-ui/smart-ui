@@ -33,7 +33,7 @@ export const Footer: FC<FooterProps> = ({ footerData }) => {
               data={footerData?.services}
               title={footerData?.servicesTitle}
             />
-            <Socials data={footerData?.socials} />
+            <Socials isLeftPosition data={footerData?.socials} />
           </div>
         </Container>
       </div>

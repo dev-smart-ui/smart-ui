@@ -9,15 +9,17 @@ import styles from './socials.module.scss';
 
 interface SocialsProps {
   data: IFooterSocialItem[];
+  isLeftPosition?: boolean;
 }
 
-export const Socials: FC<SocialsProps> = ({ data }) => {
+export const Socials: FC<SocialsProps> = ({ data, isLeftPosition = false }) => {
   return (
     <div className={styles.wrapper}>
       {data?.map(({ url, label, color, icon, ariaLabel }) => (
         <BorderGradientButton
           fullWidth
           isIconSeparated
+          isLeftPosition={isLeftPosition}
           key={url}
           as={Link}
           href={url}

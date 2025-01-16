@@ -22,7 +22,7 @@
 
 .solutionItemWrapper {
   display: grid;
-  grid-template-rows: 32px 0fr;
+  grid-template-rows: minmax(32px, auto) 0fr;
   transition: $transition2 ease;
   padding: 0 24px;
   gap: 0;
@@ -32,7 +32,7 @@
     border-radius: $borderRadius2;
     padding: 24px;
     gap: 8px;
-    grid-template-rows: 32px 1fr;
+    grid-template-rows: minmax(32px, auto) 1fr;
   }
 }
 

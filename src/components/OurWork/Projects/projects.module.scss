@@ -28,29 +28,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 26px;
 
   @include breakpoint(md) {
     gap: 26px;
   }
 
-  &:hover {
-    button {
-      background-color: $primaryColor;
+  button {
+    &:hover {
       color: white;
+      background-color: $primaryColor;
 
       &::after {
         height: calc(100%);
         width: calc(100%);
       }
-    }
-    svg {
-      animation: bounce .8s ease infinite;
 
-      path {
-        fill: black;
-        transition: $transition2 ease;
+      svg {
+        animation: bounce .8s ease infinite;
+
+        path {
+          fill: black;
+          transition: $transition2 ease;
+        }
       }
     }
   }
