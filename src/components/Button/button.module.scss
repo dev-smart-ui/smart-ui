@@ -23,6 +23,9 @@
   }
 
   .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: transform $transition2 ease;
     will-change: transform;
   }
