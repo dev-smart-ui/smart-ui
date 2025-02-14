@@ -59,15 +59,21 @@ export const NavItem: FC<NavItemProps> = ({
         normalizedLinkPath !== '/'));
 
   const isSubMenuBtnActive = servicesLinks.includes(normalizedPathname);
-
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const openSubMenu = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
     onOpenSubMenu();
     setIsOverlay(true);
   };
 
   const closeSubMenu = () => {
-    onCloseSubMenu();
-    setIsOverlay(false);
+    closeTimeoutRef.current = setTimeout(() => {
+      onCloseSubMenu();
+      setIsOverlay(false);
+    }, 400);
   };
 
   return (
