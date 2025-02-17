@@ -59,7 +59,7 @@ export const NavItem: FC<NavItemProps> = ({
         normalizedLinkPath !== '/'));
 
   const isSubMenuBtnActive = servicesLinks.includes(normalizedPathname);
-  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const closeTimeoutRef = useRef<number | null>(null);
   const openSubMenu = () => {
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current);
@@ -70,10 +70,10 @@ export const NavItem: FC<NavItemProps> = ({
   };
 
   const closeSubMenu = () => {
-    closeTimeoutRef.current = setTimeout(() => {
+    closeTimeoutRef.current = window.setTimeout(() => {
       onCloseSubMenu();
       setIsOverlay(false);
-    }, 400);
+    }, 400) as unknown as number;
   };
 
   return (

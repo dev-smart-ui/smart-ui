@@ -28,9 +28,8 @@ export const HidedText: FC<HidedTextProps> = ({ id, hidedText, isActive }) => {
         className={classNames(styles.hidedText, {
           [styles.isActive]: isActive,
         })}
-      >
-        {hidedText}
-      </p>
+        dangerouslySetInnerHTML={{ __html: hidedText }}
+      />
     </div>
   );
 };
