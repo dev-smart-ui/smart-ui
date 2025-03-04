@@ -34,15 +34,17 @@ export const ContactForm: FC<ContactFormProps> = ({ data }) => {
           <GradientBorder direction="both" className={styles.gradientBorder}>
             <SocialMediaBlock data={data} />
           </GradientBorder>
-          {isFormSent ? (
-            <FormSuccess data={data} setIsFormSent={setIsFormSent} />
-          ) : (
-            <FormWrapper
-              data={formData}
-              button={data?.button}
-              setIsFormSent={setIsFormSent}
-            />
-          )}
+          <div className={styles.dynamicContent}>
+            {isFormSent ? (
+              <FormSuccess data={data} setIsFormSent={setIsFormSent} />
+            ) : (
+              <FormWrapper
+                data={formData}
+                button={data?.button}
+                setIsFormSent={setIsFormSent}
+              />
+            )}
+          </div>
         </div>
       </Container>
     </Section>
