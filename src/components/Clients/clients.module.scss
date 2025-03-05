@@ -22,8 +22,7 @@
 .image {
   display: flex;
   justify-content: center;
-  height: 100%;
-  max-height: 50px;
+  max-height: 100px;
   max-width: 200px;
 
   img {
@@ -34,7 +33,6 @@
 .logosSwiper {
   width: 100%;
   overflow: visible!important;
-  height: 50px;
   margin-top: 32px;
 
   :global {
