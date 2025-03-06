@@ -1,6 +1,8 @@
+'use client';
+
 import Script from 'next/script';
 
-import { FC } from 'react';
+import { FC, useEffect, useRef } from 'react';
 
 import { Section } from '@components/Section';
 
@@ -13,6 +15,34 @@ interface CalendlyWidgetProps {
 export const CalendlyWidget: FC<CalendlyWidgetProps> = ({
   url = 'https://calendly.com/gashkov321',
 }) => {
+  const widgetInitialized = useRef(false);
+
+  useEffect(() => {
+    if (widgetInitialized.current) return;
+
+    if (window.Calendly) {
+      window.Calendly.initInlineWidget({
+        url,
+        parentElement: document.querySelector(`.${styles.calendlyWrapper}`),
+      });
+      widgetInitialized.current = true;
+    }
+
+    const handleScriptLoad = () => {
+      if (!widgetInitialized.current && window.Calendly) {
+        window.Calendly.initInlineWidget({
+          url,
+          parentElement: document.querySelector(`.${styles.calendlyWrapper}`),
+        });
+        widgetInitialized.current = true;
+      }
+    };
+
+    window.addEventListener('load', handleScriptLoad);
+    // eslint-disable-next-line consistent-return
+    return () => window.removeEventListener('load', handleScriptLoad);
+  }, [url]);
+
   return (
     <Section className={styles.wrapper}>
       <div

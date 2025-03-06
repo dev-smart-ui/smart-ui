@@ -6,3 +6,16 @@ export interface IHeaderInfo {
   title: IGradientTitle;
   description?: string;
 }
+
+interface Calendly {
+  initInlineWidget(options: {
+    url: string;
+    parentElement: HTMLElement | null;
+  }): void;
+}
+
+declare global {
+  interface Window {
+    Calendly?: Calendly;
+  }
+}
