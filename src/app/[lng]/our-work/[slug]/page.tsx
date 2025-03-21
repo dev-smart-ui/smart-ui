@@ -62,12 +62,18 @@ export default async function ProjectDetailPage({
       {userFlowData && Object.keys(userFlowData).length > 0 && (
         <ImageSection data={userFlowData} />
       )}
-      <ImageSection data={colorPaletteData} />
-      <ImageSection data={desktopData} />
+      {colorPaletteData && Object.keys(colorPaletteData).length > 0 && (
+        <ImageSection data={colorPaletteData} />
+      )}
+      {desktopData && Object.keys(desktopData).length > 0 && (
+        <ImageSection data={desktopData} />
+      )}
       {otherPagesData && Object.keys(otherPagesData).length > 0 && (
         <ImageSection data={otherPagesData} />
       )}
-      <ImageSection data={mobileData} />
+      {mobileData && Object.keys(mobileData).length > 0 && (
+        <ImageSection data={mobileData} />
+      )}
       <Container>
         <QuestionBlock data={questionData} lng={lng} />
       </Container>
