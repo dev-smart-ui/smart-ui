@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { FC } from 'react';
 
@@ -12,8 +11,7 @@ export const ProjectContent: FC<{
   color: string | undefined;
   mainImage: string | undefined;
   isOurWorkPage: boolean;
-  url?: string;
-}> = ({ projectName, color, mainImage, isOurWorkPage, url }) => (
+}> = ({ projectName, color, mainImage, isOurWorkPage }) => (
   <>
     <div className={styles.imgWrapper}>
       <GradientBorder color={color}>
@@ -39,10 +37,10 @@ export const ProjectContent: FC<{
           <span className={styles.shortDesc}>
             UI-UX design + Game Cross-Platform + Development
           </span>
-          <Link href={url || '#'} className={styles.additionalLink}>
+          <p className={styles.fakeLink}>
             View Case Study
             <Icons.ArrowRight fill="#31B76F" width={20} />
-          </Link>
+          </p>
         </>
       )}
     </div>

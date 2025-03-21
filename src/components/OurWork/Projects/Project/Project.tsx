@@ -34,26 +34,18 @@ export const Project: FC<ProjectProps> = ({ project, isOurWorkPage, lng }) => {
         [styles.isOurWorkPage]: isOurWorkPage,
       })}
     >
-      {isOurWorkPage ? (
-        <div className={styles.content}>
-          <ProjectContent
-            projectName={projectName}
-            color={color}
-            mainImage={mainImage?.data?.attributes?.url}
-            isOurWorkPage={isOurWorkPage}
-            url={projectUrl}
-          />
-        </div>
-      ) : (
-        <Link className={styles.content} href={projectUrl}>
-          <ProjectContent
-            projectName={projectName}
-            color={color}
-            mainImage={mainImage?.data?.attributes?.url}
-            isOurWorkPage={isOurWorkPage}
-          />
-        </Link>
-      )}
+      <Link
+        className={styles.content}
+        target={slug ? '_self' : '_blank'}
+        href={projectUrl}
+      >
+        <ProjectContent
+          projectName={projectName}
+          color={color}
+          mainImage={mainImage?.data?.attributes?.url}
+          isOurWorkPage={isOurWorkPage}
+        />
+      </Link>
     </li>
   );
 };

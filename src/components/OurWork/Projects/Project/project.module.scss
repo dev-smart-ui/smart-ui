@@ -6,10 +6,6 @@
   transition: $transition2 ease;
   overflow: hidden;
 
-  &:hover {
-    transform: scale(1.05);
-  }
-
   .image {
     border-radius: $borderRadius2;
     overflow: hidden;
@@ -69,6 +65,22 @@
   gap: 20px;
   padding: 16px;
 
+  img {
+    transition: $transition2 ease;
+  }
+
+  &:hover {
+    .fakeLink {
+      svg {
+        transform: translateX(3px);
+      }
+    }
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+
   @include breakpoint(md) {
     padding: 32px;
   }
@@ -92,7 +104,7 @@
   color: $textColor;
 }
 
-.additionalLink {
+.fakeLink {
   color: $primaryColor;
   display: inline-flex;
   align-items: center;
@@ -102,11 +114,5 @@
 
   svg {
     transition: $transition2 ease;
-  }
-
-  &:hover {
-    svg {
-      transform: translateX(3px);
-    }
   }
 }
