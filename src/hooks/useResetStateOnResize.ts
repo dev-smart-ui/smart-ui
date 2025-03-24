@@ -8,7 +8,6 @@ export const useResetStatesOnResize = (resetFunctions: (() => void)[]) => {
 
     window.addEventListener('resize', handleResize);
 
-    // Удаляем слушатель при размонтировании
     return () => {
       window.removeEventListener('resize', handleResize);
     };
