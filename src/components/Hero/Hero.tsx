@@ -29,6 +29,7 @@ export const Hero: FC<HeroProps> = ({ page = PageEnum.Home, data }) => {
     <Section
       className={classNames(styles.heroSection, {
         [styles.isAboutUsPage]: isAboutUsPage,
+        [styles.isHomePage]: isHomePage,
       })}
     >
       <Container

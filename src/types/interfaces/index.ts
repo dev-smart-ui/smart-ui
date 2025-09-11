@@ -526,3 +526,16 @@ export interface IWithImages {
     data: IImagesArray[];
   };
 }
+
+// projectsCategories
+export interface IProjectCategory {
+  id: string;
+  attributes: {
+    slug: string;
+    color?: string;
+    icon?: IImage;
+    single_projects: {
+      data: never[];
+    };
+  };
+}

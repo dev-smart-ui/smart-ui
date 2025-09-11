@@ -1,3 +1,5 @@
+'use client';
+
 import { IQuestionSection } from '@app-types/interfaces';
 import { ROUTES } from '@routes/index';
 import { scrollToElement } from '@utils/index';
@@ -14,15 +16,17 @@ interface BottomBlockProps {
   data: IQuestionSection;
   callToAction?: string;
   lng?: string;
+  className?: string;
 }
 
 export const BottomBlock: FC<BottomBlockProps> = ({
   data,
   lng,
   callToAction = '',
+  className,
 }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${className ?? ''}`}>
       {data?.bgImage?.data && (
         <div className={styles.image}>
           <Image

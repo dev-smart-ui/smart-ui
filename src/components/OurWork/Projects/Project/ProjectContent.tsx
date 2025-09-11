@@ -11,9 +11,12 @@ export const ProjectContent: FC<{
   color: string | undefined;
   mainImage: string | undefined;
   isOurWorkPage: boolean;
-}> = ({ projectName, color, mainImage, isOurWorkPage }) => (
+  description: string | undefined;
+}> = ({ projectName, color, mainImage, isOurWorkPage, description }) => (
   <>
-    <div className={styles.imgWrapper}>
+    <div
+      className={`${styles.imgWrapper} ${isOurWorkPage ? styles.isOurWorkPage : ''}`}
+    >
       <GradientBorder color={color}>
         <div className={styles.image}>
           <Image
@@ -34,9 +37,9 @@ export const ProjectContent: FC<{
       </span>
       {isOurWorkPage && (
         <>
-          <span className={styles.shortDesc}>
-            UI-UX design + Game Cross-Platform + Development
-          </span>
+          {description && (
+            <span className={styles.shortDesc}>{description}</span>
+          )}
           <p className={styles.fakeLink}>
             View Case Study
             <Icons.ArrowRight fill="#31B76F" width={20} />

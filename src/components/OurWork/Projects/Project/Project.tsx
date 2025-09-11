@@ -21,6 +21,7 @@ export const Project: FC<ProjectProps> = ({ project, isOurWorkPage, lng }) => {
     project_name: projectName,
     site_url: siteUrl = '#',
     slug,
+    seo_description: description,
   } = project?.attributes || {};
 
   const projectUrl = slug
@@ -44,6 +45,7 @@ export const Project: FC<ProjectProps> = ({ project, isOurWorkPage, lng }) => {
           color={color}
           mainImage={mainImage?.data?.attributes?.url}
           isOurWorkPage={isOurWorkPage}
+          description={description}
         />
       </Link>
     </li>
