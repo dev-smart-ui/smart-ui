@@ -35,9 +35,7 @@ export default function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)}>
       <body>
-        <Providers lng={lng}>
-          <main>{children}</main>
-        </Providers>
+        <Providers lng={lng}>{children}</Providers>
       </body>
     </html>
   );

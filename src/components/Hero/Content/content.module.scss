@@ -33,7 +33,7 @@
 
   span {
     font-size: 20px;
-    color: $textColor;
+    color: rgba(white, 0.7);
 
     @include breakpoint(md) {
       font-size: 24px;

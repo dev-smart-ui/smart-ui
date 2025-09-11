@@ -2,8 +2,9 @@
 
 import { PageEnum } from '@app-types/enums';
 import { IHeaderInfo } from '@app-types/global';
-import { IProjectData } from '@app-types/interfaces';
+import { IProjectCategory, IProjectData } from '@app-types/interfaces';
 import { PROJECTS_QUERY } from '@graphqlQueries/ProjectsQuery';
+import { CATEGORIES_QUERY } from '@graphqlQueries/categoryQuery';
 import { fetchGraphQL } from '@lib/fetchGraphQL';
 import { scrollToElement } from '@utils/index';
 
@@ -31,7 +32,9 @@ export const OurWorkWrapper: FC<OurWorkWrapperProps> = ({
   const [currentPage, setCurrentPage] = useState(1);
   const pageCountRef = useRef<number | null>(null);
   const [data, setData] = useState<IProjectData[]>([]);
-
+  const [categories, setCategories] = useState<IProjectCategory[]>([]);
+  const [activeCategory, setActiveCategory] = useState<string>('1');
+  const didFetch = useRef(false);
   // scroll to top after clicking the browser's back button from other pages or refreshing the current page
   useScrollToTop();
 
@@ -40,6 +43,7 @@ export const OurWorkWrapper: FC<OurWorkWrapperProps> = ({
       const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
         locale: lng,
         pagination: { page: currentPage, pageSize: pagSize },
+        filters: { project_categories: { id: { eq: Number(activeCategory) } } },
       });
 
       const pageCount = singleProjects?.meta?.pagination?.pageCount;
@@ -53,7 +57,29 @@ export const OurWorkWrapper: FC<OurWorkWrapperProps> = ({
     };
 
     fetchData().then();
-  }, [currentPage, lng, pagSize]);
+  }, [currentPage, lng, pagSize, activeCategory]);
+
+  const fetchCategories = async () => {
+    const { projectCategories } = await fetchGraphQL(CATEGORIES_QUERY, {
+      locale: lng,
+    });
+    if (!projectCategories?.data) {
+      return;
+    }
+    setCategories(projectCategories.data || []);
+    didFetch.current = false;
+  };
+
+  useEffect(() => {
+    if (!didFetch.current && categories.length === 0) {
+      didFetch.current = true;
+      fetchCategories().then();
+    }
+  }, []);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeCategory]);
 
   const handlePageClick = (selectedItem: { selected: number }) => {
     setCurrentPage(selectedItem.selected + 1);
@@ -62,7 +88,10 @@ export const OurWorkWrapper: FC<OurWorkWrapperProps> = ({
 
   return (
     <OurWork
+      setActiveCategory={setActiveCategory}
+      activeCategory={activeCategory}
       data={data}
+      categories={categories}
       headerInfo={headerInfo}
       page={page}
       handlePageClick={handlePageClick}

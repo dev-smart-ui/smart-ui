@@ -34,7 +34,12 @@ export const WhatWeDo: FC<WhatWeDoProps> = ({ data, lng, callToAction }) => {
           description={data?.description}
         />
         <TechnologiesList data={data?.cards} />
-        <BottomBlock data={bottomBlock} lng={lng} callToAction={callToAction} />
+        <BottomBlock
+          data={bottomBlock}
+          lng={lng}
+          callToAction={callToAction}
+          className="rounded-b-4"
+        />
       </Container>
     </Section>
   );

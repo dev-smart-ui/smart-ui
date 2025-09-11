@@ -28,10 +28,12 @@ $textColor6: #42526B;
 $textColor7: #636468;
 $textColor8: #1A1E24;
 $textColor9: #6C8184;
+$textColor10: #B4BBC5;
+$textColor11: #6A778B;
 
 //Border colors
 $borderColor: #3D4144;
-$borderColor2: #F8F8F8;
+$borderColor2: $textColor2;
 $borderColor3: #0E76A8;
 $borderColor4: #262626;
 
@@ -54,7 +56,7 @@ $warningColor: #FFC107;
 $errorColor: #E63946;
 
 // Success colors
-$successColor: #31B76F;
+$successColor: $primaryColor;
 
 //Gradient colors
 $mainBtnGradient1: #6D31B733;

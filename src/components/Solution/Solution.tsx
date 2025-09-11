@@ -27,6 +27,7 @@ export const Solution: FC<AdvantagesProps> = ({ data }) => {
             sectionName={data?.sectionName}
             title={data?.title}
             description={data?.description}
+            position="left"
           />
           {data?.cards?.length > 0 && (
             <InfoCards data={data?.cards} className={styles.infoCards} />

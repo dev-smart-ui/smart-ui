@@ -1,21 +1,20 @@
 @import "@styles/vars";
 
 .section {
-
   &.isOurWorkPage {
-    margin-top: 260px;
+    position: relative;
+    padding-top: 260px;
   }
 }
 
 .topBgImage {
   position: absolute;
-  top: 80px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: -1;
   pointer-events: none;
-  max-width: 1920px;
-  height: 300px;
+  height: 188px;
   margin: 0 auto;
 }
 
@@ -118,5 +117,57 @@
 
   @include breakpoint(md) {
     gap: 20px;
+  }
+}
+
+.categoryWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 64px;
+  margin-bottom: 48px;
+
+  .category {
+    border-radius: 30px;
+    padding: 6px 10px 6px 4px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+    text-transform: capitalize;
+    background-color: $cardColor;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    cursor: pointer;
+    border: 1px solid $cardColor;
+
+    &.active{
+      border-color: $primaryColor;
+    }
+
+    &:disabled{
+      opacity: 0.7;
+      cursor: default;
+    }
+
+    .uppercase {
+      text-transform: uppercase;
+    }
+  }
+
+  .icon {
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img{
+      width: 20px;
+      height: 20px;
+    }
   }
 }

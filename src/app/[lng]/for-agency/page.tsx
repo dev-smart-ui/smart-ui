@@ -3,14 +3,16 @@ import { fetchGraphQL } from '@lib/fetchGraphQL';
 
 import { Accordion } from '@components/Accordion';
 import { ContactForm } from '@components/ContactForm';
+import { BottomBlock } from '@components/CoreServices/bottomBlock';
 import Layout from '@components/Layout';
 import { OurWork } from '@components/OurWork';
+import { Section } from '@components/Section';
 import { Solution } from '@components/Solution';
 import { TechnologyStack } from '@components/TechnologyStack';
 
 import { Approaches } from './components/Approaches';
 import { Hero } from './components/Hero';
-import { QuestionBlock } from './components/QuestionBlock';
+import styles from './components/QuestionBlock/questionBlock.module.scss';
 import { WhatWeDo } from './components/WhatWeDo';
 
 interface ForAgencyPageProps {
@@ -44,7 +46,9 @@ export default async function ForAgencyPage({
     <Layout headerData={headerData} footerData={footerData}>
       <Hero data={heroData} />
       <Solution data={advantagesData} />
-      <QuestionBlock data={questionData} lng={lng} callToAction="contactForm" />
+      <Section className={styles.section}>
+        <BottomBlock data={questionData} lng={lng} callToAction="contactForm" />
+      </Section>
       <WhatWeDo data={whatWeDoData} lng={lng} callToAction="contactForm" />
       <TechnologyStack data={technologyStackData} />
       <Approaches data={approachesData} />

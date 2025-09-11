@@ -24,7 +24,12 @@ export const QuestionBlock: FC<IQuestionBlockProps> = ({
   return (
     <Section className={styles.section}>
       <Container className={styles.content}>
-        <BottomBlock data={data} lng={lng} callToAction={callToAction} />
+        <BottomBlock
+          data={data}
+          lng={lng}
+          callToAction={callToAction}
+          className="rounded-4"
+        />
       </Container>
     </Section>
   );

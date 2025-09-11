@@ -56,6 +56,9 @@
   justify-content: center;
   background: $cardColor;
   border-radius: $borderRadius2;
+  &.isOurWorkPage{
+    border-radius: $borderRadius2 $borderRadius2 0 0;
+  }
 }
 
 .content {
@@ -102,6 +105,10 @@
   font-size: 16px;
   font-weight: 300;
   color: $textColor;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 
 .fakeLink {

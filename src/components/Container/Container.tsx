@@ -4,7 +4,7 @@ import styles from './container.module.scss';
 
 interface ContainerProps {
   children: ReactNode;
-  size?: 'large';
+  size?: 'large' | 'xl';
   className?: string;
 }
 

@@ -9,18 +9,18 @@
 }
 
 .text {
-  color: $textColor;
+  color: $textColor10;
+  line-height: 1.5;
 }
 
 .items {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 8px;
 }
 
 .item {
-  a, span {
+  & > a, & > span {
+    padding: 8px 0;
     max-width: max-content;
     display: flex;
     align-items: center;
