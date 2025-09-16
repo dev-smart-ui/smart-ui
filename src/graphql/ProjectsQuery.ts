@@ -6,8 +6,8 @@ import {
 } from '@graphqlQueries/fragments';
 
 export const PROJECTS_QUERY = `
-query GetSingleProjectsData($locale: I18NLocaleCode!, $pagination: PaginationArg, $filters: SingleProjectFiltersInput) {
-  singleProjects(locale: $locale, pagination: $pagination, filters: $filters) {
+query GetSingleProjectsData($locale: I18NLocaleCode!, $pagination: PaginationArg, $filters: SingleProjectFiltersInput, $sort: [String]) {
+  singleProjects(locale: $locale, pagination: $pagination, filters: $filters, sort: $sort) {
     data {
       ...ProjectsFragment
     }
