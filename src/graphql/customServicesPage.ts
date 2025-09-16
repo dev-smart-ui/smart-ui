@@ -30,7 +30,7 @@ query GetCustomServicesPageData($locale: I18NLocaleCode, $pagination: Pagination
       }
     }
   }
-  singleProjects(locale: $locale, pagination: $pagination) {
+  singleProjects(locale: $locale, pagination: $pagination, sort: "order", filters: {project_categories: {slug: {eq: "custom-services"}}}) {
     data {
       ...ProjectsFragment
     }

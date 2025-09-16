@@ -38,7 +38,7 @@ query GetForAgencyPageData($locale: I18NLocaleCode, $pagination: PaginationArg) 
       }
     }
   }
-  singleProjects(locale: $locale, pagination: $pagination) {
+  singleProjects(locale: $locale, pagination: $pagination, sort: "order") {
     data {
       ...ProjectsFragment
     }
