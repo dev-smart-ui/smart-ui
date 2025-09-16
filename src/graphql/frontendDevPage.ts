@@ -30,7 +30,7 @@ query GetFrontendDevPageData($locale: I18NLocaleCode, $pagination: PaginationArg
       }
     }
   }
-  singleProjects(locale: $locale, pagination: $pagination) {
+  singleProjects(locale: $locale, pagination: $pagination, sort: "order", filters: {project_categories: {slug: {eq: "frontend-development"}}}) {
     data {
       ...ProjectsFragment
     }
