@@ -22,8 +22,8 @@ export const ProjectContent: FC<{
           <Image
             src={mainImage || ''}
             alt="projectImage"
-            width={366}
-            height={280}
+            width={530}
+            height={448}
           />
         </div>
       </GradientBorder>
