@@ -44,6 +44,7 @@ export const OurWorkWrapper: FC<OurWorkWrapperProps> = ({
         locale: lng,
         pagination: { page: currentPage, pageSize: pagSize },
         filters: { project_categories: { id: { eq: Number(activeCategory) } } },
+        sort: ['order'],
       });
 
       const pageCount = singleProjects?.meta?.pagination?.pageCount;
