@@ -33,7 +33,7 @@ export const OurWorkWrapper: FC<OurWorkWrapperProps> = ({
   const pageCountRef = useRef<number | null>(null);
   const [data, setData] = useState<IProjectData[]>([]);
   const [categories, setCategories] = useState<IProjectCategory[]>([]);
-  const [activeCategory, setActiveCategory] = useState<string>('1');
+  const [activeCategory, setActiveCategory] = useState<string>('all');
   const didFetch = useRef(false);
   // scroll to top after clicking the browser's back button from other pages or refreshing the current page
   useScrollToTop();
@@ -43,7 +43,7 @@ export const OurWorkWrapper: FC<OurWorkWrapperProps> = ({
       const { singleProjects } = await fetchGraphQL(PROJECTS_QUERY, {
         locale: lng,
         pagination: { page: currentPage, pageSize: pagSize },
-        filters: { project_categories: { id: { eq: Number(activeCategory) } } },
+        filters: { project_categories: { slug: { eq: activeCategory } } },
         sort: ['order'],
       });
 

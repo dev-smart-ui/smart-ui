@@ -74,12 +74,12 @@ export const OurWork: FC<OurWorkProps> = ({
             <button
               type="button"
               key={item.id}
-              className={`${styles.category} ${item.id === activeCategory ? styles.active : ''}`}
+              className={`${styles.category} ${item.attributes.slug === activeCategory ? styles.active : ''}`}
               disabled={item.attributes.single_projects.data.length === 0}
-              onClick={() => setActiveCategory(item.id)}
+              onClick={() => setActiveCategory(item.attributes.slug)}
               style={{
                 borderColor:
-                  item.id === activeCategory
+                  item.attributes.slug === activeCategory
                     ? item.attributes.color || '#31B76F'
                     : 'transparent',
               }}
