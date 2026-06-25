@@ -58,7 +58,12 @@ export const Card: FC<CardProps> = ({
         </div>
       </GradientBorder>
       <div className={styles.info}>
-        {createElement(titleTag, { className: styles.title }, title)}
+        <div className={styles.titleRow}>
+          {createElement(titleTag, { className: styles.title }, title)}
+          {area === 'aiAutomation' && (
+            <span className={styles.badge}>New</span>
+          )}
+        </div>
         <p className={styles.description}>{description}</p>
         {buttonLabel && (
           <Button

@@ -1,0 +1,14 @@
+# Smart-UI Development Studio
+> European software studio (Spain HQ, Ukraine dev center) building web applications,
+> custom AI agents, and business workflow automation since 2018. 315+ delivered projects.
+
+## Services
+- [AI Automation & AI Agents](https://www.smart-ui.pro/en/ai-automation): custom AI agents, workflow automation, AI integration, AI Process Audit (fixed price)
+- [Backend Development](https://www.smart-ui.pro/en/backend-development): Node.js, Python, Django
+- [Frontend Development](https://www.smart-ui.pro/en/frontend-development): React, Next.js, Vue
+- [UI/UX Design](https://www.smart-ui.pro/en/ui-ux-design), [QA](https://www.smart-ui.pro/en/qa)
+- [CMS Solutions](https://www.smart-ui.pro/en/cms): Strapi, WordPress, Headless CMS
+- [Custom Services](https://www.smart-ui.pro/en/custom-service)
+
+## Contact
+info@smart-ui.pro · Orihuela, Spain · Kharkiv, Ukraine

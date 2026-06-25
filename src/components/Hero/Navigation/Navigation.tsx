@@ -14,6 +14,8 @@ interface NavigationProps {
 }
 
 export const Navigation: FC<NavigationProps> = ({ isHomePage, data }) => {
+  const secondaryCta = data?.projectInfo?.[0];
+
   return (
     <div className={styles.wrapper}>
       {data?.siteUrl ? (
@@ -27,6 +29,11 @@ export const Navigation: FC<NavigationProps> = ({ isHomePage, data }) => {
           isBig
           text={data?.button?.label}
         />
+      )}
+      {isHomePage && secondaryCta?.text && secondaryCta?.itemId && (
+        <Link href={secondaryCta.itemId} className={styles.secondaryBtn}>
+          {secondaryCta.text}
+        </Link>
       )}
       {isHomePage && (
         <div className={styles.socialButtons}>

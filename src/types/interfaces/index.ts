@@ -163,6 +163,7 @@ export interface IHeroData {
   projectInfo: Array<{
     text: string;
     id: string;
+    itemId?: string;
   }>;
   siteUrl?: string;
 }
@@ -264,6 +265,7 @@ export interface IOurServiceCard {
   area: string;
   buttonLabel: string;
   buttonIcon: IImage;
+  href?: string | null;
 }
 
 export interface IOurServiceSection {

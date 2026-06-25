@@ -335,6 +335,7 @@ fragment OurServiceFragment on ComponentSectionsOurService {
 		description
 		area
 		buttonLabel
+		href
 		buttonIcon {
 			data {
 				attributes {

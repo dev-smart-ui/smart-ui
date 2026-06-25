@@ -17,6 +17,30 @@
   }
 }
 
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: $borderRadius2;
+  padding: 14px 32px;
+  font-weight: 600;
+  font-size: 18px;
+  min-width: max-content;
+  border: 2px solid $primaryColor2;
+  color: $textColor;
+  transition: border-color $transition1 ease, color $transition1 ease;
+
+  &:hover {
+    border-color: $primaryColor;
+    color: $primaryColor;
+  }
+
+  @include breakpoint(md) {
+    font-size: 20px;
+  }
+}
+
 .socialButtons {
   display: flex;
   gap: 20px;

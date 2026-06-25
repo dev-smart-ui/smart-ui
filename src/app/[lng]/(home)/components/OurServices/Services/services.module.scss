@@ -9,9 +9,9 @@
 
   @include breakpoint(lg) {
     grid-template-areas:
-      'service1 service1'
-      'service2 service3'
-      'service4 service4';
+      'aiAutomation aiAutomation'
+      'service1 service2'
+      'service3 service4';
     grid-template-columns: repeat(2, 1fr); // Две колонки для `lg` и выше
   }
 }

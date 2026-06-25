@@ -33,6 +33,31 @@ const Clients = dynamic(
   },
 );
 
+export const metadata = {
+  title: 'AI Automation & Software Development Company | Smart-UI',
+  description:
+    'Smart-UI builds web applications, custom AI agents, and business workflow automation for companies in the EU, UK, US, and Australia. 315+ projects since 2018.',
+  alternates: {
+    canonical: 'https://www.smart-ui.pro/en',
+    languages: {
+      en: 'https://www.smart-ui.pro/en',
+      uk: 'https://www.smart-ui.pro/uk-UA',
+    },
+  },
+  openGraph: {
+    title: 'AI Automation & Software Development Company | Smart-UI',
+    description:
+      'Smart-UI builds web applications, custom AI agents, and business workflow automation for companies in the EU, UK, US, and Australia. 315+ projects since 2018.',
+    url: 'https://www.smart-ui.pro/en',
+    type: 'website' as const,
+  },
+  twitter: {
+    title: 'AI Automation & Software Development Company | Smart-UI',
+    description:
+      'Smart-UI builds web applications, custom AI agents, and business workflow automation for companies in the EU, UK, US, and Australia. 315+ projects since 2018.',
+  },
+};
+
 interface HomePageProps {
   params: {
     lng: string;

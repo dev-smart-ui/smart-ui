@@ -1,13 +1,10 @@
 import { IClientFeedback } from '@app-types/interfaces';
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Autoplay, FreeMode, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper/types';
 
 import { FC, useRef } from 'react';
 
-import useMediaQuery from '@hooks/useMediaQuery';
-
-import { useSwiperInteraction } from '../hooks/useSwiperInteraction';
 import { Card } from './Card';
 import styles from './slider.module.scss';
 
@@ -16,25 +13,26 @@ interface SliderProps {
 }
 
 export const Slider: FC<SliderProps> = ({ data }) => {
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
   const swiperRef = useRef<SwiperType | null>(null);
-  const { handleMouseEnter, handleMouseLeave } = useSwiperInteraction(
-    isDesktop,
-    swiperRef,
-  );
+
+  // Duplicate slides for seamless infinite scroll
+  const slides = [...data, ...data, ...data];
 
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      onMouseEnter={() => swiperRef.current?.autoplay.stop()}
+      onMouseLeave={() => swiperRef.current?.autoplay.start()}
+    >
       <Swiper
         loop
-        centeredSlides
+        freeMode={{ enabled: true, momentum: false }}
         allowTouchMove={false}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
-        speed={1000}
-        loopAdditionalSlides={2}
-        modules={[Navigation, Autoplay]}
-        spaceBetween={20}
-        slidesPerView={1}
+        autoplay={{ delay: 0, disableOnInteraction: false }}
+        speed={4000}
+        modules={[Navigation, Autoplay, FreeMode]}
+        spaceBetween={24}
+        slidesPerView={1.2}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
@@ -43,22 +41,14 @@ export const Slider: FC<SliderProps> = ({ data }) => {
           nextEl: '#nextButton',
         }}
         breakpoints={{
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
+          768: { slidesPerView: 2.2 },
+          1024: { slidesPerView: 3.1 },
         }}
         className={styles.feedbackSwiper}
         id="feedbackSwiper"
       >
-        {data.map((feedback) => (
-          <SwiperSlide
-            key={feedback.id}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
+        {slides.map((feedback, index) => (
+          <SwiperSlide key={`${feedback.id}-${index}`}>
             <Card {...feedback} />
           </SwiperSlide>
         ))}
