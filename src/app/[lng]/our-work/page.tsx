@@ -11,7 +11,7 @@ import { OurWorkWrapper } from './OurWorkWrapper';
 export const metadata = {
   title: 'Our Work — Software Projects Portfolio | Smart-UI',
   description:
-    "Explore Smart-UI's portfolio of web applications, AI integrations, and custom software projects for clients across Europe and beyond.",
+    'Explore Smart-UI\'s portfolio of web applications, AI integrations, and custom software projects for clients across Europe and beyond.',
   alternates: {
     canonical: 'https://www.smart-ui.pro/en/our-work',
     languages: {
@@ -22,14 +22,14 @@ export const metadata = {
   openGraph: {
     title: 'Our Work — Software Projects Portfolio | Smart-UI',
     description:
-      "Explore Smart-UI's portfolio of web applications, AI integrations, and custom software projects for clients across Europe and beyond.",
+      'Explore Smart-UI\'s portfolio of web applications, AI integrations, and custom software projects for clients across Europe and beyond.',
     url: 'https://www.smart-ui.pro/en/our-work',
     type: 'website' as const,
   },
   twitter: {
     title: 'Our Work — Software Projects Portfolio | Smart-UI',
     description:
-      "Explore Smart-UI's portfolio of web applications, AI integrations, and custom software projects for clients across Europe and beyond.",
+      'Explore Smart-UI\'s portfolio of web applications, AI integrations, and custom software projects for clients across Europe and beyond.',
   },
 };
 

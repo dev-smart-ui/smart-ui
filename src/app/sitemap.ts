@@ -18,22 +18,16 @@ const pages = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const entries: MetadataRoute.Sitemap = [];
-
-  for (const page of pages) {
-    entries.push({
-      url: `${BASE_URL}/en${page.path}`,
-      lastModified: new Date(),
-      changeFrequency: page.changeFrequency,
-      priority: page.priority,
-      alternates: {
-        languages: {
-          en: `${BASE_URL}/en${page.path}`,
-          uk: `${BASE_URL}/uk-UA${page.path}`,
-        },
+  return pages.map((page) => ({
+    url: `${BASE_URL}/en${page.path}`,
+    lastModified: new Date(),
+    changeFrequency: page.changeFrequency,
+    priority: page.priority,
+    alternates: {
+      languages: {
+        en: `${BASE_URL}/en${page.path}`,
+        uk: `${BASE_URL}/uk-UA${page.path}`,
       },
-    });
-  }
-
-  return entries;
+    },
+  }));
 }
