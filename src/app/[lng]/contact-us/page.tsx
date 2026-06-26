@@ -11,7 +11,7 @@ import { ContactUs } from './ContactUs';
 export const metadata = {
   title: 'Contact Us | Smart-UI',
   description:
-    "Get in touch with Smart-UI. Let's discuss your web development or AI automation project.",
+    'Get in touch with Smart-UI. Let\'s discuss your web development or AI automation project.',
   alternates: {
     canonical: 'https://www.smart-ui.pro/en/contact-us',
     languages: {
@@ -22,14 +22,14 @@ export const metadata = {
   openGraph: {
     title: 'Contact Us | Smart-UI',
     description:
-      "Get in touch with Smart-UI. Let's discuss your web development or AI automation project.",
+      'Get in touch with Smart-UI. Let\'s discuss your web development or AI automation project.',
     url: 'https://www.smart-ui.pro/en/contact-us',
     type: 'website' as const,
   },
   twitter: {
     title: 'Contact Us | Smart-UI',
     description:
-      "Get in touch with Smart-UI. Let's discuss your web development or AI automation project.",
+      'Get in touch with Smart-UI. Let\'s discuss your web development or AI automation project.',
   },
 };
 
