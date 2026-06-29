@@ -45,6 +45,7 @@
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
   grid-template-areas:
+    "aiAutomation"
     "frontend"
     "cms"
     "backend"
@@ -55,10 +56,10 @@
 
   @include breakpoint(lg) {
     grid-gap: 20px;
-    grid-template-columns: repeat(3, 1fr); // Три колонки
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-      "frontend uxUi web3"
-      "cms qa ."
+      "aiAutomation frontend uxUi"
+      "cms qa web3"
       "backend customService .";
   }
 }

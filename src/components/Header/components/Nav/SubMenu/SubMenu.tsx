@@ -64,14 +64,16 @@ export const SubMenu: FC<SubMenuProps> = ({
               [styles.isActive]: checkActive(path),
             })}
           >
-            <div className={styles.icon}>
-              <Image
-                src={icon?.data?.attributes?.url}
-                width={28}
-                height={28}
-                alt="serviceicon"
-              />
-            </div>
+            {icon?.data?.attributes?.url && (
+              <div className={styles.icon}>
+                <Image
+                  src={icon.data.attributes.url}
+                  width={28}
+                  height={28}
+                  alt="serviceicon"
+                />
+              </div>
+            )}
             <div className={styles.info}>
               <span className={styles.title}>{label}</span>
               <span className={styles.description}>{desc}</span>
