@@ -15,7 +15,7 @@ export const CtaBanner: FC = () => {
             Book a free 30-minute discovery call. We&apos;ll identify your top automation
             opportunity and outline a pilot you can run in 2–4 weeks.
           </p>
-          <a href="#contactForm" className={styles.btn}>
+          <a href="https://calendly.com/gashkov321/30min" target="_blank" rel="noopener noreferrer" className={styles.btn}>
             Book a Free Call
           </a>
         </div>
