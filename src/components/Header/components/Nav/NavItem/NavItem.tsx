@@ -23,6 +23,7 @@ interface NavItemProps {
 }
 
 const servicesLinks = [
+  ROUTES.AI_AUTOMATION,
   ROUTES.FRONTEND_DEVELOPMENT,
   ROUTES.CMS,
   ROUTES.BACKEND_DEVELOPMENT,

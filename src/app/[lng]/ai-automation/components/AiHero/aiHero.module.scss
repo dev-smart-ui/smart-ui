@@ -1,0 +1,190 @@
+@import "@styles/vars";
+
+.section {
+  padding: 80px 0 60px;
+  background: $backgroundColor;
+  overflow: hidden;
+
+  @include breakpoint(lg) {
+    padding: 120px 0 80px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+
+  @include breakpoint(lg) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 600px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(49, 183, 111, 0.12);
+  border: 1px solid rgba(49, 183, 111, 0.35);
+  color: $primaryColor;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  color: $textColor2;
+  line-height: 1.15;
+  margin: 0;
+
+  @include breakpoint(md) {
+    font-size: 48px;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 56px;
+  }
+}
+
+.accent {
+  color: $primaryColor;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: $textColor;
+  line-height: 1.7;
+  margin: 0;
+
+  @include breakpoint(md) {
+    font-size: 18px;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: $borderRadius2;
+  background: $primaryColor;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background $transition2, transform $transition1;
+
+  &:hover {
+    background: $primaryColor2;
+    transform: translateY(-2px);
+  }
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 32px;
+  border-radius: $borderRadius2;
+  border: 1px solid $borderColor;
+  color: $textColor2;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color $transition2, color $transition2, transform $transition1;
+
+  &:hover {
+    border-color: $primaryColor;
+    color: $primaryColor;
+    transform: translateY(-2px);
+  }
+}
+
+.right {
+  width: 100%;
+  max-width: 540px;
+  flex-shrink: 0;
+}
+
+.terminal {
+  background: $cardColor;
+  border: 1px solid $borderColor;
+  border-radius: $borderRadius3;
+  overflow: hidden;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+}
+
+.terminalHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: $backgroundColor3;
+  border-bottom: 1px solid $borderColor;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.terminalTitle {
+  margin-left: 8px;
+  font-size: 12px;
+  color: $textColor4;
+}
+
+.terminalBody {
+  padding: 20px 20px 16px;
+  font-size: 13px;
+  line-height: 2;
+  color: $textColor;
+
+  p {
+    margin: 0;
+  }
+}
+
+.green {
+  color: $primaryColor;
+  margin-right: 8px;
+}
+
+.dim {
+  color: $textColor4;
+}
+
+.cursor {
+  color: $primaryColor;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

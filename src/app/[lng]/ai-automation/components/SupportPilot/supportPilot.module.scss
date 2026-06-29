@@ -1,0 +1,247 @@
+@import "@styles/vars";
+
+.section {
+  padding: 80px 0;
+  background: $backgroundColor;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+
+  @include breakpoint(lg) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 64px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 520px;
+}
+
+.sectionName {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $primaryColor;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: $textColor2;
+  margin: 0;
+
+  @include breakpoint(md) {
+    font-size: 36px;
+  }
+}
+
+.description {
+  font-size: 16px;
+  color: $textColor;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: $textColor2;
+
+    &::before {
+      content: '';
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(49, 183, 111, 0.15);
+      border: 1px solid $primaryColor;
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%2331B76F' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.widget {
+  width: 100%;
+  max-width: 420px;
+  background: $cardColor;
+  border: 1px solid $borderColor;
+  border-radius: $borderRadius4;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
+
+.widgetHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: $backgroundColor3;
+  border-bottom: 1px solid $borderColor;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: $primaryColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.widgetName {
+  font-size: 14px;
+  font-weight: 600;
+  color: $textColor2;
+  margin: 0;
+}
+
+.widgetStatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: $primaryColor;
+  margin: 0;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $primaryColor;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.messages {
+  list-style: none;
+  padding: 16px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 260px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $borderColor transparent;
+}
+
+.msgBot,
+.msgUser {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.msgBot {
+  background: $backgroundColor3;
+  border: 1px solid $borderColor;
+  color: $textColor2;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.msgUser {
+  background: $primaryColor;
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.typing {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 4px 0;
+
+  span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $textColor4;
+    animation: bounce 1.2s ease-in-out infinite;
+
+    &:nth-child(2) { animation-delay: 0.2s; }
+    &:nth-child(3) { animation-delay: 0.4s; }
+  }
+}
+
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+
+.quickReplies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid $borderColor;
+}
+
+.quickReplyBtn {
+  padding: 7px 14px;
+  border-radius: 100px;
+  border: 1px solid $borderColor;
+  background: transparent;
+  color: $textColor2;
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color $transition2, color $transition2, background $transition2;
+
+  &:hover {
+    border-color: $primaryColor;
+    color: $primaryColor;
+    background: rgba(49, 183, 111, 0.08);
+  }
+}
+
+.cta {
+  padding: 14px 16px;
+  border-top: 1px solid $borderColor;
+  text-align: center;
+}
+
+.ctaLink {
+  font-size: 13px;
+  font-weight: 600;
+  color: $primaryColor;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

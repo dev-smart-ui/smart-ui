@@ -1,0 +1,56 @@
+@import "@styles/vars";
+
+.band {
+  background: $surfaceColor;
+  border-top: 1px solid $borderColor;
+  border-bottom: 1px solid $borderColor;
+  padding: 32px 0;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  @include breakpoint(md) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  @include breakpoint(md) {
+    border-right: 1px solid $borderColor;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+.value {
+  font-size: 32px;
+  font-weight: 700;
+  color: $primaryColor;
+  line-height: 1;
+
+  @include breakpoint(lg) {
+    font-size: 40px;
+  }
+}
+
+.label {
+  font-size: 13px;
+  color: $textColor4;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
