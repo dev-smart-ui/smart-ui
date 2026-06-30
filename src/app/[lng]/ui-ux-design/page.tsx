@@ -19,6 +19,7 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.smart-ui.pro/en/ui-ux-design',
     languages: {
+      'x-default': 'https://www.smart-ui.pro/en/ui-ux-design',
       en: 'https://www.smart-ui.pro/en/ui-ux-design',
       uk: 'https://www.smart-ui.pro/uk-UA/ui-ux-design',
     },

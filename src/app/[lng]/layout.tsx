@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 
 import '../../styles/globals.scss';
 import { languages } from '../i18n/settings';
+import { GoogleAnalytics } from '@components/Analytics';
 import { JsonLd } from '@components/JsonLd';
 import { Providers } from './providers';
 
@@ -27,6 +28,7 @@ export const metadata = {
   },
   alternates: {
     languages: {
+      'x-default': `${BASE_URL}/en`,
       en: `${BASE_URL}/en`,
       uk: `${BASE_URL}/uk-UA`,
     },
@@ -72,6 +74,7 @@ export default function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)}>
       <body>
+        <GoogleAnalytics />
         <JsonLd data={organizationJsonLd} />
         <Providers lng={lng}>{children}</Providers>
       </body>

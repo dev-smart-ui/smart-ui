@@ -1,14 +1,27 @@
-# Smart-UI Development Studio
-> European software studio (Spain HQ, Ukraine dev center) building web applications,
-> custom AI agents, and business workflow automation since 2018. 315+ delivered projects.
+# Smart-UI — AI Automation & Software Development Agency
+> B2B software studio (Spain HQ, Ukraine dev centre) serving clients in the UK, EU, US, and Australia since 2018. 315+ delivered projects. Specialising in AI agents, workflow automation, and full-stack web development for SMEs and scale-ups.
 
-## Services
-- [AI Automation & AI Agents](https://www.smart-ui.pro/en/ai-automation): custom AI agents, workflow automation, AI integration, AI Process Audit (fixed price)
-- [Backend Development](https://www.smart-ui.pro/en/backend-development): Node.js, Python, Django
-- [Frontend Development](https://www.smart-ui.pro/en/frontend-development): React, Next.js, Vue
-- [UI/UX Design](https://www.smart-ui.pro/en/ui-ux-design), [QA](https://www.smart-ui.pro/en/qa)
-- [CMS Solutions](https://www.smart-ui.pro/en/cms): Strapi, WordPress, Headless CMS
-- [Custom Services](https://www.smart-ui.pro/en/custom-service)
+## Core Services
+- [AI Automation & Custom AI Agents](https://www.smart-ui.pro/en/ai-automation): custom LLM agents, n8n workflow automation, RAG document systems, AI copilots, lead qualification bots. Pilots from £2,500 delivered in 2–4 weeks.
+- [Backend Development](https://www.smart-ui.pro/en/backend-development): Node.js, NestJS, Python, Django, FastAPI, PostgreSQL, MongoDB
+- [Frontend Development](https://www.smart-ui.pro/en/frontend-development): React, Next.js, TypeScript, Vue.js — pixel-perfect, performant
+- [UI/UX Design](https://www.smart-ui.pro/en/ui-ux-design): product design, prototyping, Figma
+- [QA Engineering](https://www.smart-ui.pro/en/qa): manual, automated, and security testing
+- [CMS Solutions](https://www.smart-ui.pro/en/cms): Strapi, WordPress, headless CMS
+- [Custom Services](https://www.smart-ui.pro/en/custom-service): email templates, maintenance, performance, redesign
 
-## Contact
-info@smart-ui.pro · Orihuela, Spain · Kharkiv, Ukraine
+## UK Clients & Experience
+- Serving UK companies since 2018 — finance, SaaS, automotive analytics, e-commerce
+- English-native communication; working hours overlap with GMT
+- Familiar with UK business culture and compliance requirements
+
+## Why Smart-UI for UK Companies
+- Fixed-price AI Process Audit (delivered in 1 week) — low-risk entry point
+- Proven pilots: 2–4 week delivery, then scale
+- Tech stack: Python, FastAPI, Anthropic Claude, OpenAI, n8n, Next.js, Node.js, Docker
+
+## Contact & Booking
+- Website: https://www.smart-ui.pro
+- Book a call: https://calendly.com/gashkov321/30min
+- Email: info@smart-ui.pro
+- Portfolio: https://www.smart-ui.pro/en/our-work

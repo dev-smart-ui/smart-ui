@@ -21,4 +21,10 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
 Sitemap: https://www.smart-ui.pro/sitemap.xml

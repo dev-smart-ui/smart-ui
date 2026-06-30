@@ -19,6 +19,7 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.smart-ui.pro/en/custom-service',
     languages: {
+      'x-default': 'https://www.smart-ui.pro/en/custom-service',
       en: 'https://www.smart-ui.pro/en/custom-service',
       uk: 'https://www.smart-ui.pro/uk-UA/custom-service',
     },

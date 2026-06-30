@@ -19,6 +19,7 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.smart-ui.pro/en/backend-development',
     languages: {
+      'x-default': 'https://www.smart-ui.pro/en/backend-development',
       en: 'https://www.smart-ui.pro/en/backend-development',
       uk: 'https://www.smart-ui.pro/uk-UA/backend-development',
     },

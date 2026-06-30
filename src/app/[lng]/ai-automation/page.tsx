@@ -30,6 +30,7 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.smart-ui.pro/en/ai-automation',
     languages: {
+      'x-default': 'https://www.smart-ui.pro/en/ai-automation',
       en: 'https://www.smart-ui.pro/en/ai-automation',
       uk: 'https://www.smart-ui.pro/uk-UA/ai-automation',
     },
@@ -86,10 +87,58 @@ export default async function AiAutomationPage({
       'Custom AI agents, workflow automations, RAG systems, and AI copilots that reduce manual work by 60–80%.',
   };
 
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How much does AI automation cost in the UK?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Our AI Process Audit starts from £2,500 and is delivered in one week. Full automation pilots typically range from £5,000–£15,000 depending on complexity. We provide fixed-price scoping before any development begins.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can you integrate AI into our existing software?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We specialise in integrating AI capabilities into existing products via APIs, webhooks, and custom middleware — without rebuilding your stack. Common integrations include CRMs, helpdesks, ERPs, and SaaS platforms.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How long does it take to build a custom AI agent?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A focused pilot for one use case is typically delivered in 2–4 weeks. More complex multi-agent systems or full rollouts take 4–8 weeks. We always start with a scoped pilot so you see results before committing to a larger project.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What AI technologies do you use?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We work with Anthropic Claude, OpenAI GPT, Hugging Face models, LangChain, and open-source LLMs. For orchestration we use n8n, FastAPI, and custom Python pipelines. We choose the stack based on your requirements, budget, and data privacy needs.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you work with UK companies remotely?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We have been serving UK clients since 2018. Our team communicates in English, our working hours overlap with GMT, and we are experienced with UK business culture and compliance requirements.',
+        },
+      },
+    ],
+  };
+
   return (
     <Layout headerData={headerData} footerData={footerData}>
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={serviceJsonLd} />
+      <JsonLd data={faqJsonLd} />
       <AiHero lng={lng} />
       <MetricsBand />
       <TechGalaxy />
